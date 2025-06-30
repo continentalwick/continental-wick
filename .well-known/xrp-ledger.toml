@@ -1,0 +1,12 @@
+[METADATA]
+token = "WCK"
+name = "CONTINENTAL WICK"
+issuer = "rEtKBaH1koMJtQiqdhDNgS4ZrUNsJKc5go"
+desc = "$WICK is the native asset of the CONTINENTAL protocol. Powered by XRPL for speed, privacy, and real-world execution."
+url = "https://wicktoken.net"
+logo = "ipfs://YOUR_LOGO_CID"
+
+[[CURRENCIES]]
+code = "WCK"
+issuer = "rEtKBaH1koMJtQiqdhDNgS4ZrUNsJKc5go"
+display_decimals = 6
