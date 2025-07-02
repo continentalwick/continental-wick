@@ -26,16 +26,23 @@
       text-decoration: none;
       margin-top: 20px;
     }
+    .qr {
+      margin-top: 30px;
+    }
   </style>
 </head>
 <body>
   <img src="https://ipfs.io/ipfs/bafkreiajbbmrlqvhxajx7tihkbgnlwsolovkxxjjks4r7drs3w75oze3xy" alt="$WCK Logo" />
   <h1>Add $WCK Trustline</h1>
-  <p><strong>CONTINENTAL WICK</strong> is powered by XRPL. Use the link below to add the official trustline via Xaman.</p>
-  <a class="button" href="https://xumm.app/detect/trustset?issuer=rEtKBaH1koMJtQiqdhDNgS4ZrUNsJKc5go&currency=WCK" target="_blank">
+  <p><strong>CONTINENTAL WICK</strong> is powered by XRPL.<br>Use the button below to add the official $WCK trustline via Xaman.</p>
+
+  <a class="button" href="https://xumm.app/detect/xapp:trustset?issuer=rEtKBaH1koMJtQiqdhDNgS4ZrUNsJKc5go&currency=WCK" target="_blank">
     Set Trustline in Xaman
   </a>
-  <p>Scan this if you're on a desktop:</p>
-  <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://xumm.app/detect/trustset?issuer=rEtKBaH1koMJtQiqdhDNgS4ZrUNsJKc5go&currency=WCK" alt="QR Code"/>
+
+  <div class="qr">
+    <p>On desktop? Scan this with Xaman:</p>
+    <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://xumm.app/detect/xapp:trustset?issuer=rEtKBaH1koMJtQiqdhDNgS4ZrUNsJKc5go&currency=WCK" alt="QR Code"/>
+  </div>
 </body>
 </html>
