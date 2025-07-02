@@ -1,48 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Add $WCK Trustline</title>
   <style>
     body {
       font-family: Arial, sans-serif;
-      text-align: center;
       background: #fff;
       color: #111;
+      text-align: center;
       padding: 40px;
     }
-    img {
-      width: 120px;
-      margin-bottom: 20px;
-    }
-    a.button {
-      display: inline-block;
+    .button {
       background: #111;
       color: #fff;
       padding: 14px 28px;
       border-radius: 8px;
       font-weight: bold;
       text-decoration: none;
-      margin-top: 20px;
+      display: inline-block;
+      margin: 20px 0;
     }
-    .qr {
+    #qrcode {
       margin-top: 30px;
     }
   </style>
 </head>
 <body>
-  <img src="https://ipfs.io/ipfs/bafkreiajbbmrlqvhxajx7tihkbgnlwsolovkxxjjks4r7drs3w75oze3xy" alt="$WCK Logo" />
+  <img src="https://ipfs.io/ipfs/bafkreiajbbmrlqvhxajx7tihkbgnlwsolovkxxjjks4r7drs3w75oze3xy" width="100" alt="$WCK Logo">
   <h1>Add $WCK Trustline</h1>
-  <p><strong>CONTINENTAL WICK</strong> is powered by XRPL.<br>Use the button below to add the official $WCK trustline via Xaman.</p>
+  <p>Click below or scan the QR to add the official trustline via Xaman.</p>
+  <a class="button" id="launchLink" href="#" target="_blank">Generate Trustline</a>
+  <div id="qrcode"></div>
 
-  <a class="button" href="https://xumm.app/detect/xapp:trustset?issuer=rEtKBaH1koMJtQiqdhDNgS4ZrUNsJKc5go&currency=WCK" target="_blank">
-    Set Trustline in Xaman
-  </a>
+  <script>
+    async function generateTrustlinePayload() {
+      const response = await fetch("https://xumm.app/api/v1/platform/payload", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "x-api-key": "", // optional for rate limit boost if you have public API key
+        },
+        body: JSON.stringify({
+          txjson: {
+            TransactionType: "TrustSet",
+            Account: "rEtKBaH1koMJtQiqdhDNgS4ZrUNsJKc5go",
+            LimitAmount: {
+              currency: "WCK",
+              issuer: "rEtKBaH1koMJtQiqdhDNgS4ZrUNsJKc5go",
+              value: "100000000"
+            }
+          },
+          options: {
+            return_url: {
+              app: "https://wicktoken.net/thanks",
+              web: "https://wicktoken.net/thanks"
+            }
+          }
+        })
+      });
 
-  <div class="qr">
-    <p>On desktop? Scan this with Xaman:</p>
-    <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://xumm.app/detect/xapp:trustset?issuer=rEtKBaH1koMJtQiqdhDNgS4ZrUNsJKc5go&currency=WCK" alt="QR Code"/>
-  </div>
+      const data = await response.json();
+      const launchLink = document.getElementById("launchLink");
+      launchLink.href = data.next.always;
+
+      const qrCodeDiv = document.getElementById("qrcode");
+      const qrImage = new Image();
+      qrImage.src = `https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${encodeURIComponent(data.next.always)}`;
+      qrImage.alt = "Scan with Xaman";
+      qrCodeDiv.innerHTML = "";
+      qrCodeDiv.appendChild(qrImage);
+    }
+
+    generateTrustlinePayload();
+  </script>
 </body>
 </html>
