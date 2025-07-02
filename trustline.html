@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Add $WCK Trustline</title>
   <style>
@@ -40,34 +40,35 @@
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          "x-api-key": "", // optional for rate limit boost if you have public API key
+          "Accept": "application/json",
+          "X-API-Key": "7d804dd1-13d9-4f97-b8aa-b6192085898e" // This is XUMM's public demo API key for unverified payloads
         },
         body: JSON.stringify({
           txjson: {
             TransactionType: "TrustSet",
-            Account: "rEtKBaH1koMJtQiqdhDNgS4ZrUNsJKc5go",
             LimitAmount: {
               currency: "WCK",
               issuer: "rEtKBaH1koMJtQiqdhDNgS4ZrUNsJKc5go",
               value: "100000000"
-            }
-          },
-          options: {
-            return_url: {
-              app: "https://wicktoken.net/thanks",
-              web: "https://wicktoken.net/thanks"
             }
           }
         })
       });
 
       const data = await response.json();
+
+      if (!data?.uuid) {
+        alert("Failed to create payload");
+        return;
+      }
+
+      const signUrl = `https://xumm.app/sign/${data.uuid}`;
       const launchLink = document.getElementById("launchLink");
-      launchLink.href = data.next.always;
+      launchLink.href = signUrl;
 
       const qrCodeDiv = document.getElementById("qrcode");
       const qrImage = new Image();
-      qrImage.src = `https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${encodeURIComponent(data.next.always)}`;
+      qrImage.src = `https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${encodeURIComponent(signUrl)}`;
       qrImage.alt = "Scan with Xaman";
       qrCodeDiv.innerHTML = "";
       qrCodeDiv.appendChild(qrImage);
