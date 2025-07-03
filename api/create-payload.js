@@ -1,6 +1,8 @@
+console.log("🔥 TRUSTLINE FUNCTION LOADED ✅");
+
 export default async function handler(req, res) {
   const xummApiKey = 'e9e3c6d8-0c77-4323-bcb3-3e3e44bb27ca';
-  console.log("✅ Using API Key:", xummApiKey); // confirm runtime key
+  console.log("✅ Using API Key:", xummApiKey);
 
   const payload = {
     txjson: {
@@ -28,13 +30,13 @@ export default async function handler(req, res) {
 
     if (data.uuid) {
       console.log("✅ Payload UUID:", data.uuid);
-      res.status(200).json(data);
+      res.status(200).json({ status: "Function hit", uuid: data.uuid });
     } else {
-      console.error("❌ XUMM Error:", data);
+      console.error("❌ XAMAN Error:", data);
       res.status(500).json({ error: data });
     }
   } catch (err) {
-    console.error("❌ Fetch Failed:", err);
+    console.error("❌ Payload Request Failed:", err);
     res.status(500).json({ error: 'Internal server error' });
   }
 }
