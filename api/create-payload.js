@@ -1,8 +1,8 @@
-console.log("🔥 TRUSTLINE FUNCTION LOADED ✅");
-
 export default async function handler(req, res) {
+  console.log("🔥 create-payload.js triggered");
+
   const xummApiKey = 'e9e3c6d8-0c77-4323-bcb3-3e3e44bb27ca';
-  console.log("✅ Using API Key:", xummApiKey);
+  console.log("✅ Using hardcoded API Key");
 
   const payload = {
     txjson: {
@@ -27,17 +27,15 @@ export default async function handler(req, res) {
     });
 
     const data = await response.json();
+    console.log("📡 XAMAN response:", data);
 
     if (data.uuid) {
-      console.log("✅ Payload UUID:", data.uuid);
-      res.status(200).json({ status: "Function hit", uuid: data.uuid });
+      res.status(200).json({ uuid: data.uuid });
     } else {
-      console.error("❌ XAMAN Error:", data);
       res.status(500).json({ error: data });
     }
   } catch (err) {
-    console.error("❌ Payload Request Failed:", err);
-    res.status(500).json({ error: 'Internal server error' });
+    console.error("❌ Fetch error:", err);
+    res.status(500).json({ error: 'Internal Server Error', details: err.message });
   }
 }
- 
