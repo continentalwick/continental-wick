@@ -1,8 +1,6 @@
 export default async function handler(req, res) {
-  console.log("🔥 create-payload.js triggered");
-
-  const xummApiKey = 'e9e3c6d8-0c77-4323-bcb3-3e3e44bb27ca';
-  console.log("✅ Using hardcoded API Key");
+  const xummApiKey = process.env.XUMM_API_KEY;
+  console.log("🔥 Trustline function running with secure env key");
 
   const payload = {
     txjson: {
@@ -35,7 +33,7 @@ export default async function handler(req, res) {
       res.status(500).json({ error: data });
     }
   } catch (err) {
-    console.error("❌ Fetch error:", err);
-    res.status(500).json({ error: 'Internal Server Error', details: err.message });
+    console.error("❌ Payload error:", err);
+    res.status(500).json({ error: 'Internal error', details: err.message });
   }
 }
