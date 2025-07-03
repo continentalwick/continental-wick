@@ -69,40 +69,41 @@
       color: #ffd700;
       letter-spacing: 0.02em;
     }
-    .cards-row {
+    .nft-grid {
       display: flex;
-      justify-content: center;
-      gap: 36px;
       flex-wrap: wrap;
-      margin-bottom: 40px;
+      justify-content: center;
+      gap: 28px;
     }
-    .card-box {
+    .nft-card {
       background: #18171a;
-      border-radius: 16px;
-      box-shadow: 0 3px 18px #000b;
-      padding: 16px 16px 10px 16px;
-      width: 230px;
+      border-radius: 14px;
+      box-shadow: 0 3px 12px #000b;
+      border: 2px solid #c6a450;
+      padding: 12px 10px 8px 10px;
+      width: 170px;
       display: flex;
       flex-direction: column;
       align-items: center;
-      border: 2px solid #c6a450;
+      margin-bottom: 16px;
     }
-    .card-box img {
-      width: 198px;
-      height: 264px;
+    .nft-card img {
+      width: 150px;
+      height: 200px;
       object-fit: cover;
-      border-radius: 12px;
-      margin-bottom: 10px;
-      border: 2.5px solid #c6a450;
+      border-radius: 8px;
+      border: 2px solid #c6a450;
       background: #18171a;
     }
-    .card-title {
-      font-size: 1.04em;
-      margin-top: 6px;
-      color: #f8d05f;
-      letter-spacing: 0.01em;
-      text-align: center;
-      font-family: 'Cinzel', serif;
+    .nft-card p {
+      margin: 10px 0 0 0;
+      color: #f5c940;
+      font-family: monospace;
+      font-size: 13px;
+    }
+    .nft-card span {
+      font-size: 12px;
+      color: #e0cf93;
     }
     .whitepaper-block {
       background: #232227;
@@ -167,10 +168,13 @@
     }
     .x-link:hover {text-decoration:underline;}
     @media (max-width: 700px) {
-      .cards-row { flex-direction: column; align-items:center; gap:18px; }
-      .card-box { width:92vw; }
-      .card-box img { width:90vw; height:auto; }
-      .section-title { font-size: 1.15em;}
+      .nft-grid {
+        flex-direction: column;
+        align-items: center;
+        gap: 16px;
+      }
+      .nft-card { width: 92vw; }
+      .nft-card img { width: 90vw; height: auto; }
       header {margin-top: 20px;}
       .hits-block { width: 94vw; }
     }
@@ -198,40 +202,32 @@
     </div>
   </div>
 
-<section id="otc-section" class="otc-block">
-  <iframe 
-    src="/otc" 
-    style="width: 100%; height: 850px; border: none; background: #0f0f0f;" 
-    title="Buy $WCK OTC"
-  ></iframe>
-</section>
+  <section id="otc-section" class="otc-block">
+    <iframe 
+      src="/otc.html" 
+      style="width: 100%; height: 850px; border: none; background: #0f0f0f;" 
+      title="Buy $WCK OTC"
+    ></iframe>
+  </section>
 
-
+  <!-- NFT TRADING CARDS (2 across) -->
   <section id="nft-cards" style="text-align:center; padding: 40px 20px; background-color:#111;">
-  <h2 style="color:#f5c940; font-family:monospace; font-size:32px; margin-bottom:30px;">
-    NFT TRADING CARDS
-  </h2>
-
-  <!-- Card 001 -->
-  <div style="margin-bottom: 40px;">
-    <img src="CONTINENTAL-WICK-001.png" alt="Card 001 - CONTINENTAL WICK" style="width:100%; max-width:400px; border-radius:8px;" />
-    <p style="color:#f5c940; font-family:monospace; font-size:16px; margin-top:10px;">
-      Card 001 — CONTINENTAL WICK<br/>
-      <span style="font-size:14px;">Codename: The Diamond</span>
-    </p>
-  </div>
-
-  <!-- Card 002 -->
-  <div>
-    <img src="THE-ARCHITECT-002.png" alt="Card 002 - VICTOR SOREN" style="width:100%; max-width:400px; border-radius:8px;" />
-    <p style="color:#f5c940; font-family:monospace; font-size:16px; margin-top:10px;">
-      Card 002 — VICTOR SOREN<br/>
-      <span style="font-size:14px;">Codename: The Architect</span>
-    </p>
-  </div>
-</section>
-
-
+    <h2 style="color:#f5c940; font-family:monospace; font-size:32px; margin-bottom:30px;">
+      NFT TRADING CARDS
+    </h2>
+    <div class="nft-grid">
+      <!-- Card 001 -->
+      <div class="nft-card">
+        <img src="CONTINENTAL-WICK-001.png" alt="Card 001 - CONTINENTAL WICK" />
+        <p>Card 001 — CONTINENTAL WICK<br/><span>Codename: The Diamond</span></p>
+      </div>
+      <!-- Card 002 -->
+      <div class="nft-card">
+        <img src="THE-ARCHITECT-002.png" alt="Card 002 - VICTOR SOREN" />
+        <p>Card 002 — VICTOR SOREN<br/><span>Codename: The Architect</span></p>
+      </div>
+    </div>
+  </section>
 
   <div class="whitepaper-block">
     <div class="whitepaper-title">White Paper</div>
