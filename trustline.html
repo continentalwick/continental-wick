@@ -30,10 +30,10 @@
 <body>
   <img src="https://ipfs.io/ipfs/bafkreiajbbmrlqvhxajx7tihkbgnlwsolovkxxjjks4r7drs3w75oze3xy" width="100" alt="$WCK Logo">
   <h1>Add $WCK Trustline</h1>
-  <p><strong>CONTINENTAL WICK</strong> is powered by XRPL.<br>Click below or scan QR to authorize the official $WCK trustline in Xaman.</p>
+  <p><strong>CONTINENTAL WICK</strong> is powered by XRPL.<br>Click below or scan QR to authorize the official $WCK trustline in XAMAN.</p>
 
   <a class="button" id="launchLink" href="#" target="_blank" rel="noopener noreferrer">
-    Sign Trustline in Xaman
+    Sign Trustline in XAMAN
   </a>
 
   <div id="qrcode"></div>
@@ -49,7 +49,7 @@
 
         const qrImage = new Image();
         qrImage.src = `https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${encodeURIComponent(signUrl)}`;
-        qrImage.alt = "Scan with Xaman";
+        qrImage.alt = "Scan with XAMAN";
         document.getElementById("qrcode").appendChild(qrImage);
       } catch (err) {
         alert("Failed to generate trustline payload. Try again later.");
