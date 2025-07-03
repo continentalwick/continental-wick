@@ -2,10 +2,22 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Page Title</title>
+  <title>Terms of Service – CONTINENTAL WICK OTCDEX</title>
 </head>
 <body>
-  <h1>COMING SOON</h1>
-  <p>This page will be live soon. Stay tuned.</p>
+  <h1>Terms of Service</h1>
+  <p>
+    By accessing or using the CONTINENTAL WICK OTCDEX platform ("the Service"), you agree to these terms. If you do not agree, do not use this Service.
+  </p>
+  <ul>
+    <li><strong>Eligibility:</strong> You must be of legal age to use this Service in your jurisdiction.</li>
+    <li><strong>No Investment Advice:</strong> Nothing on this site constitutes investment, legal, or financial advice. Use at your own risk.</li>
+    <li><strong>No Warranty:</strong> The Service is provided "as is" with no guarantees. We are not liable for losses, damages, or downtime.</li>
+    <li><strong>Prohibited Use:</strong> Do not use the Service for illegal purposes or to violate XRPL or local regulations.</li>
+    <li><strong>Changes:</strong> Terms may change at any time. Continued use is acceptance of changes.</li>
+  </ul>
+  <p>
+    Questions? Contact us at <a href="mailto:wicktokenhq@gmail.com">wicktokenhq@gmail.com</a>.
+  </p>
 </body>
 </html>
