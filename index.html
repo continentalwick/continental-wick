@@ -94,6 +94,12 @@
       border-radius: 8px;
       border: 2px solid #c6a450;
       background: #18171a;
+      cursor: pointer;
+      transition: box-shadow 0.13s, border-color 0.13s;
+    }
+    .nft-card img:hover {
+      box-shadow: 0 0 0 2.5px #ffe083, 0 3px 20px #000a;
+      border-color: #ffe083;
     }
     .nft-card p {
       margin: 10px 0 0 0;
@@ -167,6 +173,38 @@
       text-decoration:none; font-weight:bold;
     }
     .x-link:hover {text-decoration:underline;}
+    /* --- NFT Modal CSS --- */
+    .nft-modal {
+      display: none;
+      position: fixed;
+      z-index: 9999;
+      left: 0; top: 0; width: 100vw; height: 100vh;
+      background: rgba(20,20,20,0.93);
+      justify-content: center;
+      align-items: center;
+    }
+    .nft-modal img {
+      max-width: 95vw;
+      max-height: 92vh;
+      border-radius: 13px;
+      border: 3px solid #ffd700;
+      box-shadow: 0 6px 30px #000a;
+      background: #1a1a1c;
+    }
+    .nft-modal.active { display: flex; }
+    .nft-modal .close-btn {
+      position: absolute;
+      top: 32px; right: 42px;
+      font-size: 2.8em;
+      color: #ffd700;
+      background: none;
+      border: none;
+      cursor: pointer;
+      z-index: 10001;
+      font-weight: bold;
+      transition: color 0.12s;
+    }
+    .nft-modal .close-btn:hover { color: #fff600; }
     @media (max-width: 700px) {
       .nft-grid {
         flex-direction: column;
@@ -210,7 +248,7 @@
     ></iframe>
   </section>
 
-  <!-- NFT TRADING CARDS (2 across) -->
+  <!-- NFT TRADING CARDS (2 across with modal) -->
   <section id="nft-cards" style="text-align:center; padding: 40px 20px; background-color:#111;">
     <h2 style="color:#f5c940; font-family:monospace; font-size:32px; margin-bottom:30px;">
       NFT TRADING CARDS
@@ -218,16 +256,22 @@
     <div class="nft-grid">
       <!-- Card 001 -->
       <div class="nft-card">
-        <img src="CONTINENTAL-WICK-001.png" alt="Card 001 - CONTINENTAL WICK" />
+        <img src="CONTINENTAL-WICK-001.png" alt="Card 001 - CONTINENTAL WICK" onclick="openNFTModal(this)">
         <p>Card 001 — CONTINENTAL WICK<br/><span>Codename: The Diamond</span></p>
       </div>
       <!-- Card 002 -->
       <div class="nft-card">
-        <img src="THE-ARCHITECT-002.png" alt="Card 002 - VICTOR SOREN" />
+        <img src="THE-ARCHITECT-002.png" alt="Card 002 - VICTOR SOREN" onclick="openNFTModal(this)">
         <p>Card 002 — VICTOR SOREN<br/><span>Codename: The Architect</span></p>
       </div>
     </div>
   </section>
+
+  <!-- NFT Modal -->
+  <div class="nft-modal" id="nftModal" onclick="closeNFTModal(event)">
+    <button class="close-btn" onclick="closeNFTModal(event)">&times;</button>
+    <img id="nftModalImg" src="" alt="NFT enlarged">
+  </div>
 
   <div class="whitepaper-block">
     <div class="whitepaper-title">White Paper</div>
@@ -261,5 +305,21 @@
       &copy; 2025 CONTINENTAL WICK. All rights reserved.
     </div>
   </footer>
+
+  <script>
+    function openNFTModal(img) {
+      var modal = document.getElementById('nftModal');
+      var modalImg = document.getElementById('nftModalImg');
+      modalImg.src = img.src;
+      modal.classList.add('active');
+    }
+    function closeNFTModal(event) {
+      // Only close if the user clicks the backdrop or the close button
+      if (event.target.classList.contains('nft-modal') || event.target.classList.contains('close-btn')) {
+        document.getElementById('nftModal').classList.remove('active');
+        document.getElementById('nftModalImg').src = '';
+      }
+    }
+  </script>
 </body>
 </html>
