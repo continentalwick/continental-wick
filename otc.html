@@ -90,10 +90,24 @@
     const input = document.getElementById('wckAmount');
     const feedback = document.getElementById('feedback');
 
+    const pricePerWCK = 0.05; // Presale price: $0.05 USD per WCK
+    let xrpUsd = null;
+
+    async function fetchXrpUsd() {
+      try {
+        const res = await fetch("https://api.coingecko.com/api/v3/simple/price?ids=ripple&vs_currencies=usd");
+        const data = await res.json();
+        xrpUsd = data.ripple.usd;
+      } catch (err) {
+        feedback.textContent = 'Unable to fetch $XRP price. Try again later.';
+        feedback.style.color = '#f55';
+      }
+    }
+
+    fetchXrpUsd();
+
     input.addEventListener('input', () => {
       const value = parseFloat(input.value);
-      const pricePerWCK = 0.05; // Presale price: $0.05 USD per WCK
-      const xrpUsd = 0.50; // Example XRP/USD rate
 
       if (isNaN(value)) {
         feedback.textContent = '';
@@ -103,11 +117,14 @@
       } else if (value > 50000) {
         feedback.textContent = 'Above max per transaction (50,000 $WCK)';
         feedback.style.color = '#f55';
-      } else {
+      } else if (xrpUsd) {
         const usdTotal = value * pricePerWCK;
         const xrpEquivalent = usdTotal / xrpUsd;
-        feedback.textContent = `Buying ${value.toLocaleString()} $WCK ≈ ${xrpEquivalent.toFixed(2)} $XRP (@ $0.015/WCK)`;
+        feedback.textContent = `Buying ${value.toLocaleString()} $WCK ≈ ${xrpEquivalent.toFixed(2)} $XRP (at $${xrpUsd.toFixed(2)} per $XRP)`;
         feedback.style.color = '#f9d442';
+      } else {
+        feedback.textContent = 'Fetching live $XRP price...';
+        feedback.style.color = '#888';
       }
     });
   </script>
