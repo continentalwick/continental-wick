@@ -6,7 +6,7 @@
   <title>Buy $WCK — Powered by XRPL</title>
   <style>
     body {
-      background: #fff;
+      background: #f8f5f0;
       color: #111;
       font-family: Arial, sans-serif;
       max-width: 600px;
@@ -40,9 +40,24 @@
       pointer-events: none;
       opacity: 0.6;
     }
+    #feedback {
+      margin-top: 20px;
+      font-weight: bold;
+    }
+    input[type="number"] {
+      padding: 10px;
+      font-size: 16px;
+      width: 80%;
+      margin-top: 10px;
+    }
+    img {
+      width: 80px;
+      margin-bottom: 20px;
+    }
   </style>
 </head>
 <body>
+  <img src="https://ipfs.io/ipfs/bafkreiajbbmrlqvhxajx7tihkbgnlwsolovkxxjjks4r7drs3w75oze3xy" alt="$WCK Logo">
   <h1>Buy $WCK — Powered by XRPL</h1>
   <div class="info">
     Private OTC window open.<br />
@@ -55,8 +70,32 @@
     No pre-sale unlocks. No airdrops. No nonsense. Just protocol.
   </div>
 
+  <input type="number" id="wckAmount" placeholder="Enter amount of $WCK to buy..." />
+  <div id="feedback"></div>
+
   <a class="button disabled" href="#">Set Trustline — Pending XAMAN Approval</a>
   <br />
   <a class="button" href="https://wicktoken.net/contact">Contact OTC Desk</a>
+
+  <script>
+    const input = document.getElementById('wckAmount');
+    const feedback = document.getElementById('feedback');
+
+    input.addEventListener('input', () => {
+      const value = parseFloat(input.value);
+      if (isNaN(value)) {
+        feedback.textContent = '';
+      } else if (value < 20) {
+        feedback.textContent = 'Below minimum buy of 20 $WCK';
+        feedback.style.color = '#c00';
+      } else if (value > 50000) {
+        feedback.textContent = 'Above max per transaction (50,000 $WCK)';
+        feedback.style.color = '#c00';
+      } else {
+        feedback.textContent = `You are preparing to buy ${value.toLocaleString()} $WCK`;
+        feedback.style.color = '#111';
+      }
+    });
+  </script>
 </body>
 </html>
