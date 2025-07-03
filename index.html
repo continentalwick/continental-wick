@@ -69,48 +69,64 @@
       color: #ffd700;
       letter-spacing: 0.02em;
     }
-    .nft-grid {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 28px;
-    }
-    .nft-card {
-      background: #18171a;
-      border-radius: 14px;
-      box-shadow: 0 3px 12px #000b;
-      border: 2px solid #c6a450;
-      padding: 12px 10px 8px 10px;
-      width: 170px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      margin-bottom: 16px;
-    }
-    .nft-card img {
-      width: 150px;
-      height: 200px;
-      object-fit: cover;
-      border-radius: 8px;
-      border: 2px solid #c6a450;
-      background: #18171a;
-      cursor: pointer;
-      transition: box-shadow 0.13s, border-color 0.13s;
-    }
-    .nft-card img:hover {
-      box-shadow: 0 0 0 2.5px #ffe083, 0 3px 20px #000a;
-      border-color: #ffe083;
-    }
-    .nft-card p {
-      margin: 10px 0 0 0;
-      color: #f5c940;
-      font-family: monospace;
-      font-size: 13px;
-    }
-    .nft-card span {
-      font-size: 12px;
-      color: #e0cf93;
-    }
+.nft-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 28px;
+}
+.nft-card {
+  background: #18171a;
+  border-radius: 14px;
+  box-shadow: 0 3px 12px #000b;
+  border: 2px solid #c6a450;
+  padding: 12px 10px 8px 10px;
+  width: 170px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 16px;
+}
+.nft-card img {
+  width: 150px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 2px solid #c6a450;
+  background: #18171a;
+  cursor: pointer;
+  transition: box-shadow 0.13s, border-color 0.13s;
+}
+.nft-card img:hover {
+  box-shadow: 0 0 0 2.5px #ffe083, 0 3px 20px #000a;
+  border-color: #ffe083;
+}
+.nft-card p {
+  margin: 10px 0 0 0;
+  color: #f5c940;
+  font-family: monospace;
+  font-size: 13px;
+}
+.nft-card span {
+  font-size: 12px;
+  color: #e0cf93;
+}
+@media (max-width: 700px) {
+  .nft-grid {
+    flex-direction: column !important;
+    align-items: center;
+    gap: 16px;
+  }
+  .nft-card {
+    width: 92vw !important;
+    max-width: 370px;
+  }
+  .nft-card img {
+    width: 90vw !important;
+    max-width: 340px;
+    height: auto;
+  }
+}
     .whitepaper-block {
       background: #232227;
       border-radius: 11px;
