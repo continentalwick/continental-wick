@@ -6,8 +6,8 @@
   <title>Buy $WCK — Powered by XRPL</title>
   <style>
     body {
-      background: #f8f5f0;
-      color: #111;
+      background: #0f0f0f;
+      color: #f9d442;
       font-family: Arial, sans-serif;
       max-width: 600px;
       margin: 40px auto;
@@ -17,38 +17,47 @@
     h1 {
       font-size: 28px;
       margin-bottom: 10px;
+      color: #f9d442;
     }
     .info {
       font-size: 16px;
       margin: 20px 0;
+      color: #ddd;
     }
     .warning {
-      color: #c00;
+      color: #f55;
       font-weight: bold;
     }
     .button {
       display: inline-block;
       padding: 12px 24px;
-      background: #111;
-      color: #fff;
+      background: #f9d442;
+      color: #000;
       border-radius: 6px;
       text-decoration: none;
       margin-top: 20px;
+      font-weight: bold;
     }
     .disabled {
-      background: #ccc;
+      background: #555;
+      color: #aaa;
       pointer-events: none;
       opacity: 0.6;
     }
     #feedback {
       margin-top: 20px;
       font-weight: bold;
+      color: #f9d442;
     }
     input[type="number"] {
       padding: 10px;
       font-size: 16px;
       width: 80%;
       margin-top: 10px;
+      background: #1e1e1e;
+      color: #f9d442;
+      border: 1px solid #f9d442;
+      border-radius: 4px;
     }
     img {
       width: 80px;
@@ -70,7 +79,7 @@
     No pre-sale unlocks. No airdrops. No nonsense. Just protocol.
   </div>
 
-  <input type="number" id="wckAmount" placeholder="Enter amount of $WCK to buy..." />
+  <input type="number" id="wckAmount" placeholder="Enter amount of $WCK to buy..." step="0.000001" />
   <div id="feedback"></div>
 
   <a class="button disabled" href="#">Set Trustline — Pending XAMAN Approval</a>
@@ -83,17 +92,22 @@
 
     input.addEventListener('input', () => {
       const value = parseFloat(input.value);
+      const pricePerWCK = 0.015; // Example price: $0.015 USD per WCK
+      const xrpUsd = 0.50; // Example XRP/USD rate
+
       if (isNaN(value)) {
         feedback.textContent = '';
       } else if (value < 20) {
         feedback.textContent = 'Below minimum buy of 20 $WCK';
-        feedback.style.color = '#c00';
+        feedback.style.color = '#f55';
       } else if (value > 50000) {
         feedback.textContent = 'Above max per transaction (50,000 $WCK)';
-        feedback.style.color = '#c00';
+        feedback.style.color = '#f55';
       } else {
-        feedback.textContent = `You are preparing to buy ${value.toLocaleString()} $WCK`;
-        feedback.style.color = '#111';
+        const usdTotal = value * pricePerWCK;
+        const xrpEquivalent = usdTotal / xrpUsd;
+        feedback.textContent = `Buying ${value.toLocaleString()} $WCK ≈ ${xrpEquivalent.toFixed(2)} $XRP (@ $0.015/WCK)`;
+        feedback.style.color = '#f9d442';
       }
     });
   </script>
