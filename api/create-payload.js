@@ -4,7 +4,7 @@ export default async function handler(req, res) {
     headers: {
       "Content-Type": "application/json",
       "Accept": "application/json",
-      'X-API-Key': process.env.XUMM_API_KEY
+      'X-API-Key': 'e9e3c6d8-0c77-4323-bcb3-3e3e44bb27ca'
     },
     body: JSON.stringify({
       txjson: {
