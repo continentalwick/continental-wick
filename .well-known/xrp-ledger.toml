@@ -1,16 +1,31 @@
+[METADATA]
+token = "$WCK"
+
 [[ISSUERS]]
 address = "rEtKBaH1koMJtQiqdhDNgS4ZrUNsJKc5go"
 name = "CONTINENTAL WICK"
+desc = "$WCK is the native asset of the CONTINENTAL protocol. Powered by XRPL for speed, privacy, and real-world execution."
+url = "https://wicktoken.net"
+
+[[CURRENCIES]]
+code = "$WCK"
+issuer = "rEtKBaH1koMJtQiqdhDNgS4ZrUNsJKc5go"
+display_decimals = 6
+desc = "$WCK is the native asset of the CONTINENTAL protocol. Powered by XRPL for speed, privacy, and real-world execution."
+url = "https://wicktoken.net"
+logo = "https://ipfs.io/ipfs/bafkreiajbbmrlqvhxajx7tihkbgnlwsolovkxxjjks4r7drs3w75oze3xy"
 
 [[TOKENS]]
 issuer = "rEtKBaH1koMJtQiqdhDNgS4ZrUNsJKc5go"
 currency = "$WCK"
 name = "CONTINENTAL WICK"
 desc = "$WCK is the native asset of the CONTINENTAL protocol. Powered by XRPL for speed, privacy, and real-world execution."
-icon = "ipfs://bafkreiajbbmrlqvhxajx7tihkbgnlwsolovkxxjjks4r7drs3w75oze3xy"
+icon = "https://ipfs.io/ipfs/bafkreiajbbmrlqvhxajx7tihkbgnlwsolovkxxjjks4r7drs3w75oze3xy"
+display_decimals = 6
 
 [[TOKENS.URLS]]
 url = "https://wicktoken.net"
+logo = "https://ipfs.io/ipfs/bafkreiajbbmrlqvhxajx7tihkbgnlwsolovkxxjjks4r7drs3w75oze3xy"
 type = "website"
 
 [[TOKENS.URLS]]
