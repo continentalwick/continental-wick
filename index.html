@@ -4,13 +4,79 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CONTINENTAL WICK – $WCK Protocol</title>
-  <link rel="stylesheet" href="styles.css"> <!-- optional, if you have CSS -->
+  <style>
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: #181a1f;
+      color: #fff;
+      margin: 0; padding: 0;
+    }
+    header, footer {
+      background: #23262c;
+      padding: 20px;
+      text-align: center;
+    }
+    .branding img {
+      max-height: 64px;
+      vertical-align: middle;
+      margin-bottom: 10px;
+    }
+    nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 10px 0;
+      display: flex;
+      justify-content: center;
+      gap: 32px;
+    }
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 1.12em;
+      transition: color 0.16s;
+    }
+    nav ul li a.highlight {
+      color: #ffd700;
+      border-bottom: 2px solid #ffd700;
+      padding-bottom: 2px;
+    }
+    nav ul li a:hover { color: #ffd700; }
+    main {
+      max-width: 750px;
+      margin: 40px auto;
+      padding: 36px;
+      background: #21242a;
+      border-radius: 18px;
+      box-shadow: 0 2px 24px #000a;
+      text-align: center;
+    }
+    main h1 { margin-bottom: 12px; }
+    main p { line-height: 1.7; }
+    main a {
+      color: #ffd700;
+      text-decoration: underline;
+      word-break: break-all;
+    }
+    footer {
+      font-size: 0.97em;
+      color: #aaa;
+    }
+    footer ul { display: inline-flex; gap: 18px; list-style: none; margin: 0; padding: 0;}
+    footer ul li a { color: #aaa; text-decoration: none; }
+    footer ul li a:hover { color: #ffd700; }
+    @media (max-width: 650px) {
+      nav ul { flex-direction: column; gap: 13px;}
+      main { padding: 14px; }
+      .branding img { max-height: 42px;}
+    }
+  </style>
 </head>
 <body>
 
 <header>
   <div class="branding">
-    <a href="/"><img src="logo.png" alt="Site logo" style="max-height:60px;"></a>
+    <a href="/"><img src="logo.png" alt="Site logo"></a>
   </div>
   <nav aria-label="Main navigation">
     <ul>
@@ -23,16 +89,28 @@
 </header>
 
 <main>
-  <h1>Welcome to CONTINENTAL WICK</h1>
-  <p>$WCK is the native asset of the CONTINENTAL protocol, powered by XRPL for speed, privacy, and real-world execution.</p>
-  <!-- Add more main content as needed -->
+  <h1>CONTINENTAL WICK</h1>
+  <p>
+    <strong>$WCK</strong> is the native asset of the CONTINENTAL protocol.<br>
+    Powered by XRPL for speed, privacy, and real-world execution.
+  </p>
+  <p>
+    <a href="https://ipfs.io/ipfs/bafkreibm6zcx4gcm6dgi6fkoqfzv2btbmbvb5z6ar5wrnmvyvjh654lsvi" target="_blank">
+      View Legal Disclaimer (IPFS)
+    </a>
+  </p>
+  <p>
+    <em>
+      "The Utility That Memes."
+    </em>
+  </p>
 </main>
 
 <footer>
   <nav aria-label="Footer navigation">
     <ul>
       <li><a href="/disclaimer">Disclaimer</a></li>
-      <!-- other links -->
+      <!-- Add other links as needed -->
     </ul>
   </nav>
   <p>© 2025 CONTINENTAL WICK</p>
