@@ -1,5 +1,6 @@
 [METADATA]
 token = "$WCK"
+disclaimer = "ipfs://bafkreibm6zcx4gcm6dgi6fkoqfzv2btbmbvb5z6ar5wrnmvyvjh654lsvi"
 
 [[ISSUERS]]
 address = "rEtKBaH1koMJtQiqdhDNgS4ZrUNsJKc5go"
