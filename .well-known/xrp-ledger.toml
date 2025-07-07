@@ -32,4 +32,3 @@ type = "website"
 [[TOKENS.URLS]]
 url = "https://x.com/wick_token"
 type = "social"
-
