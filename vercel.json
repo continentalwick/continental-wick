@@ -1,14 +1,17 @@
 {
   "cleanUrls": true,
-  "rewrites": [
+  "headers": [
     {
       "source": "/.well-known/xrp-ledger.toml",
-      "destination": "/.well-known/xrp-ledger.toml"
-    },
-    {
-      "source": "/(.*)",
-      "destination": "/index.html"
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "text/plain"
+        }
+      ]
     }
-  ]
+  ],
+  "rewrites": []
 }
+
 
