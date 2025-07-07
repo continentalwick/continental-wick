@@ -30,4 +30,4 @@ Protocol enforcement begins here.
 
 ---
 
-🗝️ $WCK is the native asset of the CONTINENTAL protocol — a signal-driven utility backed by real execution, not speculation.
+🗝️ $WCK is the native asset of the CONTINENTAL protocol. Powered by XRPL for speed, privacy, and real-world execution.
