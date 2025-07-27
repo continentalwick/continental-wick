@@ -9,7 +9,7 @@ issuer = "rEtKBaH1koMJtQiqdhDNgS4ZrUNsJKc5go"
 currency = "WCK"
 name = "$WCK"
 desc = "$WCK is the native asset of the CONTINENTAL protocol. Powered by XRPL for speed, privacy, and real-world execution."
-icon = "https://wicktoken.net/assets/wck-logo.png"
+icon = "https://wicktoken.net/assets/logo.png"
 
 [[TOKENS.URLS]]
 url = "https://wicktoken.net"
