@@ -21,17 +21,17 @@
       border-radius: 16px;
       box-shadow: 0 3px 18px #000b;
       width: 100%;
-      max-width: 380px;
+      max-width: 400px;
       text-align: center;
     }
     .preview-box h1 {
-      font-size: 1.45em;
-      margin-bottom: 8px;
+      font-size: 1.5em;
+      margin-bottom: 10px;
     }
     .preview-box .desc {
       color: #e0cf93;
       font-size: 1.02em;
-      margin-bottom: 22px;
+      margin-bottom: 24px;
     }
     input[type="number"] {
       width: 90%;
@@ -51,9 +51,10 @@
       font-size: 1.02em;
       color: #f9d442;
       min-height: 20px;
+      margin-top: 4px;
     }
-    .disclaimer {
-      font-size: 0.85em;
+    .coming-soon {
+      font-size: 0.95em;
       color: #aaa;
       margin-top: 24px;
       line-height: 1.4;
@@ -66,30 +67,32 @@
 <body>
   <div class="preview-box">
     <h1>$WCK OTC Preview</h1>
-    <div class="desc">Enter how much <strong>XRP</strong> you want to spend.<br>
-    Get live estimate in USD + $WCK at 5¢/token.</div>
+    <div class="desc">
+      Enter USD amount to see how much XRP and $WCK you’ll receive.<br>
+      Rate: <b>$0.05 per $WCK</b>
+    </div>
 
-    <input type="number" id="xrpInput" placeholder="Enter XRP amount" step="0.01" min="0">
-    <div class="results" id="resultsText">Fetching live price...</div>
+    <input type="number" id="usdInput" placeholder="Enter USD amount" step="0.01" min="1">
+    <div class="results" id="resultsText">Fetching live XRP price…</div>
 
-    <div class="disclaimer">
-      This is a visual preview only. No wallet connection or processing is active. <br>
-      Min buy: <strong>$1</strong> worth of XRP. Rate: <strong>$0.05</strong> per $WCK.
+    <div class="coming-soon">
+      🕒 OTC processing coming soon<br>
+      🟡 Powered by XRPL
     </div>
   </div>
 
   <script>
-    const xrpInput = document.getElementById("xrpInput");
+    const usdInput = document.getElementById("usdInput");
     const resultsText = document.getElementById("resultsText");
+    const pricePerWCK = 0.05;
     let xrpUsd = null;
-    const wckPrice = 0.05;
 
     async function fetchXrpUsd() {
       try {
         const res = await fetch("https://api.coingecko.com/api/v3/simple/price?ids=ripple&vs_currencies=usd");
         const data = await res.json();
         xrpUsd = data.ripple.usd;
-        resultsText.textContent = "Enter XRP to preview";
+        resultsText.textContent = "Enter USD to preview";
       } catch (e) {
         resultsText.textContent = "Error fetching XRP price";
         resultsText.style.color = "#f55";
@@ -98,9 +101,9 @@
 
     fetchXrpUsd();
 
-    xrpInput.addEventListener("input", () => {
-      const xrpAmount = parseFloat(xrpInput.value);
-      if (isNaN(xrpAmount) || xrpAmount <= 0) {
+    usdInput.addEventListener("input", () => {
+      const usdAmount = parseFloat(usdInput.value);
+      if (isNaN(usdAmount) || usdAmount <= 0) {
         resultsText.textContent = "";
         return;
       }
@@ -110,15 +113,16 @@
         return;
       }
 
-      const usd = xrpAmount * xrpUsd;
-      if (usd < 1) {
-        resultsText.textContent = `Below minimum: $1 USD`;
+      if (usdAmount < 1) {
+        resultsText.textContent = "Minimum is $1 USD";
         resultsText.style.color = "#f55";
         return;
       }
 
-      const wckAmount = usd / wckPrice;
-      resultsText.textContent = `≈ $${usd.toFixed(2)} USD → ${Math.floor(wckAmount).toLocaleString()} $WCK`;
+      const wckAmount = usdAmount / pricePerWCK;
+      const xrpAmount = usdAmount / xrpUsd;
+
+      resultsText.textContent = `≈ ${xrpAmount.toFixed(2)} XRP → ${Math.floor(wckAmount).toLocaleString()} $WCK`;
       resultsText.style.color = "#f9d442";
     });
   </script>
