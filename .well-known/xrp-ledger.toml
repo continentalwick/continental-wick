@@ -16,5 +16,5 @@ url = "https://wicktoken.net"
 type = "website"
 
 [[TOKENS.URLS]]
-url = "https://x.com/wick_token"
+url = "https://x.com/wcktoken"
 type = "social"
