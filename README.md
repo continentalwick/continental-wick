@@ -9,7 +9,7 @@ Powered by XRPL for speed, privacy, and real-world execution.
 
 - **Name:** CONTINENTAL WICK  
 - **Symbol:** $WCK  
-- **Issuer Address:** `rEtKBaH1koMJtQiqdhDNgS4ZrUNsJKc5go`  
+- **Issuer Address:** `rpFVEydkZrUjf4tcbLeDeVqXm5zYQGtXWm`  
 - **Decimals:** 6  
 - **Logo CID:** `bafkreiajbbmrlqvhxajx7tihkbgnlwsolovkxxjjks4r7drs3w75oze3xy`  
 - **Metadata CID:** `bafkreifalgi5ozc4ha4v6k4v2ukoz5wxdthqxt6lzy6sxkh4rfi57iabbu`
