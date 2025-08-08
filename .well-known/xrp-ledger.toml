@@ -1,11 +1,11 @@
 [[ISSUERS]]
-address = "rEtKBaH1koMJtQiqdhDNgS4ZrUNsJKc5go"
+address = "rpFVEydkZrUjf4tcbLeDeVqXm5zYQGtXWm"
 name = "CONTINENTAL WICK"
 desc = "$WCK is the native asset of the CONTINENTAL protocol. Powered by XRPL for speed, privacy, and real-world execution."
 url = "https://wicktoken.net"
 
 [[TOKENS]]
-issuer = "rEtKBaH1koMJtQiqdhDNgS4ZrUNsJKc5go"
+issuer = "rpFVEydkZrUjf4tcbLeDeVqXm5zYQGtXWm"
 currency = "WCK"
 name = "$WCK"
 desc = "$WCK is the native asset of the CONTINENTAL protocol. Powered by XRPL for speed, privacy, and real-world execution."
