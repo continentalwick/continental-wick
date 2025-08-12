@@ -75,16 +75,6 @@
       color: #fff;
       margin-bottom: 18px;
     }
-    .otc-frame {
-      width: 100%;
-      max-width: 900px;
-      height: 625px;
-      border: none;
-      border-radius: 6px;
-      box-shadow: 0 4px 30px #000a;
-      margin-bottom: 18px;
-      background: #111;
-    }
     .connect-btn {
       padding: 12px 28px;
       font-size: 1rem;
@@ -215,7 +205,6 @@
       .section-title { font-size: 1.15em;}
       header {margin-top: 20px;}
       .hits-block { width: 94vw; }
-      .otc-frame { height:550px; }
     }
   </style>
 </head>
@@ -246,10 +235,47 @@
     </div>
   </div>
 
-  <!-- OTC SECTION -->
-  <div class="otc-block">
-    <div class="otc-title">OTC Trading Live</div>
-    <iframe src="/otc" class="otc-frame" title="WCK OTC Preview" loading="lazy"></iframe>
+  <!-- OTC SECTION — embedded like BAG -->
+  <div class="otc-block" id="wck-otc">
+    <div class="otc-title">OTC Trading Preview</div>
+
+    <div style="display:grid;gap:12px;justify-items:center;margin-bottom:14px;">
+      <label style="display:flex;gap:10px;align-items:center;">
+        <span style="min-width:90px;text-align:right;">USD</span>
+        <input id="usd" type="number" min="1" step="0.01" value="25"
+               style="width:160px;padding:10px;border-radius:8px;border:1px solid #333;background:#111;color:#fff">
+        <span style="font-size:.9em;color:#bdbdbd">(min $1)</span>
+      </label>
+
+      <label style="display:flex;gap:10px;align-items:center;">
+        <span style="min-width:90px;text-align:right;">XRP/USD</span>
+        <input id="xrpUsd" type="number" step="0.0001" value="0.6000"
+               style="width:160px;padding:10px;border-radius:8px;border:1px solid #333;background:#111;color:#fff">
+        <span style="font-size:.9em;color:#bdbdbd">manual rate</span>
+      </label>
+
+      <label style="display:flex;gap:10px;align-items:center;">
+        <span style="min-width:90px;text-align:right;">WCK/XRP</span>
+        <input id="wckPerXrp" type="number" step="1" value="1000000"
+               style="width:160px;padding:10px;border-radius:8px;border:1px solid #333;background:#111;color:#fff">
+        <span style="font-size:.9em;color:#bdbdbd">tokens per 1 XRP</span>
+      </label>
+    </div>
+
+    <div style="display:flex;gap:18px;flex-wrap:wrap;justify-content:center;margin:8px 0 18px;">
+      <div style="background:#111;border:1px solid #333;border-radius:10px;padding:12px 16px;min-width:180px;">
+        <div style="font-size:.9em;color:#bdbdbd;">You’ll send</div>
+        <div style="font-size:1.25em;font-weight:700;"><span id="xrpOut">0.0000</span> XRP</div>
+      </div>
+      <div style="background:#111;border:1px solid #333;border-radius:10px;padding:12px 16px;min-width:180px;">
+        <div style="font-size:.9em;color:#bdbdbd;">You’ll receive</div>
+        <div style="font-size:1.25em;font-weight:700;"><span id="wckOut">0</span> WCK</div>
+      </div>
+    </div>
+
+    <div id="otcNote" style="color:#e0cf93;margin-bottom:10px;">Coming soon — UI preview only. No wallet connection.</div>
+    <div id="limitNote" style="color:#bdbdbd;font-size:.95em;margin-bottom:12px;">Limit per buyer: <b>$5,000</b></div>
+
     <button class="connect-btn" type="button" aria-disabled="true">Connect Wallet</button>
   </div>
 
@@ -304,5 +330,50 @@
   </footer>
 
   <noscript><style>.connect-btn{display:none}</style></noscript>
+
+  <script>
+    (function () {
+      const $ = id => document.getElementById(id);
+      const usd = $('usd'), xrpUsd = $('xrpUsd'), wckPerXrp = $('wckPerXrp');
+      const xrpOut = $('xrpOut'), wckOut = $('wckOut'), note = $('otcNote');
+
+      const MAX_USD = 5000; // per-buyer visual cap
+      function fmt(n, d=4){ return Number(n).toFixed(d); }
+      function fmtInt(n){ return Math.max(0, Math.floor(Number(n))).toLocaleString(); }
+
+      function calc() {
+        let usdVal = Number(usd.value || 0);
+        if (usdVal < 1) {
+          note.textContent = 'Minimum is $1';
+          note.style.color = '#ffb4b4';
+        } else if (usdVal > MAX_USD) {
+          note.textContent = `Max per buyer is $${MAX_USD.toLocaleString()}`;
+          note.style.color = '#ffdf91';
+          usdVal = MAX_USD;
+          usd.value = usdVal;
+        } else {
+          note.textContent = 'Coming soon — UI preview only. No wallet connection.';
+          note.style.color = '#e0cf93';
+        }
+
+        const px = Math.max(0.0000001, Number(xrpUsd.value || 0.6)); // XRP/USD
+        const rate = Math.max(0, Number(wckPerXrp.value || 1000000)); // WCK per 1 XRP
+
+        const xrp = usdVal / px;
+        const wck = xrp * rate;
+
+        xrpOut.textContent = fmt(xrp, 4);
+        wckOut.textContent = fmtInt(wck); // WCK has 6 decimals; show whole tokens
+      }
+
+      ['input','change'].forEach(ev => {
+        usd.addEventListener(ev, calc);
+        xrpUsd.addEventListener(ev, calc);
+        wckPerXrp.addEventListener(ev, calc);
+      });
+
+      calc();
+    })();
+  </script>
 </body>
 </html>
