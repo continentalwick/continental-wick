@@ -1,33 +1,84 @@
-# CONTINENTAL WICK ($WCK)
+<p align="center">
+  <img src="https://wicktoken.net/logo.png" alt="$WCK Logo" width="200" />
+</p>
 
-**The Utility That Memes.**  
-Powered by XRPL for speed, privacy, and real-world execution.
+# 🗝️ CONTINENTAL WICK ($WCK)
 
----
+**Official Site:** [https://wicktoken.net](https://wicktoken.net)  
+**Token Name:** $WCK  
+**Chain:** XRP Ledger (XRPL)  
+**Supply:** 100,000,000  
+**Decimals:** 6  
+**Status:** Live  
+**𝕏:** [https://x.com/wcktoken](https://x.com/wcktoken)  
+**Telegram:** [https://t.me/wicktoken](https://t.me/wicktoken)
 
-### 🧾 Token Details
-
-- **Name:** CONTINENTAL WICK  
-- **Symbol:** $WCK  
-- **Issuer Address:** `rpFVEydkZrUjf4tcbLeDeVqXm5zYQGtXWm`  
-- **Decimals:** 6  
-- **Logo CID:** `bafkreiajbbmrlqvhxajx7tihkbgnlwsolovkxxjjks4r7drs3w75oze3xy`  
-- **Metadata CID:** `bafkreifalgi5ozc4ha4v6k4v2ukoz5wxdthqxt6lzy6sxkh4rfi57iabbu`
-
----
-
-### 🔗 TOML File
-
-Available at:  
-[`https://wicktoken.net/.well-known/xrp-ledger.toml`](https://wicktoken.net/.well-known/xrp-ledger.toml)
+> The Utility That Memes.  
+> Powered by XRPL.
 
 ---
 
-### 🌐 Website
+## 🔗 Live Deployment
 
-Visit: [https://wicktoken.net](https://wicktoken.net)  
-Protocol enforcement begins here.
+| Item          | Link                                  |
+|---------------|---------------------------------------|
+| Website       | [wicktoken.net](https://wicktoken.net) |
+| Host          | [Vercel](https://vercel.com)          |
+| Domain        | [Namecheap](https://namecheap.com)    |
+| DNS           | Vercel DNS (ns1 / ns2.vercel-dns.com) |
 
 ---
 
-🗝️ $WCK is the native asset of the CONTINENTAL protocol. Powered by XRPL for speed, privacy, and real-world execution.
+## 💼 About the Project
+
+The official **$WCK** token — native to the CONTINENTAL protocol. Powered by XRPL for speed, privacy, and real-world execution. 🗝️
+
+**The Utility That Memes.  
+Powered by XRPL.**
+
+---
+
+## 🧱 Stack
+
+| Layer     | Tech            |
+|-----------|-----------------|
+| Frontend  | HTML / CSS / JS |
+| Hosting   | Vercel          |
+| DNS       | Vercel DNS      |
+| Registry  | Namecheap       |
+| Chain     | XRPL            |
+
+---
+
+## 📁 Project Structure
+
+
+---
+
+## 📦 Features (In Progress)
+
+- OTC sale form + processing  
+- XRPL token trustline + explorer links  
+- Protocol-grade branding and assets  
+- Mobile-optimized layout  
+- Social meta tags + share preview  
+- Redirects from www + legacy domains
+
+---
+
+## 🧠 Dev Notes
+
+- Primary domain: `wicktoken.net`  
+- All other domains are unlinked  
+- No crossover with any other project  
+- Protocol-first approach. Everything has a purpose.
+
+---
+
+## 🔒 Deployment
+
+This site is auto-deployed from GitHub → Vercel.
+
+```bash
+git commit -m "update site"
+git push origin main
