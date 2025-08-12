@@ -13,8 +13,7 @@
 **𝕏:** [https://x.com/wcktoken](https://x.com/wcktoken)  
 **Telegram:** [https://t.me/wicktoken](https://t.me/wicktoken)
 
-> The Utility That Memes.  
-> Powered by XRPL.
+> The Utility That Memes.
 
 ---
 
