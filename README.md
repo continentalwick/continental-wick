@@ -13,7 +13,8 @@
 **𝕏:** [https://x.com/wcktoken](https://x.com/wcktoken)  
 **Telegram:** [https://t.me/wicktoken](https://t.me/wicktoken)
 
-> The Utility That Memes.
+> The Utility That Memes.  
+> Powered by XRPL.
 
 ---
 
@@ -32,8 +33,7 @@
 
 The official **$WCK** token — native to the CONTINENTAL protocol. Powered by XRPL for speed, privacy, and real-world execution. 🗝️
 
-**The Utility That Memes.  
-Powered by XRPL.**
+**The Utility That Memes.**
 
 ---
 
