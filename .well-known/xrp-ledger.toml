@@ -1,20 +1,54 @@
-[[ISSUERS]]
+# XRPL Token TOML for $WCK
+# Last updated: 2025-08-12
+
+[[CURRENCIES]]
+code          = "WCK"
+currency_hex  = "57434B0000000000000000000000000000000000"
+issuer        = "rpFVEydkZrUjf4tcbLeDeVqXm5zYQGtXWm"
+network       = "main"
+name          = "WCK"
+desc          = "The official $WCK token — native to the CONTINENTAL protocol. Powered by XRPL for speed, privacy, and real-world execution. The Utility That Memes. Total supply 100,000,000."
+icon          = "https://wicktoken.net/logo.png"
+display_decimals = 6
+
+[[CURRENCIES.urls]]
+type  = "website"
+title = "Official Website"
+url   = "https://wicktoken.net"
+
+[[CURRENCIES.urls]]
+type  = "social"
+title = "X Social"
+url   = "https://x.com/wcktoken"
+
+# Last updated: 2025-08-12
+
+[[CURRENCIES.urls]]
+type  = "social"
+title = "Telegram"
+url   = "https://t.me/wicktoken"
+
+[[ACCOUNTS]]
 address = "rpFVEydkZrUjf4tcbLeDeVqXm5zYQGtXWm"
-name = "CONTINENTAL WICK"
-desc = "$WCK is the native asset of the CONTINENTAL protocol. Powered by XRPL for speed, privacy, and real-world execution."
-url = "https://wicktoken.net"
+network = "main"
+role    = "issuer"
+desc    = "Official $WCK token issuer"
+domain  = "wicktoken.net"
 
-[[TOKENS]]
-issuer = "rpFVEydkZrUjf4tcbLeDeVqXm5zYQGtXWm"
-currency = "WCK"
-name = "$WCK"
-desc = "$WCK is the native asset of the CONTINENTAL protocol. Powered by XRPL for speed, privacy, and real-world execution."
-icon = "https://wicktoken.net/assets/logo.png"
+[[ACCOUNTS]]
+address = "rstRegwzojXJTvhsiTnmDPbPTSKBPBZ55t"
+network = "main"
+role    = "treasury"
+desc    = "Treasury / OTC"
 
-[[TOKENS.URLS]]
-url = "https://wicktoken.net"
-type = "website"
+[[ACCOUNTS]]
+address = "rwzsLBhRkyux8rUBCZEmkuJcDK5s3LSB3K"
+network = "main"
+role    = "liquidity"
+desc    = "DEX / pools"
 
-[[TOKENS.URLS]]
-url = "https://x.com/wcktoken"
-type = "social"
+[[ACCOUNTS]]
+address = "rEkZ6smniCBbSuAvNdQfLRKHcgsLXiqEX1"
+network = "main"
+role    = "reserve"
+desc    = "Principal wallet"
