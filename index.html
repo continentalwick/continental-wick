@@ -4,7 +4,25 @@
   <meta charset="UTF-8">
   <title>CONTINENTAL WICK ($WCK)</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <link rel="icon" href="https://ipfs.io/ipfs/bafkreiajbbmrlqvhxajx7tihkbgnlwsolovkxxjjks4r7drs3w75oze3xy">
+
+  <!-- GitHub-hosted logo for all icons + previews -->
+  <link rel="icon" href="https://raw.githubusercontent.com/continentalwick/continental-wick/main/assets/logo.png">
+  <link rel="apple-touch-icon" href="https://raw.githubusercontent.com/continentalwick/continental-wick/main/assets/logo.png">
+  <link rel="canonical" href="https://wicktoken.net/">
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:title" content="CONTINENTAL WICK ($WCK)">
+  <meta property="og:description" content="The Utility That Memes. Powered by XRPL.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://wicktoken.net/">
+  <meta property="og:site_name" content="CONTINENTAL WICK">
+  <meta property="og:image" content="https://raw.githubusercontent.com/continentalwick/continental-wick/main/assets/logo.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="CONTINENTAL WICK ($WCK)">
+  <meta name="twitter:description" content="The Utility That Memes. Powered by XRPL.">
+  <meta name="twitter:image" content="https://raw.githubusercontent.com/continentalwick/continental-wick/main/assets/logo.png">
+  <meta name="theme-color" content="#121113">
+
   <style>
     body {
       margin: 0;
@@ -18,27 +36,29 @@
       text-align: center;
       margin-top: 48px;
       margin-bottom: 24px;
+      padding: 0 16px;
     }
     .logo-wck {
-      width: 90px;
+      width: 96px;
+      height: 96px;
       margin-bottom: 14px;
       border-radius: 50%;
       background: #232227;
       box-shadow: 0 3px 24px #000b;
       padding: 12px;
+      object-fit: contain;
     }
     h1 {
       font-size: 2.7em;
-      font-family: 'Cinzel', serif;
       margin: 6px 0 4px 0;
       letter-spacing: 0.05em;
       color: #ffd700;
+      font-weight: 700;
     }
     .tagline {
       font-size: 1.12em;
       color: #e0cf93;
       margin-bottom: 36px;
-      font-family: 'Segoe UI', Arial, sans-serif;
     }
     .otc-block {
       background: #232227;
@@ -63,6 +83,7 @@
       border-radius: 6px;
       box-shadow: 0 4px 30px #000a;
       margin-bottom: 18px;
+      background: #111;
     }
     .connect-btn {
       padding: 12px 28px;
@@ -80,9 +101,9 @@
       text-align: center;
       font-size: 1.55em;
       margin: 44px 0 22px 0;
-      font-family: 'Cinzel', serif;
       color: #ffd700;
       letter-spacing: 0.02em;
+      font-weight: 700;
     }
     .cards-row {
       display: flex;
@@ -117,7 +138,7 @@
       color: #f8d05f;
       letter-spacing: 0.01em;
       text-align: center;
-      font-family: 'Cinzel', serif;
+      font-weight: 700;
     }
     .whitepaper-block {
       background: #232227;
@@ -140,6 +161,7 @@
       margin: 48px 0 36px 0;
       color: #e5e2c9;
       font-size: 1.10em;
+      padding: 0 16px;
     }
     .token-details code {
       color: #ffe083;
@@ -159,15 +181,8 @@
       text-align: center;
       font-size: 1.12em;
     }
-    .hits-block span {
-      color: #bdbdbd;
-      font-size: 0.98em;
-    }
-    .hits-block .desc {
-      margin-top:9px;
-      color:#e0cf93;
-      font-size:0.96em;
-    }
+    .hits-block span { color: #bdbdbd; font-size: 0.98em; }
+    .hits-block .desc { margin-top:9px; color:#e0cf93; font-size:0.96em; }
     .legal-disclaimer {
       background:#000;
       color:#aaa;
@@ -179,10 +194,7 @@
       margin:50px auto 0 auto;
       border-radius:6px;
     }
-    .legal-disclaimer a {
-      color:#fff;
-      text-decoration:underline;
-    }
+    .legal-disclaimer a { color:#fff; text-decoration:underline; }
     footer {
       margin: 40px 0 22px 0;
       text-align: center;
@@ -209,9 +221,14 @@
 </head>
 <body>
   <header>
-    <img src="https://ipfs.io/ipfs/bafkreiajbbmrlqvhxajx7tihkbgnlwsolovkxxjjks4r7drs3w75oze3xy" alt="WCK Symbol" class="logo-wck">
+    <img
+      src="https://raw.githubusercontent.com/continentalwick/continental-wick/main/assets/logo.png"
+      alt="$WCK Logo"
+      class="logo-wck"
+      width="96" height="96"
+      loading="eager" decoding="async">
     <h1>CONTINENTAL WICK</h1>
-    <div class="tagline">The Protocol. The Diamond. The Enforcer.</div>
+    <div class="tagline">The Utility That Memes. Powered by XRPL.</div>
   </header>
 
   <div class="token-details">
@@ -229,33 +246,24 @@
     </div>
   </div>
 
-  <!-- OTC SECTION UPDATED -->
+  <!-- OTC SECTION -->
   <div class="otc-block">
     <div class="otc-title">OTC Trading Live</div>
-    <iframe 
-  src="/otc.html"
-  class="otc-frame">
-</iframe>
-    <button class="connect-btn">Connect Wallet</button>
+    <iframe src="/otc" class="otc-frame" title="WCK OTC Preview" loading="lazy"></iframe>
+    <button class="connect-btn" type="button" aria-disabled="true">Connect Wallet</button>
   </div>
 
   <section id="nft-cards" style="text-align:center; padding: 40px 20px; background-color:#111;">
-    <h2 style="color:#f5c940; font-family:monospace; font-size:32px; margin-bottom:30px;">
-      NFT TRADING CARDS
-    </h2>
-    <div style="margin-bottom: 40px;">
-      <img src="CONTINENTAL-WICK-001.png" alt="Card 001 - CONTINENTAL WICK" style="width:100%; max-width:400px; border-radius:8px;" />
-      <p style="color:#f5c940; font-family:monospace; font-size:16px; margin-top:10px;">
-        Card 001 — CONTINENTAL WICK<br/>
-        <span style="font-size:14px;">Codename: The Diamond</span>
-      </p>
-    </div>
-    <div>
-      <img src="THE-ARCHITECT-002.png" alt="Card 002 - VICTOR SOREN" style="width:100%; max-width:400px; border-radius:8px;" />
-      <p style="color:#f5c940; font-family:monospace; font-size:16px; margin-top:10px;">
-        Card 002 — VICTOR SOREN<br/>
-        <span style="font-size:14px;">Codename: The Architect</span>
-      </p>
+    <h2 class="section-title">NFT TRADING CARDS</h2>
+    <div class="cards-row">
+      <div class="card-box">
+        <img src="CONTINENTAL-WICK-001.png" alt="Card 001 - CONTINENTAL WICK">
+        <div class="card-title">Card 001 — CONTINENTAL WICK<br><small>Codename: The Diamond</small></div>
+      </div>
+      <div class="card-box">
+        <img src="THE-ARCHITECT-002.png" alt="Card 002 - VICTOR SOREN">
+        <div class="card-title">Card 002 — VICTOR SOREN<br><small>Codename: The Architect</small></div>
+      </div>
     </div>
   </section>
 
@@ -263,27 +271,15 @@
     <div class="whitepaper-title">White Paper</div>
     <a 
       href="https://ipfs.io/ipfs/bafkreignrzha6l74dt2m26knfjpn2eeahej4dzbijjp7wbzg2vd6lvnwhq"
-      target="_blank"
-      style="
-        display:inline-block;
-        margin-top:10px;
-        padding:11px 30px;
-        background:linear-gradient(90deg,#ffd700,#e0b600);
-        color:#18171a;
-        border-radius:8px;
-        font-weight:bold;
-        font-size:1.08em;
-        text-decoration:none;
-        box-shadow:0 2px 8px #0004;
-        border:1.5px solid #ffe083;
-        transition:.15s all;
-      "
+      target="_blank" rel="noopener"
+      style="display:inline-block;margin-top:10px;padding:11px 30px;background:linear-gradient(90deg,#ffd700,#e0b600);color:#18171a;border-radius:8px;font-weight:bold;font-size:1.08em;text-decoration:none;box-shadow:0 2px 8px #0004;border:1.5px solid #ffe083;transition:.15s all;"
       onmouseover="this.style.background='#e0b600';this.style.color='#000';"
-      onmouseout="this.style.background='linear-gradient(90deg,#ffd700,#e0b600)';this.style.color='#18171a';"
-    >View White Paper (PDF)</a>
+      onmouseout="this.style.background='linear-gradient(90deg,#ffd700,#e0b600)';this.style.color='#18171a';">
+      View White Paper (PDF)
+    </a>
   </div>
 
-  <!-- LEGAL DISCLAIMER -->
+  <!-- LEGAL -->
   <div class="legal-disclaimer">
     <p><strong>🛡 Legal Disclaimer</strong></p>
     <p>
@@ -298,22 +294,15 @@
     </p>
     <p style="margin-top:8px;">
       Immutable proof hosted on IPFS:
-      <a href="https://ipfs.io/ipfs/bafkreibm6zcx4gcm6dgi6fkoqfzv2btbmbvb5z6ar5wrnmvyvjh654lsvi" target="_blank">
-        View Here
-      </a>
+      <a href="https://ipfs.io/ipfs/bafkreibm6zcx4gcm6dgi6fkoqfzv2btbmbvb5z6ar5wrnmvyvjh654lsvi" target="_blank" rel="noopener">View Here</a>
     </p>
   </div>
 
   <footer>
-    <div>
-      <a class="x-link" href="https://x.com/wcktoken" target="_blank">𝕏&nbsp;@wcktoken</a>
-    </div>
-    <div>
-      &copy; 2025 CONTINENTAL WICK. All rights reserved.
-    </div>
+    <div><a class="x-link" href="https://x.com/wcktoken" target="_blank" rel="noopener">𝕏&nbsp;@wcktoken</a></div>
+    <div>&copy; 2025 CONTINENTAL WICK. All rights reserved.</div>
   </footer>
+
+  <noscript><style>.connect-btn{display:none}</style></noscript>
 </body>
 </html>
-
-
-
