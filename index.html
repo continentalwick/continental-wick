@@ -105,14 +105,14 @@
     <div class="grid-controls">
       <label class="row">
         <span class="label">USD</span>
-        <input id="usd" type="number" min="1" step="0.01" value="25">
+        <input id="usd" type="number" min="1" step="0.01" placeholder="Enter USD" inputmode="decimal" aria-label="USD amount">
         <span class="pill">(min $1)</span>
       </label>
 
-      <!-- Manual override shown only if API fails -->
+      <!-- Manual override appears only if API fails -->
       <label id="manualRow" class="row" style="display:none;">
         <span class="label">XRP/USD</span>
-        <input id="xrpUsdManual" type="number" step="0.0001" value="0.6000">
+        <input id="xrpUsdManual" type="number" step="0.0001" value="0.6000" inputmode="decimal" aria-label="Manual XRP/USD rate">
         <span class="pill">manual override</span>
       </label>
 
@@ -130,7 +130,7 @@
       </div>
     </div>
 
-    <div id="otcNote" class="muted" style="color:#e0cf93">Coming soon — UI preview only. No wallet connection.</div>
+    <div id="otcNote" class="muted" style="color:#e0cf93">Enter USD to preview.</div>
     <div id="limitNote" class="muted">Limit per buyer: <b>$5,000</b></div>
 
     <button class="connect-btn" type="button" aria-disabled="true">Connect Wallet</button>
@@ -143,6 +143,11 @@
         <img src="CONTINENTAL-WICK-001.png" alt="Card 001 - CONTINENTAL WICK">
         <div class="card-title">Card 001 — CONTINENTAL WICK<br><small>Codename: The Diamond</small></div>
       </div>
+      <div class="card-box">
+        <img src="THE-ARCHITECT-002.png" alt="Card 002 - VICTOR SOREN">
+        <div class="card-title">Card 002 — VICTOR SOREN<br><small>Codename: The Architect</small></div>
+      </div>
+    </div>
   </section>
 
   <div class="whitepaper-block">
@@ -239,7 +244,19 @@
       }
 
       function calc() {
-        let usdVal = Number(usd.value || 0);
+        const raw = (usd.value || '').trim();
+
+        // Neutral state if empty
+        if (raw === '') {
+          note.textContent = 'Enter USD to preview.';
+          note.style.color = '#e0cf93';
+          xrpOut.textContent = '0.0000';
+          wckOut.textContent = '0';
+          return;
+        }
+
+        let usdVal = Number(raw);
+        if (!isFinite(usdVal)) usdVal = 0;
 
         if (usdVal < 1) {
           note.textContent = 'Minimum is $1';
@@ -274,8 +291,10 @@
       fetchRate();
       setInterval(fetchRate, 60000);
       document.addEventListener('visibilitychange', () => { if (!document.hidden) fetchRate(); });
+
+      // Start neutral
+      calc();
     })();
   </script>
 </body>
 </html>
-
