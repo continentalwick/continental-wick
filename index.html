@@ -24,188 +24,46 @@
   <meta name="theme-color" content="#121113">
 
   <style>
-    body {
-      margin: 0;
-      background: #121113;
-      color: #f8f8f8;
-      font-family: 'Segoe UI', Arial, sans-serif;
-      min-height: 100vh;
-      letter-spacing: 0.01em;
-    }
-    header {
-      text-align: center;
-      margin-top: 48px;
-      margin-bottom: 24px;
-      padding: 0 16px;
-    }
-    .logo-wck {
-      width: 96px;
-      height: 96px;
-      margin-bottom: 14px;
-      border-radius: 50%;
-      background: #232227;
-      box-shadow: 0 3px 24px #000b;
-      padding: 12px;
-      object-fit: contain;
-    }
-    h1 {
-      font-size: 2.7em;
-      margin: 6px 0 4px 0;
-      letter-spacing: 0.05em;
-      color: #ffd700;
-      font-weight: 700;
-    }
-    .tagline {
-      font-size: 1.12em;
-      color: #e0cf93;
-      margin-bottom: 36px;
-    }
-    .otc-block {
-      background: #232227;
-      border-radius: 11px;
-      text-align: center;
-      padding: 32px 14px 26px 14px;
-      margin: 0 auto 38px auto;
-      max-width: 900px;
-      box-shadow: 0 4px 30px #000a;
-    }
-    .otc-title {
-      font-size: 1.25em;
-      font-weight: bold;
-      color: #fff;
-      margin-bottom: 18px;
-    }
-    .connect-btn {
-      padding: 12px 28px;
-      font-size: 1rem;
-      font-weight: 600;
-      border: none;
-      border-radius: 8px;
-      background: #111;
-      color: #fff;
-      cursor: pointer;
-      transition: 0.2s;
-    }
-    .connect-btn:hover { background: #000; }
-    .section-title {
-      text-align: center;
-      font-size: 1.55em;
-      margin: 44px 0 22px 0;
-      color: #ffd700;
-      letter-spacing: 0.02em;
-      font-weight: 700;
-    }
-    .cards-row {
-      display: flex;
-      justify-content: center;
-      gap: 36px;
-      flex-wrap: wrap;
-      margin-bottom: 40px;
-    }
-    .card-box {
-      background: #18171a;
-      border-radius: 16px;
-      box-shadow: 0 3px 18px #000b;
-      padding: 16px 16px 10px 16px;
-      width: 230px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      border: 2px solid #c6a450;
-    }
-    .card-box img {
-      width: 198px;
-      height: 264px;
-      object-fit: cover;
-      border-radius: 12px;
-      margin-bottom: 10px;
-      border: 2.5px solid #c6a450;
-      background: #18171a;
-    }
-    .card-title {
-      font-size: 1.04em;
-      margin-top: 6px;
-      color: #f8d05f;
-      letter-spacing: 0.01em;
-      text-align: center;
-      font-weight: 700;
-    }
-    .whitepaper-block {
-      background: #232227;
-      border-radius: 11px;
-      text-align: center;
-      padding: 22px 12px 26px 12px;
-      margin: 36px auto 24px auto;
-      max-width: 460px;
-      box-shadow: 0 2px 16px #0005;
-    }
-    .whitepaper-title {
-      font-size: 1.22em;
-      font-weight: bold;
-      color: #fff;
-      letter-spacing: 0.02em;
-      margin-bottom: 9px;
-    }
-    .token-details {
-      text-align: center;
-      margin: 48px 0 36px 0;
-      color: #e5e2c9;
-      font-size: 1.10em;
-      padding: 0 16px;
-    }
-    .token-details code {
-      color: #ffe083;
-      background: #191817;
-      padding: 1.5px 7px;
-      border-radius: 6px;
-      font-size: 0.98em;
-    }
-    .hits-block {
-      background: #18171a;
-      border-radius: 12px;
-      padding: 22px 18px 15px 18px;
-      max-width: 470px;
-      margin: 0 auto 36px auto;
-      box-shadow: 0 2px 16px #0005;
-      color: #ffe083;
-      text-align: center;
-      font-size: 1.12em;
-    }
-    .hits-block span { color: #bdbdbd; font-size: 0.98em; }
-    .hits-block .desc { margin-top:9px; color:#e0cf93; font-size:0.96em; }
-    .legal-disclaimer {
-      background:#000;
-      color:#aaa;
-      text-align:center;
-      padding:30px 15px;
-      font-size:0.85rem;
-      line-height:1.5;
-      max-width:900px;
-      margin:50px auto 0 auto;
-      border-radius:6px;
-    }
-    .legal-disclaimer a { color:#fff; text-decoration:underline; }
-    footer {
-      margin: 40px 0 22px 0;
-      text-align: center;
-      color: #bdbdbd;
-      font-size: 1.05em;
-      letter-spacing: 0.02em;
-    }
-    .x-link {
-      display:inline-block; margin-top:4px;
-      font-size: 1.07em; color:#ffd700;
-      text-decoration:none; font-weight:bold;
-    }
-    .x-link:hover {text-decoration:underline;}
-    @media (max-width: 700px) {
-      .cards-row { flex-direction: column; align-items:center; gap:18px; }
-      .card-box { width:92vw; }
-      .card-box img { width:90vw; height:auto; }
-      .section-title { font-size: 1.15em;}
-      header {margin-top: 20px;}
-      .hits-block { width: 94vw; }
-    }
+    body { margin:0; background:#121113; color:#f8f8f8; font-family:'Segoe UI',Arial,sans-serif; min-height:100vh; letter-spacing:.01em }
+    header { text-align:center; margin:48px auto 24px; padding:0 16px }
+    .logo-wck { width:96px; height:96px; margin-bottom:14px; border-radius:50%; background:#232227; box-shadow:0 3px 24px #000b; padding:12px; object-fit:contain }
+    h1 { font-size:2.7em; margin:6px 0 4px; letter-spacing:.05em; color:#ffd700; font-weight:700 }
+    .tagline { font-size:1.12em; color:#e0cf93; margin-bottom:36px }
+    .otc-block { background:#232227; border-radius:11px; text-align:center; padding:32px 14px 26px; margin:0 auto 38px; max-width:900px; box-shadow:0 4px 30px #000a }
+    .otc-title { font-size:1.25em; font-weight:700; color:#fff; margin-bottom:12px }
+    .rate-line { font-size:.95em; color:#bdbdbd; margin:-2px 0 16px }
+    .badge { display:inline-block; padding:2px 8px; border-radius:999px; font-size:.8em; margin-left:8px }
+    .badge.live { background:#0f3; color:#000 }
+    .badge.off { background:#f55; color:#fff }
+    .connect-btn { padding:12px 28px; font-size:1rem; font-weight:600; border:none; border-radius:8px; background:#111; color:#fff; cursor:pointer; transition:.2s }
+    .connect-btn:hover { background:#000 }
+    .section-title { text-align:center; font-size:1.55em; margin:44px 0 22px; color:#ffd700; letter-spacing:.02em; font-weight:700 }
+    .cards-row { display:flex; justify-content:center; gap:36px; flex-wrap:wrap; margin-bottom:40px }
+    .card-box { background:#18171a; border-radius:16px; box-shadow:0 3px 18px #000b; padding:16px 16px 10px; width:230px; display:flex; flex-direction:column; align-items:center; border:2px solid #c6a450 }
+    .card-box img { width:198px; height:264px; object-fit:cover; border-radius:12px; margin-bottom:10px; border:2.5px solid #c6a450; background:#18171a }
+    .card-title { font-size:1.04em; margin-top:6px; color:#f8d05f; letter-spacing:.01em; text-align:center; font-weight:700 }
+    .whitepaper-block { background:#232227; border-radius:11px; text-align:center; padding:22px 12px 26px; margin:36px auto 24px; max-width:460px; box-shadow:0 2px 16px #0005 }
+    .whitepaper-title { font-size:1.22em; font-weight:700; color:#fff; letter-spacing:.02em; margin-bottom:9px }
+    .token-details { text-align:center; margin:48px 0 36px; color:#e5e2c9; font-size:1.10em; padding:0 16px }
+    .token-details code { color:#ffe083; background:#191817; padding:1.5px 7px; border-radius:6px; font-size:.98em }
+    .hits-block { background:#18171a; border-radius:12px; padding:22px 18px 15px; max-width:470px; margin:0 auto 36px; box-shadow:0 2px 16px #0005; color:#ffe083; text-align:center; font-size:1.12em }
+    .hits-block span { color:#bdbdbd; font-size:.98em }
+    .hits-block .desc { margin-top:9px; color:#e0cf93; font-size:.96em }
+    .legal-disclaimer { background:#000; color:#aaa; text-align:center; padding:30px 15px; font-size:.85rem; line-height:1.5; max-width:900px; margin:50px auto 0; border-radius:6px }
+    .legal-disclaimer a { color:#fff; text-decoration:underline }
+    footer { margin:40px 0 22px; text-align:center; color:#bdbdbd; font-size:1.05em; letter-spacing:.02em }
+    .x-link { display:inline-block; margin-top:4px; font-size:1.07em; color:#ffd700; text-decoration:none; font-weight:bold }
+    .x-link:hover { text-decoration:underline }
+    @media (max-width:700px){ .cards-row{flex-direction:column; align-items:center; gap:18px} .card-box{width:92vw} .card-box img{width:90vw; height:auto} .section-title{font-size:1.15em} header{margin-top:20px} .hits-block{width:94vw} }
+    input[type="number"]{ width:160px;padding:10px;border-radius:8px;border:1px solid #333;background:#111;color:#fff }
+    .grid-controls{ display:grid; gap:12px; justify-items:center; margin-bottom:14px }
+    .row{ display:flex; gap:10px; align-items:center }
+    .label{ min-width:90px; text-align:right }
+    .pill{ font-size:.9em; color:#bdbdbd }
+    .result-box{ background:#111;border:1px solid #333;border-radius:10px;padding:12px 16px;min-width:200px }
+    .result-head{ font-size:.9em; color:#bdbdbd }
+    .result-val{ font-size:1.25em; font-weight:700 }
+    .muted{ color:#bdbdbd; font-size:.95em; margin-top:6px }
   </style>
 </head>
 <body>
@@ -235,43 +93,45 @@
     </div>
   </div>
 
-  <!-- OTC SECTION — fixed $0.05 presale -->
+  <!-- OTC SECTION — $0.05/WCK with live XRP/USD -->
   <div class="otc-block" id="wck-otc">
     <div class="otc-title">OTC Trading Preview — $0.05 per WCK</div>
+    <div class="rate-line">
+      XRP/USD: $<span id="xrpUsdText">—</span>
+      <span id="rateBadge" class="badge off">OFFLINE</span>
+      <span id="rateTime" class="muted"></span>
+    </div>
 
-    <div style="display:grid;gap:12px;justify-items:center;margin-bottom:14px;">
-      <label style="display:flex;gap:10px;align-items:center;">
-        <span style="min-width:90px;text-align:right;">USD</span>
-        <input id="usd" type="number" min="1" step="0.01" value="25"
-               style="width:160px;padding:10px;border-radius:8px;border:1px solid #333;background:#111;color:#fff">
-        <span style="font-size:.9em;color:#bdbdbd">(min $1)</span>
+    <div class="grid-controls">
+      <label class="row">
+        <span class="label">USD</span>
+        <input id="usd" type="number" min="1" step="0.01" value="25">
+        <span class="pill">(min $1)</span>
       </label>
 
-      <label style="display:flex;gap:10px;align-items:center;">
-        <span style="min-width:90px;text-align:right;">XRP/USD</span>
-        <input id="xrpUsd" type="number" step="0.0001" value="0.6000"
-               style="width:160px;padding:10px;border-radius:8px;border:1px solid #333;background:#111;color:#fff">
-        <span style="font-size:.9em;color:#bdbdbd">manual rate</span>
+      <!-- Manual override shown only if API fails -->
+      <label id="manualRow" class="row" style="display:none;">
+        <span class="label">XRP/USD</span>
+        <input id="xrpUsdManual" type="number" step="0.0001" value="0.6000">
+        <span class="pill">manual override</span>
       </label>
 
-      <div style="font-size:.95em;color:#e0cf93;margin-top:4px;">
-        Presale price <b>$0.05</b> per WCK
-      </div>
+      <div class="muted">Presale price <b>$0.05</b> per WCK</div>
     </div>
 
     <div style="display:flex;gap:18px;flex-wrap:wrap;justify-content:center;margin:8px 0 18px;">
-      <div style="background:#111;border:1px solid #333;border-radius:10px;padding:12px 16px;min-width:200px;">
-        <div style="font-size:.9em;color:#bdbdbd;">You’ll send</div>
-        <div style="font-size:1.25em;font-weight:700;"><span id="xrpOut">0.0000</span> XRP</div>
+      <div class="result-box">
+        <div class="result-head">You’ll send</div>
+        <div class="result-val"><span id="xrpOut">0.0000</span> XRP</div>
       </div>
-      <div style="background:#111;border:1px solid #333;border-radius:10px;padding:12px 16px;min-width:200px;">
-        <div style="font-size:.9em;color:#bdbdbd;">You’ll receive</div>
-        <div style="font-size:1.25em;font-weight:700;"><span id="wckOut">0</span> WCK</div>
+      <div class="result-box">
+        <div class="result-head">You’ll receive</div>
+        <div class="result-val"><span id="wckOut">0</span> WCK</div>
       </div>
     </div>
 
-    <div id="otcNote" style="color:#e0cf93;margin-bottom:10px;">Coming soon — UI preview only. No wallet connection.</div>
-    <div id="limitNote" style="color:#bdbdbd;font-size:.95em;margin-bottom:12px;">Limit per buyer: <b>$5,000</b></div>
+    <div id="otcNote" class="muted" style="color:#e0cf93">Coming soon — UI preview only. No wallet connection.</div>
+    <div id="limitNote" class="muted">Limit per buyer: <b>$5,000</b></div>
 
     <button class="connect-btn" type="button" aria-disabled="true">Connect Wallet</button>
   </div>
@@ -283,7 +143,12 @@
         <img src="CONTINENTAL-WICK-001.png" alt="Card 001 - CONTINENTAL WICK">
         <div class="card-title">Card 001 — CONTINENTAL WICK<br><small>Codename: The Diamond</small></div>
       </div>
-     </section>
+      <div class="card-box">
+        <img src="THE-ARCHITECT-002.png" alt="Card 002 - VICTOR SOREN">
+        <div class="card-title">Card 002 — VICTOR SOREN<br><small>Codename: The Architect</small></div>
+      </div>
+    </div>
+  </section>
 
   <div class="whitepaper-block">
     <div class="whitepaper-title">White Paper</div>
@@ -326,14 +191,57 @@
   <script>
     (function () {
       const $ = id => document.getElementById(id);
-      const usd = $('usd'), xrpUsd = $('xrpUsd');
+      const usd = $('usd');
+      const xrpUsdText = $('xrpUsdText');
+      const xrpUsdManual = $('xrpUsdManual');
+      const manualRow = $('manualRow');
+      const rateBadge = $('rateBadge');
+      const rateTime = $('rateTime');
       const xrpOut = $('xrpOut'), wckOut = $('wckOut'), note = $('otcNote');
 
       const PRICE_PER_WCK = 0.05;   // USD per WCK — presale
       const MAX_USD = 5000;
+      const API = "https://api.coingecko.com/api/v3/simple/price?ids=ripple&vs_currencies=usd";
+
+      let xrpUsd = null;
+      let online = false;
 
       function fmt(n, d=4){ return Number(n).toFixed(d); }
       function fmtInt(n){ return Math.max(0, Math.floor(Number(n))).toLocaleString(); }
+      function stamp(){ const t=new Date(); return t.toLocaleTimeString([], {hour:'2-digit',minute:'2-digit',second:'2-digit'}); }
+
+      async function fetchRate() {
+        try {
+          const res = await fetch(API, { cache: 'no-store' });
+          if (!res.ok) throw new Error('Bad status');
+          const data = await res.json();
+          const val = Number(data?.ripple?.usd);
+          if (!isFinite(val) || val <= 0) throw new Error('Bad data');
+
+          xrpUsd = val;
+          xrpUsdText.textContent = val.toFixed(4);
+          rateBadge.textContent = 'LIVE';
+          rateBadge.className = 'badge live';
+          rateTime.textContent = `updated ${stamp()}`;
+          manualRow.style.display = 'none';
+          online = true;
+          calc();
+        } catch (e) {
+          // Fallback to manual override
+          online = false;
+          rateBadge.textContent = 'OFFLINE';
+          rateBadge.className = 'badge off';
+          rateTime.textContent = 'manual rate enabled';
+          if (!xrpUsdManual.value) xrpUsdManual.value = '0.6000';
+          xrpUsdText.textContent = Number(xrpUsdManual.value || 0).toFixed(4);
+          manualRow.style.display = 'flex';
+          calc();
+        }
+      }
+
+      function effectiveXrpUsd() {
+        return online ? xrpUsd : Number(xrpUsdManual.value || 0.6);
+      }
 
       function calc() {
         let usdVal = Number(usd.value || 0);
@@ -351,22 +259,27 @@
           note.style.color = '#e0cf93';
         }
 
-        const px = Math.max(0.0000001, Number(xrpUsd.value || 0.6)); // USD per 1 XRP
-        const xrp = usdVal / px;                       // XRP you’ll send
-        const wck = usdVal / PRICE_PER_WCK;           // WCK you’ll receive
+        const px = Math.max(0.0000001, effectiveXrpUsd()); // USD per 1 XRP
+        xrpUsdText.textContent = Number(px).toFixed(4);
+
+        const xrp = usdVal / px;            // XRP you’ll send
+        const wck = usdVal / PRICE_PER_WCK; // WCK you’ll receive
 
         xrpOut.textContent = fmt(xrp, 4);
-        wckOut.textContent = fmtInt(wck); // display whole tokens for readability
+        wckOut.textContent = fmtInt(wck);
       }
 
+      // Events
       ['input','change'].forEach(ev => {
         usd.addEventListener(ev, calc);
-        xrpUsd.addEventListener(ev, calc);
+        xrpUsdManual.addEventListener(ev, calc);
       });
 
-      calc();
+      // Initial fetch + refresh every 60s and on tab focus
+      fetchRate();
+      setInterval(fetchRate, 60000);
+      document.addEventListener('visibilitychange', () => { if (!document.hidden) fetchRate(); });
     })();
   </script>
 </body>
 </html>
-
