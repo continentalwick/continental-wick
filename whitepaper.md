@@ -69,5 +69,5 @@ All references to “CONTINENTAL,” “WICK,” or related terminology are part
 ---
 
 ## 📢 Official Channels
-- [𝕏 (Twitter): @wcktoken](https://x.com/wcktoken)  
+- [𝕏: @wcktoken](https://x.com/wcktoken)  
 - [Telegram: @wcktoken](https://t.me/wcktoken)
