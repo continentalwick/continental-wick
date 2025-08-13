@@ -69,6 +69,7 @@
     .x-handle { display:inline-block; margin-top:4px; font-size:1.02em; color:#ffd700; text-decoration:none; font-weight:600 }
     .x-handle:hover { text-decoration:underline }
 
+    /* Inputs & OTC control rows */
     input[type="number"]{ width:320px; max-width:100%; padding:10px; border-radius:8px; border:1px solid #333; background:#111; color:#fff }
     .grid-controls{ display:grid; gap:12px; justify-items:center; margin-bottom:14px }
     .row{ display:flex; gap:10px; align-items:center; justify-content:center; width:100% }
@@ -79,6 +80,11 @@
     .result-head{ font-size:.9em; color:#bdbdbd }
     .result-val{ font-size:1.25em; font-weight:700 }
     .muted{ color:#bdbdbd; font-size:.95em; margin-top:6px }
+
+    /* Stack the USD label above the input */
+    .row--stack{ flex-direction:column; align-items:center }
+    .row--stack .label{ display:block; margin-bottom:6px; text-align:center }
+    .row--stack .pill{ margin-top:6px }
 
     @media (max-width: 700px){
       header{ margin-top:20px }
@@ -136,7 +142,8 @@
     </div>
 
     <div class="grid-controls">
-      <label class="row">
+      <!-- USD label moved above the input -->
+      <label class="row row--stack">
         <span class="label">USD</span>
         <input id="usd" type="number" min="1" step="0.01" placeholder="Enter USD" inputmode="decimal" aria-label="USD amount">
         <span class="pill">(min $1)</span>
@@ -215,7 +222,6 @@
   </div>
 
   <footer>
-    <!-- Removed the icon buttons from the bottom per your request -->
     <div>
       <a class="x-handle" href="https://x.com/wcktoken" target="_blank" rel="noopener">𝕏&nbsp;@wcktoken</a>
       &nbsp;•&nbsp;
@@ -284,7 +290,6 @@
       function calc() {
         const raw = (usd.value || '').trim();
 
-        // Neutral state if empty
         if (raw === '') {
           note.textContent = 'Enter USD to preview.';
           note.style.color = '#e0cf93';
@@ -319,18 +324,15 @@
         wckOut.textContent = fmtInt(wck);
       }
 
-      // Events
       ['input','change'].forEach(ev => {
         usd.addEventListener(ev, calc);
         xrpUsdManual.addEventListener(ev, calc);
       });
 
-      // Initial fetch + refresh every 60s and on tab focus
       fetchRate();
       setInterval(fetchRate, 60000);
       document.addEventListener('visibilitychange', () => { if (!document.hidden) fetchRate(); });
 
-      // Start neutral
       calc();
     })();
   </script>
