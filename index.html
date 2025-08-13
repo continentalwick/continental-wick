@@ -29,10 +29,16 @@
     html, body { overflow-x: hidden; }
 
     body { margin:0; background:#121113; color:#f8f8f8; font-family:'Segoe UI',Arial,sans-serif; min-height:100vh; letter-spacing:.01em }
-    header { text-align:center; margin:48px auto 24px; padding:0 16px }
+    header { text-align:center; margin:48px auto 12px; padding:0 16px }
     .logo-wck { width:96px; height:96px; margin-bottom:14px; border-radius:50%; background:#232227; box-shadow:0 3px 24px #000b; padding:12px; object-fit:contain }
     h1 { font-size:2.7em; margin:6px 0 4px; letter-spacing:.05em; color:#ffd700; font-weight:700 }
-    .tagline { font-size:1.12em; color:#e0cf93; margin-bottom:36px }
+    .tagline { font-size:1.12em; color:#e0cf93; margin-bottom:16px }
+
+    /* Social buttons */
+    .social-row { display:flex; justify-content:center; align-items:center; gap:14px; margin:8px 0 28px }
+    .social-btn { display:inline-flex; align-items:center; justify-content:center; width:40px; height:40px; border-radius:10px; background:#18171a; border:1px solid #2d2c30; box-shadow:0 2px 8px #0006; transition:.15s transform, .15s box-shadow }
+    .social-btn:hover { transform:translateY(-2px); box-shadow:0 6px 18px #0009 }
+    .social-icon { width:24px; height:24px; display:block }
 
     .otc-block { background:#232227; border-radius:11px; text-align:center; padding:32px 14px 26px; margin:0 auto 38px; max-width:900px; box-shadow:0 4px 30px #000a }
     .otc-title { font-size:1.25em; font-weight:700; color:#fff; margin-bottom:12px }
@@ -52,16 +58,18 @@
     .whitepaper-block { background:#232227; border-radius:11px; text-align:center; padding:22px 12px 26px; margin:36px auto 24px; max-width:460px; box-shadow:0 2px 16px #0005 }
     .whitepaper-title { font-size:1.22em; font-weight:700; color:#fff; letter-spacing:.02em; margin-bottom:9px }
 
-    .token-details { text-align:center; margin:48px 0 36px; color:#e5e2c9; font-size:1.10em; padding:0 16px }
+    .token-details { text-align:center; margin:28px 0 24px; color:#e5e2c9; font-size:1.10em; padding:0 16px }
     .token-details code { color:#ffe083; background:#191817; padding:1.5px 7px; border-radius:6px; font-size:.98em }
 
     .hits-block { background:#18171a; border-radius:12px; padding:22px 18px 15px; max-width:470px; margin:0 auto 36px; box-shadow:0 2px 16px #0005; color:#ffe083; text-align:center; font-size:1.12em }
 
     .legal-disclaimer { background:#000; color:#aaa; text-align:center; padding:30px 15px; font-size:.85rem; line-height:1.5; max-width:900px; margin:50px auto 0; border-radius:6px }
     .legal-disclaimer a { color:#fff; text-decoration:underline }
+
     footer { margin:40px 0 22px; text-align:center; color:#bdbdbd; font-size:1.05em; letter-spacing:.02em }
-    .x-link { display:inline-block; margin-top:4px; font-size:1.07em; color:#ffd700; text-decoration:none; font-weight:bold }
-    .x-link:hover { text-decoration:underline }
+    .footer-social { display:flex; justify-content:center; gap:14px; margin-bottom:8px }
+    .x-handle { display:inline-block; margin-top:4px; font-size:1.02em; color:#ffd700; text-decoration:none; font-weight:600 }
+    .x-handle:hover { text-decoration:underline }
 
     input[type="number"]{ width:320px; max-width:100%; padding:10px; border-radius:8px; border:1px solid #333; background:#111; color:#fff }
     .grid-controls{ display:grid; gap:12px; justify-items:center; margin-bottom:14px }
@@ -93,6 +101,16 @@
       loading="eager" decoding="async">
     <h1>CONTINENTAL WICK</h1>
     <div class="tagline">The Utility That Memes. Powered by XRPL.</div>
+
+    <!-- Social icons (top) -->
+    <div class="social-row">
+      <a class="social-btn" href="https://x.com/wcktoken" target="_blank" rel="noopener" aria-label="Follow WCK on X">
+        <img class="social-icon" src="https://raw.githubusercontent.com/continentalwick/continental-wick/main/assets/x.png" alt="X logo" width="24" height="24" loading="lazy" decoding="async">
+      </a>
+      <a class="social-btn" href="https://t.me/wicktoken" target="_blank" rel="noopener" aria-label="Join WCK on Telegram">
+        <img class="social-icon" src="https://raw.githubusercontent.com/continentalwick/continental-wick/main/assets/telegram.png" alt="Telegram logo" width="24" height="24" loading="lazy" decoding="async">
+      </a>
+    </div>
   </header>
 
   <div class="token-details">
@@ -199,8 +217,23 @@
   </div>
 
   <footer>
-    <div><a class="x-link" href="https://x.com/wcktoken" target="_blank" rel="noopener">𝕏&nbsp;@wcktoken</a></div>
-    <div>&copy; 2025 CONTINENTAL WICK. All rights reserved.</div>
+    <!-- Social icons (footer) -->
+    <div class="footer-social">
+      <a class="social-btn" href="https://x.com/wcktoken" target="_blank" rel="noopener" aria-label="Follow WCK on X">
+        <img class="social-icon" src="https://raw.githubusercontent.com/continentalwick/continental-wick/main/assets/x.png" alt="X logo" width="24" height="24" loading="lazy" decoding="async">
+      </a>
+      <a class="social-btn" href="https://t.me/wicktoken" target="_blank" rel="noopener" aria-label="Join WCK on Telegram">
+        <img class="social-icon" src="https://raw.githubusercontent.com/continentalwick/continental-wick/main/assets/telegram.png" alt="Telegram logo" width="24" height="24" loading="lazy" decoding="async">
+      </a>
+    </div>
+
+    <div>
+      <a class="x-handle" href="https://x.com/wcktoken" target="_blank" rel="noopener">𝕏&nbsp;@wcktoken</a>
+      &nbsp;•&nbsp;
+      <a class="x-handle" href="https://t.me/wicktoken" target="_blank" rel="noopener">Telegram</a>
+    </div>
+
+    <div style="margin-top:6px;">&copy; 2025 CONTINENTAL WICK. All rights reserved.</div>
   </footer>
 
   <noscript><style>.connect-btn{display:none}</style></noscript>
