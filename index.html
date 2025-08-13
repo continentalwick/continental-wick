@@ -45,7 +45,7 @@
     .badge { display:inline-block; padding:2px 8px; border-radius:999px; font-size:.8em; margin-left:8px }
     .badge.live { background:#0f3; color:#000 }
     .badge.off { background:#f55; color:#fff }
-    .connect-btn { padding:12px 28px; font-size:1rem; font-weight:600; border:none; border-radius:8px; background:#111; color:#fff; cursor:pointer; transition:.2s; margin-top:14px; } /* space above button */
+    .connect-btn { padding:12px 28px; font-size:1rem; font-weight:600; border:none; border-radius:8px; background:#111; color:#fff; cursor:pointer; transition:.2s; margin-top:14px }
     .connect-btn:hover { background:#000 }
 
     .section-title { text-align:center; font-size:1.55em; margin:44px 0 22px; color:#ffd700; letter-spacing:.02em; font-weight:700 }
@@ -72,9 +72,8 @@
     /* Inputs & OTC control rows */
     input[type="number"]{ width:320px; max-width:100%; padding:10px; border-radius:8px; border:1px solid #333; background:#111; color:#fff }
     .grid-controls{ display:grid; gap:12px; justify-items:center; margin-bottom:14px }
-    .grid-controls .row:first-child{ margin-top:12px; } /* space above Enter USD */
+    .grid-controls .row:first-child{ margin-top:12px } /* space above Enter USD */
     .row{ display:flex; gap:10px; align-items:center; justify-content:center; width:100% }
-    .label{ min-width:90px; text-align:right }
     .pill{ font-size:.9em; color:#bdbdbd }
     .results-row{ display:flex; gap:18px; flex-wrap:wrap; justify-content:center; margin:8px 0 18px }
     .result-box{ background:#111; border:1px solid #333; border-radius:10px; padding:12px 16px; min-width:200px }
@@ -138,17 +137,10 @@
     </div>
 
     <div class="grid-controls">
-      <!-- USD label removed; input centered -->
+      <!-- USD input -->
       <label class="row">
         <input id="usd" type="number" min="1" step="0.01" placeholder="Enter USD" inputmode="decimal" aria-label="USD amount">
         <span class="pill">(min $1)</span>
-      </label>
-
-      <!-- Manual override appears only if API fails -->
-      <label id="manualRow" class="row" style="display:none;">
-        <span class="label">XRP/USD</span>
-        <input id="xrpUsdManual" type="number" step="0.0001" value="0.6000" inputmode="decimal" aria-label="Manual XRP/USD rate">
-        <span class="pill">manual override</span>
       </label>
 
       <div class="muted">Presale price <b>$0.05</b> per WCK</div>
@@ -157,7 +149,7 @@
     <div class="results-row">
       <div class="result-box">
         <div class="result-head">You’ll send</div>
-        <div class="result-val"><span id="xrpOut">0.0000</span> XRP</div>
+        <div class="result-val"><span id="xrpOut">—</span> XRP</div>
       </div>
       <div class="result-box">
         <div class="result-head">You’ll receive</div>
@@ -232,8 +224,6 @@
       const $ = id => document.getElementById(id);
       const usd = $('usd');
       const xrpUsdText = $('xrpUsdText');
-      const xrpUsdManual = $('xrpUsdManual');
-      const manualRow = $('manualRow');
       const rateBadge = $('rateBadge');
       const rateTime = $('rateTime');
       const xrpOut = $('xrpOut'), wckOut = $('wckOut'), note = $('otcNote');
@@ -243,7 +233,6 @@
       const API = "https://api.coingecko.com/api/v3/simple/price?ids=ripple&vs_currencies=usd";
 
       let xrpUsd = null;
-      let online = false;
 
       function fmt(n, d=4){ return Number(n).toFixed(d); }
       function fmtInt(n){ return Math.max(0, Math.floor(Number(n))).toLocaleString(); }
@@ -262,24 +251,15 @@
           rateBadge.textContent = 'LIVE';
           rateBadge.className = 'badge live';
           rateTime.textContent = `updated ${stamp()}`;
-          manualRow.style.display = 'none';
-          online = true;
           calc();
-        } catch (e) {
-          // Fallback to manual override
-          online = false;
+        } catch {
+          xrpUsd = null;
+          xrpUsdText.textContent = '—';
           rateBadge.textContent = 'OFFLINE';
           rateBadge.className = 'badge off';
-          rateTime.textContent = 'manual rate enabled';
-          if (!xrpUsdManual.value) xrpUsdManual.value = '0.6000';
-          xrpUsdText.textContent = Number(xrpUsdManual.value || 0).toFixed(4);
-          manualRow.style.display = 'flex';
+          rateTime.textContent = 'rate unavailable';
           calc();
         }
-      }
-
-      function effectiveXrpUsd() {
-        return online ? xrpUsd : Number(xrpUsdManual.value || 0.6);
       }
 
       function calc() {
@@ -288,7 +268,7 @@
         if (raw === '') {
           note.textContent = 'Enter USD to preview.';
           note.style.color = '#e0cf93';
-          xrpOut.textContent = '0.0000';
+          xrpOut.textContent = '—';
           wckOut.textContent = '0';
           return;
         }
@@ -309,20 +289,21 @@
           note.style.color = '#e0cf93';
         }
 
-        const px = Math.max(0.0000001, effectiveXrpUsd()); // USD per 1 XRP
-        xrpUsdText.textContent = Number(px).toFixed(4);
+        // XRP requires live rate; WCK always computable from USD
+        if (xrpUsd) {
+          const xrp = usdVal / xrpUsd;
+          xrpOut.textContent = fmt(xrp, 4);
+          xrpUsdText.textContent = xrpUsd.toFixed(4);
+        } else {
+          xrpOut.textContent = '—';
+          xrpUsdText.textContent = '—';
+        }
 
-        const xrp = usdVal / px;            // XRP you’ll send
-        const wck = usdVal / PRICE_PER_WCK; // WCK you’ll receive
-
-        xrpOut.textContent = fmt(xrp, 4);
+        const wck = usdVal / PRICE_PER_WCK;
         wckOut.textContent = fmtInt(wck);
       }
 
-      ['input','change'].forEach(ev => {
-        usd.addEventListener(ev, calc);
-        xrpUsdManual.addEventListener(ev, calc);
-      });
+      ['input','change'].forEach(ev => usd.addEventListener(ev, calc));
 
       fetchRate();
       setInterval(fetchRate, 60000);
