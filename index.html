@@ -40,6 +40,8 @@
     .social-icon { width:24px; height:24px; display:block }
 
     .otc-block { background:#232227; border-radius:11px; text-align:center; padding:32px 14px 26px; margin:0 auto 38px; max-width:900px; box-shadow:0 4px 30px #000a }
+    .otc-banner { font-size:.95em; color:#ffd36d; margin:-6px 0 10px }
+    .otc-banner a { color:#ffd700; text-decoration:underline }
     .otc-title { font-size:1.25em; font-weight:700; color:#fff; margin-bottom:12px }
     .rate-line { font-size:.95em; color:#bdbdbd; margin:-2px 0 16px }
     .badge { display:inline-block; padding:2px 8px; border-radius:999px; font-size:.8em; margin-left:8px }
@@ -62,13 +64,13 @@
 
     .hits-block { background:#18171a; border-radius:12px; padding:22px 18px 15px; max-width:470px; margin:0 auto 36px; box-shadow:0 2px 16px #0005; color:#ffe083; text-align:center; font-size:1.12em }
 
-    /* Tokenomics panel (OTC) */
+    /* Tokenomics panel */
     .tokenomics-box{
       background:#1d1c21;
       border:1.5px solid #c6a450;
       border-radius:12px;
       padding:14px 16px;
-      margin:14px auto 8px;
+      margin:12px auto 8px;
       max-width:720px;
       text-align:left;
       color:#e0cf93;
@@ -153,6 +155,11 @@
 
   <!-- OTC SECTION — $0.05/WCK with live XRP/USD -->
   <div class="otc-block" id="wck-otc">
+    <!-- New banner above the title -->
+    <div class="otc-banner">
+      🚧 OTC sales not live yet. Follow us on <a href="https://x.com/wcktoken" target="_blank" rel="noopener">𝕏</a> for the drop.
+    </div>
+
     <div class="otc-title">OTC Trading Preview — $0.05 per WCK</div>
     <div class="rate-line">
       XRP/USD: $<span id="xrpUsdText">—</span>
@@ -181,19 +188,19 @@
       </div>
     </div>
 
-    <!-- WCK tokenomics panel (3×) -->
+    <div id="otcNote" class="muted" style="color:#e0cf93">Enter USD to preview.</div>
+    <div id="limitNote" class="muted">Limit per buyer: <b>$5,000</b></div>
+
+    <button class="connect-btn" type="button" aria-disabled="true">Connect Wallet</button>
+
+    <!-- Tokenomics moved BELOW the button -->
     <div class="tokenomics-box" role="note" aria-label="WCK OTC tokenomics">
       <div class="line">🎯 <span><b>OTC Rate:</b> $0.05 per <b>$WCK</b></span></div>
       <div class="line">📉 <span><b>Public Launch Price:</b> $0.15 per <b>$WCK</b></span></div>
       <div class="line">✅ <span>OTC buyers are in early — <b>3×</b> value on day one.</span></div>
     </div>
 
-    <div id="otcNote" class="muted" style="color:#e0cf93">Enter USD to preview.</div>
-    <div id="limitNote" class="muted">Limit per buyer: <b>$5,000</b></div>
-
-    <button class="connect-btn" type="button" aria-disabled="true">Connect Wallet</button>
-
-    <!-- Disclaimer below the button -->
+    <!-- Disclaimer remains below the button (now below tokenomics as well) -->
     <p class="otc-disclaimer">
       🔒 $WCK OTC is a one-way sale until on-chain launch. No sellbacks or redemptions during the presale phase.
     </p>
