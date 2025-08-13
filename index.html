@@ -69,9 +69,18 @@
     .x-handle { display:inline-block; margin-top:4px; font-size:1.02em; color:#ffd700; text-decoration:none; font-weight:600 }
     .x-handle:hover { text-decoration:underline }
 
-    input[type="number"]{ width:320px; max-width:100%; padding:10px; border-radius:8px; border:1px solid #333; background:#111; color:#fff }
+    /* Inputs & OTC control rows */
+    input[type="number"]{
+      width:320px; max-width:100%; padding:10px;
+      border-radius:8px; border:1px solid #333; background:#111; color:#fff;
+      display:block; margin:0 auto; /* <-- centers the input itself */
+    }
     .grid-controls{ display:grid; gap:12px; justify-items:center; margin-bottom:14px }
     .row{ display:flex; gap:10px; align-items:center; justify-content:center; width:100% }
+    .row-stack{ flex-direction:column; }                 /* <-- stack + center */
+    .row-stack .label{ display:none; }                   /* hide side label */
+    .row-stack .pill{ margin-top:6px; text-align:center }/* center the note */
+
     .label{ min-width:90px; text-align:right }
     .pill{ font-size:.9em; color:#bdbdbd }
     .results-row{ display:flex; gap:18px; flex-wrap:wrap; justify-content:center; margin:8px 0 18px }
@@ -136,7 +145,8 @@
     </div>
 
     <div class="grid-controls">
-      <label class="row">
+      <!-- Centered input row -->
+      <label class="row row-stack">
         <span class="label">USD</span>
         <input id="usd" type="number" min="1" step="0.01" placeholder="Enter USD" inputmode="decimal" aria-label="USD amount">
         <span class="pill">(min $1)</span>
@@ -215,7 +225,6 @@
   </div>
 
   <footer>
-    <!-- Removed the icon buttons from the bottom per your request -->
     <div>
       <a class="x-handle" href="https://x.com/wcktoken" target="_blank" rel="noopener">𝕏&nbsp;@wcktoken</a>
       &nbsp;•&nbsp;
