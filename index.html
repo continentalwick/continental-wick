@@ -215,6 +215,7 @@
   </div>
 
   <footer>
+    <!-- Removed the icon buttons from the bottom per your request -->
     <div>
       <a class="x-handle" href="https://x.com/wcktoken" target="_blank" rel="noopener">𝕏&nbsp;@wcktoken</a>
       &nbsp;•&nbsp;
@@ -283,6 +284,7 @@
       function calc() {
         const raw = (usd.value || '').trim();
 
+        // Neutral state if empty
         if (raw === '') {
           note.textContent = 'Enter USD to preview.';
           note.style.color = '#e0cf93';
@@ -317,15 +319,18 @@
         wckOut.textContent = fmtInt(wck);
       }
 
+      // Events
       ['input','change'].forEach(ev => {
         usd.addEventListener(ev, calc);
         xrpUsdManual.addEventListener(ev, calc);
       });
 
+      // Initial fetch + refresh every 60s and on tab focus
       fetchRate();
       setInterval(fetchRate, 60000);
       document.addEventListener('visibilitychange', () => { if (!document.hidden) fetchRate(); });
 
+      // Start neutral
       calc();
     })();
   </script>
