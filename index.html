@@ -62,6 +62,29 @@
 
     .hits-block { background:#18171a; border-radius:12px; padding:22px 18px 15px; max-width:470px; margin:0 auto 36px; box-shadow:0 2px 16px #0005; color:#ffe083; text-align:center; font-size:1.12em }
 
+    /* Tokenomics panel (OTC) */
+    .tokenomics-box{
+      background:#1d1c21;
+      border:1.5px solid #c6a450;
+      border-radius:12px;
+      padding:14px 16px;
+      margin:14px auto 8px;
+      max-width:720px;
+      text-align:left;
+      color:#e0cf93;
+      box-shadow:0 2px 12px #0006;
+    }
+    .tokenomics-box .line{ display:flex; gap:10px; align-items:baseline; margin:6px 0 }
+    .tokenomics-box b{ color:#ffd700 }
+
+    /* OTC disclaimer */
+    .otc-disclaimer{
+      margin-top:12px;
+      font-size:0.92em;
+      color:#f55;
+      line-height:1.5;
+    }
+
     .legal-disclaimer { background:#000; color:#aaa; text-align:center; padding:30px 15px; font-size:.85rem; line-height:1.5; max-width:900px; margin:50px auto 0; border-radius:6px }
     .legal-disclaimer a { color:#fff; text-decoration:underline }
 
@@ -87,6 +110,7 @@
       .results-row{ flex-direction:column; align-items:center; gap:12px }
       .result-box{ width:100%; max-width:320px; min-width:0 }
       .cards-row{ gap:18px }
+      .tokenomics-box{ margin-left:10px; margin-right:10px }
     }
   </style>
 </head>
@@ -157,10 +181,22 @@
       </div>
     </div>
 
+    <!-- WCK tokenomics panel (3×) -->
+    <div class="tokenomics-box" role="note" aria-label="WCK OTC tokenomics">
+      <div class="line">🎯 <span><b>OTC Rate:</b> $0.05 per <b>$WCK</b></span></div>
+      <div class="line">📉 <span><b>Public Launch Price:</b> $0.15 per <b>$WCK</b></span></div>
+      <div class="line">✅ <span>OTC buyers are in early — <b>3×</b> value on day one.</span></div>
+    </div>
+
     <div id="otcNote" class="muted" style="color:#e0cf93">Enter USD to preview.</div>
     <div id="limitNote" class="muted">Limit per buyer: <b>$5,000</b></div>
 
     <button class="connect-btn" type="button" aria-disabled="true">Connect Wallet</button>
+
+    <!-- Disclaimer below the button -->
+    <p class="otc-disclaimer">
+      🔒 $WCK OTC is a one-way sale until on-chain launch. No sellbacks or redemptions during the presale phase.
+    </p>
   </div>
 
   <!-- NFT CARD (single) -->
