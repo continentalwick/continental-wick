@@ -81,11 +81,6 @@
     .result-val{ font-size:1.25em; font-weight:700 }
     .muted{ color:#bdbdbd; font-size:.95em; margin-top:6px }
 
-    /* Stack the USD label above the input */
-    .row--stack{ flex-direction:column; align-items:center }
-    .row--stack .label{ display:block; margin-bottom:6px; text-align:center }
-    .row--stack .pill{ margin-top:6px }
-
     @media (max-width: 700px){
       header{ margin-top:20px }
       .otc-block{ width:94vw; padding:20px 12px }
@@ -142,9 +137,8 @@
     </div>
 
     <div class="grid-controls">
-      <!-- USD label moved above the input -->
-      <label class="row row--stack">
-        <span class="label">USD</span>
+      <!-- USD label removed -->
+      <label class="row">
         <input id="usd" type="number" min="1" step="0.01" placeholder="Enter USD" inputmode="decimal" aria-label="USD amount">
         <span class="pill">(min $1)</span>
       </label>
@@ -290,6 +284,7 @@
       function calc() {
         const raw = (usd.value || '').trim();
 
+        // Neutral state if empty
         if (raw === '') {
           note.textContent = 'Enter USD to preview.';
           note.style.color = '#e0cf93';
@@ -324,15 +319,18 @@
         wckOut.textContent = fmtInt(wck);
       }
 
+      // Events
       ['input','change'].forEach(ev => {
         usd.addEventListener(ev, calc);
         xrpUsdManual.addEventListener(ev, calc);
       });
 
+      // Initial fetch + refresh every 60s and on tab focus
       fetchRate();
       setInterval(fetchRate, 60000);
       document.addEventListener('visibilitychange', () => { if (!document.hidden) fetchRate(); });
 
+      // Start neutral
       calc();
     })();
   </script>
