@@ -9,7 +9,7 @@ issuer          = "rpFVEydkZrUjf4tcbLeDeVqXm5zYQGtXWm"
 network         = "main"
 name            = "WCK"
 desc            = "The official $WCK token — native to the CONTINENTAL protocol. Powered by XRPL for speed, privacy, and real-world execution."
-icon            = "https://wicktoken.net/logo.png"
+icon            = "https://wicktoken.net/.well-known/logo.png"
 display_decimals = 6
 
 [[CURRENCIES.urls]]
@@ -64,7 +64,7 @@ issuer   = "rpFVEydkZrUjf4tcbLeDeVqXm5zYQGtXWm"
 currency = "WCK"
 name     = "WCK"
 desc     = "The official $WCK token — native to the CONTINENTAL protocol. Powered by XRPL for speed, privacy, and real-world execution."
-icon     = "https://wicktoken.net/logo.png"
+icon     = "https://wicktoken.net/.well-known/logo.png"
 
 [[TOKENS.URLS]]
 type = "website"
