@@ -142,6 +142,12 @@
       <a class="social-btn" href="https://t.me/wcktoken" target="_blank" rel="noopener" aria-label="Join WCK on Telegram">
         <img class="social-icon" src="https://raw.githubusercontent.com/continentalwick/continental-wick/main/assets/telegram.png" alt="Telegram logo" width="24" height="24" loading="lazy" decoding="async">
       </a>
+      <a class="social-btn" href="https://bithomp.com/explorer/rpFVEydkZrUjf4tcbLeDeVqXm5zYQGtXWm" target="_blank" rel="noopener" aria-label="View WCK on Bithomp">
+        <img class="social-icon" src="https://raw.githubusercontent.com/continentalwick/continental-wick/main/assets/bithomp.png" alt="Bithomp logo" width="24" height="24" loading="lazy" decoding="async">
+      </a>
+      <a class="social-btn" href="https://xrpscan.com/account/rpFVEydkZrUjf4tcbLeDeVqXm5zYQGtXWm" target="_blank" rel="noopener" aria-label="View WCK on XRPSCAN">
+        <img class="social-icon" src="https://raw.githubusercontent.com/continentalwick/continental-wick/main/assets/xrpscan.png" alt="XRPSCAN logo" width="24" height="24" loading="lazy" decoding="async">
+      </a>
     </div>
   </div>
 
@@ -157,7 +163,7 @@
   <div class="otc-block" id="wck-otc">
     <!-- New banner above the title -->
     <div class="otc-banner">
-      🚧 OTC sales not live yet. Follow us on <a href="https://x.com/wcktoken" target="_blank" rel="noopener">𝕏</a> for the drop.
+      🚧 OTC sales not live yet. Follow us on <a href="https://x.com/wcktoken" target="_blank" rel="noopener"> 𝕏</a> for the drop.
     </div>
 
     <div class="otc-title">OTC Trading Preview — $0.05 per WCK</div>
@@ -317,7 +323,7 @@
         try {
           const res = await fetch(API, { cache: 'no-store' });
           if (!res.ok) throw new Error('Bad status');
-        const data = await res.json();
+          const data = await res.json();
           const val = Number(data?.ripple?.usd);
           if (!isFinite(val) || val <= 0) throw new Error('Bad data');
 
@@ -338,7 +344,7 @@
       }
 
       function calc() {
-        const raw = (usd.value || '').trim();
+        const raw = (usd?.value || '').trim();
 
         if (raw === '') {
           note.textContent = 'Enter USD to preview.';
@@ -377,7 +383,9 @@
         wckOut.textContent = fmtInt(wck);
       }
 
-      ['input','change'].forEach(ev => usd.addEventListener(ev, calc));
+      if (usd) {
+        ['input','change'].forEach(ev => usd.addEventListener(ev, calc));
+      }
 
       fetchRate();
       setInterval(fetchRate, 60000);
