@@ -33,11 +33,28 @@
     h1 { font-size:2.7em; margin:6px 0 4px; letter-spacing:.05em; color:#ffd700; font-weight:700 }
     .tagline { font-size:1.12em; color:#e0cf93; margin-bottom:16px }
 
-    /* Social buttons (under token block) */
-    .social-row { display:flex; justify-content:center; align-items:center; gap:14px; margin:12px 0 0 }
+    /* Social buttons */
+    .social-wrap { margin-top:10px }
+    .social-row { display:flex; justify-content:center; align-items:center; gap:14px; }
     .social-btn { display:inline-flex; align-items:center; justify-content:center; width:40px; height:40px; border-radius:10px; background:#18171a; border:1px solid #2d2c30; box-shadow:0 2px 8px #0006; transition:.15s transform, .15s box-shadow }
     .social-btn:hover { transform:translateY(-2px); box-shadow:0 6px 18px #0009 }
     .social-icon { width:24px; height:24px; display:block }
+
+    /* Verify line beneath social icons */
+    .verify-line{
+      text-align:center;
+      margin-top:12px;
+      font-size:1.02em;
+      color:#d8d3c0;
+      letter-spacing:.01em;
+    }
+    .verify-line b,
+    .verify-line a{
+      color:#ffd700;
+      font-weight:700;
+      text-decoration:none;
+    }
+    .verify-line a:hover{ text-decoration:underline }
 
     .otc-block { background:#232227; border-radius:11px; text-align:center; padding:32px 14px 26px; margin:0 auto 38px; max-width:900px; box-shadow:0 4px 30px #000a }
     .otc-banner { font-size:.95em; color:#ffd36d; margin:-6px 0 10px }
@@ -59,12 +76,11 @@
     .whitepaper-block { background:#232227; border-radius:11px; text-align:center; padding:22px 12px 26px; margin:36px auto 24px; max-width:460px; box-shadow:0 2px 16px #0005 }
     .whitepaper-title { font-size:1.22em; font-weight:700; color:#fff; letter-spacing:.02em; margin-bottom:9px }
 
-    .token-details { text-align:center; margin:28px 0 24px; color:#e5e2c9; font-size:1.10em; padding:0 16px }
+    .token-details { text-align:center; margin:28px 0 10px; color:#e5e2c9; font-size:1.10em; padding:0 16px }
     .token-details code { color:#ffe083; background:#191817; padding:1.5px 7px; border-radius:6px; font-size:.98em }
 
     .hits-block { background:#18171a; border-radius:12px; padding:22px 18px 15px; max-width:470px; margin:0 auto 36px; box-shadow:0 2px 16px #0005; color:#ffe083; text-align:center; font-size:1.12em }
 
-    /* Tokenomics panel */
     .tokenomics-box{
       background:#1d1c21;
       border:1.5px solid #c6a450;
@@ -79,7 +95,6 @@
     .tokenomics-box .line{ display:flex; gap:10px; align-items:baseline; margin:6px 0 }
     .tokenomics-box b{ color:#ffd700 }
 
-    /* OTC disclaimer */
     .otc-disclaimer{
       margin-top:12px;
       font-size:0.92em;
@@ -94,10 +109,9 @@
     .x-handle { display:inline-block; margin-top:4px; font-size:1.02em; color:#ffd700; text-decoration:none; font-weight:600 }
     .x-handle:hover { text-decoration:underline }
 
-    /* Inputs & OTC control rows */
     input[type="number"]{ width:320px; max-width:100%; padding:10px; border-radius:8px; border:1px solid #333; background:#111; color:#fff }
     .grid-controls{ display:grid; gap:12px; justify-items:center; margin-bottom:14px }
-    .grid-controls .row:first-child{ margin-top:12px } /* space above Enter USD */
+    .grid-controls .row:first-child{ margin-top:12px }
     .row{ display:flex; gap:10px; align-items:center; justify-content:center; width:100% }
     .pill{ font-size:.9em; color:#bdbdbd }
     .results-row{ display:flex; gap:18px; flex-wrap:wrap; justify-content:center; margin:8px 0 18px }
@@ -134,20 +148,23 @@
     <b>Decimals:</b> 6 &mdash; <b>Total Supply:</b> 100,000,000<br>
     <b>XRPL Native Utility &bull; Privacy &bull; Real-World Execution</b>
 
-    <!-- Social icons right below the details -->
-    <div class="social-row">
-      <a class="social-btn" href="https://x.com/wcktoken" target="_blank" rel="noopener" aria-label="Follow WCK on X">
-        <img class="social-icon" src="https://raw.githubusercontent.com/continentalwick/continental-wick/main/assets/x.png" alt="X logo" width="24" height="24" loading="lazy" decoding="async">
-      </a>
-      <a class="social-btn" href="https://t.me/wcktoken" target="_blank" rel="noopener" aria-label="Join WCK on Telegram">
-        <img class="social-icon" src="https://raw.githubusercontent.com/continentalwick/continental-wick/main/assets/telegram.png" alt="Telegram logo" width="24" height="24" loading="lazy" decoding="async">
-      </a>
-      <a class="social-btn" href="https://bithomp.com/explorer/rpFVEydkZrUjf4tcbLeDeVqXm5zYQGtXWm" target="_blank" rel="noopener" aria-label="View WCK on Bithomp">
-        <img class="social-icon" src="https://raw.githubusercontent.com/continentalwick/continental-wick/main/assets/bithomp.png" alt="Bithomp logo" width="24" height="24" loading="lazy" decoding="async">
-      </a>
-      <a class="social-btn" href="https://xrpscan.com/account/rpFVEydkZrUjf4tcbLeDeVqXm5zYQGtXWm" target="_blank" rel="noopener" aria-label="View WCK on XRPSCAN">
-        <img class="social-icon" src="https://raw.githubusercontent.com/continentalwick/continental-wick/main/assets/xrpscan.png" alt="XRPSCAN logo" width="24" height="24" loading="lazy" decoding="async">
-      </a>
+    <!-- Social icons and verify line -->
+    <div class="social-wrap">
+      <div class="social-row">
+        <a class="social-btn" href="https://x.com/wcktoken" target="_blank" rel="noopener" aria-label="Follow WCK on X">
+          <img class="social-icon" src="https://raw.githubusercontent.com/continentalwick/continental-wick/main/assets/x.png" alt="X logo" width="24" height="24" loading="lazy" decoding="async">
+        </a>
+        <a class="social-btn" href="https://t.me/wcktoken" target="_blank" rel="noopener" aria-label="Join WCK on Telegram">
+          <img class="social-icon" src="https://raw.githubusercontent.com/continentalwick/continental-wick/main/assets/telegram.png" alt="Telegram logo" width="24" height="24" loading="lazy" decoding="async">
+        </a>
+      </div>
+
+      <div class="verify-line">
+        🔍 Verify on:
+        <a href="https://bithomp.com/explorer/rpFVEydkZrUjf4tcbLeDeVqXm5zYQGtXWm" target="_blank" rel="noopener"><b>Bithomp</b></a>
+        <span style="opacity:.6;">|</span>
+        <a href="https://xrpscan.com/account/rpFVEydkZrUjf4tcbLeDeVqXm5zYQGtXWm" target="_blank" rel="noopener"><b>XRPSCAN</b></a>
+      </div>
     </div>
   </div>
 
@@ -161,9 +178,8 @@
 
   <!-- OTC SECTION — $0.05/WCK with live XRP/USD -->
   <div class="otc-block" id="wck-otc">
-    <!-- New banner above the title -->
     <div class="otc-banner">
-      🚧 OTC sales not live yet. Follow us on <a href="https://x.com/wcktoken" target="_blank" rel="noopener"> 𝕏</a> for the drop.
+      🚧 OTC sales not live yet. Follow us on <a href="https://x.com/wcktoken" target="_blank" rel="noopener">𝕏</a> for the drop.
     </div>
 
     <div class="otc-title">OTC Trading Preview — $0.05 per WCK</div>
@@ -174,7 +190,6 @@
     </div>
 
     <div class="grid-controls">
-      <!-- USD input -->
       <label class="row">
         <input id="usd" type="number" min="1" step="0.01" placeholder="Enter USD" inputmode="decimal" aria-label="USD amount">
         <span class="pill">(min $1)</span>
@@ -199,20 +214,17 @@
 
     <button class="connect-btn" type="button" aria-disabled="true">Connect Wallet</button>
 
-    <!-- Tokenomics moved BELOW the button -->
     <div class="tokenomics-box" role="note" aria-label="WCK OTC tokenomics">
       <div class="line">🎯 <span><b>OTC Rate:</b> $0.05 per <b>$WCK</b></span></div>
       <div class="line">📉 <span><b>Public Launch Price:</b> $0.15 per <b>$WCK</b></span></div>
       <div class="line">✅ <span>OTC buyers are in early — <b>3×</b> value on day one.</span></div>
     </div>
 
-    <!-- Disclaimer remains below the button (now below tokenomics as well) -->
     <p class="otc-disclaimer">
       🔒 $WCK OTC is a one-way sale until on-chain launch. No sellbacks or redemptions during the presale phase.
     </p>
   </div>
 
-  <!-- NFT CARD (single) -->
   <section id="nft-cards" style="text-align:center; padding: 40px 20px; background-color:#111;">
     <h2 class="section-title">NFT TRADING CARDS</h2>
     <div class="cards-row">
@@ -225,7 +237,6 @@
       </div>
     </div>
 
-    <!-- Additions: COMING SOON + tiers + two-sided + utility -->
     <div style="max-width:720px;margin:10px auto 0;text-align:center;padding:12px 16px;">
       <p style="color:#ffd700;font-weight:700;letter-spacing:.03em;margin:0 0 8px;">
         COMING SOON
@@ -239,7 +250,6 @@
         Each card is two-sided — front art, back with bio and rarity details.
       </p>
 
-      <!-- Utility list -->
       <div style="margin-top:18px;text-align:left;display:inline-block;max-width:620px;color:#e5e2c9;font-size:0.95em;line-height:1.5;">
         <p style="color:#ffd700;font-weight:700;margin-bottom:6px;">What They Do:</p>
         <ul style="padding-left:18px;margin:0;">
@@ -270,7 +280,6 @@
     </a>
   </div>
 
-  <!-- LEGAL -->
   <div class="legal-disclaimer">
     <p><strong>🛡 Legal Disclaimer</strong></p>
     <p>
@@ -309,7 +318,7 @@
       const rateTime = $('rateTime');
       const xrpOut = $('xrpOut'), wckOut = $('wckOut'), note = $('otcNote');
 
-      const PRICE_PER_WCK = 0.05;   // USD per WCK — presale
+      const PRICE_PER_WCK = 0.05;
       const MAX_USD = 5000;
       const API = "https://api.coingecko.com/api/v3/simple/price?ids=ripple&vs_currencies=usd";
 
