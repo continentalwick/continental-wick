@@ -1,58 +1,22 @@
 {
-  "$schema": "https://openapi.vercel.sh/vercel.json",
-  "framework": null,
-  "builds": [{ "src": "index.html", "use": "@vercel/static" }],
-  "trailingSlash": false,
-  "cleanUrls": true,
-
-  "redirects": [
+  "rewrites": [
     {
-      "source": "/(.*)",
-      "has": [{ "type": "host", "value": "www.wicktoken.net" }],
-      "destination": "https://wicktoken.net/$1",
-      "permanent": true
+      "source": "/.well-known/xrp-ledger.toml",
+      "destination": "https://raw.githubusercontent.com/continentalwick/continental-wick/main/.well-known/xrp-ledger.toml"
+    },
+    {
+      "source": "/.well-known/logo.png",
+      "destination": "https://raw.githubusercontent.com/continentalwick/continental-wick/main/.well-known/logo.png"
     }
   ],
-
   "headers": [
     {
       "source": "/.well-known/xrp-ledger.toml",
-      "headers": [
-        { "key": "Content-Type", "value": "text/plain; charset=utf-8" },
-        { "key": "Cache-Control", "value": "public, max-age=300, s-maxage=300, stale-while-revalidate=600" }
-      ]
+      "headers": [{ "key": "Cache-Control", "value": "public, max-age=300" }]
     },
     {
-      "source": "/.well-known/(.*)",
-      "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=300, s-maxage=300, stale-while-revalidate=600" }
-      ]
-    },
-    {
-      "source": "/assets/(.*)",
-      "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
-      ]
-    },
-    {
-      "source": "/logo.png",
-      "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=3600, s-maxage=86400" }
-      ]
-    },
-    {
-      "source": "/(.*)",
-      "headers": [
-        { "key": "Strict-Transport-Security", "value": "max-age=31536000; includeSubDomains; preload" },
-        { "key": "X-Frame-Options", "value": "DENY" },
-        { "key": "X-Content-Type-Options", "value": "nosniff" },
-        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
-        { "key": "Permissions-Policy", "value": "camera=(), microphone=(), geolocation=()" },
-        {
-          "key": "Content-Security-Policy",
-          "value": "default-src 'self'; base-uri 'none'; object-src 'none'; img-src 'self' https: data:; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; connect-src 'self' https://api.coingecko.com; frame-ancestors 'none'; upgrade-insecure-requests"
-        }
-      ]
+      "source": "/.well-known/logo.png",
+      "headers": [{ "key": "Cache-Control", "value": "public, max-age=86400" }]
     }
   ]
 }
