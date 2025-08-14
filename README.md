@@ -2,7 +2,7 @@
   <img src="./assets/logo.png" alt="$WCK Logo" width="200">
 </p>
 
-# 🗝️ CONTINENTAL WICK ($WCK)
+🗝️ CONTINENTAL WICK ($WCK)
 
 **Official Site:** [https://wicktoken.net](https://wicktoken.net)  
 **Token Name:** $WCK  
