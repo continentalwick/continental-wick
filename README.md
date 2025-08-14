@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://wicktoken.net/logo.png" alt="$WCK Logo" width="200" />
+  <img src="./assets/logo.png" alt="$WCK Logo" width="200">
 </p>
 
 # 🗝️ CONTINENTAL WICK ($WCK)
@@ -20,18 +20,18 @@
 
 ## 🔗 Live Deployment
 
-| Item          | Link                                  |
-|---------------|---------------------------------------|
-| Website       | [wicktoken.net](https://wicktoken.net) |
-| Host          | [Vercel](https://vercel.com)          |
-| Domain        | [Namecheap](https://namecheap.com)    |
-| DNS           | Vercel DNS (ns1 / ns2.vercel-dns.com) |
+| Item    | Link                                   |
+|---------|----------------------------------------|
+| Website | [wicktoken.net](https://wicktoken.net) |
+| Host    | [Vercel](https://vercel.com)           |
+| Domain  | [Namecheap](https://namecheap.com)     |
+| DNS     | Vercel DNS (ns1 and ns2.vercel-dns.com)|
 
 ---
 
 ## 💼 About the Project
 
-The official **$WCK** token — native to the CONTINENTAL protocol. Powered by XRPL for speed, privacy, and real-world execution. 🗝️
+The official **$WCK** token, native to the CONTINENTAL protocol. Powered by XRPL for speed, privacy, and real‑world execution. 🗝️
 
 **The Utility That Memes.**
 
@@ -39,29 +39,26 @@ The official **$WCK** token — native to the CONTINENTAL protocol. Powered by X
 
 ## 🧱 Stack
 
-| Layer     | Tech            |
-|-----------|-----------------|
-| Frontend  | HTML / CSS / JS |
-| Hosting   | Vercel          |
-| DNS       | Vercel DNS      |
-| Registry  | Namecheap       |
-| Chain     | XRPL            |
+| Layer    | Tech            |
+|----------|-----------------|
+| Frontend | HTML / CSS / JS |
+| Hosting  | Vercel          |
+| DNS      | Vercel DNS      |
+| Registry | Namecheap       |
+| Chain    | XRPL            |
 
 ---
-
-## 📁 Project Structure
-
 
 ---
 
 ## 📦 Features (In Progress)
 
-- OTC sale form + processing  
-- XRPL token trustline + explorer links  
-- Protocol-grade branding and assets  
-- Mobile-optimized layout  
-- Social meta tags + share preview  
-- Redirects from www + legacy domains
+- OTC sale form and processing  
+- XRPL token trustline and explorer links  
+- Protocol‑grade branding and assets  
+- Mobile‑optimized layout  
+- Social meta tags and share preview  
+- Redirects from www and legacy domains
 
 ---
 
@@ -70,14 +67,15 @@ The official **$WCK** token — native to the CONTINENTAL protocol. Powered by X
 - Primary domain: `wicktoken.net`  
 - All other domains are unlinked  
 - No crossover with any other project  
-- Protocol-first approach. Everything has a purpose.
+- Protocol‑first approach. Everything has a purpose.
 
 ---
 
 ## 🔒 Deployment
 
-This site is auto-deployed from GitHub → Vercel.
+This site is auto‑deployed from GitHub to Vercel.
 
 ```bash
+git add -A
 git commit -m "update site"
 git push origin main
