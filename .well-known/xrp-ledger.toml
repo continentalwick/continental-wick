@@ -1,39 +1,38 @@
 # XRPL Token TOML for $WCK
-# Last updated: 2025-08-12
+# Path: /.well-known/xrp-ledger.toml
 
+# --- Original XRPL-style blocks (keep)
 [[CURRENCIES]]
-code          = "WCK"
-currency_hex  = "57434B0000000000000000000000000000000000"
-issuer        = "rpFVEydkZrUjf4tcbLeDeVqXm5zYQGtXWm"
-network       = "main"
-name          = "WCK"
-desc          = "The official $WCK token — native to the CONTINENTAL protocol. Powered by XRPL for speed, privacy, and real-world execution. The Utility That Memes. Total supply 100,000,000."
-icon          = "https://wicktoken.net/logo.png"
+code             = "WCK"
+currency_hex     = "57434B0000000000000000000000000000000000"  # "WCK" ASCII padded
+issuer           = "rpFVEydkZrUjf4tcbLeDeVqXm5zYQGtXWm"
+network          = "main"
+name             = "WCK"
+desc             = "The official $WCK token — native to the CONTINENTAL protocol. Powered by XRPL for speed, privacy, and real-world execution."
+icon             = "https://YOUR-DOMAIN.TLD/.well-known/logo.png"  # <— updated
 display_decimals = 6
 
 [[CURRENCIES.urls]]
 type  = "website"
 title = "Official Website"
-url   = "https://wicktoken.net"
+url   = "https://YOUR-DOMAIN.TLD"  # replace
 
 [[CURRENCIES.urls]]
 type  = "social"
-title = "X Social"
-url   = "https://x.com/wcktoken"
-
-# Last updated: 2025-08-12
+title = "X (Twitter)"
+url   = "https://x.com/YOUR_HANDLE"  # replace
 
 [[CURRENCIES.urls]]
 type  = "social"
 title = "Telegram"
-url   = "https://t.me/wicktoken"
+url   = "https://t.me/YOUR_CHANNEL"  # replace
 
 [[ACCOUNTS]]
 address = "rpFVEydkZrUjf4tcbLeDeVqXm5zYQGtXWm"
 network = "main"
 role    = "issuer"
 desc    = "Official $WCK token issuer"
-domain  = "wicktoken.net"
+domain  = "YOUR-DOMAIN.TLD"  # set this as the on-ledger Domain, too
 
 [[ACCOUNTS]]
 address = "rstRegwzojXJTvhsiTnmDPbPTSKBPBZ55t"
@@ -52,3 +51,28 @@ address = "rEkZ6smniCBbSuAvNdQfLRKHcgsLXiqEX1"
 network = "main"
 role    = "reserve"
 desc    = "Principal wallet"
+
+# --- XRPLMETA-preferred blocks (add)
+[[ISSUERS]]
+address = "rpFVEydkZrUjf4tcbLeDeVqXm5zYQGtXWm"
+name    = "$WCK"
+# Tip: set the on-ledger Domain for this account to YOUR-DOMAIN.TLD
+
+[[TOKENS]]
+issuer   = "rpFVEydkZrUjf4tcbLeDeVqXm5zYQGtXWm"
+currency = "WCK"
+name     = "WCK"
+desc     = "The official $WCK token — native to the CONTINENTAL protocol. Powered by XRPL for speed, privacy, and real-world execution."
+icon     = "https://YOUR-DOMAIN.TLD/.well-known/logo.png"  # <— updated
+
+[[TOKENS.URLS]]
+type = "website"
+url  = "https://YOUR-DOMAIN.TLD"  # replace
+
+[[TOKENS.URLS]]
+type = "social"
+url  = "https://x.com/wcktoken"  # replace
+
+[[TOKENS.URLS]]
+type = "social"
+url  = "https://t.me/wcktoken"  # replace
