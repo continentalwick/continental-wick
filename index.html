@@ -219,7 +219,7 @@
       </div>
     </div>
 
-    <!-- Additions: COMING SOON + tiers + collect line -->
+    <!-- Additions: COMING SOON + tiers + two-sided + utility -->
     <div style="max-width:720px;margin:10px auto 0;text-align:center;padding:12px 16px;">
       <p style="color:#ffd700;font-weight:700;letter-spacing:.03em;margin:0 0 8px;">
         COMING SOON
@@ -229,7 +229,24 @@
         <li><strong style="color:#f8d05f;">Rare</strong> — Limited mission-set exclusives</li>
         <li><strong style="color:#f8d05f;">Ultra Rare</strong> — High-value, low-supply protocol icons</li>
       </ul>
-      <p style="color:#bdbdbd;margin:6px 0 0;font-style:italic;">
+      <p style="color:#ccc;margin:6px 0 0;font-style:italic;">
+        Each card is two-sided — front art, back with bio and rarity details.
+      </p>
+
+      <!-- Utility list -->
+      <div style="margin-top:18px;text-align:left;display:inline-block;max-width:620px;color:#e5e2c9;font-size:0.95em;line-height:1.5;">
+        <p style="color:#ffd700;font-weight:700;margin-bottom:6px;">What They Do:</p>
+        <ul style="padding-left:18px;margin:0;">
+          <li><b>Lore Unlocks:</b> Access hidden character files and intel drops.</li>
+          <li><b>Rarity Perks:</b> Higher tiers unlock exclusive drops and events.</li>
+          <li><b>Protocol Missions:</b> Cards act as access keys to special on-chain or off-chain challenges.</li>
+          <li><b>Burn-to-Upgrade:</b> Combine cards to craft higher rarities.</li>
+          <li><b>Meta-Collection Bonuses:</b> Complete sets for unique rewards or NFT weapon drops.</li>
+          <li><b>Storyline Influence:</b> High-tier holders can vote on future protocol moves.</li>
+        </ul>
+      </div>
+
+      <p style="color:#bdbdbd;margin:10px 0 0;font-style:italic;">
         Collect them all. Secure the set.
       </p>
     </div>
@@ -300,7 +317,7 @@
         try {
           const res = await fetch(API, { cache: 'no-store' });
           if (!res.ok) throw new Error('Bad status');
-          const data = await res.json();
+        const data = await res.json();
           const val = Number(data?.ripple?.usd);
           if (!isFinite(val) || val <= 0) throw new Error('Bad data');
 
