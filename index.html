@@ -4,8 +4,6 @@
   <meta charset="UTF-8">
   <title>CONTINENTAL WICK ($WCK)</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-
-  <!-- Icons / previews -->
   <link rel="icon" href="https://raw.githubusercontent.com/continentalwick/continental-wick/main/assets/logo.png">
   <link rel="apple-touch-icon" href="https://raw.githubusercontent.com/continentalwick/continental-wick/main/assets/logo.png">
   <link rel="canonical" href="https://wicktoken.net/">
@@ -51,7 +49,7 @@
     .otc-banner a { color:#ffd700; text-decoration:underline }
     .otc-title { font-size:1.25em; font-weight:700; color:#fff; margin-bottom:12px }
 
-    /* Rate line like the example */
+    /* Rate line */
     .rate-line { font-size:1.05em; color:#d8d8d8; margin:0 0 16px; display:flex; gap:10px; justify-content:center; align-items:center; flex-wrap:wrap }
     .badge { display:inline-block; padding:6px 14px; border-radius:999px; font-size:.9em; line-height:1; font-weight:800; letter-spacing:.02em }
     .badge.live { background:#00ff66; color:#000 }
@@ -62,27 +60,35 @@
     .cta-row { display:flex; gap:10px; justify-content:center; align-items:center; margin:10px 0 14px; flex-wrap:wrap }
     .btn { appearance:none; border:none; border-radius:12px; padding:12px 18px; font-weight:800; letter-spacing:.02em; cursor:pointer; transition:.15s transform,.15s box-shadow,.15s background,.15s border-color }
     .btn:active { transform:translateY(1px) }
-    .btn-primary { background:#ffd700; color:#18171a; box-shadow:0 3px 12px #0008; border:1px solid #ffe083 }
-    .btn-primary:hover { background:#e0b600 }
     .btn-ghost { background:#111; color:#fff; border:1px solid #333 }
     .btn-ghost:hover { background:#000 }
-    .btn-lg { padding:14px 24px; font-size:1.06em }
 
     /* Premium trustline button */
     .btn-trustline {
       background: radial-gradient(120% 120% at 50% -10%, #ffe083 0%, #b8942e 60%, #2a261a 100%);
-      color:#0c0b07;
-      border:1.5px solid #e5c767;
+      color:#0c0b07; border:1.5px solid #e5c767;
       box-shadow:0 6px 22px rgba(255, 208, 64, .18), inset 0 1px 0 rgba(255,255,255,.18);
     }
     .btn-trustline:hover { filter:brightness(1.06) }
     .btn-trustline .mini { display:block; font-size:.78em; font-weight:600; opacity:.9; color:#120e05; margin-top:2px }
 
+    /* Hero BUY button */
+    .btn-buy {
+      background: linear-gradient(180deg, #ffe083 0%, #e6b400 60%, #b88b00 100%);
+      color:#121113; border:1.5px solid #ffe083;
+      box-shadow: 0 8px 26px rgba(255, 208, 64, .22), inset 0 1px 0 rgba(255,255,255,.25);
+      text-transform:uppercase; letter-spacing:.05em;
+      padding:16px 28px; font-size:1.06em; border-radius:14px;
+      min-width:200px;
+    }
+    .btn-buy:hover { filter:brightness(1.05) }
+    .btn-buy:disabled { opacity:.6; cursor:not-allowed; }
+
     /* Inputs and results */
     .grid-controls{ display:grid; gap:12px; justify-items:center; margin-bottom:14px }
     .row{ display:flex; gap:10px; align-items:center; justify-content:center; width:100% }
 
-    /* iOS zoom guard: keep font-size >= 16px */
+    /* iOS zoom guard */
     input, select, textarea { font-size:16px }
     input[type="number"]{
       width:320px; max-width:100%;
@@ -95,7 +101,9 @@
     .result-head{ font-size:.9em; color:#bdbdbd }
     .result-val{ font-size:1.25em; font-weight:700 }
 
-    .tokenomics-box{ background:#1d1c21; border:1.5px solid #c6a450; border-radius:12px; padding:14px 16px; margin:12px auto 8px; max-width:720px; text-align:left; color:#e0cf93; box-shadow:0 2px 12px #0006 }
+    .notes-wrap { margin-top:18px } /* pushed further down per request */
+
+    .tokenomics-box{ background:#1d1c21; border:1.5px solid #c6a450; border-radius:12px; padding:14px 16px; margin:14px auto 8px; max-width:720px; text-align:left; color:#e0cf93; box-shadow:0 2px 12px #0006 }
     .tokenomics-box .line{ display:flex; gap:10px; align-items:baseline; margin:6px 0 }
     .tokenomics-box b{ color:#ffd700 }
 
@@ -138,6 +146,7 @@
       .result-box{ width:100%; max-width:320px; min-width:0 }
       .cards-row{ gap:18px }
       .tokenomics-box{ margin-left:10px; margin-right:10px }
+      .btn-buy{ width:100%; max-width:320px }
     }
   </style>
 </head>
@@ -206,7 +215,7 @@
 
     <!-- CONNECT above USD input (larger) -->
     <div class="cta-row" aria-label="OTC connect">
-      <button type="button" class="btn btn-ghost btn-lg" id="btnConnect">CONNECT</button>
+      <button type="button" class="btn btn-ghost" style="padding:14px 24px; font-size:1.06em" id="btnConnect">CONNECT</button>
     </div>
 
     <div class="grid-controls">
@@ -228,13 +237,16 @@
       </div>
     </div>
 
-    <!-- BUY directly under “You’ll receive” — pushed down one line -->
-    <div class="cta-row" aria-label="OTC buy" style="margin-top:6px; margin-bottom:2px;">
-      <button type="button" class="btn btn-primary" id="btnBuy">BUY</button>
+    <!-- BUY directly under “You’ll receive” -->
+    <div class="cta-row" aria-label="OTC buy" style="margin-top:6px;">
+      <button type="button" class="btn btn-buy" id="btnBuy">BUY</button>
     </div>
 
-    <div id="otcNote" class="muted" style="color:#e0cf93">Enter USD to preview.</div>
-    <div id="limitNote" class="muted">Limit per buyer: <b>$5,000</b></div>
+    <!-- Notes moved further down a line -->
+    <div class="notes-wrap">
+      <div id="otcNote" class="muted" style="color:#e0cf93">Enter USD to preview.</div>
+      <div id="limitNote" class="muted">Limit per buyer: <b>$5,000</b></div>
+    </div>
 
     <div class="tokenomics-box" role="note" aria-label="WCK OTC tokenomics">
       <div class="line">🎯 <span><b>OTC Rate:</b> $0.05 per <b>$WCK</b></span></div>
@@ -408,7 +420,7 @@
 
         if (xrpUsd) {
           const xrp = usdVal / xrpUsd;
-          xrpOut.textContent = fmt(xrp, 4);
+          xrpOut.textContent = Number(xrp).toFixed(4);
           xrpUsdText.textContent = xrpUsd.toFixed(4);
         } else {
           xrpOut.textContent = '—';
@@ -416,7 +428,7 @@
         }
 
         const wck = usdVal / PRICE_PER_WCK;
-        wckOut.textContent = fmtInt(wck);
+        wckOut.textContent = Math.max(0, Math.floor(Number(wck))).toLocaleString();
       }
 
       if (usd) ['input','change'].forEach(ev => usd.addEventListener(ev, calc));
