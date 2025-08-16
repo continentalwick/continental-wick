@@ -5,12 +5,12 @@
   <title>CONTINENTAL WICK ($WCK)</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
 
-  <!-- GitHub-hosted logo for all icons + previews -->
+  <!-- Icons / previews -->
   <link rel="icon" href="https://raw.githubusercontent.com/continentalwick/continental-wick/main/assets/logo.png">
   <link rel="apple-touch-icon" href="https://raw.githubusercontent.com/continentalwick/continental-wick/main/assets/logo.png">
   <link rel="canonical" href="https://wicktoken.net/">
 
-  <!-- Open Graph / Twitter -->
+  <!-- OG / Twitter -->
   <meta property="og:title" content="CONTINENTAL WICK ($WCK)">
   <meta property="og:description" content="The Utility That Memes. Powered by XRPL.">
   <meta property="og:type" content="website">
@@ -25,7 +25,7 @@
 
   <style>
     * { box-sizing: border-box }
-    html, body { overflow-x: hidden; }
+    html, body { overflow-x: hidden }
 
     body { margin:0; background:#121113; color:#f8f8f8; font-family:'Segoe UI',Arial,sans-serif; min-height:100vh; letter-spacing:.01em }
     header { text-align:center; margin:48px auto 12px; padding:0 16px }
@@ -33,39 +33,63 @@
     h1 { font-size:2.7em; margin:6px 0 4px; letter-spacing:.05em; color:#ffd700; font-weight:700 }
     .tagline { font-size:1.12em; color:#e0cf93; margin-bottom:16px }
 
-    /* Social buttons */
+    /* Social */
     .social-wrap { margin-top:10px }
-    .social-row { display:flex; justify-content:center; align-items:center; gap:14px; }
-    .social-btn { display:inline-flex; align-items:center; justify-content:center; width:40px; height:40px; border-radius:10px; background:#18171a; border:1px solid #2d2c30; box-shadow:0 2px 8px #0006; transition:.15s transform, .15s box-shadow }
+    .social-row { display:flex; justify-content:center; align-items:center; gap:14px }
+    .social-btn { display:inline-flex; align-items:center; justify-content:center; width:40px; height:40px; border-radius:10px; background:#18171a; border:1px solid #2d2c30; box-shadow:0 2px 8px #0006; transition:.15s transform,.15s box-shadow }
     .social-btn:hover { transform:translateY(-2px); box-shadow:0 6px 18px #0009 }
     .social-icon { width:24px; height:24px; display:block }
 
-    /* Verify line beneath social icons */
-    .verify-line{
-      text-align:center;
-      margin-top:12px;
-      font-size:1.02em;
-      color:#d8d3c0;
-      letter-spacing:.01em;
-    }
-    .verify-line b,
-    .verify-line a{
-      color:#ffd700;
-      font-weight:700;
-      text-decoration:none;
-    }
+    /* Verify line */
+    .verify-line{ text-align:center; margin-top:12px; font-size:1.02em; color:#d8d3c0; letter-spacing:.01em }
+    .verify-line b, .verify-line a{ color:#ffd700; font-weight:700; text-decoration:none }
     .verify-line a:hover{ text-decoration:underline }
 
+    /* OTC */
     .otc-block { background:#232227; border-radius:11px; text-align:center; padding:32px 14px 26px; margin:0 auto 38px; max-width:900px; box-shadow:0 4px 30px #000a }
     .otc-banner { font-size:.95em; color:#ffd36d; margin:-6px 0 10px }
     .otc-banner a { color:#ffd700; text-decoration:underline }
     .otc-title { font-size:1.25em; font-weight:700; color:#fff; margin-bottom:12px }
-    .rate-line { font-size:.95em; color:#bdbdbd; margin:-2px 0 16px }
-    .badge { display:inline-block; padding:2px 8px; border-radius:999px; font-size:.8em; margin-left:8px }
-    .badge.live { background:#0f3; color:#000 }
+
+    /* Rate line styled like example */
+    .rate-line { font-size:1.05em; color:#d8d8d8; margin:0 0 16px; display:flex; gap:10px; justify-content:center; align-items:center; flex-wrap:wrap }
+    .badge { display:inline-block; padding:6px 14px; border-radius:999px; font-size:.9em; line-height:1; font-weight:800; letter-spacing:.02em }
+    .badge.live { background:#00ff66; color:#000 }
     .badge.off { background:#f55; color:#fff }
-    .connect-btn { padding:12px 28px; font-size:1rem; font-weight:600; border:none; border-radius:8px; background:#111; color:#fff; cursor:pointer; transition:.2s; margin-top:14px }
-    .connect-btn:hover { background:#000 }
+    .muted { color:#bdbdbd; font-size:.95em }
+
+    /* New CTA buttons row */
+    .cta-row { display:flex; gap:10px; justify-content:center; align-items:center; margin:10px 0 14px; flex-wrap:wrap }
+    .btn { appearance:none; border:none; border-radius:10px; padding:12px 18px; font-weight:700; cursor:pointer; transition:.15s transform,.15s box-shadow,.15s background }
+    .btn:active { transform:translateY(1px) }
+    .btn-primary { background:#ffd700; color:#18171a; box-shadow:0 3px 12px #0008; border:1px solid #ffe083 }
+    .btn-primary:hover { background:#e0b600 }
+    .btn-ghost { background:#111; color:#fff; border:1px solid #333 }
+    .btn-ghost:hover { background:#000 }
+
+    .grid-controls{ display:grid; gap:12px; justify-items:center; margin-bottom:14px }
+    .row{ display:flex; gap:10px; align-items:center; justify-content:center; width:100% }
+    input[type="number"]{ width:320px; max-width:100%; padding:10px; border-radius:8px; border:1px solid #333; background:#111; color:#fff }
+    .pill{ font-size:.9em; color:#bdbdbd }
+
+    .results-row{ display:flex; gap:18px; flex-wrap:wrap; justify-content:center; margin:8px 0 18px }
+    .result-box{ background:#111; border:1px solid #333; border-radius:10px; padding:12px 16px; min-width:200px }
+    .result-head{ font-size:.9em; color:#bdbdbd }
+    .result-val{ font-size:1.25em; font-weight:700 }
+
+    .tokenomics-box{ background:#1d1c21; border:1.5px solid #c6a450; border-radius:12px; padding:14px 16px; margin:12px auto 8px; max-width:720px; text-align:left; color:#e0cf93; box-shadow:0 2px 12px #0006 }
+    .tokenomics-box .line{ display:flex; gap:10px; align-items:baseline; margin:6px 0 }
+    .tokenomics-box b{ color:#ffd700 }
+
+    .otc-disclaimer{ margin-top:12px; font-size:.92em; color:#f55; line-height:1.5 }
+
+    /* Modal */
+    .modal-backdrop{ position:fixed; inset:0; background:#000a; display:none; align-items:center; justify-content:center; z-index:9999; padding:20px }
+    .modal{ background:#1a1a1a; border:1px solid #333; border-radius:14px; width:100%; max-width:420px; padding:22px 18px; text-align:center; box-shadow:0 8px 30px #000c }
+    .modal h3{ margin:0 0 8px; color:#ffd700 }
+    .modal p{ margin:0 0 16px; color:#ddd }
+    .modal .close-btn{ padding:10px 16px; border-radius:10px; border:1px solid #333; background:#111; color:#fff; font-weight:700; cursor:pointer }
+    .modal .close-btn:hover{ background:#000 }
 
     .section-title { text-align:center; font-size:1.55em; margin:44px 0 22px; color:#ffd700; letter-spacing:.02em; font-weight:700 }
     .cards-row { display:flex; justify-content:center; gap:36px; flex-wrap:wrap; margin-bottom:40px; padding:0 12px }
@@ -81,27 +105,6 @@
 
     .hits-block { background:#18171a; border-radius:12px; padding:22px 18px 15px; max-width:470px; margin:0 auto 36px; box-shadow:0 2px 16px #0005; color:#ffe083; text-align:center; font-size:1.12em }
 
-    .tokenomics-box{
-      background:#1d1c21;
-      border:1.5px solid #c6a450;
-      border-radius:12px;
-      padding:14px 16px;
-      margin:12px auto 8px;
-      max-width:720px;
-      text-align:left;
-      color:#e0cf93;
-      box-shadow:0 2px 12px #0006;
-    }
-    .tokenomics-box .line{ display:flex; gap:10px; align-items:baseline; margin:6px 0 }
-    .tokenomics-box b{ color:#ffd700 }
-
-    .otc-disclaimer{
-      margin-top:12px;
-      font-size:0.92em;
-      color:#f55;
-      line-height:1.5;
-    }
-
     .legal-disclaimer { background:#000; color:#aaa; text-align:center; padding:30px 15px; font-size:.85rem; line-height:1.5; max-width:900px; margin:50px auto 0; border-radius:6px }
     .legal-disclaimer a { color:#fff; text-decoration:underline }
 
@@ -109,18 +112,7 @@
     .x-handle { display:inline-block; margin-top:4px; font-size:1.02em; color:#ffd700; text-decoration:none; font-weight:600 }
     .x-handle:hover { text-decoration:underline }
 
-    input[type="number"]{ width:320px; max-width:100%; padding:10px; border-radius:8px; border:1px solid #333; background:#111; color:#fff }
-    .grid-controls{ display:grid; gap:12px; justify-items:center; margin-bottom:14px }
-    .grid-controls .row:first-child{ margin-top:12px }
-    .row{ display:flex; gap:10px; align-items:center; justify-content:center; width:100% }
-    .pill{ font-size:.9em; color:#bdbdbd }
-    .results-row{ display:flex; gap:18px; flex-wrap:wrap; justify-content:center; margin:8px 0 18px }
-    .result-box{ background:#111; border:1px solid #333; border-radius:10px; padding:12px 16px; min-width:200px }
-    .result-head{ font-size:.9em; color:#bdbdbd }
-    .result-val{ font-size:1.25em; font-weight:700 }
-    .muted{ color:#bdbdbd; font-size:.95em; margin-top:6px }
-
-    @media (max-width: 700px){
+    @media (max-width:700px){
       header{ margin-top:20px }
       .otc-block{ width:94vw; padding:20px 12px }
       .results-row{ flex-direction:column; align-items:center; gap:12px }
@@ -132,12 +124,7 @@
 </head>
 <body>
   <header>
-    <img
-      src="https://raw.githubusercontent.com/continentalwick/continental-wick/main/assets/logo.png"
-      alt="$WCK Logo"
-      class="logo-wck"
-      width="96" height="96"
-      loading="eager" decoding="async">
+    <img src="https://raw.githubusercontent.com/continentalwick/continental-wick/main/assets/logo.png" alt="$WCK Logo" class="logo-wck" width="96" height="96" loading="eager" decoding="async">
     <h1>CONTINENTAL WICK</h1>
     <div class="tagline">The Utility That Memes. Powered by XRPL.</div>
   </header>
@@ -148,7 +135,6 @@
     <b>Decimals:</b> 6 &mdash; <b>Total Supply:</b> 100,000,000<br>
     <b>XRPL Native Utility &bull; Privacy &bull; Real-World Execution</b>
 
-    <!-- Social icons and verify line -->
     <div class="social-wrap">
       <div class="social-row">
         <a class="social-btn" href="https://x.com/wcktoken" target="_blank" rel="noopener" aria-label="Follow WCK on X">
@@ -176,17 +162,25 @@
     </div>
   </div>
 
-  <!-- OTC SECTION — $0.05/WCK with live XRP/USD -->
+  <!-- OTC -->
   <div class="otc-block" id="wck-otc">
     <div class="otc-banner">
       🚧 OTC sales not live yet. Follow us on <a href="https://x.com/wcktoken" target="_blank" rel="noopener">𝕏</a> for the drop.
     </div>
 
     <div class="otc-title">OTC Trading Preview — $0.05 per WCK</div>
+
+    <!-- Rate line: XRP/USD + LIVE pill + updated time -->
     <div class="rate-line">
-      XRP/USD: $<span id="xrpUsdText">—</span>
+      <span>XRP/USD: $<span id="xrpUsdText">—</span></span>
       <span id="rateBadge" class="badge off">OFFLINE</span>
       <span id="rateTime" class="muted"></span>
+    </div>
+
+    <!-- New CONNECT / BUY row -->
+    <div class="cta-row" aria-label="OTC controls">
+      <button type="button" class="btn btn-ghost" id="btnConnect">CONNECT</button>
+      <button type="button" class="btn btn-primary" id="btnBuy">BUY</button>
     </div>
 
     <div class="grid-controls">
@@ -194,7 +188,6 @@
         <input id="usd" type="number" min="1" step="0.01" placeholder="Enter USD" inputmode="decimal" aria-label="USD amount">
         <span class="pill">(min $1)</span>
       </label>
-
       <div class="muted">Presale price <b>$0.05</b> per WCK</div>
     </div>
 
@@ -212,8 +205,6 @@
     <div id="otcNote" class="muted" style="color:#e0cf93">Enter USD to preview.</div>
     <div id="limitNote" class="muted">Limit per buyer: <b>$5,000</b></div>
 
-    <button class="connect-btn" type="button" aria-disabled="true">Connect Wallet</button>
-
     <div class="tokenomics-box" role="note" aria-label="WCK OTC tokenomics">
       <div class="line">🎯 <span><b>OTC Rate:</b> $0.05 per <b>$WCK</b></span></div>
       <div class="line">📉 <span><b>Public Launch Price:</b> $0.15 per <b>$WCK</b></span></div>
@@ -225,75 +216,45 @@
     </p>
   </div>
 
+  <!-- Cards -->
   <section id="nft-cards" style="text-align:center; padding: 40px 20px; background-color:#111;">
     <h2 class="section-title">NFT TRADING CARDS</h2>
     <div class="cards-row">
       <div class="card-box">
-        <img
-          src="https://raw.githubusercontent.com/continentalwick/continental-wick/main/assets/nfts/CONTINENTAL-WICK-001.png"
-          alt="Card 001 — CONTINENTAL WICK"
-          loading="lazy" decoding="async">
+        <img src="https://raw.githubusercontent.com/continentalwick/continental-wick/main/assets/nfts/CONTINENTAL-WICK-001.png" alt="Card 001 — CONTINENTAL WICK" loading="lazy" decoding="async">
         <div class="card-title">Card 001 — CONTINENTAL WICK<br><small>Codename: The Diamond</small></div>
       </div>
     </div>
 
     <div style="max-width:720px;margin:10px auto 0;text-align:center;padding:12px 16px;">
-      <p style="color:#ffd700;font-weight:700;letter-spacing:.03em;margin:0 0 8px;">
-        COMING SOON
-      </p>
+      <p style="color:#ffd700;font-weight:700;letter-spacing:.03em;margin:0 0 8px;">COMING SOON</p>
       <ul style="list-style:none;padding:0;margin:8px 0 6px;color:#e5e2c9;line-height:1.6;">
         <li><strong style="color:#f8d05f;">Common</strong> — Base-level protocol drops</li>
         <li><strong style="color:#f8d05f;">Rare</strong> — Limited mission-set exclusives</li>
         <li><strong style="color:#f8d05f;">Ultra Rare</strong> — High-value, low-supply protocol icons</li>
       </ul>
-      <p style="color:#ccc;margin:6px 0 0;font-style:italic;">
-        Each card is two-sided — front art, back with bio and rarity details.
-      </p>
-
-      <div style="margin-top:18px;text-align:left;display:inline-block;max-width:620px;color:#e5e2c9;font-size:0.95em;line-height:1.5;">
-        <p style="color:#ffd700;font-weight:700;margin-bottom:6px;">What They Do:</p>
-        <ul style="padding-left:18px;margin:0;">
-          <li><b>Lore Unlocks:</b> Access hidden character files and intel drops.</li>
-          <li><b>Rarity Perks:</b> Higher tiers unlock exclusive drops and events.</li>
-          <li><b>Protocol Missions:</b> Cards act as access keys to special on-chain or off-chain challenges.</li>
-          <li><b>Burn-to-Upgrade:</b> Combine cards to craft higher rarities.</li>
-          <li><b>Meta-Collection Bonuses:</b> Complete sets for unique rewards or NFT weapon drops.</li>
-          <li><b>Storyline Influence:</b> High-tier holders can vote on future protocol moves.</li>
-        </ul>
-      </div>
-
-      <p style="color:#bdbdbd;margin:10px 0 0;font-style:italic;">
-        Collect them all. Secure the set.
-      </p>
+      <p style="color:#ccc;margin:6px 0 0;font-style:italic;">Each card is two-sided — front art, back with bio and rarity details.</p>
     </div>
   </section>
 
+  <!-- White paper -->
   <div class="whitepaper-block">
     <div class="whitepaper-title">White Paper</div>
-    <a 
-      href="https://ipfs.io/ipfs/bafkreig62355qfvwskjs63jk5q2bnysthvsthmglnkkhstsh363hjvyw4e"
-      target="_blank" rel="noopener"
-      style="display:inline-block;margin-top:10px;padding:11px 30px;background:linear-gradient(90deg,#ffd700,#e0b600);color:#18171a;border-radius:8px;font-weight:bold;font-size:1.08em;text-decoration:none;box-shadow:0 2px 8px #0004;border:1.5px solid #ffe083;transition:.15s all;"
-      onmouseover="this.style.background='#e0b600';this.style.color='#000';"
-      onmouseout="this.style.background='linear-gradient(90deg,#ffd700,#e0b600)';this.style.color='#18171a';">
-      View White Paper (PDF)
+    <a href="https://ipfs.io/ipfs/bafkreig62355qfvwskjs63jk5q2bnysthvsthmglnkkhstsh363hjvyw4e"
+       target="_blank" rel="noopener"
+       style="display:inline-block;margin-top:10px;padding:11px 30px;background:linear-gradient(90deg,#ffd700,#e0b600);color:#18171a;border-radius:8px;font-weight:bold;font-size:1.08em;text-decoration:none;box-shadow:0 2px 8px #0004;border:1.5px solid #ffe083;transition:.15s all;"
+       onmouseover="this.style.background='#e0b600';this.style.color='#000';"
+       onmouseout="this.style.background='linear-gradient(90deg,#ffd700,#e0b600)';this.style.color='#18171a';">
+       View White Paper (PDF)
     </a>
   </div>
 
+  <!-- Legal -->
   <div class="legal-disclaimer">
     <p><strong>🛡 Legal Disclaimer</strong></p>
-    <p>
-      CONTINENTAL WICK and the $WCK token are independent creations and are
-      <strong>not affiliated with, endorsed by, or associated with</strong> the
-      <em>John Wick</em> film franchise, Lionsgate Films, Summit Entertainment, or any related trademarks or intellectual property.
-    </p>
-    <p>
-      All references to “CONTINENTAL,” “WICK,” or related terminology are part of a
-      <strong>fictional blockchain protocol universe</strong> developed by the $WCK team.
-      They do <strong>not depict or reference</strong> any characters, stories, or settings from the John Wick franchise.
-    </p>
-    <p style="margin-top:8px;">
-      Immutable proof hosted on IPFS:
+    <p>CONTINENTAL WICK and the $WCK token are independent creations and are <strong>not affiliated with, endorsed by, or associated with</strong> the <em>John Wick</em> film franchise, Lionsgate Films, Summit Entertainment, or any related trademarks or intellectual property.</p>
+    <p>All references to “CONTINENTAL,” “WICK,” or related terminology are part of a <strong>fictional blockchain protocol universe</strong> developed by the $WCK team. They do <strong>not depict or reference</strong> any characters, stories, or settings from the John Wick franchise.</p>
+    <p style="margin-top:8px;">Immutable proof hosted on IPFS:
       <a href="https://ipfs.io/ipfs/bafkreibm6zcx4gcm6dgi6fkoqfzv2btbmbvb5z6ar5wrnmvyvjh654lsvi" target="_blank" rel="noopener">View Here</a>
     </p>
   </div>
@@ -307,7 +268,16 @@
     <div style="margin-top:6px;">&copy; 2025 CONTINENTAL WICK. All rights reserved.</div>
   </footer>
 
-  <noscript><style>.connect-btn{display:none}</style></noscript>
+  <noscript><style>.cta-row{display:none}</style></noscript>
+
+  <!-- Modal markup -->
+  <div id="soonModal" class="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="soonTitle">
+    <div class="modal">
+      <h3 id="soonTitle">OTC COMING SOON</h3>
+      <p>UI preview only. Wallet connection and purchases are disabled until launch</p>
+      <button class="close-btn" id="closeSoon" type="button">Close</button>
+    </div>
+  </div>
 
   <script>
     (function () {
@@ -318,6 +288,12 @@
       const rateTime = $('rateTime');
       const xrpOut = $('xrpOut'), wckOut = $('wckOut'), note = $('otcNote');
 
+      // New: modal controls
+      const soonModal = $('soonModal');
+      const closeSoon = $('closeSoon');
+      const btnConnect = $('btnConnect');
+      const btnBuy = $('btnBuy');
+
       const PRICE_PER_WCK = 0.05;
       const MAX_USD = 5000;
       const API = "https://api.coingecko.com/api/v3/simple/price?ids=ripple&vs_currencies=usd";
@@ -327,6 +303,23 @@
       function fmt(n, d=4){ return Number(n).toFixed(d); }
       function fmtInt(n){ return Math.max(0, Math.floor(Number(n))).toLocaleString(); }
       function stamp(){ const t=new Date(); return t.toLocaleTimeString([], {hour:'2-digit',minute:'2-digit',second:'2-digit'}); }
+
+      function openSoon(){
+        soonModal.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+        closeSoon.focus();
+      }
+      function closeModal(){
+        soonModal.style.display = 'none';
+        document.body.style.overflow = '';
+        btnConnect.blur(); btnBuy.blur();
+      }
+
+      btnConnect.addEventListener('click', openSoon);
+      btnBuy.addEventListener('click', openSoon);
+      closeSoon.addEventListener('click', closeModal);
+      soonModal.addEventListener('click', (e)=>{ if(e.target === soonModal) closeModal(); });
+      window.addEventListener('keydown', (e)=>{ if(e.key === 'Escape' && soonModal.style.display==='flex') closeModal(); });
 
       async function fetchRate() {
         try {
@@ -392,9 +385,7 @@
         wckOut.textContent = fmtInt(wck);
       }
 
-      if (usd) {
-        ['input','change'].forEach(ev => usd.addEventListener(ev, calc));
-      }
+      if (usd) ['input','change'].forEach(ev => usd.addEventListener(ev, calc));
 
       fetchRate();
       setInterval(fetchRate, 60000);
