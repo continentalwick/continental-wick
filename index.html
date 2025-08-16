@@ -43,7 +43,7 @@
     .verify-line b, .verify-line a{ color:#ffd700; font-weight:700; text-decoration:none }
     .verify-line a:hover{ text-decoration:underline }
 
-    /* Blended info strip (NEW) */
+    /* Blended info strip */
     .blend-section {
       margin: 18px auto 14px;
       padding: 10px 16px;
@@ -117,7 +117,7 @@
     .result-head{ font-size:.9em; color:#bdbdbd }
     .result-val{ font-size:1.25em; font-weight:700 }
 
-    .notes-wrap { margin-top:18px } /* pushed further down per request */
+    .notes-wrap { margin-top:18px }
 
     .tokenomics-box{ background:#1d1c21; border:1.5px solid #c6a450; border-radius:12px; padding:14px 16px; margin:14px auto 8px; max-width:720px; text-align:left; color:#e0cf93; box-shadow:0 2px 12px #0006 }
     .tokenomics-box .line{ display:flex; gap:10px; align-items:baseline; margin:6px 0 }
@@ -154,6 +154,19 @@
     .modal p{ margin:0 0 16px; color:#ddd }
     .modal .close-btn{ padding:10px 16px; border-radius:10px; border:1px solid #333; background:#111; color:#fff; font-weight:700; cursor:pointer }
     .modal .close-btn:hover{ background:#000 }
+
+    /* WHAT THEY DO block styles (new) */
+    .cards-utility{
+      margin:18px auto 0; padding:14px 16px;
+      max-width:720px; text-align:left; color:#e5e2c9; font-size:.96em; line-height:1.55;
+      background:#141416; border:1px solid #2f2b1d; border-radius:10px; box-shadow:0 2px 12px #0006;
+    }
+    .cards-utility h3{
+      margin:0 0 8px; color:#ffd700; font-size:1.05em; letter-spacing:.03em
+    }
+    .cards-utility ul{ margin:0; padding-left:18px }
+    .cards-utility li{ margin:6px 0 }
+    .cards-utility b{ color:#ffd700 }
 
     @media (max-width:700px){
       header{ margin-top:20px }
@@ -296,7 +309,23 @@
         <li><strong style="color:#f8d05f;">Rare</strong> — Limited mission-set exclusives</li>
         <li><strong style="color:#f8d05f;">Ultra Rare</strong> — High-value, low-supply protocol icons</li>
       </ul>
-      <p style="color:#ccc;margin:6px 0 0;font-style:italic;">Each card is two-sided — front art, back with bio and rarity details.</p>
+      <p style="color:#ccc;margin:6px 0 10px;font-style:italic;">Each card is two-sided — front art, back with bio and rarity details.</p>
+
+      <!-- WHAT THEY DO (NEW) -->
+      <div class="cards-utility">
+        <h3>WHAT THEY DO</h3>
+        <ul>
+          <li><b>🔓 Lore Unlocks:</b> Holders access hidden dossiers, encrypted intel, and character backstories.</li>
+          <li><b>⭐ Rarity Perks:</b> Higher-tier cards open exclusive OTC windows, drops, and voting rights.</li>
+          <li><b>🎯 Protocol Missions:</b> Cards double as access keys for on-chain and off-chain missions with rewards.</li>
+          <li><b>🔥 Burn-to-Upgrade:</b> Craft stronger cards by burning duplicates, fueling collector trade.</li>
+          <li><b>📈 Market Ready:</b> Tradable on XRPL NFT markets with royalties routed to the treasury.</li>
+        </ul>
+      </div>
+
+      <p style="color:#bdbdbd;margin:10px 0 0;font-style:italic;">
+        Collect them all. Secure the set.
+      </p>
     </div>
   </section>
 
