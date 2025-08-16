@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>CONTINENTAL WICK ($WCK)</title>
-  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 
   <!-- Icons / previews -->
   <link rel="icon" href="https://raw.githubusercontent.com/continentalwick/continental-wick/main/assets/logo.png">
@@ -60,23 +60,37 @@
 
     /* Buttons */
     .cta-row { display:flex; gap:10px; justify-content:center; align-items:center; margin:10px 0 14px; flex-wrap:wrap }
-    .btn { appearance:none; border:none; border-radius:10px; padding:12px 18px; font-weight:700; cursor:pointer; transition:.15s transform,.15s box-shadow,.15s background }
+    .btn { appearance:none; border:none; border-radius:12px; padding:12px 18px; font-weight:800; letter-spacing:.02em; cursor:pointer; transition:.15s transform,.15s box-shadow,.15s background,.15s border-color }
     .btn:active { transform:translateY(1px) }
     .btn-primary { background:#ffd700; color:#18171a; box-shadow:0 3px 12px #0008; border:1px solid #ffe083 }
     .btn-primary:hover { background:#e0b600 }
     .btn-ghost { background:#111; color:#fff; border:1px solid #333 }
     .btn-ghost:hover { background:#000 }
-    .btn-lg { padding:14px 22px; font-size:1.05em }
-    .btn-outline-gold { background:transparent; color:#ffd700; border:1.5px solid #ffd700 }
-    .btn-outline-gold:hover { background:#2a281f }
+    .btn-lg { padding:14px 24px; font-size:1.06em }
+
+    /* Premium trustline button */
+    .btn-trustline {
+      background: radial-gradient(120% 120% at 50% -10%, #ffe083 0%, #b8942e 60%, #2a261a 100%);
+      color:#0c0b07;
+      border:1.5px solid #e5c767;
+      box-shadow:0 6px 22px rgba(255, 208, 64, .18), inset 0 1px 0 rgba(255,255,255,.18);
+    }
+    .btn-trustline:hover { filter:brightness(1.06) }
+    .btn-trustline .mini { display:block; font-size:.78em; font-weight:600; opacity:.9; color:#120e05; margin-top:2px }
 
     /* Inputs and results */
     .grid-controls{ display:grid; gap:12px; justify-items:center; margin-bottom:14px }
     .row{ display:flex; gap:10px; align-items:center; justify-content:center; width:100% }
-    input[type="number"]{ width:320px; max-width:100%; padding:10px; border-radius:8px; border:1px solid #333; background:#111; color:#fff }
+
+    /* iOS zoom guard: keep font-size >= 16px */
+    input, select, textarea { font-size:16px }
+    input[type="number"]{
+      width:320px; max-width:100%;
+      padding:12px; border-radius:8px; border:1px solid #333; background:#111; color:#fff
+    }
     .pill{ font-size:.9em; color:#bdbdbd }
 
-    .results-row{ display:flex; gap:18px; flex-wrap:wrap; justify-content:center; margin:8px 0 10px }
+    .results-row{ display:flex; gap:18px; flex-wrap:wrap; justify-content:center; margin:8px 0 12px }
     .result-box{ background:#111; border:1px solid #333; border-radius:10px; padding:12px 16px; min-width:200px }
     .result-head{ font-size:.9em; color:#bdbdbd }
     .result-val{ font-size:1.25em; font-weight:700 }
@@ -182,14 +196,12 @@
       <span id="rateTime" class="muted"></span>
     </div>
 
-    <!-- Trustline above CONNECT -->
+    <!-- Trustline above CONNECT (no external link) -->
     <div class="cta-row" aria-label="Trustline">
-      <a
-        class="btn btn-outline-gold"
-        href="https://xrpl.services/?issuer=rpFVEydkZrUjf4tcbLeDeVqXm5zYQGtXWm&currency=WCK&limit=100000000"
-        target="_blank" rel="noopener"
-        title="Set trustline to $WCK in Xaman"
-      >Set $WCK Trustline</a>
+      <button type="button" class="btn btn-trustline" id="btnTrust">
+        🗝️ Set $WCK Trustline
+        <span class="mini">Xaman flow coming soon</span>
+      </button>
     </div>
 
     <!-- CONNECT above USD input (larger) -->
@@ -216,8 +228,8 @@
       </div>
     </div>
 
-    <!-- BUY directly under “You’ll receive” -->
-    <div class="cta-row" aria-label="OTC buy" style="margin-top:-6px;">
+    <!-- BUY directly under “You’ll receive” — pushed down one line -->
+    <div class="cta-row" aria-label="OTC buy" style="margin-top:6px; margin-bottom:2px;">
       <button type="button" class="btn btn-primary" id="btnBuy">BUY</button>
     </div>
 
@@ -312,6 +324,7 @@
       const closeSoon = $('closeSoon');
       const btnConnect = $('btnConnect');
       const btnBuy = $('btnBuy');
+      const btnTrust = $('btnTrust');
 
       const PRICE_PER_WCK = 0.05;
       const MAX_USD = 5000;
@@ -331,12 +344,13 @@
       function closeModal(){
         soonModal.style.display = 'none';
         document.body.style.overflow = '';
-        btnConnect?.blur(); btnBuy?.blur();
+        btnConnect?.blur(); btnBuy?.blur(); btnTrust?.blur();
       }
 
       // Wire buttons to modal
       btnConnect.addEventListener('click', openSoon);
       btnBuy.addEventListener('click', openSoon);
+      btnTrust.addEventListener('click', openSoon);
       closeSoon.addEventListener('click', closeModal);
       soonModal.addEventListener('click', (e)=>{ if(e.target === soonModal) closeModal(); });
       window.addEventListener('keydown', (e)=>{ if(e.key === 'Escape' && soonModal.style.display==='flex') closeModal(); });
