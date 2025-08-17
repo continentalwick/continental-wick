@@ -3,13 +3,13 @@
 
 # --- Original XRPL-style blocks (keep)
 [[CURRENCIES]]
-code            = "WCK"
-currency_hex    = "57434B0000000000000000000000000000000000"
-issuer          = "rpFVEydkZrUjf4tcbLeDeVqXm5zYQGtXWm"
-network         = "main"
-name            = "WCK"
-desc            = "The official $WCK token — native to the CONTINENTAL protocol. Powered by XRPL for speed, privacy, and real-world execution."
-icon            = "https://wicktoken.net/.well-known/logo.png"
+code             = "WCK"
+currency_hex     = "57434B0000000000000000000000000000000000"
+issuer           = "rpFVEydkZrUjf4tcbLeDeVqXm5zYQGtXWm"
+network          = "main"
+name             = "CONTINENTAL WICK ($WCK)"
+desc             = "The official $WCK token — native to the CONTINENTAL protocol. Powered by XRPL for speed, privacy, and real-world execution."
+icon             = "https://wicktoken.net/.well-known/logo.png"
 display_decimals = 6
 
 [[CURRENCIES.urls]]
@@ -56,13 +56,13 @@ desc    = "Principal wallet"
 # --- XRPLMETA-preferred blocks (add)
 [[ISSUERS]]
 address = "rpFVEydkZrUjf4tcbLeDeVqXm5zYQGtXWm"
-name    = "$WCK"
+name    = "CONTINENTAL WICK ($WCK)"
 # Tip: set the on-ledger Domain for this account to wicktoken.net
 
 [[TOKENS]]
 issuer   = "rpFVEydkZrUjf4tcbLeDeVqXm5zYQGtXWm"
 currency = "WCK"
-name     = "WCK"
+name     = "CONTINENTAL WICK ($WCK)"
 desc     = "The official $WCK token — native to the CONTINENTAL protocol. Powered by XRPL for speed, privacy, and real-world execution."
 icon     = "https://wicktoken.net/.well-known/logo.png"
 
