@@ -1,4 +1,4 @@
-# XRPL Token TOML for $WCK
+# XRPL Token TOML for CONTINENTAL WICK ($WCK)
 # Path: /.well-known/xrp-ledger.toml
 
 [[CURRENCIES]]
@@ -30,14 +30,14 @@ url   = "https://t.me/wcktoken"
 address = "rpFVEydkZrUjf4tcbLeDeVqXm5zYQGtXWm"
 network = "main"
 role    = "issuer"
-desc    = "Official $WCK token issuer"
+desc    = "Official CONTINENTAL WICK token issuer"
 domain  = "wicktoken.net"
 
 [[ACCOUNTS]]
 address = "rstRegwzojXJTvhsiTnmDPbPTSKBPBZ55t"
 network = "main"
 role    = "treasury"
-desc    = "Treasury / OTC"
+desc    = "Treasury / OTC distributions"
 
 [[ACCOUNTS]]
 address = "rwzsLBhRkyux8rUBCZEmkuJcDK5s3LSB3K"
@@ -73,3 +73,7 @@ url  = "https://x.com/wcktoken"
 [[TOKENS.URLS]]
 type = "social"
 url  = "https://t.me/wcktoken"
+
+[[DOCUMENTS]]
+type = "Self-Assessment Questionnaire"
+url  = "https://wicktoken.net/.well-known/self-assessment.md"
