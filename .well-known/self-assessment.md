@@ -1,6 +1,6 @@
 # 📋 XRPL Token Issuer Self-Assessment Questionnaire — $WCK
 
-**Token Name:** $WCK  
+**Token Name:** CONTINENTAL WICK  
 **Ticker:** WCK  
 **Chain:** XRP Ledger (XRPL)  
 **Issuer Type:** Utility Meme Token (non-redeemable, non-stablecoin)  
