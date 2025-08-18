@@ -68,13 +68,3 @@ The $WCK project publishes this self-assessment to ensure transparency with the 
 While meme-branded, $WCK is protocol-driven and **inherits XRPL utility** (instant settlement, low fees, decentralized exchange liquidity).  
 
 ---
-
-## 🔗 How to Publish
-1. Save as `self-assessment.md` or export as PDF.  
-2. Host at: `https://wicktoken.net/.well-known/self-assessment.pdf`  
-3. Add to TOML:  
-
-```toml
-[[DOCUMENTS]]
-type = "Self-Assessment Questionnaire"
-url  = "https://wicktoken.net/.well-known/self-assessment.pdf"
