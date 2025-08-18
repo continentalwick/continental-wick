@@ -1,31 +1,30 @@
-# XRPL Token Self-Assessment for $WCK
-# Path: /.well-known/xrp-ledger.toml
+# XRPL Token Self-Assessment — $WCK
 
 [[SELF_ASSESSMENT]]
-network = "main"
-currency_code = "WCK"
-issuer = "rpFVEydkZrUjf4tcbLeDeVqXm5zYQGtXWm"
+network      = "main"
+code         = "WCK"
+issuer       = "rpFVEydkZrUjf4tcbLeDeVqXm5zYQGtXWm"
+name         = "CONTINENTAL WICK"
+desc         = "The official $WCK token — native to the CONTINENTAL protocol. Powered by XRPL for speed, privacy, and real-world execution. The Utility That Memes."
+supply       = "100000000"
+decimals     = 6
 
-# Basic Project Info
-project_name = "CONTINENTAL WICK"
-token_name   = "$WCK"
-description  = "The official $WCK token — native to the CONTINENTAL protocol. Powered by XRPL for speed, privacy, and real-world execution. The Utility That Memes."
+[[SELF_ASSESSMENT.urls]]
+type  = "website"
+url   = "https://wicktoken.net"
 
-# Supply + Decimals
-total_supply     = "100000000"
-display_decimals = 6
+[[SELF_ASSESSMENT.urls]]
+type  = "social"
+url   = "https://x.com/wcktoken"
 
-# Project URLs
-website   = "https://wicktoken.net"
-x_social  = "https://x.com/wcktoken"
-telegram  = "https://t.me/wcktoken"
+[[SELF_ASSESSMENT.urls]]
+type  = "social"
+url   = "https://t.me/wcktoken"
 
-# Compliance + Transparency
-kyc_status        = "Pending"
-legal_disclaimer  = "The $WCK token is an independent creation and not affiliated with or endorsed by Lionsgate Films, Summit Entertainment, or the John Wick franchise. CONTINENTAL WICK is a fictional blockchain protocol universe developed independently."
-audited           = "In progress"
-audit_provider    = "TBD"
-token_distribution = "Mint, Treasury, Liquidity, Reserve wallets established and funded. OTC proceeds flow into Liquidity and Reserve per tokenomics plan."
+[[SELF_ASSESSMENT.compliance]]
+kyc            = "pending"
+audit          = "in-progress"
+disclaimer     = "The $WCK token is an independent creation and not affiliated with or endorsed by Lionsgate Films, Summit Entertainment, or the John Wick franchise. CONTINENTAL WICK is a fictional blockchain protocol universe developed independently."
 
-# Risk + Notes
-risk_disclaimer = "Cryptocurrency investments carry risk. $WCK has no guaranteed returns. OTC sales are one-way until public launch."
+[[SELF_ASSESSMENT.risk]]
+note = "Cryptocurrency investments carry risk. $WCK has no guaranteed returns. OTC sales are one-way until public launch."
