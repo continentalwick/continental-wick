@@ -123,6 +123,8 @@
     .tokenomics-box .line{ display:flex; gap:10px; align-items:baseline; margin:6px 0 }
     .tokenomics-box b{ color:#ffd700 }
 
+    .otc-disclaimer{ margin-top:12px; font-size:.92em; color:#f55; line-height:1.5 }
+
     /* Disclaimer (red alert style) */
     .disclaimer {
       font-size: 0.75rem;
@@ -143,15 +145,28 @@
 
     /* Sections below */
     .section-title { text-align:center; font-size:1.55em; margin:44px 0 22px; color:#ffd700; letter-spacing:.02em; font-weight:700 }
-    /* ... rest unchanged ... */
+
+    @media (max-width:700px){
+      header{ margin-top:20px }
+      .otc-block{ width:94vw; padding:20px 12px }
+      .results-row{ flex-direction:column; align-items:center; gap:12px }
+      .result-box{ width:100%; max-width:320px; min-width:0 }
+      .cards-row{ gap:18px }
+      .tokenomics-box{ margin-left:10px; margin-right:10px }
+      .btn-buy{ width:100%; max-width:320px }
+    }
   </style>
 </head>
 <body>
-  <!-- ... top content unchanged ... -->
+  <header>
+    <img src="https://raw.githubusercontent.com/continentalwick/continental-wick/main/assets/logo.png" alt="$WCK Logo" class="logo-wck" width="96" height="96" loading="eager" decoding="async">
+    <h1>CONTINENTAL WICK</h1>
+    <div class="tagline">The Utility That Memes. Powered by XRPL.</div>
+  </header>
 
   <!-- OTC -->
   <div class="otc-block" id="wck-otc">
-    <!-- ... OTC UI unchanged ... -->
+    <!-- ... OTC UI content above ... -->
 
     <div class="tokenomics-box" role="note" aria-label="WCK OTC tokenomics">
       <div class="line">🎯 <span><b>OTC Rate:</b> $0.05 per <b>$WCK</b></span></div>
@@ -168,8 +183,12 @@
     <p class="countdown-warning">
       Countdown to public launch begins once 500B are sold — early OTC holders lock in 3× value at launch.
     </p>
+
+    <p class="otc-disclaimer">
+      🔒 $WCK OTC is a one-way sale until on-chain launch. No sellbacks or redemptions during the presale phase.
+    </p>
   </div>
 
-  <!-- ... rest of page unchanged ... -->
+  <!-- rest of your site remains unchanged ... -->
 </body>
 </html>
