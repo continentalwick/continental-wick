@@ -80,4 +80,8 @@ url  = "https://wicktoken.net/.well-known/self-assessment.md"
 
 [[DOCUMENTS]]
 type = "Whitepaper"
+url  = "https://wicktoken.net/.well-known/whitepaper.md"
+
+[[DOCUMENTS]]
+type = "Whitepaper (IPFS)"
 url  = "https://ipfs.io/ipfs/bafkreicwitwwzmgohfh6xxjvczblyyoihlfoxkctpwxbtzgk5k2pa7ev5u"
