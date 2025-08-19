@@ -123,8 +123,22 @@
     .tokenomics-box .line{ display:flex; gap:10px; align-items:baseline; margin:6px 0 }
     .tokenomics-box b{ color:#ffd700 }
 
-    /* ↓ smaller first disclaimer text */
-    .otc-disclaimer{ margin-top:12px; font-size:.70em; color:#f55; line-height:1.5 }
+    /* 🔒 first disclaimer: small, bold, red */
+    .otc-disclaimer{
+      margin-top:12px;
+      font-size:.85em;       /* keep the small size */
+      font-weight:700;       /* bold */
+      color:#f55;
+      line-height:1.5;
+    }
+    /* ⏳ second line: original size, gold, no bold */
+    .otc-disclaimer .countdown{
+      display:block;
+      margin-top:8px;
+      color:#ffd700;
+      font-size:1rem;        /* original text size (not scaled by .85em) */
+      font-weight:400;       /* no bold */
+    }
 
     /* Sections below */
     .section-title { text-align:center; font-size:1.55em; margin:44px 0 22px; color:#ffd700; letter-spacing:.02em; font-weight:700 }
@@ -289,8 +303,7 @@
 
     <p class="otc-disclaimer">
       🔒 $WCK OTC is a one-way sale until on-chain launch. No sellbacks or redemptions during the presale phase.
-      <br>
-      <span style="display:block;margin-top:8px;color:#ffd700;font-size:1.08em;font-weight:normal;">
+      <span class="countdown">
         ⏳ Countdown to public launch begins once 50B $WCK are sold — early OTC holders lock in 3× value at launch.
       </span>
     </p>
