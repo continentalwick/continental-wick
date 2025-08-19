@@ -123,21 +123,21 @@
     .tokenomics-box .line{ display:flex; gap:10px; align-items:baseline; margin:6px 0 }
     .tokenomics-box b{ color:#ffd700 }
 
-    /* 🔒 first disclaimer: small, bold, red */
+    /* 🔒 first disclaimer: now exactly 0.72rem, bold, red */
     .otc-disclaimer{
       margin-top:12px;
-      font-size:.85em;       /* keep the small size */
-      font-weight:700;       /* bold */
-      color:#f55;
+      font-size:0.72rem;   /* <- updated per request */
+      font-weight:700;     /* bold */
+      color:#f55;          /* red */
       line-height:1.5;
     }
-    /* ⏳ second line: original size, gold, no bold */
+    /* ⏳ second line: original gold, no bold (unchanged) */
     .otc-disclaimer .countdown{
       display:block;
       margin-top:8px;
       color:#ffd700;
-      font-size:1rem;        /* original text size (not scaled by .85em) */
-      font-weight:400;       /* no bold */
+      font-size:1rem;
+      font-weight:400;
     }
 
     /* Sections below */
