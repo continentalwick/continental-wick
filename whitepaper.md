@@ -3,13 +3,11 @@
 ## Token Overview
 - **Name:** CONTINENTAL WICK  
 - **Symbol:** $WCK  
-- **Supply:** 100,000,000.000000  
+- **Supply:** 100,000,000  
 - **Decimals:** 6  
 - **Network:** XRPL (XRP Ledger)  
 - **Mint (Issuer Address):** `rpFVEydkZrUjf4tcbLeDeVqXm5zYQGtXWm`  
-- **Divisibility:** Yes — Micro-denominations enabled  
-- **1 $WCK = 1,000,000 HITS**  
-- **Each HIT = 0.000001 $WCK**  
+- **Divisibility:** Yes — divisible down to 0.000001 WCK  
 
 ---
 
@@ -19,14 +17,14 @@ CONTINENTAL WICK is the official token of the CONTINENTAL protocol, built on XRP
 ---
 
 ## Protocol Utility
-The $WCK token activates a protocol-grade micro-denomination system built for:
+The $WCK token supports precise divisibility for:
 - Smart contracts  
 - Streaming payments  
 - Atomic swaps  
 - OTC execution  
 - Real-world settlement  
 
-Each token is divisible into **1,000,000 HITS**, unlocking precision at scale for global commerce and programmable finance.
+Each token is divisible down to **0.000001 WCK (6 decimals)**, unlocking precision at scale for global commerce and programmable finance.
 
 ---
 
