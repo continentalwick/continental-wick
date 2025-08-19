@@ -123,22 +123,7 @@
     .tokenomics-box .line{ display:flex; gap:10px; align-items:baseline; margin:6px 0 }
     .tokenomics-box b{ color:#ffd700 }
 
-    /* DISCLAIMER + COUNTDOWN */
-    .otc-disclaimer{
-      margin-top:12px;
-      font-size:0.72rem;   /* smaller as requested */
-      font-weight:700;     /* bold */
-      color:#c00;          /* red */
-      line-height:1.5;
-    }
-    .otc-disclaimer .countdown{
-      display:block;
-      margin-top:12px;
-      color:#ffd700;       /* gold */
-      font-weight:400;     /* not bold */
-      font-size:1.35rem;   /* larger, like your screenshot */
-      line-height:1.4;
-    }
+    .otc-disclaimer{ margin-top:12px; font-size:.92em; color:#f55; line-height:1.5 }
 
     /* Sections below */
     .section-title { text-align:center; font-size:1.55em; margin:44px 0 22px; color:#ffd700; letter-spacing:.02em; font-weight:700 }
@@ -204,6 +189,7 @@
   <div class="token-details">
     <b>Token:</b> <span style="color:#ffd700;">$WCK</span> &mdash;
     <b>Issuer:</b> <code>rpFVEydkZrUjf4tcbLeDeVqXm5zYQGtXWm</code>
+    <!-- moved Decimals / Supply / tagline into blended section below -->
     <div class="social-wrap">
       <div class="social-row">
         <a class="social-btn" href="https://x.com/wcktoken" target="_blank" rel="noopener" aria-label="Follow WCK on X">
@@ -303,8 +289,9 @@
 
     <p class="otc-disclaimer">
       🔒 $WCK OTC is a one-way sale until on-chain launch. No sellbacks or redemptions during the presale phase.
-      <span class="countdown">
-        ⏳ Countdown to public launch begins once 50B $WCK are sold — early OTC holders lock in 3× value at launch.
+      <br>
+      <span style="display:block;margin-top:8px;color:#ffd700;font-size:1.08em;font-weight:700;">
+        ⏳ Countdown to public launch begins once <b>50B $WCK</b> are sold — early OTC holders lock in <b>3×</b> value at launch.
       </span>
     </p>
   </div>
@@ -409,6 +396,8 @@
 
       let xrpUsd = null;
 
+      function fmt(n, d=4){ return Number(n).toFixed(d); }
+      function fmtInt(n){ return Math.max(0, Math.floor(Number(n))).toLocaleString(); }
       function stamp(){ const t=new Date(); return t.toLocaleTimeString([], {hour:'2-digit',minute:'2-digit',second:'2-digit'}); }
 
       function openSoon(){
