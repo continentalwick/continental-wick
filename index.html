@@ -126,9 +126,9 @@
     /* 🔒 first disclaimer: now exactly 0.72rem, bold, red */
     .otc-disclaimer{
       margin-top:12px;
-      font-size:0.72rem;   /* <- updated per request */
-      font-weight:700;     /* bold */
-      color:#f55;          /* red */
+      font-size:0.72rem;
+      font-weight:700;
+      color:#f55;
       line-height:1.5;
     }
     /* ⏳ second line: original gold, no bold (unchanged) */
@@ -152,8 +152,6 @@
 
     .token-details { text-align:center; margin:28px 0 10px; color:#e5e2c9; font-size:1.10em; padding:0 16px }
     .token-details code { color:#ffe083; background:#191817; padding:1.5px 7px; border-radius:6px; font-size:.98em }
-
-    .hits-block { background:#18171a; border-radius:12px; padding:22px 18px 15px; max-width:470px; margin:0 auto 36px; box-shadow:0 2px 16px #0005; color:#ffe083; text-align:center; font-size:1.12em }
 
     .legal-disclaimer { background:#000; color:#aaa; text-align:center; padding:30px 15px; font-size:.85rem; line-height:1.5; max-width:900px; margin:50px auto 0; border-radius:6px }
     .legal-disclaimer a { color:#fff; text-decoration:underline }
@@ -229,13 +227,7 @@
     <span class="line">XRPL Native Utility &bull; Privacy &bull; Real-World Execution</span>
   </div>
 
-  <div class="hits-block">
-    <b>$WCK HITS</b><br>
-    <span><b>1 $WCK = 1,000,000 HITS</b></span>
-    <div class="desc">
-      <b>HITS</b> are the smallest unit of $WCK on XRPL (6 decimals). Perfect for micro-rewards, tipping, NFTs, and game integration.
-    </div>
-  </div>
+  <!-- 🔥 WCK HITS block REMOVED -->
 
   <!-- OTC -->
   <div class="otc-block" id="wck-otc">
@@ -462,7 +454,7 @@
           note.textContent = 'Enter USD to preview.';
           note.style.color = '#e0cf93';
           xrpOut.textContent = '—';
-          wckOut.textContent = '0';
+          wckOut.textContent = '0.000000';   // enforce 6dp when empty
           return;
         }
 
@@ -484,15 +476,16 @@
 
         if (xrpUsd) {
           const xrp = usdVal / xrpUsd;
-          xrpOut.textContent = Number(xrp).toFixed(4);
+          xrpOut.textContent = Number(xrp).toFixed(4);   // XRP stays at 4dp
           xrpUsdText.textContent = xrpUsd.toFixed(4);
         } else {
           xrpOut.textContent = '—';
           xrpUsdText.textContent = '—';
         }
 
+        // WCK output: always 6 decimals
         const wck = usdVal / PRICE_PER_WCK;
-        wckOut.textContent = Math.max(0, Math.floor(Number(wck))).toLocaleString();
+        wckOut.textContent = Number(wck).toFixed(6);
       }
 
       if (usd) ['input','change'].forEach(ev => usd.addEventListener(ev, calc));
