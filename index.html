@@ -123,21 +123,21 @@
     .tokenomics-box .line{ display:flex; gap:10px; align-items:baseline; margin:6px 0 }
     .tokenomics-box b{ color:#ffd700 }
 
-    /* 🔒 first disclaimer: now exactly 0.72rem, bold, red */
+    /* DISCLAIMER + COUNTDOWN */
     .otc-disclaimer{
       margin-top:12px;
-      font-size:0.72rem;   /* <- updated per request */
+      font-size:0.72rem;   /* smaller as requested */
       font-weight:700;     /* bold */
-      color:#f55;          /* red */
+      color:#c00;          /* red */
       line-height:1.5;
     }
-    /* ⏳ second line: original gold, no bold (unchanged) */
     .otc-disclaimer .countdown{
       display:block;
-      margin-top:8px;
-      color:#ffd700;
-      font-size:1rem;
-      font-weight:400;
+      margin-top:12px;
+      color:#ffd700;       /* gold */
+      font-weight:400;     /* not bold */
+      font-size:1.35rem;   /* larger, like your screenshot */
+      line-height:1.4;
     }
 
     /* Sections below */
@@ -328,7 +328,6 @@
       </ul>
       <p style="color:#ccc;margin:6px 0 10px;font-style:italic;">Each card is two-sided — front art, back with bio and rarity details.</p>
 
-      <!-- WHAT THEY DO (NEW) -->
       <div class="cards-utility">
         <h3>WHAT THEY DO</h3>
         <ul>
