@@ -62,7 +62,7 @@ CONTINENTAL WICK and the $WCK token are independent creations and are **not affi
 All references to “CONTINENTAL,” “WICK,” or related terminology are part of a **fictional blockchain protocol universe** developed by the $WCK team and do **not depict or reference** any characters, stories, or settings from the John Wick franchise.
 
 **Immutable proof hosted on IPFS:**  
-[https://ipfs.io/ipfs/bafkreibm6zcx4gcm6dgi6fkoqfzv2btbmbvb5z6ar5wrnmvyvjh654lsvi](https://ipfs.io/ipfs/bafkreibm6zcx4gcm6dgi6fkoqfzv2btbmbvb5z6ar5wrnmvyvjh654lsvi)
+[https://ipfs.io/ipfs/bafkreigabnpmipxqdv6bhispdq7ytmyj5ccoobpfow2fndcnnyjyu2yowe](https://ipfs.io/ipfs/bafkreigabnpmipxqdv6bhispdq7ytmyj5ccoobpfow2fndcnnyjyu2yowe)
 
 ---
 
