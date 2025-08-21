@@ -11,4 +11,3 @@ depict or reference any characters, stories, or settings from the John Wick fran
 $WCK is a utility token built on the **XRP Ledger (XRPL)**. It is not issued or  
 endorsed by Ripple Labs Inc. or the XRP Ledger Foundation.  
 
-Immutable proof hosted on IPFS: *[View Here](https://ipfs.io/)*  
