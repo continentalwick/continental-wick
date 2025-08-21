@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="logo.png" alt="CONTINENTAL WICK Logo" width="200"/>
+</p>
+
 # CONTINENTAL WICK — WHITE PAPER
 
 ---
