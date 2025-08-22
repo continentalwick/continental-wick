@@ -14,6 +14,7 @@
 - **Network:** XRPL (XRP Ledger)  
 - **Mint (Issuer Address):** `rpFVEydkZrUjf4tcbLeDeVqXm5zYQGtXWm`  
 - **Divisibility:** Yes — Micro-denominations enabled  
+- **Website:** [wicktoken.net](https://wicktoken.net)  
 
 ---
 
@@ -72,6 +73,7 @@ $WCK is a **utility token** built on the XRP Ledger (XRPL). It is not issued or 
 ---
 
 ## Official Channels
+- **Website:** [wicktoken.net](https://wicktoken.net)  
 - **𝕏:** [@wcktoken](https://x.com/wcktoken)  
 - **Telegram:** [@wcktoken](https://t.me/wcktoken)  
 
