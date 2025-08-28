@@ -1,0 +1,87 @@
+# XRPL Token TOML for CONTINENTAL WICK ($WCK)
+# Path: /.well-known/xrp-ledger.toml
+
+[[CURRENCIES]]
+code             = "WCK"
+currency_hex     = "57434B0000000000000000000000000000000000"
+issuer           = "rpFVEydkZrUjf4tcbLeDeVqXm5zYQGtXWm"
+network          = "main"
+name             = "CONTINENTAL WICK"
+desc             = "The official $WCK token — native to the CONTINENTAL protocol. Powered by XRPL for speed, privacy, and real-world execution."
+icon             = "https://wicktoken.net/.well-known/logo.png"
+display_decimals = 6
+
+[[CURRENCIES.urls]]
+type  = "website"
+title = "Official Website"
+url   = "https://wicktoken.net"
+
+[[CURRENCIES.urls]]
+type  = "social"
+title = "X Social"
+url   = "https://x.com/wcktoken"
+
+[[CURRENCIES.urls]]
+type  = "social"
+title = "Telegram"
+url   = "https://t.me/wcktoken"
+
+[[ACCOUNTS]]
+address = "rpFVEydkZrUjf4tcbLeDeVqXm5zYQGtXWm"
+network = "main"
+role    = "issuer"
+desc    = "Official CONTINENTAL WICK token issuer"
+domain  = "wicktoken.net"
+
+[[ACCOUNTS]]
+address = "rstRegwzojXJTvhsiTnmDPbPTSKBPBZ55t"
+network = "main"
+role    = "treasury"
+desc    = "Treasury / OTC distributions"
+
+[[ACCOUNTS]]
+address = "rwzsLBhRkyux8rUBCZEmkuJcDK5s3LSB3K"
+network = "main"
+role    = "liquidity"
+desc    = "DEX / pools"
+
+[[ACCOUNTS]]
+address = "rEkZ6smniCBbSuAvNdQfLRKHcgsLXiqEX1"
+network = "main"
+role    = "reserve"
+desc    = "Principal wallet"
+
+[[ISSUERS]]
+address = "rpFVEydkZrUjf4tcbLeDeVqXm5zYQGtXWm"
+name    = "CONTINENTAL WICK"
+
+[[TOKENS]]
+issuer   = "rpFVEydkZrUjf4tcbLeDeVqXm5zYQGtXWm"
+currency = "WCK"
+name     = "CONTINENTAL WICK"
+desc     = "The official $WCK token — native to the CONTINENTAL protocol. Powered by XRPL for speed, privacy, and real-world execution."
+icon     = "https://wicktoken.net/.well-known/logo.png"
+
+[[TOKENS.URLS]]
+type = "website"
+url  = "https://wicktoken.net"
+
+[[TOKENS.URLS]]
+type = "social"
+url  = "https://x.com/wcktoken"
+
+[[TOKENS.URLS]]
+type = "social"
+url  = "https://t.me/wcktoken"
+
+[[DOCUMENTS]]
+type = "Self-Assessment Questionnaire"
+url  = "https://wicktoken.net/.well-known/self-assessment.md"
+
+[[DOCUMENTS]]
+type = "Whitepaper"
+url  = "https://wicktoken.net/.well-known/whitepaper.md"
+
+[[DOCUMENTS]]
+type = "Whitepaper (IPFS)"
+url  = "https://ipfs.io/ipfs/bafkreicwitwwzmgohfh6xxjvczblyyoihlfoxkctpwxbtzgk5k2pa7ev5u"
