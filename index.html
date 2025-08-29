@@ -246,18 +246,21 @@
       <span id="rateTime" class="muted"></span>
     </div>
 
-    <!-- Trustline above CONNECT (no external link) -->
+    <!-- Trustline button (linked) -->
     <div class="cta-row" aria-label="Trustline">
-      <button type="button" class="btn btn-trustline" id="btnTrust">
+      <a
+        class="btn btn-trustline"
+        id="btnTrust"
+        href="https://xrpl.services/?issuer=rpFVEydkZrUjf4tcbLeDeVqXm5zYQGtXWm&currency=WCK&limit=100000000"
+        target="_blank"
+        rel="noopener"
+      >
         🗝️ Set $WCK Trustline
-        <span class="mini">Xaman flow coming soon</span>
-      </button>
+        <span class="mini">Open in xrpl.services</span>
+      </a>
     </div>
 
-    <!-- CONNECT above USD input (larger) -->
-    <div class="cta-row" aria-label="OTC connect">
-      <button type="button" class="btn btn-ghost" style="padding:14px 24px; font-size:1.06em" id="btnConnect">CONNECT</button>
-    </div>
+    <!-- CONNECT button removed -->
 
     <div class="grid-controls">
       <label class="row">
@@ -423,9 +426,7 @@
       // Modal controls
       const soonModal = $('soonModal');
       const closeSoon = $('closeSoon');
-      const btnConnect = $('btnConnect');
       const btnBuy = $('btnBuy');
-      const btnTrust = $('btnTrust');
 
       const PRICE_PER_WCK = 0.05;
       const MAX_USD = 5000;
@@ -443,13 +444,11 @@
       function closeModal(){
         soonModal.style.display = 'none';
         document.body.style.overflow = '';
-        btnConnect?.blur(); btnBuy?.blur(); btnTrust?.blur();
+        btnBuy?.blur();
       }
 
       // Wire buttons to modal
-      btnConnect.addEventListener('click', openSoon);
       btnBuy.addEventListener('click', openSoon);
-      btnTrust.addEventListener('click', openSoon);
       closeSoon.addEventListener('click', closeModal);
       soonModal.addEventListener('click', (e)=>{ if(e.target === soonModal) closeModal(); });
       window.addEventListener('keydown', (e)=>{ if(e.key === 'Escape' && soonModal.style.display==='flex') closeModal(); });
