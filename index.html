@@ -32,16 +32,19 @@
     body { margin:0; background:#121113; color:#f8f8f8; font-family:'Segoe UI',Arial,sans-serif; min-height:100vh; letter-spacing:.01em }
     header { text-align:center; margin:48px auto 12px; padding:0 16px }
 
-    /* ✅ Match BAG hero image sizing */
-    .hero-img { 
-      width: 60%; 
-      max-width: 240px; 
-      height: auto; 
-      margin: 0 auto 20px; 
-      display: block; 
+    /* ✅ Match RAD/BAG hero image sizing */
+    .hero-img {
+      width:55%;
+      max-width:320px;
+      height:auto;
+      margin:0 auto 20px;
+      display:block;
     }
-    @media (max-width: 480px) { 
-      .hero-img { width: 70%; } 
+    @media (max-width:480px){
+      .hero-img{
+        width:65%;
+        max-width:220px;
+      }
     }
 
     /* (Old .logo-wck kept for reference; no longer used)
