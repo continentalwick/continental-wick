@@ -31,7 +31,23 @@
 
     body { margin:0; background:#121113; color:#f8f8f8; font-family:'Segoe UI',Arial,sans-serif; min-height:100vh; letter-spacing:.01em }
     header { text-align:center; margin:48px auto 12px; padding:0 16px }
+
+    /* ✅ Match BAG hero image sizing */
+    .hero-img { 
+      width: 60%; 
+      max-width: 240px; 
+      height: auto; 
+      margin: 0 auto 20px; 
+      display: block; 
+    }
+    @media (max-width: 480px) { 
+      .hero-img { width: 70%; } 
+    }
+
+    /* (Old .logo-wck kept for reference; no longer used)
     .logo-wck { width:96px; height:96px; margin-bottom:14px; border-radius:50%; background:#232227; box-shadow:0 3px 24px #000b; padding:12px; object-fit:contain }
+    */
+
     h1 { font-size:2.7em; margin:6px 0 4px; letter-spacing:.05em; color:#ffd700; font-weight:700 }
     .tagline { font-size:1.12em; color:#e0cf93; margin-bottom:16px }
 
@@ -198,7 +214,7 @@
 </head>
 <body>
   <header>
-    <img src="https://raw.githubusercontent.com/continentalwick/continental-wick/main/assets/logo.png" alt="$WCK Logo" class="logo-wck" width="96" height="96" loading="eager" decoding="async">
+    <img src="https://raw.githubusercontent.com/continentalwick/continental-wick/main/assets/logo.png" alt="$WCK Logo" class="hero-img" loading="eager" decoding="async">
     <h1>CONTINENTAL WICK</h1>
     <div class="tagline">The Utility That Memes. Powered by XRPL.</div>
   </header>
