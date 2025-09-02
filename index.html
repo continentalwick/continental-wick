@@ -4,9 +4,21 @@
   <meta charset="UTF-8">
   <title>CONTINENTAL WICK ($WCK)</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <link rel="icon" href="https://raw.githubusercontent.com/continentalwick/continental-wick/main/assets/logo.png">
-  <link rel="apple-touch-icon" href="https://raw.githubusercontent.com/continentalwick/continental-wick/main/assets/logo.png">
   <link rel="canonical" href="https://wicktoken.net/">
+
+  <!-- Favicons / PWA (local in /assets) -->
+  <link rel="icon" href="/assets/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+  <link rel="manifest" href="/assets/site.webmanifest">
+  <meta name="theme-color" content="#121113">
+  <meta name="application-name" content="$WCK">
+  <meta name="apple-mobile-web-app-title" content="$WCK">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="msapplication-TileColor" content="#C9A227">
+  <meta name="msapplication-config" content="/assets/browserconfig.xml">
 
   <!-- SEO -->
   <meta name="description" content="$WCK – The Utility That Memes. CONTINENTAL protocol agent enforcing value on XRPL. NFT card series, OTC launch, and ledger-driven culture.">
@@ -23,7 +35,6 @@
   <meta name="twitter:title" content="CONTINENTAL WICK ($WCK)">
   <meta name="twitter:description" content="The Utility That Memes. Powered by XRPL.">
   <meta name="twitter:image" content="https://raw.githubusercontent.com/continentalwick/continental-wick/main/assets/logo.png">
-  <meta name="theme-color" content="#121113">
 
   <style>
     * { box-sizing: border-box }
@@ -246,8 +257,8 @@
 
   <!-- NEW blended info strip placed above $WCK HITS -->
   <div class="blend-section" aria-label="Token quick facts">
-    <span class="line"><span class="em">Decimals:</span> 6 &mdash; <span class="em">Total Supply:</span> 100,000,000</span>
-    <span class="line">XRPL Native Utility &bull; Privacy &bull; Real-World Execution</span>
+    <span class="line"><span class="em">Decimals:</span> 6 — <span class="em">Total Supply:</span> 100,000,000</span>
+    <span class="line">XRPL Native Utility • Privacy • Real-World Execution</span>
   </div>
 
   <!-- OTC -->
@@ -279,8 +290,6 @@
       </a>
     </div>
 
-    <!-- CONNECT button removed -->
-
     <div class="grid-controls">
       <label class="row">
         <input id="usd" type="number" min="1" step="0.01" placeholder="Enter USD" inputmode="decimal" aria-label="USD amount">
@@ -300,12 +309,10 @@
       </div>
     </div>
 
-    <!-- BUY directly under “You’ll receive” -->
     <div class="cta-row" aria-label="OTC buy" style="margin-top:6px;">
       <button type="button" class="btn btn-buy" id="btnBuy">BUY</button>
     </div>
 
-    <!-- Notes moved further down a line -->
     <div class="notes-wrap">
       <div id="otcNote" class="muted" style="color:#e0cf93">Enter USD to preview.</div>
       <div id="limitNote" class="muted">Limit per buy: <b>$5,000</b></div>
@@ -325,7 +332,6 @@
     </p>
   </div>
 
-<!-- Cards -->
 <section id="nft-cards" style="text-align:center; padding: 40px 20px; background-color:#111;">
   <h2 class="section-title">NFT TRADING CARDS</h2>
   <div class="cards-row">
@@ -368,7 +374,6 @@
     </div>
   </section>
 
-<!-- Whitepaper button only -->
 <div class="whitepaper-block">
   <a href="https://github.com/continentalwick/continental-wick/blob/aa36f42bb3be95b7c6f92cb1735c15fb6ddc0e26/whitepaper.md" 
      target="_blank" 
@@ -391,7 +396,6 @@
   </a>
 </div>
 
-  <!-- Legal -->
 <div class="legal-disclaimer">
   <h3>🛡 Legal Disclaimer</h3>
   <p>
@@ -411,7 +415,6 @@
     It is not issued or endorsed by Ripple Labs Inc. or the XRP Ledger Foundation.
   </p>
 </div>
-
 
   <footer>
     <div>
@@ -503,7 +506,7 @@
           note.textContent = 'Enter USD to preview.';
           note.style.color = '#e0cf93';
           xrpOut.textContent = '—';
-          wckOut.textContent = '0.000000';   // enforce 6dp when empty
+          wckOut.textContent = '0.000000';
           return;
         }
 
@@ -525,14 +528,13 @@
 
         if (xrpUsd) {
           const xrp = usdVal / xrpUsd;
-          xrpOut.textContent = Number(xrp).toFixed(4);   // XRP stays at 4dp
+          xrpOut.textContent = Number(xrp).toFixed(4);
           xrpUsdText.textContent = xrpUsd.toFixed(4);
         } else {
           xrpOut.textContent = '—';
           xrpUsdText.textContent = '—';
         }
 
-        // WCK output: always 6 decimals
         const wck = usdVal / PRICE_PER_WCK;
         wckOut.textContent = Number(wck).toFixed(6);
       }
