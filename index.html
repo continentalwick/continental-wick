@@ -162,7 +162,7 @@
     .x-handle { display:inline-block; margin-top:4px; font-size:1.02em; color:#ffd700; text-decoration:none; font-weight:600 }
     .x-handle:hover { text-decoration:underline }
 
-    /* Modal */
+    /* Modal + Paybox */
     .modal-backdrop{ position:fixed; inset:0; background:#000a; display:none; align-items:center; justify-content:center; z-index:9999; padding:20px }
     .modal{ background:#1a1a1a; border:1px solid #333; border-radius:14px; width:100%; max-width:420px; padding:22px 18px; text-align:center; box-shadow:0 8px 30px #000c }
     .modal h3{ margin:0 0 8px; color:#ffd700 }
@@ -170,14 +170,9 @@
     .modal .close-btn{ padding:10px 16px; border-radius:10px; border:1px solid #333; background:#111; color:#fff; font-weight:700; cursor:pointer }
     .modal .close-btn:hover{ background:#000 }
 
-    .cards-utility{ margin:18px auto 0; padding:14px 16px; max-width:720px; text-align:left; color:#e5e2c9; font-size:.96em; line-height:1.55; background:#141416; border:1px solid #2f2b1d; border-radius:10px; box-shadow:0 2px 12px #0006; }
-    .cards-utility h3{ margin:0 0 8px; color:#ffd700; font-size:1.05em; letter-spacing:.03em }
-    .cards-utility ul{ margin:0; padding-left:18px }
-    .cards-utility li{ margin:6px 0 }
-    .cards-utility b{ color:#ffd700 }
-
-    /* ✅ Center the “Collect them all…” line */
-    .collect-line{ text-align:center; color:#bdbdbd; margin:10px 0 0; font-style:italic; }
+    .paybox{ display:none; margin-top:14px }
+    .paybox img{ width:220px; height:auto; border-radius:10px; border:1px solid #333; background:#111 }
+    .paybox a{ display:inline-block; margin-top:10px; color:#ffd700; font-weight:700; text-decoration:underline }
     @media (max-width:700px){
       header{ margin-top:20px }
       .otc-block{ width:94vw; padding:20px 12px }
@@ -220,20 +215,16 @@
 
   <div class="blend-section" aria-label="Token quick facts">
     <span class="line"><span class="em">Decimals:</span> 6 &mdash; <span class="em">Total Supply:</span> 100,000,000</span>
-    <span class="line">XRPL Native Utility &bull; Privacy &bull; Real-World Execution</span>
+    <span class="line">XRPL Native Utility • Privacy • Real-World Execution</span>
   </div>
 
   <!-- OTC -->
   <div class="otc-block" id="wck-otc">
-    <div class="otc-banner">
-      🚧 OTC sales not live yet. Follow us on <a href="https://x.com/wcktoken" target="_blank" rel="noopener">𝕏</a> for the drop.
-    </div>
-
-    <div class="otc-title">OTC Trading Preview — $0.05 per WCK</div>
+    <div class="otc-title">OTC Trading — Live</div>
 
     <div class="rate-line">
       <span>XRP/USD: $<span id="xrpUsdText">—</span></span>
-      <span id="rateBadge" class="badge off">OFFLINE</span>
+      <span id="rateBadge" class="badge off">CHECKING</span>
       <span id="rateTime" class="muted"></span>
     </div>
 
@@ -255,7 +246,7 @@
         <input id="usd" type="number" min="1" step="0.01" placeholder="Enter USD" inputmode="decimal" aria-label="USD amount">
         <span class="pill">(min $1)</span>
       </label>
-      <div class="muted">Presale price <b>$0.05</b> per WCK</div>
+      <div class="muted">OTC rate shown live from the desk</div>
     </div>
 
     <div class="results-row">
@@ -270,25 +261,27 @@
     </div>
 
     <div class="cta-row" aria-label="OTC buy" style="margin-top:6px;">
-      <button type="button" class="btn btn-buy" id="btnBuy">BUY</button>
+      <button type="button" class="btn btn-buy" id="btnBuy" disabled>GET XAMAN PAYLINK</button>
+    </div>
+
+    <div class="paybox" id="paybox">
+      <div><img id="qr" alt="Xaman QR"></div>
+      <div><a id="payweb" href="#" target="_blank" rel="noopener">Open in Xaman</a></div>
     </div>
 
     <div class="notes-wrap">
-      <div id="otcNote" class="muted" style="color:#e0cf93">Enter USD to preview.</div>
+      <div id="otcNote" class="muted" style="color:#e0cf93">Enter USD to quote</div>
       <div id="limitNote" class="muted">Limit per buy: <b>$5,000</b></div>
     </div>
 
     <div class="tokenomics-box" role="note" aria-label="WCK OTC tokenomics">
-      <div class="line">🎯 <span><b>OTC Rate:</b> $0.05 per <b>$WCK</b></span></div>
-      <div class="line">📉 <span><b>Public Launch Price:</b> $0.15 per <b>$WCK</b></span></div>
-      <div class="line">✅ <span>OTC buyers are in early — <b>3×</b> value on day one.</span></div>
+      <div class="line">🎯 <span><b>OTC</b> uses a fixed WCK-per-USD rate set by the desk</span></div>
+      <div class="line">🧮 <span>Live XRP/USD is fetched for conversion</span></div>
+      <div class="line">🔒 <span>One-way until public launch</span></div>
     </div>
 
     <p class="otc-disclaimer">
       🔒 $WCK OTC is a one-way sale until on-chain launch. No sellbacks or redemptions during the presale phase.
-      <span class="countdown">
-        ⏳ Countdown to public launch begins once 50B $WCK are sold — early OTC holders lock in 3× value at launch.
-      </span>
     </p>
   </div>
 
@@ -360,11 +353,11 @@
 
   <noscript><style>.cta-row{display:none}</style></noscript>
 
-  <!-- Modal -->
+  <!-- Modal kept for future notices; unused in live OTC -->
   <div id="soonModal" class="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="soonTitle">
     <div class="modal">
-      <h3 id="soonTitle">OTC COMING SOON</h3>
-      <p>UI preview only. Wallet connection and purchases are disabled until launch</p>
+      <h3 id="soonTitle">Notice</h3>
+      <p>—</p>
       <button class="close-btn" id="closeSoon" type="button">Close</button>
     </div>
   </div>
@@ -377,107 +370,119 @@
       const rateBadge = $('rateBadge');
       const rateTime = $('rateTime');
       const xrpOut = $('xrpOut'), wckOut = $('wckOut'), note = $('otcNote');
-
-      // Modal controls
-      const soonModal = $('soonModal');
-      const closeSoon = $('closeSoon');
       const btnBuy = $('btnBuy');
+      const paybox = $('paybox');
+      const qrEl = $('qr');
+      const paywebEl = $('payweb');
 
-      const PRICE_PER_WCK = 0.05;
+      // point to your API. If reverse-proxied on same domain, set API_BASE=''
+      const API_BASE = 'https://otc.wicktoken.net';
+
       const MAX_USD = 5000;
-      const API = "https://api.coingecko.com/api/v3/simple/price?ids=ripple&vs_currencies=usd";
-
-      let xrpUsd = null;
 
       function stamp(){ const t=new Date(); return t.toLocaleTimeString([], {hour:'2-digit',minute:'2-digit',second:'2-digit'}); }
 
-      function openSoon(){
-        soonModal.style.display = 'flex';
-        document.body.style.overflow = 'hidden';
-        closeSoon.focus();
-      }
-      function closeModal(){
-        soonModal.style.display = 'none';
-        document.body.style.overflow = '';
-        btnBuy?.blur();
-      }
-
-      btnBuy.addEventListener('click', openSoon);
-      closeSoon.addEventListener('click', closeModal);
-      soonModal.addEventListener('click', (e)=>{ if(e.target === soonModal) closeModal(); });
-      window.addEventListener('keydown', (e)=>{ if(e.key === 'Escape' && soonModal.style.display==='flex') closeModal(); });
-
-      async function fetchRate() {
-        try {
-          const res = await fetch(API, { cache: 'no-store' });
-          if (!res.ok) throw new Error('Bad status');
-          const data = await res.json();
-          const val = Number(data?.ripple?.usd);
-          if (!isFinite(val) || val <= 0) throw new Error('Bad data');
-
-          xrpUsd = val;
-          xrpUsdText.textContent = val.toFixed(4);
-          rateBadge.textContent = 'LIVE';
-          rateBadge.className = 'badge live';
-          rateTime.textContent = `updated ${stamp()}`;
-          calc();
-        } catch {
-          xrpUsd = null;
-          xrpUsdText.textContent = '—';
-          rateBadge.textContent = 'OFFLINE';
-          rateBadge.className = 'badge off';
-          rateTime.textContent = 'rate unavailable';
-          calc();
-        }
+      async function postJSON(path, body) {
+        const r = await fetch(API_BASE + path, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(body || {})
+        });
+        if (!r.ok) throw new Error('http');
+        return await r.json();
       }
 
-      function calc() {
+      function enableBuy(ok) {
+        btnBuy.disabled = !ok;
+      }
+
+      async function quote(mode, amount) {
+        const d = await postJSON('/api/quote', { mode, amount });
+        return d;
+      }
+
+      async function refresh() {
         const raw = (usd?.value || '').trim();
-
         if (raw === '') {
-          const noteEl = document.getElementById('otcNote');
-          if (noteEl) { noteEl.textContent = 'Enter USD to preview.'; noteEl.style.color = '#e0cf93'; }
-          if (xrpOut) xrpOut.textContent = '—';
-          if (wckOut) wckOut.textContent = '0.000000';
+          note.textContent = 'Enter USD to quote';
+          xrpOut.textContent = '—';
+          wckOut.textContent = '0';
+          enableBuy(false);
           return;
         }
 
         let usdVal = Number(raw);
-        if (!isFinite(usdVal)) usdVal = 0;
+        if (!isFinite(usdVal) || usdVal <= 0) usdVal = 0;
 
-        const noteEl = document.getElementById('otcNote');
         if (usdVal < 1) {
-          if (noteEl) { noteEl.textContent = 'Minimum is $1'; noteEl.style.color = '#ffb4b4'; }
-        } else if (usdVal > 5000) {
-          if (noteEl) { noteEl.textContent = 'Max per buyer is $5,000'; noteEl.style.color = '#ffdf91'; }
-          usdVal = 5000;
-          if (usd) usd.value = usdVal;
+          note.textContent = 'Minimum is $1';
+          enableBuy(false);
+          return;
+        }
+        if (usdVal > MAX_USD) {
+          usdVal = MAX_USD;
+          usd.value = usdVal;
+          note.textContent = 'Max per buy is $5,000';
         } else {
-          if (noteEl) { noteEl.textContent = 'Coming soon — UI preview only. No wallet connection.'; noteEl.style.color = '#e0cf93'; }
+          note.textContent = 'Live quote ready';
         }
 
-        if (xrpUsd && xrpOut) {
-          const xrp = usdVal / xrpUsd;
-          xrpOut.textContent = Number(xrp).toFixed(4);
-          xrpUsdText.textContent = xrpUsd.toFixed(4);
-        } else if (xrpOut) {
-          xrpOut.textContent = '—';
+        try {
+          const q = await quote('USD', usdVal);
+          if (q.error) {
+            note.textContent = q.error === 'below_minimum' ? `Minimum $${q.min_usd}` : q.error;
+            enableBuy(false);
+            return;
+          }
+          xrpUsdText.textContent = Number(q.xrp_usd).toFixed(4);
+          xrpOut.textContent = q.xrp;
+          wckOut.textContent = q.wck;
+          rateBadge.textContent = 'LIVE';
+          rateBadge.className = 'badge live';
+          rateTime.textContent = `updated ${stamp()}`;
+          // stash the last quote on the button for reuse
+          btnBuy.dataset.quote = JSON.stringify(q);
+          enableBuy(true);
+        } catch (e) {
+          rateBadge.textContent = 'OFFLINE';
+          rateBadge.className = 'badge off';
+          rateTime.textContent = 'desk unavailable';
           xrpUsdText.textContent = '—';
-        }
-
-        if (wckOut) {
-          const wck = usdVal / 0.05;
-          wckOut.textContent = Number(wck).toFixed(6);
+          xrpOut.textContent = '—';
+          enableBuy(false);
         }
       }
 
-      if (usd) ['input','change'].forEach(ev => usd.addEventListener(ev, calc));
+      async function createPaylink(q) {
+        const d = await postJSON('/api/create-paylink', q);
+        if (d.error) throw new Error(d.error);
+        return d;
+      }
 
-      fetchRate();
-      setInterval(fetchRate, 60000);
-      document.addEventListener('visibilitychange', () => { if (!document.hidden) fetchRate(); });
+      btnBuy.addEventListener('click', async () => {
+        try {
+          enableBuy(false);
+          const q = JSON.parse(btnBuy.dataset.quote || '{}');
+          if (!q.usd) { enableBuy(true); return; }
+          const d = await createPaylink(q);
+          if (d.qr) qrEl.src = d.qr;
+          if (d.web) { paywebEl.href = d.web; paywebEl.textContent = 'Open in Xaman'; }
+          paybox.style.display = 'block';
+          note.textContent = `Order #${d.order_id} created`;
+        } catch (e) {
+          note.textContent = 'Paylink error. Try again';
+          paybox.style.display = 'none';
+        } finally {
+          enableBuy(true);
+        }
+      });
 
-      calc();
+      if (usd) ['input','change'].forEach(ev => usd.addEventListener(ev, refresh));
+
+      // first run and keep things fresh
+      refresh();
+      setInterval(refresh, 60000);
+      document.addEventListener('visibilitychange', () => { if (!document.hidden) refresh(); });
     })();
   </script>
 </body>
