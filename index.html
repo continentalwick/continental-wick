@@ -47,7 +47,12 @@
     @media (max-width:480px){ .hero-img{ width:65%; max-width:220px; } }
 
     h1 { font-size:2.7em; margin:6px 0 4px; letter-spacing:.05em; color:#ffd700; font-weight:700 }
-    .tagline { font-size:1.12em; color:#e0cf93; margin-bottom:16px }
+    .tagline { font-size:1.12em; color:#e0cf93; margin-bottom:10px }
+
+    /* Quick nav chip to /nft */
+    .chip-nav { display:inline-block; margin:6px 0 16px; }
+    .chip-link { display:inline-block; font-weight:700; text-decoration:none; color:#ececec; background:#16171a; border:1px solid #2a2b2f; padding:8px 12px; border-radius:999px; }
+    .chip-link:hover { border-color:#2f3035 }
 
     /* Social */
     .social-wrap { margin-top:10px }
@@ -77,13 +82,13 @@
     .blend-section .line { display:block }
     .blend-section .em { color:#ffd700 }
 
-    /* Launch banner (replaces OTC) */
+    /* Launch banner */
     .launch-block { background:#232227; border-radius:11px; text-align:center; padding:32px 14px 26px; margin:0 auto 38px; max-width:900px; box-shadow:0 4px 30px #000a }
     .launch-title { font-size:1.35em; font-weight:800; color:#ffd700; margin-bottom:10px; letter-spacing:.02em }
     .launch-sub { color:#e0cf93; font-size:1.02em; margin:0 0 6px }
     .cta-row { display:flex; gap:10px; justify-content:center; align-items:center; margin:12px 0 0; flex-wrap:wrap }
 
-    /* Premium trustline button */
+    /* Buttons */
     .btn { appearance:none; border:none; border-radius:12px; padding:12px 18px; font-weight:800; letter-spacing:.02em; cursor:pointer; transition:.15s transform,.15s box-shadow,.15s background,.15s border-color }
     .btn:active { transform:translateY(1px) }
     .btn-trustline {
@@ -96,10 +101,13 @@
 
     /* Cards */
     .section-title { text-align:center; font-size:1.55em; margin:44px 0 22px; color:#ffd700; letter-spacing:.02em; font-weight:700 }
-    .cards-row { display:flex; justify-content:center; gap:36px; flex-wrap:wrap; margin-bottom:40px; padding:0 12px }
+    .cards-row { display:flex; justify-content:center; gap:36px; flex-wrap:wrap; margin-bottom:22px; padding:0 12px }
     .card-box { background:#18171a; border-radius:16px; box-shadow:0 3px 18px #000b; padding:16px; width:100%; max-width:420px; display:flex; flex-direction:column; align-items:center; border:2px solid #c6a450; margin:0 auto }
     .card-box img { width:100%; height:auto; object-fit:cover; border-radius:12px; margin-bottom:10px; border:2.5px solid #c6a450; background:#18171a }
     .card-title { font-size:1.04em; margin-top:6px; color:#f8d05f; letter-spacing:.01em; text-align:center; font-weight:700 }
+    .card-actions { display:flex; gap:10px; flex-wrap:wrap; justify-content:center; margin-top:10px }
+    .btn-ghost { display:inline-block; padding:8px 10px; border-radius:10px; border:1px solid #26272b; background:#16171a; color:#ececec; text-decoration:none; font-size:.95em }
+    .btn-ghost:hover { border-color:#2f3035 }
 
     /* Whitepaper */
     .whitepaper-block { background:#232227; border-radius:11px; text-align:center; padding:22px 12px 26px; margin:36px auto 24px; max-width:460px; box-shadow:0 2px 16px #0005 }
@@ -126,6 +134,7 @@
     <img src="https://raw.githubusercontent.com/continentalwick/continental-wick/main/assets/logo.png" alt="$WCK Logo" class="hero-img" loading="eager" decoding="async">
     <h1>CONTINENTAL WICK</h1>
     <div class="tagline">The Utility That Memes. Powered by XRPL.</div>
+    <div class="chip-nav"><a class="chip-link" href="/nft" aria-label="Go to $WCK NFT gallery">Explore NFTs →</a></div>
   </header>
 
   <div class="token-details">
@@ -152,7 +161,7 @@
 
   <div class="blend-section" aria-label="Token quick facts">
     <span class="line"><span class="em">Decimals:</span> 6 &mdash; <span class="em">Total Supply:</span> 100,000,000</span>
-    <span class="line">XRPL Native Utility • Privacy • Real-World Execution</span>
+    <span class="line">Protocol Enforced • Powered by XRPL • The Utility That Memes</span>
   </div>
 
   <!-- Replacement Launch Banner (OTC removed) -->
@@ -173,17 +182,28 @@
     </div>
   </section>
 
-  <!-- Cards -->
+  <!-- NFTs on homepage -->
   <section id="nft-cards" style="text-align:center; padding: 40px 20px; background-color:#111;">
     <h2 class="section-title">NFT TRADING CARDS</h2>
     <div class="cards-row">
       <div class="card-box">
         <img src="https://github.com/continentalwick/continental-wick/blob/main/assets/nfts/CONTINENTAL-WICK-001_PREVIEW.png?raw=true" alt="Card 001 — CONTINENTAL WICK" loading="lazy" decoding="async">
         <div class="card-title">Card 001 — CONTINENTAL WICK<br><small>Codename: The Diamond</small></div>
+        <div class="card-actions">
+          <a class="btn-ghost" href="/nft#wick">Details</a>
+          <!-- Replace # with live links when ready -->
+          <a class="btn-ghost" href="#" target="_blank" rel="noopener">XRPSCAN</a>
+          <a class="btn-ghost" href="#" target="_blank" rel="noopener">Bithomp</a>
+        </div>
       </div>
       <div class="card-box">
         <img src="https://github.com/continentalwick/continental-wick/blob/main/assets/nfts/CLICKZ-002_PREVIEW.png?raw=true" alt="Card 002 — CLICKZ" loading="lazy" decoding="async">
         <div class="card-title">Card 002 — CLICKZ<br><small>Codename: The Feed</small></div>
+        <div class="card-actions">
+          <a class="btn-ghost" href="/nft#clickz">Details</a>
+          <a class="btn-ghost" href="#" target="_blank" rel="noopener">XRPSCAN</a>
+          <a class="btn-ghost" href="#" target="_blank" rel="noopener">Bithomp</a>
+        </div>
       </div>
     </div>
 
@@ -195,17 +215,22 @@
         <li><strong style="color:#f8d05f;">Ultra Rare</strong> — High-value, low-supply protocol icons</li>
       </ul>
       <p class="collect-line">Collect them all. Secure the set.</p>
+
+      <!-- CTA to full gallery -->
+      <div style="margin-top:10px;">
+        <a href="/nft" style="text-decoration:none; font-weight:700; border:1px solid #00b4ff; padding:12px 16px; border-radius:12px; color:#ececec; background:#0a1f28;">Explore All NFTs</a>
+      </div>
     </div>
   </section>
 
-  <!-- Whitepaper button only -->
+  <!-- Whitepaper button (link locally to /whitepaper.md per your sitemap) -->
   <div class="whitepaper-block">
-    <a href="https://github.com/continentalwick/continental-wick/blob/aa36f42bb3be95b7c6f92cb1735c15fb6ddc0e26/whitepaper.md"
+    <a href="/whitepaper.md"
        target="_blank" rel="noopener"
        style="display:inline-block;margin-top:10px;padding:11px 30px;background:linear-gradient(90deg,#ffd700,#e0b600);color:#18171a;border-radius:8px;font-weight:bold;font-size:1.08em;text-decoration:none;box-shadow:0 2px 8px #0004;border:1.5px solid #ffe083;transition:.15s all;"
        onmouseover="this.style.background='#e0b600';this.style.color='#000';"
        onmouseout="this.style.background='linear-gradient(90deg,#ffd700,#e0b600)';this.style.color='#18171a';">
-       View White Paper (PDF)
+       View White Paper
     </a>
   </div>
 
