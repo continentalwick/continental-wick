@@ -1,20 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Support – CONTINENTAL WICK OTCDEX</title>
+  <meta charset="UTF-8" />
+  <title>Support – CONTINENTAL WICK</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 </head>
-<body>
+<body style="font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; margin: 2rem; line-height: 1.6;">
   <h1>Support &amp; Contact</h1>
   <p>
-    For help, questions, or support regarding CONTINENTAL WICK OTCDEX or the $WCK token, email:
+    For help, questions, or support regarding <strong>CONTINENTAL WICK</strong> or the <strong>$WCK</strong> token, reach us here
   </p>
   <ul>
     <li>Email: <a href="mailto:wicktokenhq@gmail.com">wicktokenhq@gmail.com</a></li>
-    <li>Follow us on 𝕏: <a href="https://x.com/wcktoken">@wcktoken</a></li>
+    <li>𝕏: <a href="https://x.com/wcktoken" rel="noopener">@wcktoken</a></li>
   </ul>
-  <p>
-    Typical response time: 24 hours or less.
-  </p>
+  <p>Typical response time: 24 hours or less.</p>
 </body>
 </html>
