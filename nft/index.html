@@ -17,7 +17,7 @@
     .wrap { max-width:1100px; margin:0 auto; padding:24px 16px 64px; }
     .grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap:16px; }
     .card { background:var(--card); border:1px solid #1e1f22; border-radius:16px; overflow:hidden; box-shadow: 0 6px 24px rgba(0,0,0,.25); display:flex; flex-direction:column; }
-    .thumb { width:100%; aspect-ratio: 4/3; object-fit:cover; background:#0f0f11; }
+    .thumb { width:100%; aspect-ratio: 4/3; object-fit:cover; background:#0f0f11; display:block; }
     .body { padding:14px; display:flex; flex-direction:column; gap:8px; }
     .title { font-weight:600; font-size:18px; }
     .meta { font-size:13px; color:var(--muted); }
@@ -25,7 +25,46 @@
     .btn { display:inline-block; padding:10px 12px; border-radius:10px; border:1px solid #26272b; background:#16171a; color:var(--fg); text-decoration:none; font-size:13px; }
     .btn:hover { border-color:#2f3035; }
     .btn.primary { border-color:var(--accent); }
+
     footer { text-align:center; color:var(--muted); padding:40px 16px; border-top:1px solid #1e1f22; }
+
+    /* Modal Styles */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 999;
+      inset: 0;
+      background: rgba(0,0,0,0.92);
+      justify-content: center;
+      align-items: center;
+      padding: 24px;
+    }
+    .modal.active { display: flex; }
+    .modal-inner { position: relative; max-width: min(1000px, 96vw); max-height: 92vh; }
+    .modal-img {
+      max-width: 100%;
+      max-height: 92vh;
+      border-radius: 14px;
+      box-shadow: 0 12px 40px rgba(0,0,0,.6);
+      display: block;
+    }
+    .modal-close {
+      position: absolute;
+      top: -14px;
+      right: -14px;
+      width: 40px;
+      height: 40px;
+      border-radius: 999px;
+      background: #1a1a1d;
+      border: 1px solid #2b2c30;
+      color: #fff;
+      font-size: 22px;
+      line-height: 38px;
+      text-align: center;
+      cursor: pointer;
+    }
+    .modal-close:focus { outline: 2px solid var(--accent); outline-offset: 2px; }
+    .open-modal { display:block; }
   </style>
 </head>
 <body>
@@ -37,8 +76,11 @@
 
   <main class="wrap">
     <section class="grid" aria-label="NFT Gallery">
+      <!-- 001 WICK -->
       <article class="card" id="wick">
-        <img class="thumb" src="https://github.com/continentalwick/continental-wick/blob/main/assets/nfts/CONTINENTAL-WICK-001_PREVIEW.png?raw=true" alt="CONTINENTAL WICK — The Diamond card" loading="lazy" />
+        <a class="open-modal" href="#" data-img="https://github.com/continentalwick/continental-wick/blob/main/assets/nfts/CONTINENTAL-WICK-001_PREVIEW.png?raw=true" aria-label="Open preview for CONTINENTAL WICK — The Diamond">
+          <img class="thumb" src="https://github.com/continentalwick/continental-wick/blob/main/assets/nfts/CONTINENTAL-WICK-001_PREVIEW.png?raw=true" alt="CONTINENTAL WICK — The Diamond card" loading="lazy" />
+        </a>
         <div class="body">
           <div class="title">CONTINENTAL WICK — The Diamond</div>
           <div class="meta">Series 1 • Protocol Aligned</div>
@@ -50,8 +92,11 @@
         </div>
       </article>
 
+      <!-- 002 CLICKZ -->
       <article class="card" id="clickz">
-        <img class="thumb" src="https://github.com/continentalwick/continental-wick/blob/main/assets/nfts/CLICKZ-002_PREVIEW.png?raw=true" alt="CLICKZ — The Feed card" loading="lazy" />
+        <a class="open-modal" href="#" data-img="https://github.com/continentalwick/continental-wick/blob/main/assets/nfts/CLICKZ-002_PREVIEW.png?raw=true" aria-label="Open preview for CLICKZ — The Feed">
+          <img class="thumb" src="https://github.com/continentalwick/continental-wick/blob/main/assets/nfts/CLICKZ-002_PREVIEW.png?raw=true" alt="CLICKZ — The Feed card" loading="lazy" />
+        </a>
         <div class="body">
           <div class="title">CLICKZ — The Feed</div>
           <div class="meta">Series 1 • Protocol Aligned</div>
@@ -63,8 +108,11 @@
         </div>
       </article>
 
+      <!-- 003 THE CUSTODIAN -->
       <article class="card" id="custodian">
-        <img class="thumb" src="https://github.com/continentalwick/continental-wick/blob/main/assets/nfts/MARSHAL-VANCE-003_PREVIEW.png?raw=true" alt="THE CUSTODIAN — Marshal Vance card" loading="lazy" />
+        <a class="open-modal" href="#" data-img="https://github.com/continentalwick/continental-wick/blob/main/assets/nfts/MARSHAL-VANCE-003_PREVIEW.png?raw=true" aria-label="Open preview for THE CUSTODIAN — Marshal Vance">
+          <img class="thumb" src="https://github.com/continentalwick/continental-wick/blob/main/assets/nfts/MARSHAL-VANCE-003_PREVIEW.png?raw=true" alt="THE CUSTODIAN — Marshal Vance card" loading="lazy" />
+        </a>
         <div class="body">
           <div class="title">THE CUSTODIAN — Marshal Vance</div>
           <div class="meta">Series 1 • Protocol Aligned</div>
@@ -82,8 +130,53 @@
     <p>&copy; <span id="y"></span> CONTINENTAL WICK • All rights reserved</p>
   </footer>
 
+  <!-- Modal -->
+  <div class="modal" id="imgModal" aria-hidden="true" role="dialog" aria-label="NFT preview">
+    <div class="modal-inner">
+      <button class="modal-close" type="button" aria-label="Close preview">&times;</button>
+      <img id="modalImage" class="modal-img" src="" alt="NFT preview image" />
+    </div>
+  </div>
+
   <script>
+    // Year
     document.getElementById('y').textContent = new Date().getFullYear();
+
+    // Modal logic
+    const modal = document.getElementById('imgModal');
+    const modalImg = document.getElementById('modalImage');
+    const closeBtn = document.querySelector('.modal-close');
+
+    // Open on click
+    document.querySelectorAll('.open-modal').forEach(link => {
+      link.addEventListener('click', e => {
+        e.preventDefault();
+        const url = link.getAttribute('data-img');
+        modalImg.src = url;
+        modal.classList.add('active');
+        modal.setAttribute('aria-hidden', 'false');
+        closeBtn.focus();
+      });
+    });
+
+    // Close handlers
+    const closeModal = () => {
+      modal.classList.remove('active');
+      modal.setAttribute('aria-hidden', 'true');
+      modalImg.src = '';
+    };
+
+    closeBtn.addEventListener('click', closeModal);
+
+    // Click outside image to close
+    modal.addEventListener('click', e => {
+      if (e.target === modal) closeModal();
+    });
+
+    // ESC to close
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape' && modal.classList.contains('active')) closeModal();
+    });
   </script>
 </body>
 </html>
