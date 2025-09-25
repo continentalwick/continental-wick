@@ -21,8 +21,8 @@
   <meta name="msapplication-config" content="/assets/browserconfig.xml">
 
   <!-- SEO -->
-  <meta name="description" content="$WCK – The Utility That Memes. CONTINENTAL protocol agent enforcing value on XRPL. NFT card series, OTC launch, and ledger-driven culture.">
-  <meta name="keywords" content="WCK, Continental Wick, XRPL, XRP Ledger, crypto, NFT cards, meme coin, protocol enforcer, OTC crypto, The Utility That Memes">
+  <meta name="description" content="$WCK – The Utility That Memes. CONTINENTAL protocol agent enforcing value on XRPL. NFT card series and ledger-driven culture.">
+  <meta name="keywords" content="WCK, Continental Wick, XRPL, XRP Ledger, crypto, NFT cards, meme coin, protocol enforcer, The Utility That Memes">
 
   <!-- OG / Twitter -->
   <meta property="og:title" content="CONTINENTAL WICK ($WCK)">
@@ -77,27 +77,15 @@
     .blend-section .line { display:block }
     .blend-section .em { color:#ffd700 }
 
-    /* OTC container */
-    .otc-block { background:#232227; border-radius:11px; text-align:center; padding:32px 14px 26px; margin:0 auto 38px; max-width:900px; box-shadow:0 4px 30px #000a }
-    .otc-banner { font-size:.95em; color:#ffd36d; margin:-6px 0 10px }
-    .otc-banner a { color:#ffd700; text-decoration:underline }
-    .otc-title { font-size:1.25em; font-weight:700; color:#fff; margin-bottom:12px }
-
-    /* Rate line */
-    .rate-line { font-size:1.05em; color:#d8d8d8; margin:0 0 16px; display:flex; gap:10px; justify-content:center; align-items:center; flex-wrap:wrap }
-    .badge { display:inline-block; padding:6px 14px; border-radius:999px; font-size:.9em; line-height:1; font-weight:800; letter-spacing:.02em }
-    .badge.live { background:#00ff66; color:#000 }
-    .badge.off { background:#f55; color:#fff }
-    .muted { color:#bdbdbd; font-size:.95em }
-
-    /* Buttons */
-    .cta-row { display:flex; gap:10px; justify-content:center; align-items:center; margin:10px 0 14px; flex-wrap:wrap }
-    .btn { appearance:none; border:none; border-radius:12px; padding:12px 18px; font-weight:800; letter-spacing:.02em; cursor:pointer; transition:.15s transform,.15s box-shadow,.15s background,.15s border-color }
-    .btn:active { transform:translateY(1px) }
-    .btn-ghost { background:#111; color:#fff; border:1px solid #333 }
-    .btn-ghost:hover { background:#000 }
+    /* Launch banner (replaces OTC) */
+    .launch-block { background:#232227; border-radius:11px; text-align:center; padding:32px 14px 26px; margin:0 auto 38px; max-width:900px; box-shadow:0 4px 30px #000a }
+    .launch-title { font-size:1.35em; font-weight:800; color:#ffd700; margin-bottom:10px; letter-spacing:.02em }
+    .launch-sub { color:#e0cf93; font-size:1.02em; margin:0 0 6px }
+    .cta-row { display:flex; gap:10px; justify-content:center; align-items:center; margin:12px 0 0; flex-wrap:wrap }
 
     /* Premium trustline button */
+    .btn { appearance:none; border:none; border-radius:12px; padding:12px 18px; font-weight:800; letter-spacing:.02em; cursor:pointer; transition:.15s transform,.15s box-shadow,.15s background,.15s border-color }
+    .btn:active { transform:translateY(1px) }
     .btn-trustline {
       background: radial-gradient(120% 120% at 50% -10%, #ffe083 0%, #b8942e 60%, #2a261a 100%);
       color:#0c0b07; border:1.5px solid #e5c767;
@@ -106,49 +94,14 @@
     .btn-trustline:hover { filter:brightness(1.06) }
     .btn-trustline .mini { display:block; font-size:.78em; font-weight:600; opacity:.9; color:#120e05; margin-top:2px }
 
-    /* Hero BUY button */
-    .btn-buy {
-      background: linear-gradient(180deg, #ffe083 0%, #e6b400 60%, #b88b00 100%);
-      color:#121113; border:1.5px solid #ffe083;
-      box-shadow: 0 8px 26px rgba(255, 208, 64, .22), inset 0 1px 0 rgba(255,255,255,.25);
-      text-transform:uppercase; letter-spacing:.05em;
-      padding:16px 28px; font-size:1.06em; border-radius:14px;
-      min-width:200px;
-    }
-    .btn-buy:hover { filter:brightness(1.05) }
-    .btn-buy:disabled { opacity:.6; cursor:not-allowed; }
-
-    /* Inputs and results */
-    .grid-controls{ display:grid; gap:12px; justify-items:center; margin-bottom:14px }
-    .row{ display:flex; gap:10px; align-items:center; justify-content:center; width:100% }
-
-    input, select, textarea { font-size:16px }
-    input[type="number"]{
-      width:320px; max-width:100%;
-      padding:12px; border-radius:8px; border:1px solid #333; background:#111; color:#fff
-    }
-    .pill{ font-size:.9em; color:#bdbdbd }
-
-    .results-row{ display:flex; gap:18px; flex-wrap:wrap; justify-content:center; margin:8px 0 12px }
-    .result-box{ background:#111; border:1px solid #333; border-radius:10px; padding:12px 16px; min-width:200px }
-    .result-head{ font-size:.9em; color:#bdbdbd }
-    .result-val{ font-size:1.25em; font-weight:700 }
-
-    .notes-wrap { margin-top:18px }
-
-    .tokenomics-box{ background:#1d1c21; border:1.5px solid #c6a450; border-radius:12px; padding:14px 16px; margin:14px auto 8px; max-width:720px; text-align:left; color:#e0cf93; box-shadow:0 2px 12px #0006 }
-    .tokenomics-box .line{ display:flex; gap:10px; align-items:baseline; margin:6px 0 }
-    .tokenomics-box b{ color:#ffd700 }
-
-    .otc-disclaimer{ margin-top:12px; font-size:0.72rem; font-weight:700; color:#f55; line-height:1.5; }
-    .otc-disclaimer .countdown{ display:block; margin-top:8px; color:#ffd700; font-size:1rem; font-weight:400; }
-
+    /* Cards */
     .section-title { text-align:center; font-size:1.55em; margin:44px 0 22px; color:#ffd700; letter-spacing:.02em; font-weight:700 }
     .cards-row { display:flex; justify-content:center; gap:36px; flex-wrap:wrap; margin-bottom:40px; padding:0 12px }
     .card-box { background:#18171a; border-radius:16px; box-shadow:0 3px 18px #000b; padding:16px; width:100%; max-width:420px; display:flex; flex-direction:column; align-items:center; border:2px solid #c6a450; margin:0 auto }
     .card-box img { width:100%; height:auto; object-fit:cover; border-radius:12px; margin-bottom:10px; border:2.5px solid #c6a450; background:#18171a }
     .card-title { font-size:1.04em; margin-top:6px; color:#f8d05f; letter-spacing:.01em; text-align:center; font-weight:700 }
 
+    /* Whitepaper */
     .whitepaper-block { background:#232227; border-radius:11px; text-align:center; padding:22px 12px 26px; margin:36px auto 24px; max-width:460px; box-shadow:0 2px 16px #0005 }
     .whitepaper-title { font-size:1.22em; font-weight:700; color:#fff; letter-spacing:.02em; margin-bottom:9px }
 
@@ -162,25 +115,9 @@
     .x-handle { display:inline-block; margin-top:4px; font-size:1.02em; color:#ffd700; text-decoration:none; font-weight:600 }
     .x-handle:hover { text-decoration:underline }
 
-    /* Modal + Paybox */
-    .modal-backdrop{ position:fixed; inset:0; background:#000a; display:none; align-items:center; justify-content:center; z-index:9999; padding:20px }
-    .modal{ background:#1a1a1a; border:1px solid #333; border-radius:14px; width:100%; max-width:420px; padding:22px 18px; text-align:center; box-shadow:0 8px 30px #000c }
-    .modal h3{ margin:0 0 8px; color:#ffd700 }
-    .modal p{ margin:0 0 16px; color:#ddd }
-    .modal .close-btn{ padding:10px 16px; border-radius:10px; border:1px solid #333; background:#111; color:#fff; font-weight:700; cursor:pointer }
-    .modal .close-btn:hover{ background:#000 }
-
-    .paybox{ display:none; margin-top:14px }
-    .paybox img{ width:220px; height:auto; border-radius:10px; border:1px solid #333; background:#111 }
-    .paybox a{ display:inline-block; margin-top:10px; color:#ffd700; font-weight:700; text-decoration:underline }
     @media (max-width:700px){
       header{ margin-top:20px }
-      .otc-block{ width:94vw; padding:20px 12px }
-      .results-row{ flex-direction:column; align-items:center; gap:12px }
-      .result-box{ width:100%; max-width:320px; min-width:0 }
       .cards-row{ gap:18px }
-      .tokenomics-box{ margin-left:10px; margin-right:10px }
-      .btn-buy{ width:100%; max-width:320px }
     }
   </style>
 </head>
@@ -218,72 +155,23 @@
     <span class="line">XRPL Native Utility • Privacy • Real-World Execution</span>
   </div>
 
-  <!-- OTC -->
-  <div class="otc-block" id="wck-otc">
-    <div class="otc-title">OTC Trading — Live</div>
-
-    <div class="rate-line">
-      <span>XRP/USD: $<span id="xrpUsdText">—</span></span>
-      <span id="rateBadge" class="badge off">CHECKING</span>
-      <span id="rateTime" class="muted"></span>
-    </div>
-
+  <!-- Replacement Launch Banner (OTC removed) -->
+  <section class="launch-block" aria-labelledby="launchTitle">
+    <div class="launch-title" id="launchTitle">$WCK Launching Soon</div>
+    <div class="launch-sub">We’re going live on-chain. Liquidity will drop on the XRPL DEX.</div>
+    <div class="launch-sub"><strong>Set your trust line now</strong> to be ready.</div>
     <div class="cta-row" aria-label="Trustline">
       <a
         class="btn btn-trustline"
-        id="btnTrust"
         href="https://xrpl.services/?issuer=rpFVEydkZrUjf4tcbLeDeVqXm5zYQGtXWm&currency=WCK&limit=100000000"
         target="_blank"
         rel="noopener"
       >
-        🗝️ Set $WCK Trustline
-        <span class="mini">Open in xrpl.services</span>
+        🗝️ Set $WCK Trust Line
+        <span class="mini">opens via xrpl.services</span>
       </a>
     </div>
-
-    <div class="grid-controls">
-      <label class="row">
-        <input id="usd" type="number" min="1" step="0.01" placeholder="Enter USD" inputmode="decimal" aria-label="USD amount">
-        <span class="pill">(min $1)</span>
-      </label>
-      <div class="muted">OTC rate shown live from the desk</div>
-    </div>
-
-    <div class="results-row">
-      <div class="result-box">
-        <div class="result-head">You’ll send</div>
-        <div class="result-val"><span id="xrpOut">—</span> XRP</div>
-      </div>
-      <div class="result-box">
-        <div class="result-head">You’ll receive</div>
-        <div class="result-val"><span id="wckOut">0</span> WCK</div>
-      </div>
-    </div>
-
-    <div class="cta-row" aria-label="OTC buy" style="margin-top:6px;">
-      <button type="button" class="btn btn-buy" id="btnBuy" disabled>GET XAMAN PAYLINK</button>
-    </div>
-
-    <div class="paybox" id="paybox">
-      <div><img id="qr" alt="Xaman QR"></div>
-      <div><a id="payweb" href="#" target="_blank" rel="noopener">Open in Xaman</a></div>
-    </div>
-
-    <div class="notes-wrap">
-      <div id="otcNote" class="muted" style="color:#e0cf93">Enter USD to quote</div>
-      <div id="limitNote" class="muted">Limit per buy: <b>$5,000</b></div>
-    </div>
-
-    <div class="tokenomics-box" role="note" aria-label="WCK OTC tokenomics">
-      <div class="line">🎯 <span><b>OTC</b> uses a fixed WCK-per-USD rate set by the desk</span></div>
-      <div class="line">🧮 <span>Live XRP/USD is fetched for conversion</span></div>
-      <div class="line">🔒 <span>One-way until public launch</span></div>
-    </div>
-
-    <p class="otc-disclaimer">
-      🔒 $WCK OTC is a one-way sale until on-chain launch. No sellbacks or redemptions during the presale phase.
-    </p>
-  </div>
+  </section>
 
   <!-- Cards -->
   <section id="nft-cards" style="text-align:center; padding: 40px 20px; background-color:#111;">
@@ -351,139 +239,6 @@
     <div style="margin-top:6px;">&copy; 2025 CONTINENTAL WICK. All rights reserved.</div>
   </footer>
 
-  <noscript><style>.cta-row{display:none}</style></noscript>
-
-  <!-- Modal kept for future notices; unused in live OTC -->
-  <div id="soonModal" class="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="soonTitle">
-    <div class="modal">
-      <h3 id="soonTitle">Notice</h3>
-      <p>—</p>
-      <button class="close-btn" id="closeSoon" type="button">Close</button>
-    </div>
-  </div>
-
-  <script>
-    (function () {
-      const $ = id => document.getElementById(id);
-      const usd = $('usd');
-      const xrpUsdText = $('xrpUsdText');
-      const rateBadge = $('rateBadge');
-      const rateTime = $('rateTime');
-      const xrpOut = $('xrpOut'), wckOut = $('wckOut'), note = $('otcNote');
-      const btnBuy = $('btnBuy');
-      const paybox = $('paybox');
-      const qrEl = $('qr');
-      const paywebEl = $('payweb');
-
-      // point to your API. If reverse-proxied on same domain, set API_BASE=''
-      const API_BASE = 'https://otc.wicktoken.net';
-
-      const MAX_USD = 5000;
-
-      function stamp(){ const t=new Date(); return t.toLocaleTimeString([], {hour:'2-digit',minute:'2-digit',second:'2-digit'}); }
-
-      async function postJSON(path, body) {
-        const r = await fetch(API_BASE + path, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(body || {})
-        });
-        if (!r.ok) throw new Error('http');
-        return await r.json();
-      }
-
-      function enableBuy(ok) {
-        btnBuy.disabled = !ok;
-      }
-
-      async function quote(mode, amount) {
-        const d = await postJSON('/api/quote', { mode, amount });
-        return d;
-      }
-
-      async function refresh() {
-        const raw = (usd?.value || '').trim();
-        if (raw === '') {
-          note.textContent = 'Enter USD to quote';
-          xrpOut.textContent = '—';
-          wckOut.textContent = '0';
-          enableBuy(false);
-          return;
-        }
-
-        let usdVal = Number(raw);
-        if (!isFinite(usdVal) || usdVal <= 0) usdVal = 0;
-
-        if (usdVal < 1) {
-          note.textContent = 'Minimum is $1';
-          enableBuy(false);
-          return;
-        }
-        if (usdVal > MAX_USD) {
-          usdVal = MAX_USD;
-          usd.value = usdVal;
-          note.textContent = 'Max per buy is $5,000';
-        } else {
-          note.textContent = 'Live quote ready';
-        }
-
-        try {
-          const q = await quote('USD', usdVal);
-          if (q.error) {
-            note.textContent = q.error === 'below_minimum' ? `Minimum $${q.min_usd}` : q.error;
-            enableBuy(false);
-            return;
-          }
-          xrpUsdText.textContent = Number(q.xrp_usd).toFixed(4);
-          xrpOut.textContent = q.xrp;
-          wckOut.textContent = q.wck;
-          rateBadge.textContent = 'LIVE';
-          rateBadge.className = 'badge live';
-          rateTime.textContent = `updated ${stamp()}`;
-          // stash the last quote on the button for reuse
-          btnBuy.dataset.quote = JSON.stringify(q);
-          enableBuy(true);
-        } catch (e) {
-          rateBadge.textContent = 'OFFLINE';
-          rateBadge.className = 'badge off';
-          rateTime.textContent = 'desk unavailable';
-          xrpUsdText.textContent = '—';
-          xrpOut.textContent = '—';
-          enableBuy(false);
-        }
-      }
-
-      async function createPaylink(q) {
-        const d = await postJSON('/api/create-paylink', q);
-        if (d.error) throw new Error(d.error);
-        return d;
-      }
-
-      btnBuy.addEventListener('click', async () => {
-        try {
-          enableBuy(false);
-          const q = JSON.parse(btnBuy.dataset.quote || '{}');
-          if (!q.usd) { enableBuy(true); return; }
-          const d = await createPaylink(q);
-          if (d.qr) qrEl.src = d.qr;
-          if (d.web) { paywebEl.href = d.web; paywebEl.textContent = 'Open in Xaman'; }
-          paybox.style.display = 'block';
-          note.textContent = `Order #${d.order_id} created`;
-        } catch (e) {
-          note.textContent = 'Paylink error. Try again';
-          paybox.style.display = 'none';
-        } finally {
-          enableBuy(true);
-        }
-      });
-
-      if (usd) ['input','change'].forEach(ev => usd.addEventListener(ev, refresh));
-
-      // first run and keep things fresh
-      refresh();
-      setInterval(refresh, 60000);
-      document.addEventListener('visibilitychange', () => { if (!document.hidden) refresh(); });
-    })();
-  </script>
+  <!-- No OTC scripts needed -->
 </body>
 </html>
