@@ -1,4 +1,4 @@
-<p align="center">
+[<p align="center">
   <img src="logo.png" alt="CONTINENTAL WICK Logo" width="200"/>
 </p>
 
@@ -86,3 +86,4 @@ $WCK is a utility token on the XRP Ledger (XRPL). It is not issued or endorsed b
 ---
 
 ⚡ *Powered by XRPL | Protocol Enforced | The Utility That Memes*
+](https://github.com/continentalwick/continental-wick/blob/22b32815ec882178884790faaeaf805f9aa7d18b/whitepaper.md)
