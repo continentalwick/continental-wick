@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CONTINENTAL WICK ($WCK) — Lite Paper</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+  <link rel="canonical" href="https://wicktoken.net/whitepaper.html">
+
+  <!-- Favicons (reuse from main site) -->
+  <link rel="icon" href="/assets/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+  <link rel="manifest" href="/assets/site.webmanifest">
+  <meta name="theme-color" content="#121113">
+
+  <!-- SEO -->
+  <meta name="description" content="CONTINENTAL WICK ($WCK) Lite Paper — XRPL-based collector token and NFT card series. The Utility That Memes.">
+  <meta name="keywords" content="WCK, Continental Wick, XRPL, XRP Ledger, crypto, NFT cards, The Utility That Memes">
+
+  <!-- OG / Twitter -->
+  <meta property="og:title" content="CONTINENTAL WICK ($WCK) — Lite Paper">
+  <meta property="og:description" content="The Utility That Memes. CONTINENTAL protocol collector token and NFT card series on XRPL.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://wicktoken.net/whitepaper.html">
+  <meta property="og:site_name" content="CONTINENTAL WICK">
+  <meta property="og:image" content="https://raw.githubusercontent.com/continentalwick/continental-wick/main/assets/logo.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="CONTINENTAL WICK ($WCK) — Lite Paper">
+  <meta name="twitter:description" content="The Utility That Memes. Powered by XRPL.">
+  <meta name="twitter:image" content="https://raw.githubusercontent.com/continentalwick/continental-wick/main/assets/logo.png">
+
+  <style>
+    * { box-sizing:border-box }
+    html, body { margin:0; padding:0; background:#121113; color:#f5f3e8; font-family:'Segoe UI',Arial,sans-serif; }
+
+    body {
+      min-height:100vh;
+      display:flex;
+      flex-direction:column;
+    }
+
+    .wp-wrapper {
+      max-width:960px;
+      margin:32px auto 40px;
+      padding:0 16px 40px;
+    }
+
+    .wp-logo {
+      text-align:center;
+      margin-bottom:16px;
+    }
+
+    .wp-logo img {
+      width:160px;
+      max-width:60%;
+      height:auto;
+    }
+
+    h1 {
+      text-align:center;
+      color:#ffd700;
+      letter-spacing:.08em;
+      font-size:2.2rem;
+      margin:6px 0 18px;
+    }
+
+    .wp-subtitle {
+      text-align:center;
+      color:#e0cf93;
+      font-size:.98rem;
+      margin-bottom:26px;
+    }
+
+    .wp-card {
+      background:#18171a;
+      border-radius:14px;
+      padding:20px 18px 24px;
+      border:1px solid #2b2a30;
+      box-shadow:0 2px 18px #000a;
+    }
+
+    h2 {
+      margin-top:26px;
+      margin-bottom:10px;
+      font-size:1.25rem;
+      color:#ffd700;
+      letter-spacing:.03em;
+    }
+
+    h3 {
+      margin-top:18px;
+      margin-bottom:8px;
+      font-size:1.05rem;
+      color:#f4e3a0;
+    }
+
+    p {
+      line-height:1.6;
+      margin:0 0 10px;
+      color:#f1eee0;
+      font-size:.98rem;
+    }
+
+    ul {
+      margin:6px 0 10px 20px;
+      padding:0;
+    }
+
+    li {
+      margin-bottom:4px;
+      line-height:1.5;
+      font-size:.96rem;
+    }
+
+    code {
+      background:#222026;
+      padding:2px 6px;
+      border-radius:5px;
+      font-size:.9rem;
+      color:#ffe083;
+    }
+
+    strong { color:#fbe49a; }
+
+    .meta-table {
+      background:#151418;
+      border-radius:10px;
+      border:1px solid #2a2720;
+      padding:10px 12px 8px;
+      font-size:.95rem;
+      margin-bottom:10px;
+    }
+
+    .meta-row {
+      display:flex;
+      flex-wrap:wrap;
+      gap:6px;
+      margin-bottom:2px;
+    }
+    .meta-label {
+      width:130px;
+      max-width:40%;
+      font-weight:600;
+      color:#f8d05f;
+    }
+    .meta-value {
+      flex:1;
+    }
+
+    .legal {
+      margin-top:26px;
+      border-top:1px solid #2c2b30;
+      padding-top:18px;
+      font-size:.84rem;
+      color:#b7b4a7;
+    }
+
+    .back-link {
+      text-align:center;
+      margin-top:16px;
+    }
+    .back-link a {
+      color:#ffd700;
+      text-decoration:none;
+      font-weight:600;
+      border:1px solid #ffd700;
+      padding:7px 14px;
+      border-radius:999px;
+      font-size:.9rem;
+    }
+    .back-link a:hover {
+      background:#ffd700;
+      color:#121113;
+    }
+
+    @media (max-width:600px){
+      h1 { font-size:1.7rem; }
+      .wp-wrapper { margin-top:20px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wp-wrapper">
+    <div class="wp-logo">
+      <img src="https://raw.githubusercontent.com/continentalwick/continental-wick/main/assets/logo.png" alt="CONTINENTAL WICK Logo">
+    </div>
+    <h1>CONTINENTAL WICK — LITE PAPER</h1>
+    <div class="wp-subtitle">The Utility That Memes. Protocol-grade collector series on XRPL.</div>
+
+    <div class="wp-card">
+      <h2>Token Overview</h2>
+      <div class="meta-table">
+        <div class="meta-row">
+          <div class="meta-label">Name</div>
+          <div class="meta-value">CONTINENTAL WICK</div>
+        </div>
+        <div class="meta-row">
+          <div class="meta-label">Symbol</div>
+          <div class="meta-value">$WCK</div>
+        </div>
+        <div class="meta-row">
+          <div class="meta-label">Supply</div>
+          <div class="meta-value">100,000,000.000000</div>
+        </div>
+        <div class="meta-row">
+          <div class="meta-label">Decimals</div>
+          <div class="meta-value">6</div>
+        </div>
+        <div class="meta-row">
+          <div class="meta-label">Network</div>
+          <div class="meta-value">XRPL (XRP Ledger)</div>
+        </div>
+        <div class="meta-row">
+          <div class="meta-label">Mint (Issuer)</div>
+          <div class="meta-value"><code>rpFVEydkZrUjf4tcbLeDeVqXm5zYQGtXWm</code></div>
+        </div>
+        <div class="meta-row">
+          <div class="meta-label">Website</div>
+          <div class="meta-value"><a href="https://wicktoken.net" style="color:#f8d05f;text-decoration:none;">wicktoken.net</a></div>
+        </div>
+      </div>
+
+      <p><strong>Official Wallets</strong></p>
+      <ul>
+        <li><strong>Mint:</strong> <code>rpFVEydkZrUjf4tcbLeDeVqXm5zYQGtXWm</code></li>
+        <li><strong>Treasury:</strong> <code>rstRegwzojXJTvhsiTnmDPbPTSKBPBZ55t</code></li>
+        <li><strong>Reserve:</strong> <code>rEkZ6smniCBbSuAvNdQfLRKHcgsLXiqEX1</code></li>
+        <li><strong>Liquidity:</strong> <code>rwzsLBhRkyux8rUBCZEmkuJcDK5s3LSB3K</code></li>
+      </ul>
+
+      <h2>Project Summary</h2>
+      <p>
+        CONTINENTAL WICK is the <strong>official token and collector system of the CONTINENTAL protocol</strong> — a universe of
+        protocol enforcers, vault agents, and signal operators running on $XRP rails.
+      </p>
+      <p>
+        $WCK sits at the center of a structured ecosystem:
+      </p>
+      <ul>
+        <li>The <strong>token layer</strong> for access, alignment, and protocol actions.</li>
+        <li>A <strong>Collector Card NFT series</strong> that turns protocol roles into character-driven digital collectibles.</li>
+      </ul>
+      <p>
+        The objective is clear: build a <strong>living collector series on XRPL</strong> — evolving characters, escalating threats,
+        and expanding sets that feel like a real card universe, not a random collection of drops.
+      </p>
+
+      <h2>Role of $WCK</h2>
+      <p>$WCK operates as the native asset of the CONTINENTAL protocol in three primary ways:</p>
+      <h3>Access and Alignment</h3>
+      <ul>
+        <li>Enables priority access to future CONTINENTAL drops and ecosystem expansions.</li>
+        <li>Acts as a community alignment layer for ecosystem direction at the discretion of the team.</li>
+      </ul>
+
+      <h3>Collector and Protocol Utility</h3>
+      <ul>
+        <li>Used as a key reference asset around future card drops, protocol events, and gated experiences.</li>
+        <li>Eligible to be integrated into collector mechanics such as raffles, draws, or snapshot-based recognition where legally permissible.</li>
+      </ul>
+
+      <h3>Ecosystem Sync</h3>
+      <ul>
+        <li>Ties the narrative together across <strong>NFT series, physical integrations, and protocol-grade tools</strong> built on XRPL.</li>
+      </ul>
+
+      <h2>CONTINENTAL WICK Collector Cards (NFTs)</h2>
+      <p>
+        $WCK powers a <strong>series-based Collector Card universe</strong> on XRPL. Each card is an NFT representing a protocol role
+        inside the CONTINENTAL world.
+      </p>
+
+      <h3>Core Structure</h3>
+      <ul>
+        <li><strong>Network:</strong> XRPL</li>
+        <li><strong>Standard:</strong> XRPL NFT (NFToken)</li>
+        <li><strong>Format:</strong> Character-based Collector Cards</li>
+        <li><strong>Series / Sets:</strong> built in waves and series, designed as a true collector line with base characters, variants, threat types, and protocol ranks.</li>
+      </ul>
+      <p>
+        Card 001 — <strong>CONTINENTAL WICK</strong> — anchors the story as the first ultra-rare protocol card. Subsequent cards expand
+        the world: vault security, armory specialists, surveillance nodes, internal operators, and external threats.
+      </p>
+
+      <h3>Collector Focus</h3>
+      <p>The roadmap centers on turning CONTINENTAL WICK into a <strong>recognizable collector franchise on XRPL</strong>:</p>
+      <ul>
+        <li>Ongoing series and expansions of character cards.</li>
+        <li>Structured rarity and continuity across sets.</li>
+        <li>Visual and narrative cohesion so collecting the series matters as much as holding the token.</li>
+      </ul>
+
+      <h3>Utility of the Cards</h3>
+      <ul>
+        <li><strong>Lore Anchors</strong> — each card defines a role, function, and place inside the protocol.</li>
+        <li><strong>Collector Assets</strong> — rarities and series give collectors clear targets and sets to complete.</li>
+        <li><strong>Access Keys</strong> — priority access or enhanced weight for future CONTINENTAL releases, and potential eligibility for physical tie-ins or digital events where allowed.</li>
+      </ul>
+      <p>
+        All specific mechanics, benefits, or redemptions are defined and updated on
+        <a href="https://wicktoken.net" style="color:#f8d05f;text-decoration:none;">wicktoken.net</a>
+        and in official channel posts as the ecosystem evolves.
+      </p>
+
+      <h2>Technology Stack</h2>
+      <p>CONTINENTAL WICK is built on the <strong>XRP Ledger (XRPL)</strong> to leverage:</p>
+      <ul>
+        <li><strong>Speed</strong> — near-instant settlement and confirmations.</li>
+        <li><strong>Cost Control</strong> — low, predictable transaction fees.</li>
+        <li><strong>Deterministic Execution</strong> — no gas auctions or mempool warfare.</li>
+        <li><strong>Native DEX and NFT Support</strong> — built-in order books, AMMs, and NFT primitives.</li>
+      </ul>
+      <p>
+        This stack keeps execution clean and efficient for both the <strong>$WCK token</strong> and the
+        <strong>Collector Card series</strong>.
+      </p>
+
+      <h2>Tokenomics</h2>
+      <h3>Allocation</h3>
+      <ul>
+        <li><strong>Market Liquidity:</strong> 10,000,000 $WCK</li>
+        <li><strong>Treasury:</strong> 70,000,000 $WCK</li>
+        <li><strong>Reserve (Locked / Controlled Release):</strong> 20,000,000 $WCK</li>
+      </ul>
+
+      <p><strong>Market Liquidity</strong></p>
+      <p>
+        Dedicated to on-ledger liquidity, depth, and trading health. Managed to avoid reckless emissions and unnecessary volatility.
+      </p>
+
+      <p><strong>Treasury</strong></p>
+      <p>
+        Used for ecosystem buildout, infrastructure, integrations, listings, and brand expansion, plus aligned community and partnership
+        activity when it supports long-term protocol strength.
+      </p>
+
+      <p><strong>Reserve</strong></p>
+      <p>
+        Held for future initiatives, potential expansions, and long-horizon strategic use. Any movements are communicated through
+        official channels.
+      </p>
+
+      <h2>Governance &amp; Controls</h2>
+      <p>Current token configuration on XRPL:</p>
+      <ul>
+        <li><strong>Freeze:</strong> Not enabled.</li>
+        <li><strong>Clawback:</strong> Not enabled.</li>
+        <li><strong>Rippling:</strong> Configured only where required for routing and pathfinding.</li>
+        <li><strong>Mint Key / Account Controls:</strong> future mint key handling or issuer-locking policy will be documented publicly; any hard changes such as black-holing will be announced before execution.</li>
+      </ul>
+      <p>
+        All policy updates are posted on
+        <a href="https://wicktoken.net" style="color:#f8d05f;text-decoration:none;">wicktoken.net</a>
+        and mirrored in the project TOML once finalized.
+      </p>
+
+      <h2>Roadmap Snapshot</h2>
+      <p>
+        The roadmap is built around <strong>expanding the Collector Card universe</strong> and solidifying CONTINENTAL WICK as a
+        long-term collector brand on XRPL.
+      </p>
+      <ul>
+        <li><strong>Series 1 Completion and Expansion</strong> — full deployment of Series 1 cards on XRPL, with a clear rarity table and metadata for collectors.</li>
+        <li><strong>Series-Based Collector Growth</strong> — additional series and waves featuring new protocol roles, variants, and threats, with consistent art direction and lore.</li>
+        <li><strong>Collector Mechanics and Experiences</strong> — snapshot-based recognition, themed events, and collector-focused activations where permitted.</li>
+        <li><strong>Physical / Digital Tie-Ins</strong> — exploration of physical product integrations and cross-medium collectibles that mirror or complement the on-ledger card universe.</li>
+      </ul>
+      <p>
+        Sequence and details may adjust with market conditions, regulatory guidance, security posture, and technical realities.
+        The north star remains the same: <strong>grow CONTINENTAL WICK as a serious collector series on XRPL.</strong>
+      </p>
+
+      <div class="legal">
+        <h3>Legal &amp; IP Disclaimer</h3>
+        <p>
+          CONTINENTAL WICK and the $WCK token are <strong>independent creations</strong> and are not affiliated with, endorsed by, or
+          associated with the <em>John Wick</em> film franchise, Lionsgate Films, Summit Entertainment, or any related trademarks or
+          intellectual property.
+        </p>
+        <p>
+          All references to “CONTINENTAL,” “WICK,” or related terminology describe a <strong>fictional blockchain protocol universe</strong>
+          developed by the $WCK team. They do not depict or reference any characters, plots, or settings from the John Wick franchise.
+        </p>
+        <p>
+          $WCK is a utility token on the XRP Ledger. It is not issued or endorsed by Ripple Labs Inc., the XRP Ledger Foundation, or any
+          centralized exchange. $WCK and associated NFTs are <strong>not financial instruments, investment contracts, or guarantees of profit</strong>.
+          Holders assume all risk associated with acquisition, transfer, or use.
+        </p>
+        <p>
+          Participants are responsible for understanding local laws and regulations before interacting with the token or NFTs.
+        </p>
+      </div>
+    </div>
+
+    <div class="back-link">
+      <a href="/">← Back to Main Site</a>
+    </div>
+  </div>
+</body>
+</html>
