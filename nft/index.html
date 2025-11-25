@@ -15,7 +15,8 @@
       --card:#131315;
       --line:#1b1b1e;
       --accent:#00b4ff;
-      --gold:#d4aa00;
+      --gold1:#ffcc33;
+      --gold2:#d4aa00;
     }
 
     *{box-sizing:border-box}
@@ -26,25 +27,24 @@
       font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
     }
 
-    /* BACK BUTTON */
+    /* STATIC BACK BUTTON */
     .back-btn {
-      position: fixed;
-      top: 20px;
-      left: 20px;
-      padding: 10px 16px;
-      background: #141416;
-      border: 1px solid #2a2b2f;
-      border-radius: 10px;
-      color: var(--fg);
-      font-size: 14px;
-      text-decoration: none;
-      z-index: 9999;
-      box-shadow: 0 4px 12px rgba(0,0,0,.35);
-      transition: .15s all;
+      display:inline-block;
+      margin-bottom:24px;
+      padding:10px 18px;
+      font-size:14px;
+      font-weight:600;
+      text-decoration:none;
+      color:#18171a;
+      background:linear-gradient(90deg,var(--gold1),var(--gold2));
+      border:1px solid #e0b600;
+      border-radius:10px;
+      box-shadow:0 3px 10px rgba(0,0,0,.35);
+      transition:.15s all;
     }
     .back-btn:hover {
-      border-color: var(--accent);
-      transform: translateX(-2px);
+      filter:brightness(1.08);
+      transform:translateX(-2px);
     }
 
     /* HEADER */
@@ -54,24 +54,33 @@
       border-bottom:1px solid var(--line);
       background:linear-gradient(180deg,#0c0c0d 0%, #0a0a0b 100%);
     }
+    .top-left {
+      max-width:1200px;
+      margin:0 auto;
+      text-align:left;
+    }
     .tagline{
       font-size:12px;
       color:var(--muted);
       letter-spacing:1.3px;
       text-transform:uppercase;
       font-weight:600;
+      margin-top:20px;
       margin-bottom:10px;
+      text-align:center;
     }
     h1{
       margin:0;
       font-size:clamp(30px,4vw,46px);
       font-weight:700;
       letter-spacing:-1px;
+      text-align:center;
     }
     .subline{
       color:var(--muted);
       margin-top:8px;
       font-size:15px;
+      text-align:center;
     }
 
     /* WRAPPER */
@@ -217,11 +226,12 @@
 
 <body>
 
-  <!-- BACK BUTTON -->
-  <a href="https://wicktoken.net" class="back-btn" aria-label="Back to main page">⟵ Back</a>
-
-  <!-- HEADER -->
+  <!-- STATIC BACK BUTTON TOP LEFT -->
   <header>
+    <div class="top-left">
+      <a href="https://wicktoken.net" class="back-btn">⟵ Back</a>
+    </div>
+
     <div class="tagline">PROTOCOL ENFORCED • XRPL NATIVE • SERIES ONE</div>
     <h1>CONTINENTAL WICK — NFT COLLECTION</h1>
     <div class="subline">Official gallery for character cards & protocol-grade artifacts</div>
