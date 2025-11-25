@@ -26,6 +26,27 @@
       font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
     }
 
+    /* BACK BUTTON */
+    .back-btn {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      padding: 10px 16px;
+      background: #141416;
+      border: 1px solid #2a2b2f;
+      border-radius: 10px;
+      color: var(--fg);
+      font-size: 14px;
+      text-decoration: none;
+      z-index: 9999;
+      box-shadow: 0 4px 12px rgba(0,0,0,.35);
+      transition: .15s all;
+    }
+    .back-btn:hover {
+      border-color: var(--accent);
+      transform: translateX(-2px);
+    }
+
     /* HEADER */
     header{
       padding:48px 16px 40px;
@@ -195,6 +216,9 @@
 </head>
 
 <body>
+
+  <!-- BACK BUTTON -->
+  <a href="https://wicktoken.net" class="back-btn" aria-label="Back to main page">⟵ Back</a>
 
   <!-- HEADER -->
   <header>
