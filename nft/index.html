@@ -6,177 +6,302 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="canonical" href="https://wicktoken.net/nft" />
   <meta name="description" content="$WCK NFT hub — official gallery for CONTINENTAL WICK character cards and protocol artifacts on XRPL." />
+
   <style>
-    :root { --bg:#0b0b0c; --fg:#ececec; --muted:#9aa0a6; --card:#121214; --accent:#00b4ff; }
-    * { box-sizing: border-box; }
-    body { margin:0; background:var(--bg); color:var(--fg); font-family: system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif; }
-    header { padding:32px 16px; text-align:center; }
-    .badge { font-size:12px; border:1px solid #2a2b2f; padding:4px 8px; border-radius:999px; color:var(--muted); display:inline-block; }
-    h1 { margin:8px 0 4px; font-size:clamp(28px,4vw,40px); }
-    p { margin:0; color:var(--muted); }
-    .wrap { max-width:1100px; margin:0 auto; padding:24px 16px 64px; }
-    .grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap:16px; }
-    .card { background:var(--card); border:1px solid #1e1f22; border-radius:16px; overflow:hidden; box-shadow: 0 6px 24px rgba(0,0,0,.25); display:flex; flex-direction:column; }
-    .thumb { width:100%; aspect-ratio: 4/3; object-fit:cover; background:#0f0f11; display:block; }
-    .body { padding:14px; display:flex; flex-direction:column; gap:8px; }
-    .title { font-weight:600; font-size:18px; }
-    .meta { font-size:13px; color:var(--muted); }
-    .row { display:flex; gap:8px; flex-wrap:wrap; margin-top:4px; }
-    .btn { display:inline-block; padding:10px 12px; border-radius:10px; border:1px solid #26272b; background:#16171a; color:var(--fg); text-decoration:none; font-size:13px; }
-    .btn:hover { border-color:#2f3035; }
-    .btn.primary { border-color:var(--accent); }
+    :root {
+      --bg:#0a0a0b;
+      --fg:#e9e9e9;
+      --muted:#8f939a;
+      --card:#131315;
+      --line:#1b1b1e;
+      --accent:#00b4ff;
+      --gold:#d4aa00;
+    }
 
-    footer { text-align:center; color:var(--muted); padding:40px 16px; border-top:1px solid #1e1f22; }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      background:var(--bg);
+      color:var(--fg);
+      font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+    }
 
-    /* Modal Styles */
-    .modal {
-      display: none;
-      position: fixed;
-      z-index: 999;
-      inset: 0;
-      background: rgba(0,0,0,0.92);
-      justify-content: center;
-      align-items: center;
-      padding: 24px;
+    /* HEADER */
+    header{
+      padding:48px 16px 40px;
+      text-align:center;
+      border-bottom:1px solid var(--line);
+      background:linear-gradient(180deg,#0c0c0d 0%, #0a0a0b 100%);
     }
-    .modal.active { display: flex; }
-    .modal-inner { position: relative; max-width: min(1000px, 96vw); max-height: 92vh; }
-    .modal-img {
-      max-width: 100%;
-      max-height: 92vh;
-      border-radius: 14px;
-      box-shadow: 0 12px 40px rgba(0,0,0,.6);
-      display: block;
+    .tagline{
+      font-size:12px;
+      color:var(--muted);
+      letter-spacing:1.3px;
+      text-transform:uppercase;
+      font-weight:600;
+      margin-bottom:10px;
     }
-    .modal-close {
-      position: absolute;
-      top: -14px;
-      right: -14px;
-      width: 40px;
-      height: 40px;
-      border-radius: 999px;
-      background: #1a1a1d;
-      border: 1px solid #2b2c30;
-      color: #fff;
-      font-size: 22px;
-      line-height: 38px;
-      text-align: center;
-      cursor: pointer;
+    h1{
+      margin:0;
+      font-size:clamp(30px,4vw,46px);
+      font-weight:700;
+      letter-spacing:-1px;
     }
-    .modal-close:focus { outline: 2px solid var(--accent); outline-offset: 2px; }
-    .open-modal { display:block; }
+    .subline{
+      color:var(--muted);
+      margin-top:8px;
+      font-size:15px;
+    }
+
+    /* WRAPPER */
+    .wrap{
+      max-width:1200px;
+      margin:0 auto;
+      padding:48px 16px 80px;
+    }
+
+    /* SECTION TITLE BAR */
+    .section-title{
+      font-size:15px;
+      font-weight:600;
+      color:var(--muted);
+      margin:0 0 24px;
+      text-transform:uppercase;
+      letter-spacing:1px;
+      border-left:3px solid var(--accent);
+      padding-left:10px;
+    }
+
+    /* GRID */
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(270px,1fr));
+      gap:24px;
+    }
+
+    /* CARD */
+    .card{
+      background:var(--card);
+      border:1px solid var(--line);
+      border-radius:18px;
+      overflow:hidden;
+      display:flex;
+      flex-direction:column;
+      box-shadow:0 4px 24px rgba(0,0,0,.35);
+      transition:transform .15s ease;
+    }
+    .card:hover{
+      transform:translateY(-4px);
+    }
+    .thumb{
+      width:100%;
+      aspect-ratio:4/3;
+      object-fit:cover;
+      display:block;
+      background:#0f0f11;
+    }
+    .body{
+      padding:18px 16px 16px;
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+    }
+    .title{
+      font-size:18px;
+      font-weight:700;
+      letter-spacing:-0.2px;
+    }
+    .meta{
+      font-size:13px;
+      color:var(--muted);
+    }
+
+    .row{
+      margin-top:8px;
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+    }
+
+    .btn{
+      display:inline-block;
+      padding:10px 14px;
+      font-size:13px;
+      border-radius:10px;
+      text-decoration:none;
+      background:#16171a;
+      border:1px solid #26272b;
+      color:var(--fg);
+      transition:.15s all;
+    }
+    .btn:hover{
+      border-color:#33353a;
+    }
+    .btn.primary{
+      border-color:var(--accent);
+    }
+
+    /* FOOTER */
+    footer{
+      border-top:1px solid var(--line);
+      text-align:center;
+      padding:40px 16px;
+      color:var(--muted);
+      font-size:14px;
+    }
+
+    /* MODAL */
+    .modal{
+      display:none;
+      position:fixed;
+      inset:0;
+      z-index:999;
+      background:rgba(0,0,0,.92);
+      justify-content:center;
+      align-items:center;
+      padding:24px;
+      backdrop-filter:blur(3px);
+    }
+    .modal.active{display:flex}
+    .modal-inner{
+      position:relative;
+      max-width:min(1000px,96vw);
+      max-height:92vh;
+      animation:fadeIn .2s ease-out;
+    }
+    @keyframes fadeIn{
+      from{opacity:0; transform:scale(.96)}
+      to{opacity:1; transform:scale(1)}
+    }
+    .modal-img{
+      max-width:100%;
+      max-height:92vh;
+      border-radius:16px;
+      box-shadow:0 8px 40px rgba(0,0,0,.7);
+    }
+    .modal-close{
+      position:absolute;
+      top:-14px; right:-14px;
+      width:42px; height:42px;
+      border-radius:50%;
+      border:1px solid #2d2e33;
+      background:#1a1b1d;
+      color:#fff;
+      font-size:22px;
+      line-height:40px;
+      cursor:pointer;
+    }
   </style>
 </head>
+
 <body>
+
+  <!-- HEADER -->
   <header>
-    <div class="badge">Powered by XRPL • Protocol Enforced • The Utility That Memes</div>
-    <h1>$WCK — Official NFT Gallery</h1>
-    <p>Canonical hub for character cards and protocol artifacts</p>
+    <div class="tagline">PROTOCOL ENFORCED • XRPL NATIVE • SERIES ONE</div>
+    <h1>CONTINENTAL WICK — NFT COLLECTION</h1>
+    <div class="subline">Official gallery for character cards & protocol-grade artifacts</div>
   </header>
 
+  <!-- MAIN -->
   <main class="wrap">
-    <section class="grid" aria-label="NFT Gallery">
+    <h2 class="section-title">Character Cards</h2>
+
+    <section class="grid">
+
       <!-- 001 WICK -->
-      <article class="card" id="wick">
-        <a class="open-modal" href="#" data-img="https://github.com/continentalwick/continental-wick/blob/main/assets/nfts/CONTINENTAL-WICK-001_PREVIEW.png?raw=true" aria-label="Open preview for CONTINENTAL WICK — The Diamond">
-          <img class="thumb" src="https://github.com/continentalwick/continental-wick/blob/main/assets/nfts/CONTINENTAL-WICK-001_PREVIEW.png?raw=true" alt="CONTINENTAL WICK — The Diamond card" loading="lazy" />
+      <article class="card">
+        <a class="open-modal" href="#" data-img="https://github.com/continentalwick/continental-wick/blob/main/assets/nfts/CONTINENTAL-WICK-001_PREVIEW.png?raw=true">
+          <img class="thumb" src="https://github.com/continentalwick/continental-wick/blob/main/assets/nfts/CONTINENTAL-WICK-001_PREVIEW.png?raw=true" alt="CONTINENTAL WICK — The Diamond" />
         </a>
+
         <div class="body">
           <div class="title">CONTINENTAL WICK — The Diamond</div>
           <div class="meta">Series 1 • Protocol Aligned</div>
           <div class="row">
-            <a class="btn primary" href="#" target="_blank" rel="noopener">XRPSCAN</a>
-            <a class="btn" href="#" target="_blank" rel="noopener">Bithomp</a>
-            <a class="btn" href="#" target="_blank" rel="noopener">X Post</a>
+            <a class="btn primary" href="#" target="_blank">XRPSCAN</a>
+            <a class="btn" href="#" target="_blank">Bithomp</a>
+            <a class="btn" href="#" target="_blank">X Post</a>
           </div>
         </div>
       </article>
 
       <!-- 002 CLICKZ -->
-      <article class="card" id="clickz">
-        <a class="open-modal" href="#" data-img="https://github.com/continentalwick/continental-wick/blob/main/assets/nfts/CLICKZ-002_PREVIEW.png?raw=true" aria-label="Open preview for CLICKZ — The Feed">
-          <img class="thumb" src="https://github.com/continentalwick/continental-wick/blob/main/assets/nfts/CLICKZ-002_PREVIEW.png?raw=true" alt="CLICKZ — The Feed card" loading="lazy" />
+      <article class="card">
+        <a class="open-modal" href="#" data-img="https://github.com/continentalwick/continental-wick/blob/main/assets/nfts/CLICKZ-002_PREVIEW.png?raw=true">
+          <img class="thumb" src="https://github.com/continentalwick/continental-wick/blob/main/assets/nfts/CLICKZ-002_PREVIEW.png?raw=true" alt="CLICKZ — The Feed" />
         </a>
+
         <div class="body">
           <div class="title">CLICKZ — The Feed</div>
           <div class="meta">Series 1 • Protocol Aligned</div>
           <div class="row">
-            <a class="btn primary" href="#" target="_blank" rel="noopener">XRPSCAN</a>
-            <a class="btn" href="#" target="_blank" rel="noopener">Bithomp</a>
-            <a class="btn" href="#" target="_blank" rel="noopener">X Post</a>
+            <a class="btn primary" href="#" target="_blank">XRPSCAN</a>
+            <a class="btn" href="#" target="_blank">Bithomp</a>
+            <a class="btn" href="#" target="_blank">X Post</a>
           </div>
         </div>
       </article>
 
       <!-- 003 THE CUSTODIAN -->
-      <article class="card" id="custodian">
-        <a class="open-modal" href="#" data-img="https://github.com/continentalwick/continental-wick/blob/main/assets/nfts/MARSHAL-VANCE-003_PREVIEW.png?raw=true" aria-label="Open preview for THE CUSTODIAN — Marshal Vance">
-          <img class="thumb" src="https://github.com/continentalwick/continental-wick/blob/main/assets/nfts/MARSHAL-VANCE-003_PREVIEW.png?raw=true" alt="THE CUSTODIAN — Marshal Vance card" loading="lazy" />
+      <article class="card">
+        <a class="open-modal" href="#" data-img="https://github.com/continentalwick/continental-wick/blob/main/assets/nfts/MARSHAL-VANCE-003_PREVIEW.png?raw=true">
+          <img class="thumb" src="https://github.com/continentalwick/continental-wick/blob/main/assets/nfts/MARSHAL-VANCE-003_PREVIEW.png?raw=true" alt="THE CUSTODIAN — Marshal Vance" />
         </a>
+
         <div class="body">
           <div class="title">THE CUSTODIAN — Marshal Vance</div>
           <div class="meta">Series 1 • Protocol Aligned</div>
           <div class="row">
-            <a class="btn primary" href="#" target="_blank" rel="noopener">XRPSCAN</a>
-            <a class="btn" href="#" target="_blank" rel="noopener">Bithomp</a>
-            <a class="btn" href="#" target="_blank" rel="noopener">X Post</a>
+            <a class="btn primary" href="#" target="_blank">XRPSCAN</a>
+            <a class="btn" href="#" target="_blank">Bithomp</a>
+            <a class="btn" href="#" target="_blank">X Post</a>
           </div>
         </div>
       </article>
+
     </section>
   </main>
 
+  <!-- FOOTER -->
   <footer>
-    <p>&copy; <span id="y"></span> CONTINENTAL WICK • All rights reserved</p>
+    &copy; <span id="y"></span> CONTINENTAL WICK — All Rights Reserved
   </footer>
 
-  <!-- Modal -->
-  <div class="modal" id="imgModal" aria-hidden="true" role="dialog" aria-label="NFT preview">
+  <!-- MODAL -->
+  <div class="modal" id="imgModal">
     <div class="modal-inner">
-      <button class="modal-close" type="button" aria-label="Close preview">&times;</button>
-      <img id="modalImage" class="modal-img" src="" alt="NFT preview image" />
+      <button class="modal-close">&times;</button>
+      <img id="modalImage" class="modal-img" src="" alt="NFT Preview" />
     </div>
   </div>
 
   <script>
-    // Year
+    // YEAR
     document.getElementById('y').textContent = new Date().getFullYear();
 
-    // Modal logic
-    const modal = document.getElementById('imgModal');
-    const modalImg = document.getElementById('modalImage');
-    const closeBtn = document.querySelector('.modal-close');
+    // MODAL LOGIC
+    const modal=document.getElementById('imgModal');
+    const modalImg=document.getElementById('modalImage');
+    const closeBtn=document.querySelector('.modal-close');
 
-    // Open on click
-    document.querySelectorAll('.open-modal').forEach(link => {
-      link.addEventListener('click', e => {
+    document.querySelectorAll('.open-modal').forEach(link=>{
+      link.addEventListener('click',e=>{
         e.preventDefault();
-        const url = link.getAttribute('data-img');
-        modalImg.src = url;
+        modalImg.src=link.dataset.img;
         modal.classList.add('active');
-        modal.setAttribute('aria-hidden', 'false');
-        closeBtn.focus();
       });
     });
 
-    // Close handlers
-    const closeModal = () => {
+    const closeModal=()=>{
       modal.classList.remove('active');
-      modal.setAttribute('aria-hidden', 'true');
-      modalImg.src = '';
+      modalImg.src='';
     };
 
-    closeBtn.addEventListener('click', closeModal);
-
-    // Click outside image to close
-    modal.addEventListener('click', e => {
-      if (e.target === modal) closeModal();
-    });
-
-    // ESC to close
-    document.addEventListener('keydown', e => {
-      if (e.key === 'Escape' && modal.classList.contains('active')) closeModal();
-    });
+    closeBtn.addEventListener('click',closeModal);
+    modal.addEventListener('click',e=>{if(e.target===modal)closeModal()});
+    document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal()});
   </script>
+
 </body>
 </html>
