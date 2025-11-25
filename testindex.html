@@ -68,8 +68,8 @@
       border:1px solid #2d2c30;
       box-shadow:0 2px 8px #0006;
       transition:.15s transform,.15s box-shadow;
-      text-decoration:none;         /* remove blue underline */
-      color:#f8f8f8;               /* keep emoji/icon white */
+      text-decoration:none;
+      color:#f8f8f8;
     }
     .social-btn:visited {
       text-decoration:none;
@@ -105,7 +105,6 @@
     .launch-sub { color:#e0cf93; font-size:1.02em; margin:0 0 6px }
     .cta-row { display:flex; gap:10px; justify-content:center; align-items:center; margin:12px 0 0; flex-wrap:wrap }
 
-    /* Buttons */
     .btn { appearance:none; border:none; border-radius:12px; padding:12px 18px; font-weight:800; letter-spacing:.02em; cursor:pointer; transition:.15s transform,.15s box-shadow,.15s background,.15s border-color }
     .btn:active { transform:translateY(1px) }
     .btn-trustline {
@@ -145,7 +144,7 @@
       .cards-row{ gap:18px }
     }
 
-    /* RAD Certified seal — top-left, static */
+    /* RAD Certified seal — top-left */
     .rad-certified-badge {
       position: absolute;
       top: 10px;
@@ -158,65 +157,84 @@
       height: auto;
       display: block;
     }
+
+    /* AUDIO TOGGLE */
+    .audio-toggle {
+      position: fixed;
+      top: 12px;
+      right: 12px;
+      width: 46px;
+      height: 46px;
+      background:#18171a;
+      border:1px solid #2d2c30;
+      border-radius:12px;
+      box-shadow:0 3px 12px #0009;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      cursor:pointer;
+      z-index:9999;
+      font-size:22px;
+      color:#ffd700;
+      user-select:none;
+      transition:.15s transform;
+    }
+    .audio-toggle:active { transform:scale(.92); }
   </style>
 </head>
+
 <body>
-  <!-- RAD Certified badge, linked to the Ledger -->
-  <a href="https://radgarlington.io/ledger.html" class="rad-certified-badge" aria-label="View The RAD Ledger — Certified">
+  <!-- RAD Certified badge -->
+  <a href="https://radgarlington.io/ledger.html" class="rad-certified-badge">
     <picture>
       <source srcset="/assets/rad_ledger_certified.webp" type="image/webp">
-      <img src="/assets/rad_ledger_certified.png" alt="Certified RAD Project" loading="lazy" decoding="async">
+      <img src="/assets/rad_ledger_certified.png" alt="Certified RAD Project" loading="lazy">
     </picture>
   </a>
 
   <header>
-    <img src="https://raw.githubusercontent.com/continentalwick/continental-wick/main/assets/logo.png" alt="$WCK Logo" class="hero-img" loading="eager" decoding="async">
+    <img src="https://raw.githubusercontent.com/continentalwick/continental-wick/main/assets/logo.png" alt="$WCK Logo" class="hero-img">
     <h1>CONTINENTAL WICK</h1>
     <div class="tagline">The Utility That Memes. Powered by XRPL.</div>
-    <div class="chip-nav"><a class="chip-link" href="/nft" aria-label="Go to $WCK NFT gallery">Explore NFTs →</a></div>
+    <div class="chip-nav">
+      <a class="chip-link" href="/nft">Explore NFTs →</a>
+    </div>
   </header>
 
   <div class="token-details">
-    <b>Token:</b> <span style="color:#ffd700;">$WCK</span> &mdash;
+    <b>Token:</b> <span style="color:#ffd700;">$WCK</span> —
     <b>Issuer:</b> <code>rpFVEydkZrUjf4tcbLeDeVqXm5zYQGtXWm</code>
+
     <div class="social-wrap">
       <div class="social-row">
-        <a class="social-btn" href="https://x.com/wcktoken" target="_blank" rel="noopener" aria-label="Follow WCK on X">
-          <img class="social-icon" src="/assets/x.png" alt="X logo" width="24" height="24" loading="lazy" decoding="async">
-        </a>
-        <a class="social-btn" href="https://t.me/wcktoken" target="_blank" rel="noopener" aria-label="Join WCK on Telegram">
-          <img class="social-icon" src="/assets/telegram.png" alt="Telegram logo" width="24" height="24" loading="lazy" decoding="async">
-        </a>
-        <a class="social-btn" href="https://t.me/wcklobby" target="_blank" rel="noopener" aria-label="Enter The WCK Lobby chat group">
-          <span class="social-icon" style="font-size:20px;line-height:24px;text-align:center;">💬</span>
-        </a>
+        <a class="social-btn" href="https://x.com/wcktoken" target="_blank"><img class="social-icon" src="/assets/x.png"></a>
+        <a class="social-btn" href="https://t.me/wcktoken" target="_blank"><img class="social-icon" src="/assets/telegram.png"></a>
+        <a class="social-btn" href="https://t.me/wcklobby" target="_blank"><span class="social-icon" style="font-size:20px;">💬</span></a>
       </div>
 
       <div class="verify-line">
         🔍 Verify on:
-        <a href="https://bithomp.com/explorer/rpFVEydkZrUjf4tcbLeDeVqXm5zYQGtXWm" target="_blank" rel="noopener"><b>Bithomp</b></a>
+        <a href="https://bithomp.com/explorer/rpFVEydkZrUjf4tcbLeDeVqXm5zYQGtXWm" target="_blank"><b>Bithomp</b></a>
         <span style="opacity:.6;">|</span>
-        <a href="https://xrpscan.com/account/rpFVEydkZrUjf4tcbLeDeVqXm5zYQGtXWm" target="_blank" rel="noopener"><b>XRPSCAN</b></a>
+        <a href="https://xrpscan.com/account/rpFVEydkZrUjf4tcbLeDeVqXm5zYQGtXWm" target="_blank"><b>XRPSCAN</b></a>
       </div>
     </div>
   </div>
 
-  <div class="blend-section" aria-label="Token quick facts">
-    <span class="line"><span class="em">Decimals:</span> 6 &mdash; <span class="em">Total Supply:</span> 100,000,000</span>
+  <div class="blend-section">
+    <span class="line"><span class="em">Decimals:</span> 6 — <span class="em">Total Supply:</span> 100,000,000</span>
     <span class="line">Protocol Enforced • Powered by XRPL • The Utility That Memes</span>
   </div>
 
-  <!-- Replacement Launch Banner (OTC removed) -->
-  <section class="launch-block" aria-labelledby="launchTitle">
-    <div class="launch-title" id="launchTitle">$WCK Launching Soon</div>
+  <section class="launch-block">
+    <div class="launch-title">$WCK Launching Soon</div>
     <div class="launch-sub">We’re going live on-chain. Liquidity will drop on the XRPL DEX.</div>
     <div class="launch-sub"><strong>Set your trust line now</strong> to be ready.</div>
-    <div class="cta-row" aria-label="Trustline">
+    <div class="cta-row">
       <a
         class="btn btn-trustline"
         href="https://xrpl.services/?issuer=rpFVEydkZrUjf4tcbLeDeVqXm5zYQGtXWm&currency=WCK&limit=100000000"
         target="_blank"
-        rel="noopener"
       >
         🗝️ Set $WCK Trust Line
         <span class="mini">opens via xrpl.services</span>
@@ -224,27 +242,27 @@
     </div>
   </section>
 
-  <!-- NFTs on homepage -->
-  <section id="nft-cards" style="text-align:center; padding: 40px 20px; background-color:#111;">
+  <section id="nft-cards" style="text-align:center; padding:40px 20px; background-color:#111;">
     <h2 class="section-title">NFT TRADING CARDS</h2>
+
     <div class="cards-row">
       <div class="card-box">
-        <img src="https://github.com/continentalwick/continental-wick/blob/main/assets/nfts/CONTINENTAL-WICK-001_PREVIEW.png?raw=true" alt="Card 001 — CONTINENTAL WICK" loading="lazy" decoding="async">
+        <img src="https://github.com/continentalwick/continental-wick/blob/main/assets/nfts/CONTINENTAL-WICK-001_PREVIEW.png?raw=true">
         <div class="card-title">Card 001 — CONTINENTAL WICK<br><small>Codename: The Diamond</small></div>
         <div class="card-actions">
           <a class="btn-ghost" href="/nft#wick">Details</a>
-          <!-- Replace # with live links when ready -->
-          <a class="btn-ghost" href="#" target="_blank" rel="noopener">XRPSCAN</a>
-          <a class="btn-ghost" href="#" target="_blank" rel="noopener">Bithomp</a>
+          <a class="btn-ghost" href="#">XRPSCAN</a>
+          <a class="btn-ghost" href="#">Bithomp</a>
         </div>
       </div>
+
       <div class="card-box">
-        <img src="https://github.com/continentalwick/continental-wick/blob/main/assets/nfts/CLICKZ-002_PREVIEW.png?raw=true" alt="Card 002 — CLICKZ" loading="lazy" decoding="async">
+        <img src="https://github.com/continentalwick/continental-wick/blob/main/assets/nfts/CLICKZ-002_PREVIEW.png?raw=true">
         <div class="card-title">Card 002 — CLICKZ<br><small>Codename: The Feed</small></div>
         <div class="card-actions">
           <a class="btn-ghost" href="/nft#clickz">Details</a>
-          <a class="btn-ghost" href="#" target="_blank" rel="noopener">XRPSCAN</a>
-          <a class="btn-ghost" href="#" target="_blank" rel="noopener">Bithomp</a>
+          <a class="btn-ghost" href="#">XRPSCAN</a>
+          <a class="btn-ghost" href="#">Bithomp</a>
         </div>
       </div>
     </div>
@@ -258,25 +276,20 @@
       </ul>
       <p class="collect-line">Collect them all. Secure the set.</p>
 
-      <!-- CTA to full gallery -->
       <div style="margin-top:10px;">
         <a href="/nft" style="text-decoration:none; font-weight:700; border:1px solid #00b4ff; padding:12px 16px; border-radius:12px; color:#ececec; background:#0a1f28;">Explore All NFTs</a>
       </div>
     </div>
   </section>
 
-  <!-- Whitepaper button (link locally to /whitepaper.md per your sitemap) -->
   <div class="whitepaper-block">
     <a href="/whitepaper.html"
-       target="_blank" rel="noopener"
-       style="display:inline-block;margin-top:10px;padding:11px 30px;background:linear-gradient(90deg,#ffd700,#e0b600);color:#18171a;border-radius:8px;font-weight:bold;font-size:1.08em;text-decoration:none;box-shadow:0 2px 8px #0004;border:1.5px solid #ffe083;transition:.15s all;"
-       onmouseover="this.style.background='#e0b600';this.style.color='#000';"
-       onmouseout="this.style.background='linear-gradient(90deg,#ffd700,#e0b600)';this.style.color='#18171a';">
+       target="_blank"
+       style="display:inline-block;margin-top:10px;padding:11px 30px;background:linear-gradient(90deg,#ffd700,#e0b600);color:#18171a;border-radius:8px;font-weight:bold;font-size:1.08em;text-decoration:none;box-shadow:0 2px 8px #0004;border:1.5px solid #ffe083;">
        View White Paper
     </a>
   </div>
 
-  <!-- Legal -->
   <div class="legal-disclaimer">
     <h3>🛡 Legal Disclaimer</h3>
     <p>
@@ -299,15 +312,63 @@
 
   <footer>
     <div>
-      <a class="x-handle" href="https://x.com/wcktoken" target="_blank" rel="noopener">𝕏&nbsp;@wcktoken</a>
+      <a class="x-handle" href="https://x.com/wcktoken" target="_blank">𝕏 @wcktoken</a>
       &nbsp;•&nbsp;
-      <a class="x-handle" href="https://t.me/wcktoken" target="_blank" rel="noopener">Telegram&nbsp;@wcktoken</a>
+      <a class="x-handle" href="https://t.me/wcktoken" target="_blank">Telegram @wcktoken</a>
       &nbsp;•&nbsp;
-      <a class="x-handle" href="https://t.me/wcklobby" target="_blank" rel="noopener">The Lobby&nbsp;@wcklobby</a>
+      <a class="x-handle" href="https://t.me/wcklobby" target="_blank">The Lobby @wcklobby</a>
     </div>
     <div style="margin-top:6px;">&copy; 2025 CONTINENTAL WICK. All rights reserved.</div>
   </footer>
 
-  <!-- No OTC scripts needed -->
+  <!-- AUDIO ELEMENT -->
+  <audio id="bg-audio" preload="auto">
+    <source src="/assets/killing_strangers.mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- AUDIO TOGGLE BUTTON -->
+  <div class="audio-toggle" id="audioToggle">🔇</div>
+
+  <!-- AUDIO SCRIPT -->
+  <script>
+    const audio = document.getElementById('bg-audio');
+    const toggle = document.getElementById('audioToggle');
+
+    let started = false;
+    let playing = false;
+
+    const startAudio = () => {
+      if (!started) {
+        audio.play().then(() => {
+          started = true;
+          playing = true;
+          toggle.textContent = "🔊";
+        }).catch(() => {});
+      }
+    };
+
+    const triggers = ["touchstart", "click", "scroll", "wheel", "keydown"];
+    triggers.forEach(ev => {
+      document.addEventListener(ev, startAudio, { once: true });
+    });
+
+    toggle.addEventListener("click", () => {
+      if (!started) {
+        startAudio();
+        return;
+      }
+
+      if (playing) {
+        audio.pause();
+        playing = false;
+        toggle.textContent = "🔇";
+      } else {
+        audio.play();
+        playing = true;
+        toggle.textContent = "🔊";
+      }
+    });
+  </script>
+
 </body>
 </html>
