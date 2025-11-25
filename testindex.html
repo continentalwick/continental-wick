@@ -57,7 +57,24 @@
     /* Social */
     .social-wrap { margin-top:10px }
     .social-row { display:flex; justify-content:center; align-items:center; gap:14px }
-    .social-btn { display:inline-flex; align-items:center; justify-content:center; width:40px; height:40px; border-radius:10px; background:#18171a; border:1px solid #2d2c30; box-shadow:0 2px 8px #0006; transition:.15s transform,.15s box-shadow }
+    .social-btn {
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      width:40px;
+      height:40px;
+      border-radius:10px;
+      background:#18171a;
+      border:1px solid #2d2c30;
+      box-shadow:0 2px 8px #0006;
+      transition:.15s transform,.15s box-shadow;
+      text-decoration:none;         /* remove blue underline */
+      color:#f8f8f8;               /* keep emoji/icon white */
+    }
+    .social-btn:visited {
+      text-decoration:none;
+      color:#f8f8f8;
+    }
     .social-btn:hover { transform:translateY(-2px); box-shadow:0 6px 18px #0009 }
     .social-icon { width:24px; height:24px; display:block }
 
