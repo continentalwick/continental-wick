@@ -46,7 +46,31 @@
       letter-spacing:.05em; color:#ffd700; font-weight:800;
     }
 
-    .tagline { font-size:1.15em; color:#e0cf93; margin-bottom:10px }
+    /* ⭐ Enhanced Tagline */
+    .tagline {
+      font-size:1.22em;
+      color:#e0cf93;
+      margin-bottom:12px;
+      letter-spacing:0.01em;
+      opacity:0;
+      animation:taglineFade .6s ease-out forwards;
+    }
+    .tagline-highlight {
+      color:#ffd700;
+      font-weight:800;
+      letter-spacing:0.02em;
+    }
+    @keyframes taglineFade {
+      from { opacity:0; transform:translateY(6px); }
+      to   { opacity:1; transform:translateY(0); }
+    }
+    @media (max-width:480px) {
+      .tagline {
+        font-size:1.05em;
+        line-height:1.35;
+        padding:0 10px;
+      }
+    }
 
     .chip-nav { margin:12px auto 22px; }
 
@@ -103,7 +127,7 @@
       box-shadow:0 6px 22px rgba(255, 208, 64, .18);
     }
 
-    /* NEW CHAOTIC UNIVERSE SECTION */
+    /* CHAOTIC UNIVERSE BLOCK */
     .chaos-block {
       background:#18171a;
       border:1px solid #2a2a2d;
@@ -160,7 +184,13 @@
     <img src="https://raw.githubusercontent.com/continentalwick/continental-wick/main/assets/logo.png" class="hero-img">
 
     <h1>CONTINENTAL WICK</h1>
-    <div class="tagline">Protocol Order. Chaotic Reality.</div>
+
+    <!-- ⭐ UPDATED TAGLINE ⭐ -->
+    <div class="tagline">
+      Protocol order. Chaotic reality.
+      <span class="tagline-highlight">Collect the agents.</span>
+    </div>
+
     <div class="chip-nav">
       <a class="chip-link" href="/nft">Explore NFTs →</a>
     </div>
@@ -206,7 +236,7 @@
     </a>
 </section>
 
-<!-- ⭐ INSERTED CHAOTIC UNIVERSE BLOCK (NEW) ⭐ -->
+<!-- CHAOTIC UNIVERSE -->
 <div class="chaos-block">
   <h2>WELCOME TO THE WCK UNIVERSE</h2>
   <p>
@@ -227,7 +257,6 @@
     All of them are moments inside the WCK universe.
   </p>
 </div>
-
 
 <!-- NFT CARDS -->
 <section id="nft-cards" style="text-align:center; padding:40px 20px; background-color:#111;">
