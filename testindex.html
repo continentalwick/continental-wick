@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <title>CONTINENTAL WICK ($WCK)</title>
 
-  <!-- MOBILE VIEWPORT: DISABLE ZOOM, LOCK LAYOUT -->
+  <!-- MOBILE VIEWPORT: DISABLE ZOOM -->
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
   <link rel="canonical" href="https://wicktoken.net/">
@@ -21,14 +21,12 @@
   <meta name="apple-mobile-web-app-title" content="$WCK">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
-  <meta name="msapplication-TileColor" content="#121113">
-  <meta name="msapplication-config" content="/assets/browserconfig.xml">
 
   <!-- SEO -->
-  <meta name="description" content="$WCK – The Utility That Memes. CONTINENTAL protocol agent enforcing value on XRPL. NFT card series and universe building.">
+  <meta name="description" content="$WCK – The Utility That Memes. CONTINENTAL protocol universe. NFT card series. XRPL native.">
   <meta name="keywords" content="WCK, Continental Wick, XRPL, XRP Ledger, NFT cards, protocol enforcer">
 
-  <!-- OG / Twitter -->
+  <!-- OG / TWITTER -->
   <meta property="og:title" content="CONTINENTAL WICK ($WCK)">
   <meta property="og:description" content="The Utility That Memes. Powered by XRPL.">
   <meta property="og:type" content="website">
@@ -40,65 +38,72 @@
   <meta name="twitter:description" content="The Utility That Memes. Powered by XRPL.">
   <meta name="twitter:image" content="https://raw.githubusercontent.com/continentalwick/continental-wick/main/assets/logo.png">
 
+
+  <!-- ==================== CSS ==================== -->
   <style>
-    * { box-sizing: border-box; }
-    html, body { overflow-x: hidden; }
+    * { box-sizing:border-box; }
+    html, body { overflow-x:hidden; }
 
     body {
       margin:0;
       background:#121113;
       color:#f8f8f8;
       font-family:'Segoe UI',Arial,sans-serif;
-      min-height:100vh;
       letter-spacing:.01em;
     }
 
-    /* GLOBAL IMAGE FIX */
+    /* GLOBAL IMAGE SAFETY */
     img {
       max-width:100%;
       height:auto;
       display:block;
     }
 
-    /* RAD Certified Badge */
-    .rad-certified-badge {
-      position:absolute;
-      top:10px;
-      left:10px;
-      width:70px;
-      z-index:50;
-    }
-    @media(max-width:480px){
-      .rad-certified-badge { width:58px; }
-    }
-
-    /* Hero */
-    header {
-      text-align:center;
-      margin:48px auto 12px;
-      padding:0 16px;
-      max-width:960px;
-    }
-
+    /* HARD LOCK HERO LOGO */
     .hero-img {
-      width:44%;
-      max-width:220px;
-      margin:0 auto 16px;
+      width:180px !important;
+      max-width:180px !important;
+      margin:0 auto 14px !important;
+      display:block !important;
     }
-
     @media(max-width:480px){
       .hero-img {
-        width:50%;
-        max-width:180px;
+        width:150px !important;
+        max-width:150px !important;
+        margin-bottom:12px !important;
       }
+    }
+
+    /* RAD CERTIFIED BADGE — FIXED 90px */
+    .rad-certified-badge {
+      position:fixed !important;
+      top:10px !important;
+      left:10px !important;
+      width:90px !important;
+      height:auto !important;
+      z-index:9999 !important;
+      padding:0 !important;
+      margin:0 !important;
+    }
+    .rad-certified-badge img {
+      width:100% !important;
+      height:auto !important;
+    }
+
+    /* HEADER */
+    header {
+      text-align:center;
+      margin:58px auto 12px;
+      padding:0 16px;
+      max-width:960px;
     }
 
     h1 {
       font-size:2.6em;
       margin:6px 0 4px;
-      letter-spacing:.05em;
       color:#ffd700;
       font-weight:700;
+      letter-spacing:.05em;
     }
 
     .tagline {
@@ -107,99 +112,98 @@
       margin-bottom:10px;
     }
 
-    .chip-nav { display:inline-block; margin:6px 0 16px; }
+    .chip-nav { margin:6px 0 16px; }
     .chip-link {
       display:inline-block;
-      font-weight:700;
-      text-decoration:none;
-      color:#ececec;
-      background:#16171a;
-      border:1px solid #2a2b2f;
       padding:8px 12px;
       border-radius:999px;
+      background:#16171a;
+      border:1px solid #2a2b2f;
+      color:#ececec;
+      text-decoration:none;
+      font-weight:700;
     }
 
-    /* LORE INTRO */
+    /* LORE SECTION */
     .lore-section {
       max-width:880px;
       margin:26px auto 0;
-      text-align:center;
       padding:0 18px;
+      text-align:center;
     }
     .lore-section h2 {
-      color:#ffd700;
       font-size:1.75em;
+      color:#ffd700;
       margin-bottom:10px;
     }
     .lore-section p {
-      color:#e5e2c9;
       font-size:1.05em;
+      color:#e5e2c9;
       line-height:1.55;
       margin:10px 0;
     }
 
-    /* MEET THE PROTOCOL */
+    /* PROTOCOL PREVIEW */
     .protocol-preview {
       max-width:960px;
-      margin:36px auto 0;
+      margin:40px auto 0;
       padding:0 18px;
+      text-align:center;
     }
     .protocol-preview h2 {
-      text-align:center;
-      color:#ffd700;
       font-size:1.65em;
-      margin-bottom:12px;
+      color:#ffd700;
     }
 
     .mini-cards {
+      margin-top:24px;
       display:flex;
       flex-wrap:wrap;
-      gap:22px;
       justify-content:center;
-      margin-top:24px;
+      gap:22px;
     }
+
     .mini-card {
       background:#18171a;
-      padding:16px 18px;
-      border-radius:14px;
       border:1px solid #2d2c30;
       width:240px;
-      max-width:90%;
+      padding:16px 18px;
+      border-radius:14px;
       text-align:center;
       box-shadow:0 3px 12px #0008;
     }
     .mini-card h3 {
       margin:0 0 6px;
-      font-size:1.16em;
       color:#ffd700;
+      font-size:1.16em;
     }
     .mini-card p {
       margin:0;
-      color:#cfcbb6;
       font-size:.94em;
+      color:#cfcbb6;
       line-height:1.45;
     }
 
-    /* Social */
+    /* SOCIAL BUTTON FIX — SHRUNK DOWN */
+    .social-btn {
+      width:30px !important;
+      height:30px !important;
+      border-radius:8px !important;
+      background:#18171a !important;
+      border:1px solid #2d2c30 !important;
+      box-shadow:0 2px 6px #0007 !important;
+      display:flex !important;
+      align-items:center !important;
+      justify-content:center !important;
+      padding:0 !important;
+    }
+    .social-icon {
+      width:16px !important;
+      height:16px !important;
+    }
+
     .social-wrap { margin-top:10px; }
     .social-row { display:flex; justify-content:center; gap:14px; }
-
-    .social-btn {
-      display:inline-flex;
-      width:40px;
-      height:40px;
-      border-radius:10px;
-      background:#18171a;
-      border:1px solid #2d2c30;
-      box-shadow:0 2px 8px #0006;
-      align-items:center;
-      justify-content:center;
-      transition:.15s;
-    }
-    .social-btn:hover {
-      transform:translateY(-2px);
-      box-shadow:0 6px 18px #0009;
-    }
 
     .verify-line {
       text-align:center;
@@ -207,9 +211,13 @@
       font-size:1.02em;
       color:#d8d3c0;
     }
-    .verify-line a { color:#ffd700; text-decoration:none; font-weight:700; }
+    .verify-line a {
+      color:#ffd700;
+      text-decoration:none;
+      font-weight:700;
+    }
 
-    /* Supply Strip */
+    /* SUPPLY STRIP */
     .blend-section {
       margin:22px auto 14px;
       padding:10px 16px;
@@ -220,21 +228,24 @@
       border-radius:10px;
       color:#e8e3cf;
       font-weight:700;
-      line-height:1.4;
     }
 
-    /* Trustline Block */
+    /* TRUSTLINE BLOCK */
     .launch-block {
+      max-width:900px;
+      margin:0 auto 38px;
+      padding:32px 14px 26px;
       background:#232227;
       border-radius:11px;
       text-align:center;
-      padding:32px 14px 26px;
-      margin:0 auto 38px;
-      max-width:900px;
       box-shadow:0 4px 30px #000a;
     }
 
-    .launch-title { font-size:1.35em; font-weight:800; color:#ffd700; }
+    .launch-title {
+      font-size:1.35em;
+      color:#ffd700;
+      font-weight:800;
+    }
 
     .btn {
       appearance:none;
@@ -243,17 +254,15 @@
       padding:12px 18px;
       font-weight:800;
       cursor:pointer;
-      transition:.15s;
     }
 
     .btn-trustline {
       background:radial-gradient(120% 120% at 50% -10%, #ffe083 0%, #b8942e 60%, #2a261a 100%);
       color:#0c0b07;
       border:1.5px solid #e5c767;
-      box-shadow:0 6px 22px rgba(255, 208, 64, .18);
     }
 
-    /* NFT Cards */
+    /* NFT CARDS */
     .section-title {
       text-align:center;
       font-size:1.55em;
@@ -263,51 +272,62 @@
 
     .cards-row {
       display:flex;
+      flex-wrap:wrap;
       justify-content:center;
       gap:32px;
-      flex-wrap:wrap;
       padding:0 12px;
     }
 
     .card-box {
-      background:#18171a;
-      border-radius:16px;
-      box-shadow:0 3px 18px #000b;
-      padding:16px;
       width:100%;
       max-width:420px;
+      background:#18171a;
+      border-radius:16px;
       border:2px solid #c6a450;
+      padding:16px;
+      box-shadow:0 3px 18px #000b;
     }
 
     .card-box img {
-      width:100%;
+      width:100% !important;
+      max-width:360px !important;
+      margin:0 auto !important;
+      display:block !important;
       border-radius:12px;
       border:2.5px solid #c6a450;
-      background:#18171a;
     }
 
-    /* Whitepaper */
+    .btn-ghost {
+      padding:8px 10px;
+      background:#16171a;
+      border:1px solid #26272b;
+      border-radius:10px;
+      text-decoration:none;
+      color:#ececec;
+      font-size:.95em;
+    }
+
+    /* WHITEPAPER */
     .whitepaper-block {
+      max-width:460px;
+      margin:36px auto 24px;
+      padding:22px 12px 26px;
+      text-align:center;
       background:#232227;
       border-radius:11px;
-      text-align:center;
-      padding:22px 12px 26px;
-      margin:36px auto 24px;
-      max-width:460px;
       box-shadow:0 2px 16px #0005;
     }
 
-    /* Legal */
+    /* LEGAL */
     .legal-disclaimer {
-      background:#000;
-      color:#aaa;
-      text-align:center;
-      padding:30px 15px;
-      font-size:.85rem;
-      line-height:1.5;
       max-width:900px;
       margin:50px auto 0;
+      padding:30px 15px;
+      background:#000;
+      color:#aaa;
       border-radius:6px;
+      font-size:.85rem;
+      text-align:center;
     }
 
     footer {
@@ -316,10 +336,9 @@
       color:#bdbdbd;
       font-size:1.05em;
     }
-
     .x-handle { color:#ffd700; text-decoration:none; }
 
-    /* AUDIO BUTTON */
+    /* AUDIO TOGGLE */
     .audio-toggle {
       position:fixed;
       top:12px;
@@ -333,10 +352,10 @@
       display:flex;
       align-items:center;
       justify-content:center;
-      cursor:pointer;
       color:#ffd700;
-      font-size:22px;
+      cursor:pointer;
       z-index:9999;
+      font-size:22px;
     }
 
   </style>
@@ -344,7 +363,7 @@
 
 <body>
 
-  <!-- RAD Certified Badge -->
+  <!-- RAD CERTIFIED BADGE -->
   <a href="https://radgarlington.io/ledger.html" class="rad-certified-badge">
     <img src="/assets/rad_ledger_certified.png" alt="Certified RAD Project">
   </a>
@@ -354,7 +373,9 @@
     <img src="https://raw.githubusercontent.com/continentalwick/continental-wick/main/assets/logo.png" class="hero-img">
     <h1>CONTINENTAL WICK</h1>
     <div class="tagline">The Utility That Memes. Powered by XRPL.</div>
-    <div class="chip-nav"><a class="chip-link" href="/nft">Explore NFTs →</a></div>
+    <div class="chip-nav">
+      <a class="chip-link" href="/nft">Explore NFTs →</a>
+    </div>
   </header>
 
   <!-- LORE INTRO -->
@@ -364,7 +385,7 @@
     <p>CONTINENTAL WICK isn’t a token site. It’s a world. Built in series. Expanded through characters. Driven by lore. Enforced through the $WCK protocol layer.</p>
   </section>
 
-  <!-- MEET THE PROTOCOL -->
+  <!-- PROTOCOL PREVIEW -->
   <section class="protocol-preview">
     <h2>Meet the Protocol</h2>
     <div class="mini-cards">
@@ -389,14 +410,14 @@
 
   <!-- TOKEN DETAILS -->
   <div class="token-details" style="text-align:center; margin:28px 0 10px;">
-    <b>Token:</b> <span style="color:#ffd700;">$WCK</span> —  
+    <b>Token:</b> <span style="color:#ffd700;">$WCK</span> —
     <b>Issuer:</b> <code>rpFVEydkZrUjf4tcbLeDeVqXm5zYQGtXWm</code>
 
     <div class="social-wrap">
       <div class="social-row">
         <a class="social-btn" href="https://x.com/wcktoken" target="_blank"><img class="social-icon" src="/assets/x.png"></a>
         <a class="social-btn" href="https://t.me/wcktoken" target="_blank"><img class="social-icon" src="/assets/telegram.png"></a>
-        <a class="social-btn" href="https://t.me/wcklobby" target="_blank"><span style="font-size:20px;">💬</span></a>
+        <a class="social-btn" href="https://t.me/wcklobby" target="_blank"><span class="social-icon" style="width:16px;height:16px;font-size:16px;display:block;text-align:center;">💬</span></a>
       </div>
 
       <div class="verify-line">
@@ -410,28 +431,28 @@
 
   <!-- SUPPLY STRIP -->
   <div class="blend-section">
-    <span class="line"><span class="em">Decimals:</span> 6 — <span class="em">Total Supply:</span> 100,000,000</span>
-    <span class="line">Protocol Enforced • Powered by XRPL • The Utility That Memes</span>
+    <span><b>Decimals:</b> 6 — <b>Total Supply:</b> 100,000,000</span><br>
+    Protocol Enforced • Powered by XRPL • The Utility That Memes
   </div>
 
-  <!-- TRUSTLINE BLOCK -->
+  <!-- TRUSTLINE -->
   <section class="launch-block">
     <div class="launch-title">$WCK Launching Soon</div>
     <div class="launch-sub">Liquidity deploys on XRPL. Be aligned on day one.</div>
     <div class="launch-sub"><strong>Set your trust line now.</strong></div>
 
-    <div class="cta-row">
+    <div class="cta-row" style="margin-top:14px;">
       <a class="btn btn-trustline"
          href="https://xrpl.services/?issuer=rpFVEydkZrUjf4tcbLeDeVqXm5zYQGtXWm&currency=WCK&limit=100000000"
          target="_blank">
-         🗝️ Set $WCK Trust Line
-         <span class="mini" style="display:block;font-size:.78em;">opens via xrpl.services</span>
+        🗝️ Set $WCK Trust Line
+        <span class="mini" style="display:block;font-size:.78em;margin-top:2px;">opens via xrpl.services</span>
       </a>
     </div>
   </section>
 
   <!-- NFT CARDS -->
-  <section id="nft-cards" style="text-align:center; padding:40px 20px; background-color:#111;">
+  <section id="nft-cards" style="padding:40px 20px; background:#111; text-align:center;">
     <h2 class="section-title">NFT TRADING CARDS</h2>
 
     <div class="cards-row">
@@ -460,32 +481,29 @@
 
     </div>
 
-    <div style="max-width:720px;margin:10px auto 0;text-align:center;padding:12px 16px;">
+    <div style="max-width:720px;margin:10px auto 0;padding:12px 16px;">
       <p style="color:#ffd700;font-weight:700;">COMING SOON</p>
-
-      <ul style="list-style:none;padding:0;margin:8px 0 6px;color:#e5e2c9;line-height:1.6;">
+      <ul style="list-style:none;padding:0;color:#e5e2c9;line-height:1.6;">
         <li><strong style="color:#f8d05f;">Common</strong> — Base-level protocol drops</li>
         <li><strong style="color:#f8d05f;">Rare</strong> — Mission-set exclusives</li>
         <li><strong style="color:#f8d05f;">Ultra Rare</strong> — Limited protocol icons</li>
       </ul>
 
-      <p style="margin-top:6px;">Collect them all. Secure the set.</p>
+      <p>Collect them all. Secure the set.</p>
 
-      <div style="margin-top:10px;">
-        <a href="/nft"
-           style="text-decoration:none;font-weight:700;border:1px solid #00b4ff;padding:12px 16px;border-radius:12px;color:#ececec;background:#0a1f28;">
-           Explore All NFTs
-        </a>
-      </div>
+      <a href="/nft"
+         style="text-decoration:none;padding:12px 16px;border-radius:12px;background:#0a1f28;border:1px solid #00b4ff;color:#ececec;font-weight:700;">
+         Explore All NFTs
+      </a>
     </div>
 
   </section>
 
-  <!-- WHITE PAPER -->
+  <!-- WHITEPAPER -->
   <div class="whitepaper-block">
     <a href="/whitepaper.html"
        target="_blank"
-       style="display:inline-block;padding:11px 30px;background:linear-gradient(90deg,#ffd700,#e0b600);color:#18171a;border-radius:8px;font-weight:bold;font-size:1.08em;box-shadow:0 2px 8px #0004;border:1.5px solid #ffe083;">
+       style="display:inline-block;padding:11px 30px;background:linear-gradient(90deg,#ffd700,#e0b600);color:#18171a;border-radius:8px;font-weight:bold;font-size:1.08em;border:1.5px solid #ffe083;">
        View White Paper
     </a>
   </div>
