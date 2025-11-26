@@ -3,7 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <title>CONTINENTAL WICK ($WCK)</title>
+
+  <!-- Mobile Viewport / Prevent Zoom -->
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
   <link rel="canonical" href="https://wicktoken.net/">
 
   <!-- Favicons -->
@@ -14,16 +17,24 @@
   <link rel="manifest" href="/assets/site.webmanifest">
 
   <!-- SEO -->
-  <meta name="description" content="$WCK – The Utility That Memes. CONTINENTAL protocol agent enforcing value on XRPL. NFT card series and lore.">
+  <meta name="description" content="$WCK – The Utility That Memes. CONTINENTAL protocol universe. NFT card series. XRPL native.">
 
   <style>
-    * { box-sizing: border-box }
-    body { margin:0; background:#121113; color:#f8f8f8; font-family:'Segoe UI',Arial,sans-serif; }
+    * { box-sizing:border-box; }
+    html, body { overflow-x:hidden; }
 
-    /* GLOBAL IMAGE SAFETY */
+    body {
+      margin:0;
+      background:#121113;
+      color:#f8f8f8;
+      font-family:'Segoe UI',Arial,sans-serif;
+      letter-spacing:.01em;
+    }
+
+    /* GLOBAL IMG SAFETY */
     img { max-width:100%; height:auto; display:block; }
 
-    /* HERO LOGO — restored to your original sizing */
+    /* HERO LOGO — your original scale */
     .hero-img {
       width:55%;
       max-width:320px;
@@ -38,28 +49,29 @@
 
     header { text-align:center; margin:48px auto 12px; padding:0 16px; }
 
-    /* TITLE */
-    h1 { font-size:2.7em; color:#ffd700; margin:6px 0 4px; }
-
-    /* SOCIAL BUTTONS (RESTORED TO ORIGINAL SIZE) */
-    .social-wrap { margin-top:10px; }
-    .social-row { display:flex; gap:14px; justify-content:center; }
-
-    .social-btn {
-      width:40px;
-      height:40px;
-      border-radius:10px;
-      background:#18171a;
-      border:1px solid #2d2c30;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      box-shadow:0 2px 8px #0006;
+    h1 {
+      font-size:2.7em;
+      margin:6px 0 4px;
+      letter-spacing:.05em;
+      color:#ffd700;
+      font-weight:700;
     }
 
-    .social-icon { width:24px; height:24px; }
+    .tagline { font-size:1.12em; color:#e0cf93; margin-bottom:10px; }
 
-    /* RAD BADGE — NOW LOCKED AT EXACT 90PX */
+    .chip-nav { margin:6px 0 16px; }
+    .chip-link {
+      display:inline-block;
+      padding:8px 12px;
+      border-radius:999px;
+      background:#16171a;
+      border:1px solid #2a2b2f;
+      color:#ececec;
+      font-weight:700;
+      text-decoration:none;
+    }
+
+    /* RAD BADGE — locked at 90px */
     .rad-certified-badge {
       position:fixed;
       top:10px;
@@ -71,78 +83,38 @@
     }
     .rad-certified-badge img { width:100%; height:auto; }
 
-    /* NFT CARDS — restored to original container size */
-    .cards-row {
-      display:flex;
-      justify-content:center;
-      gap:36px;
-      flex-wrap:wrap;
-      padding:0 12px;
+    /* LORE CINEMATIC SECTION */
+    .lore-section {
+      max-width:880px;
+      margin:32px auto 0;
+      padding:0 18px;
+      text-align:center;
     }
-    .card-box {
-      width:100%;
-      max-width:420px;
-      background:#18171a;
-      padding:16px;
-      border-radius:16px;
-      border:2px solid #c6a450;
-      box-shadow:0 3px 18px #000b;
-    }
-    .card-box img {
-      border:2.5px solid #c6a450;
-      border-radius:12px;
-    }
-
-    /* MINI CARD PREVIEWS — restored to original baseline size */
-    .mini-card {
-      width:220px;
-      max-width:220px;
-      margin:0 auto;
-      border-radius:14px;
-      overflow:hidden;
-    }
-
-    /* LAUNCH BLOCK */
-    .launch-block {
-      background:#232227;
-      padding:32px 14px 26px;
-      margin:0 auto 38px;
-      max-width:900px;
-      border-radius:11px;
-    }
-
-    /* WHITEPAPER BUTTON */
-    .whitepaper-block { text-align:center; margin:36px auto 24px; }
-
-    /* DISABLE SAFARI ZOOM ON INPUT */
-    input, a, button { font-size:16px; }
-
-    /* AUDIO BUTTON */
-    .audio-toggle {
-      position:fixed;
-      top:12px;
-      right:12px;
-      width:46px;
-      height:46px;
-      border-radius:12px;
-      background:#18171a;
-      border:1px solid #2d2c30;
-      display:flex;
-      align-items:center;
-      justify-content:center;
+    .lore-section h2 {
+      font-size:1.9em;
+      font-weight:800;
       color:#ffd700;
-      z-index:9999;
+      margin-bottom:14px;
+      letter-spacing:.03em;
+      text-transform:uppercase;
+    }
+    .lore-section p {
+      font-size:1.05em;
+      line-height:1.55;
+      color:#e5e2c9;
+      margin:10px 0 14px;
     }
   </style>
 </head>
 
 <body>
 
-<!-- RAD CERTIFIED BADGE -->
+<!-- RAD BADGE -->
 <a href="https://radgarlington.io/ledger.html" class="rad-certified-badge">
-  <img src="/assets/rad_ledger_certified.png">
+  <img src="/assets/rad_ledger_certified.png" alt="Certified RAD Project">
 </a>
 
+<!-- HERO -->
 <header>
   <img src="https://raw.githubusercontent.com/continentalwick/continental-wick/main/assets/logo.png" class="hero-img">
   <h1>CONTINENTAL WICK</h1>
@@ -153,24 +125,306 @@
   </div>
 </header>
 
-<!-- SHORTENED FOR BREVITY: ALL LORE, PREVIEW, TOKEN DETAILS, LAUNCH BLOCK, NFT GRID, WHITEPAPER, AND FOOTER REMAIN IDENTICAL TO YOUR ORIGINAL SCRIPT -->
+<!-- CINEMATIC LORE -->
+<section class="lore-section">
+  <h2>THE CONTINENTAL PROTOCOL</h2>
+
+  <p>
+    A decentralized enforcement layer built on XRPL — where value isn’t printed, it’s protected.
+    Where access is earned, not granted. Where every signal is tracked, every breach is punished, and every action leaves a ledger mark.
+  </p>
+
+  <p>
+    CONTINENTAL WICK isn’t a mascot. He’s the execution layer of a protocol that does not bend.
+    Every agent, every vault operator, every surveillance node, every archival entity exists because order must hold inside the chain.
+  </p>
+
+  <p>
+    This universe is not a story — it is a structure.  
+    A collector-driven mythos enforced by rules, roles, and consequences.  
+    Welcome to the protocol.
+  </p>
+</section>
+
+  <!-- MEET THE PROTOCOL -->
+<section class="protocol-preview" style="max-width:960px;margin:40px auto 0;padding:0 18px;text-align:center;">
+  <h2 style="font-size:1.75em;color:#ffd700;font-weight:800;margin-bottom:18px;">
+    Meet the Protocol
+  </h2>
+
+  <div class="mini-cards" style="display:flex;flex-wrap:wrap;justify-content:center;gap:22px;">
+
+    <div class="mini-card" style="background:#18171a;border:1px solid #2d2c30;width:220px;padding:16px 18px;border-radius:14px;text-align:center;box-shadow:0 3px 12px #0008;">
+      <h3 style="margin:0 0 6px;color:#ffd700;font-size:1.18em;font-weight:700;">CONTINENTAL WICK</h3>
+      <p style="margin:0;font-size:.94em;color:#cfcbb6;line-height:1.45;">
+        The Diamond. Execution layer of $WCK.
+      </p>
+    </div>
+
+    <div class="mini-card" style="background:#18171a;border:1px solid #2d2c30;width:220px;padding:16px 18px;border-radius:14px;text-align:center;box-shadow:0 3px 12px #0008;">
+      <h3 style="margin:0 0 6px;color:#ffd700;font-size:1.18em;font-weight:700;">CLICKZ</h3>
+      <p style="margin:0;font-size:.94em;color:#cfcbb6;line-height:1.45;">
+        The Feed. Internal surveillance. Logs don’t lie.
+      </p>
+    </div>
+
+    <div class="mini-card" style="background:#18171a;border:1px solid #2d2c30;width:220px;padding:16px 18px;border-radius:14px;text-align:center;box-shadow:0 3px 12px #0008;">
+      <h3 style="margin:0 0 6px;color:#ffd700;font-size:1.18em;font-weight:700;">ARMOIRE</h3>
+      <p style="margin:0;font-size:.94em;color:#cfcbb6;line-height:1.45;">
+        The Armorer. Vault-grade precision.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<!-- TOKEN DETAILS -->
+<div class="token-details" style="text-align:center;margin:32px 0 10px;color:#e5e2c9;font-size:1.10em;padding:0 16px;">
+  <b>Token:</b> <span style="color:#ffd700;">$WCK</span> —
+  <b>Issuer:</b> <code style="color:#ffe083;background:#191817;padding:2px 7px;border-radius:6px;font-size:.95em;">rpFVEydkZrUjf4tcbLeDeVqXm5zYQGtXWm</code>
+
+  <!-- SOCIAL -->
+  <div class="social-wrap" style="margin-top:10px;">
+    <div class="social-row" style="display:flex;justify-content:center;gap:14px;align-items:center;">
+
+      <a class="social-btn" href="https://x.com/wcktoken" target="_blank"
+         style="width:40px;height:40px;border-radius:10px;background:#18171a;border:1px solid #2d2c30;
+                box-shadow:0 2px 8px #0006;display:flex;align-items:center;justify-content:center;">
+        <img class="social-icon" src="/assets/x.png" style="width:24px;height:24px;">
+      </a>
+
+      <a class="social-btn" href="https://t.me/wcktoken" target="_blank"
+         style="width:40px;height:40px;border-radius:10px;background:#18171a;border:1px solid #2d2c30;
+                box-shadow:0 2px 8px #0006;display:flex;align-items:center;justify-content:center;">
+        <img class="social-icon" src="/assets/telegram.png" style="width:24px;height:24px;">
+      </a>
+
+      <a class="social-btn" href="https://t.me/wcklobby" target="_blank"
+         style="width:40px;height:40px;border-radius:10px;background:#18171a;border:1px solid #2d2c30;
+                box-shadow:0 2px 8px #0006;display:flex;align-items:center;justify-content:center;">
+        <span style="font-size:20px;line-height:20px;">💬</span>
+      </a>
+
+    </div>
+
+    <div class="verify-line" style="text-align:center;margin-top:12px;font-size:1.02em;color:#d8d3c0;">
+      🔍 Verify on:
+      <a href="https://bithomp.com/explorer/rpFVEydkZrUjf4tcbLeDeVqXm5zYQGtXWm" target="_blank"
+         style="color:#ffd700;font-weight:700;text-decoration:none;">Bithomp</a>
+      <span style="opacity:.6;">|</span>
+      <a href="https://xrpscan.com/account/rpFVEydkZrUjf4tcbLeDeVqXm5zYQGtXWm" target="_blank"
+         style="color:#ffd700;font-weight:700;text-decoration:none;">XRPSCAN</a>
+    </div>
+  </div>
+</div>
+
+<!-- SUPPLY STRIP -->
+<div class="blend-section"
+     style="margin:22px auto 14px;padding:10px 16px;max-width:960px;text-align:center;
+            background:linear-gradient(90deg, rgba(255,215,0,.10), rgba(255,255,255,.05) 60%, rgba(255,215,0,.10));
+            border:1px solid #2f2b1d;border-radius:10px;color:#e8e3cf;font-weight:700;">
+  <span><b>Decimals:</b> 6 — <b>Total Supply:</b> 100,000,000</span><br>
+  Protocol Enforced • Powered by XRPL • The Utility That Memes
+</div>
+
+<!-- TRUSTLINE BLOCK -->
+<section class="launch-block"
+         style="background:#232227;border-radius:11px;text-align:center;padding:32px 14px 26px;max-width:900px;margin:0 auto 38px;box-shadow:0 4px 30px #000a;">
+  <div class="launch-title" style="font-size:1.35em;font-weight:800;color:#ffd700;margin-bottom:10px;">
+    $WCK Launching Soon
+  </div>
+
+  <div style="color:#e0cf93;font-size:1.02em;">Liquidity deploys on XRPL. Be aligned on day one.</div>
+  <div style="color:#e0cf93;font-size:1.02em;margin-top:4px;"><strong>Set your trust line now.</strong></div>
+
+  <div class="cta-row" style="margin-top:14px;display:flex;justify-content:center;">
+    <a class="btn btn-trustline"
+       href="https://xrpl.services/?issuer=rpFVEydkZrUjf4tcbLeDeVqXm5zYQGtXWm&currency=WCK&limit=100000000"
+       target="_blank"
+       style="background:radial-gradient(120% 120% at 50% -10%, #ffe083 0%, #b8942e 60%, #2a261a 100%);
+              color:#0c0b07;border:1.5px solid #e5c767;padding:12px 18px;border-radius:12px;font-weight:800;">
+      🗝️ Set $WCK Trust Line
+      <span style="display:block;font-size:.78em;font-weight:600;margin-top:2px;color:#120e05;">opens via xrpl.services</span>
+    </a>
+  </div>
+</section>
+
+<!-- NFT CARDS -->
+<section id="nft-cards" style="text-align:center;padding:40px 20px;background:#111;">
+  <h2 class="section-title" style="font-size:1.55em;margin:0 0 22px;color:#ffd700;font-weight:700;">
+    NFT TRADING CARDS
+  </h2>
+
+  <div class="cards-row">
+
+    <!-- CARD 001 -->
+    <div class="card-box">
+      <img src="https://github.com/continentalwick/continental-wick/blob/main/assets/nfts/CONTINENTAL-WICK-001_PREVIEW.png?raw=true">
+      <div class="card-title" style="font-size:1.04em;margin-top:6px;color:#f8d05f;font-weight:700;">
+        Card 001 — CONTINENTAL WICK<br><small>Codename: The Diamond</small>
+      </div>
+      <div class="card-actions" style="margin-top:10px;display:flex;gap:10px;justify-content:center;">
+        <a class="btn-ghost" href="/nft#wick"
+           style="padding:8px 10px;border-radius:10px;border:1px solid #26272b;background:#16171a;color:#ececec;text-decoration:none;">
+           Details
+        </a>
+      </div>
+    </div>
+
+    <!-- CARD 002 -->
+    <div class="card-box">
+      <img src="https://github.com/continentalwick/continental-wick/blob/main/assets/nfts/CLICKZ-002_PREVIEW.png?raw=true">
+      <div class="card-title" style="font-size:1.04em;margin-top:6px;color:#f8d05f;font-weight:700;">
+        Card 002 — CLICKZ<br><small>Codename: The Feed</small>
+      </div>
+      <div class="card-actions" style="margin-top:10px;display:flex;gap:10px;justify-content:center;">
+        <a class="btn-ghost" href="/nft#clickz"
+           style="padding:8px 10px;border-radius:10px;border:1px solid #26272b;background:#16171a;color:#ececec;text-decoration:none;">
+           Details
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- COMING SOON -->
+  <div style="max-width:720px;margin:20px auto 0;padding:12px 16px;">
+    <p style="color:#ffd700;font-weight:700;letter-spacing:.03em;margin-bottom:8px;">COMING SOON</p>
+
+    <ul style="list-style:none;padding:0;margin:8px 0 6px;color:#e5e2c9;line-height:1.6;">
+      <li><strong style="color:#f8d05f;">Common</strong> — Base-level protocol drops</li>
+      <li><strong style="color:#f8d05f;">Rare</strong> — Mission-set exclusives</li>
+      <li><strong style="color:#f8d05f;">Ultra Rare</strong> — Limited protocol icons</li>
+    </ul>
+
+    <p style="color:#e5e2c9;">Collect them all. Secure the set.</p>
+
+    <a href="/nft"
+       style="display:inline-block;margin-top:10px;text-decoration:none;font-weight:700;
+              border:1px solid #00b4ff;padding:12px 16px;border-radius:12px;color:#ececec;background:#0a1f28;">
+      Explore All NFTs
+    </a>
+  </div>
+
+</section>
+
+  <!-- WHITEPAPER BLOCK -->
+<div class="whitepaper-block"
+     style="background:#232227;border-radius:11px;text-align:center;padding:22px 12px 26px;
+            margin:36px auto 24px;max-width:460px;box-shadow:0 2px 16px #0005;">
+  <a href="/whitepaper.html" target="_blank"
+     style="display:inline-block;padding:11px 30px;background:linear-gradient(90deg,#ffd700,#e0b600);
+            color:#18171a;border-radius:8px;font-weight:bold;font-size:1.08em;text-decoration:none;
+            box-shadow:0 2px 8px #0004;border:1.5px solid #ffe083;">
+     View White Paper
+  </a>
+</div>
+
+<!-- LEGAL DISCLAIMER -->
+<div class="legal-disclaimer"
+     style="background:#000;color:#aaa;text-align:center;padding:30px 15px;font-size:.85rem;
+            line-height:1.5;max-width:900px;margin:50px auto 0;border-radius:6px;">
+  <h3 style="margin:0 0 12px;color:#fff;">🛡 Legal Disclaimer</h3>
+
+  <p style="margin:8px 0;">
+    CONTINENTAL WICK and the $WCK token are independent creations and are
+    <strong>not affiliated with, endorsed by, or associated with</strong>
+    the <em>John Wick</em> film franchise, Lionsgate Films, Summit Entertainment,
+    or any related trademarks or intellectual property.
+  </p>
+
+  <p style="margin:8px 0;">
+    All references to “CONTINENTAL,” “WICK,” or related terminology describe a
+    <strong>fictional blockchain protocol universe</strong> developed solely for this project.
+    These terms do not depict or reference any characters, stories, or settings
+    from the John Wick franchise.
+  </p>
+
+  <p style="margin:8px 0;">
+    $WCK is a utility token built on the <strong>XRP Ledger (XRPL)</strong>.
+    It is not issued or endorsed by Ripple Labs Inc. or the XRP Ledger Foundation.
+  </p>
+</div>
+
+<!-- FOOTER -->
+<footer style="margin:40px 0 22px;text-align:center;color:#bdbdbd;font-size:1.05em;">
+  <div>
+    <a class="x-handle" href="https://x.com/wcktoken" target="_blank"
+       style="color:#ffd700;text-decoration:none;font-weight:600;">
+       𝕏 @wcktoken
+    </a>
+    &nbsp;•&nbsp;
+    <a class="x-handle" href="https://t.me/wcktoken" target="_blank"
+       style="color:#ffd700;text-decoration:none;font-weight:600;">
+       Telegram @wcktoken
+    </a>
+    &nbsp;•&nbsp;
+    <a class="x-handle" href="https://t.me/wcklobby" target="_blank"
+       style="color:#ffd700;text-decoration:none;font-weight:600;">
+       The Lobby @wcklobby
+    </a>
+  </div>
+
+  <div style="margin-top:6px;">
+    &copy; 2025 CONTINENTAL WICK. All rights reserved.
+  </div>
+</footer>
 
 <!-- AUDIO -->
 <audio id="bg-audio" preload="auto">
   <source src="/assets/killing_strangers.mp3" type="audio/mpeg">
 </audio>
 
-<div class="audio-toggle" id="audioToggle">🔇</div>
+<!-- AUDIO TOGGLE BUTTON -->
+<div class="audio-toggle"
+     id="audioToggle"
+     style="position:fixed;top:12px;right:12px;width:46px;height:46px;background:#18171a;
+            border:1px solid #2d2c30;border-radius:12px;box-shadow:0 3px 12px #0009;
+            display:flex;align-items:center;justify-content:center;cursor:pointer;
+            font-size:22px;color:#ffd700;z-index:9999;">
+  🔇
+</div>
 
+<!-- AUDIO SCRIPT -->
 <script>
-  const audio=document.getElementById('bg-audio');
-  const toggle=document.getElementById('audioToggle');
-  let started=false,playing=false;
+  const audio = document.getElementById('bg-audio');
+  const toggle = document.getElementById('audioToggle');
 
-  const start=()=>{ if(!started){ audio.play().then(()=>{started=true;playing=true;toggle.textContent="🔊";}); }};
-  ["touchstart","click","scroll","wheel","keydown"].forEach(e=>document.addEventListener(e,start,{once:true}));
+  let started = false;
+  let playing = false;
 
-  toggle.onclick=()=>{ if(!started){start();return;} playing ? audio.pause() : audio.play(); playing=!playing; toggle.textContent=playing?"🔊":"🔇"; };
+  const startAudio = () => {
+    if (!started) {
+      audio.play()
+        .then(() => {
+          started = true;
+          playing = true;
+          toggle.textContent = "🔊";
+        })
+        .catch(() => {});
+    }
+  };
+
+  ["touchstart", "click", "scroll", "wheel", "keydown"].forEach(ev => {
+    document.addEventListener(ev, startAudio, { once: true });
+  });
+
+  toggle.addEventListener("click", () => {
+    if (!started) {
+      startAudio();
+      return;
+    }
+
+    if (playing) {
+      audio.pause();
+      playing = false;
+      toggle.textContent = "🔇";
+    } else {
+      audio.play();
+      playing = true;
+      toggle.textContent = "🔊";
+    }
+  });
 </script>
 
 </body>
