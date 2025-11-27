@@ -35,28 +35,22 @@
       font-family:'Segoe UI', Arial, sans-serif;
     }
 
-    /* ============================================
-       FIXED RAD BADGE — SAFARI-PROOF VERSION
-    =============================================*/
+    /* STATIC RAD BADGE — NO FLOATING */
     .rad-badge {
-      position: fixed;
-      top: 14px;
-      left: 14px;
-      width: 90px;
-      height: auto;
-      z-index: 9999999;
-      transform: translateZ(0);
-      backface-visibility: hidden;
-      pointer-events: auto;
+      position:absolute;
+      top:14px;
+      left:14px;
+      width:90px;
+      height:auto;
+      z-index:10;
+      pointer-events:auto;
     }
     .rad-badge img { width:100%; height:auto; display:block; }
 
-    /* WRAPPER LAYER — keeps cards from breaking fixed elements */
+    /* WRAPPER LAYER */
     #content {
-      position: relative;
-      z-index: 1;
-      transform: translateZ(0);
-      -webkit-transform: translateZ(0);
+      position:relative;
+      z-index:1;
     }
 
     header { text-align:center; padding:40px 16px 20px; }
@@ -197,14 +191,12 @@
       box-shadow:0 3px 14px #0008;
     }
 
-    /* INNER WRAPPER FOR ANIMATION */
     .card-inner {
       width:100%;
       border-radius:12px;
       border:2px solid #c6a450;
       overflow:hidden;
       transform:rotate(var(--tilt));
-      transition:transform .25s ease;
     }
 
     .card-inner img {
@@ -213,10 +205,18 @@
       display:block;
     }
 
-    /* WIGGLE + TOUCH JIGGLE */
+    /* JIGGLE ANIMATION (PC + MOBILE) */
+    @keyframes cardJiggle {
+      0%   { transform: rotate(var(--tilt)); }
+      25%  { transform: rotate(calc(var(--tilt) + 1deg)); }
+      50%  { transform: rotate(calc(var(--tilt) - 1deg)); }
+      75%  { transform: rotate(calc(var(--tilt) + 0.5deg)); }
+      100% { transform: rotate(var(--tilt)); }
+    }
+
     .card-box:hover .card-inner,
     .card-box:active .card-inner {
-      transform:rotate(var(--tilt)) scale(1.05) translateY(-4px);
+      animation: cardJiggle 0.22s ease-in-out;
     }
 
     /* WHITEPAPER */
@@ -268,7 +268,7 @@
 
 <body>
 
-<!-- ⭐ FIXED RAD BADGE ⭐ -->
+<!-- RAD BADGE (STATIC TOP-LEFT, SCROLLS WITH PAGE) -->
 <a href="https://radgarlington.io/ledger.html" class="rad-badge" target="_blank">
   <picture>
     <source src="/assets/rad_ledger_certified.webp" type="image/webp">
@@ -280,7 +280,7 @@
 <div id="content">
 
 <header>
-  <img src="https://raw.githubusercontent.com/continentalwick/continental-wick/main/assets/logo.png" class="hero-img">
+  <img src="https://raw.githubusercontent.com/continentalwick/continental-wick/main/assets/logo.png" class="hero-img" alt="CONTINENTAL WICK">
   <h1>CONTINENTAL WICK</h1>
   <div class="tagline">
     Protocol Order. Chaotic Reality.<br>
@@ -304,10 +304,10 @@
 <div class="social-wrap">
   <div class="social-row">
     <a class="social-btn" href="https://x.com/wcktoken" target="_blank">
-      <img class="social-icon" src="/assets/x.png">
+      <img class="social-icon" src="/assets/x.png" alt="X">
     </a>
     <a class="social-btn" href="https://t.me/wcktoken" target="_blank">
-      <img class="social-icon" src="/assets/telegram.png">
+      <img class="social-icon" src="/assets/telegram.png" alt="Telegram">
     </a>
     <a class="social-btn" href="https://t.me/wcklobby" target="_blank">💬</a>
   </div>
@@ -369,7 +369,7 @@
     <div class="card-inner">
       <picture>
         <source srcset="/assets/nfts/continental_wick_001_preview.webp" type="image/webp">
-        <img src="/assets/nfts/continental_wick_001_preview.png">
+        <img src="/assets/nfts/continental_wick_001_preview.png" alt="CONTINENTAL WICK — The Diamond">
       </picture>
     </div>
   </div>
@@ -378,7 +378,7 @@
     <div class="card-inner">
       <picture>
         <source srcset="/assets/nfts/clickz_002_preview.webp" type="image/webp">
-        <img src="/assets/nfts/clickz_002_preview.png">
+        <img src="/assets/nfts/clickz_002_preview.png" alt="CLICKZ — The Feed">
       </picture>
     </div>
   </div>
@@ -387,7 +387,7 @@
     <div class="card-inner">
       <picture>
         <source srcset="/assets/nfts/the_armorer_003_preview.webp" type="image/webp">
-        <img src="/assets/nfts/the_armorer_003_preview.png">
+        <img src="/assets/nfts/the_armorer_003_preview.png" alt="ARMORIE — The Armorer">
       </picture>
     </div>
   </div>
@@ -405,7 +405,7 @@
     <div class="card-inner">
       <picture>
         <source srcset="/assets/nfts/clickz_preview_card.webp" type="image/webp">
-        <img src="/assets/nfts/clickz_preview_card.png">
+        <img src="/assets/nfts/clickz_preview_card.png" alt="CLICKZ Preview Card">
       </picture>
     </div>
   </div>
@@ -414,7 +414,7 @@
     <div class="card-inner">
       <picture>
         <source srcset="/assets/nfts/the_architect_preview_card.webp" type="image/webp">
-        <img src="/assets/nfts/the_architect_preview_card.png">
+        <img src="/assets/nfts/the_architect_preview_card.png" alt="THE ARCHITECT Preview Card">
       </picture>
     </div>
   </div>
@@ -423,7 +423,7 @@
     <div class="card-inner">
       <picture>
         <source srcset="/assets/nfts/the_armorer_preview_card.webp" type="image/webp">
-        <img src="/assets/nfts/the_armorer_preview_card.png">
+        <img src="/assets/nfts/the_armorer_preview_card.png" alt="ARMORIE Preview Card">
       </picture>
     </div>
   </div>
@@ -479,7 +479,6 @@
   let started = false;
   let playing = false;
 
-  // FIRST TOUCH START — iOS SAFE
   const startAudio = () => {
     if (started) return;
     audio.play().then(() => {
