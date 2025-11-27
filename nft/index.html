@@ -253,9 +253,9 @@
           <div class="title">CONTINENTAL WICK — The Diamond</div>
           <div class="meta">Series 1 • Protocol Aligned</div>
           <div class="row">
-            <a class="btn primary" href="#" target="_blank">XRPSCAN</a>
-            <a class="btn" href="#" target="_blank">Bithomp</a>
-            <a class="btn" href="#" target="_blank">X Post</a>
+            <a class="btn primary" href="https://xrpscan.com" target="_blank" rel="noopener">XRPSCAN</a>
+            <a class="btn" href="https://bithomp.com/en" target="_blank" rel="noopener">Bithomp</a>
+            <a class="btn" href="https://x.com/wcktoken" target="_blank" rel="noopener">X Post</a>
           </div>
         </div>
       </article>
@@ -270,14 +270,37 @@
           <div class="title">CLICKZ — The Feed</div>
           <div class="meta">Series 1 • Protocol Aligned</div>
           <div class="row">
-            <a class="btn primary" href="#" target="_blank">XRPSCAN</a>
-            <a class="btn" href="#" target="_blank">Bithomp</a>
-            <a class="btn" href="#" target="_blank">X Post</a>
+            <a class="btn primary" href="https://xrpscan.com" target="_blank" rel="noopener">XRPSCAN</a>
+            <a class="btn" href="https://bithomp.com/en" target="_blank" rel="noopener">Bithomp</a>
+            <a class="btn" href="https://x.com/wcktoken" target="_blank" rel="noopener">X Post</a>
           </div>
         </div>
       </article>
 
-      
+      <!-- 003 ARMORIE -->
+      <article class="card">
+        <a
+          class="open-modal"
+          href="#"
+          data-img="https://github.com/continentalwick/continental-wick/blob/main/assets/nfts/the_armorer_003_preview.png?raw=true">
+          <img
+            class="thumb"
+            src="https://github.com/continentalwick/continental-wick/blob/main/assets/nfts/the_armorer_003_preview.webp?raw=true"
+            alt="ARMORIE — The Armorer" />
+        </a>
+
+        <div class="body">
+          <div class="title">ARMORIE — The Armorer</div>
+          <div class="meta">
+            Protocol Armorer • Weaponization Specialist • Threat Level: NONE
+          </div>
+          <div class="row">
+            <a class="btn primary" href="https://xrpscan.com" target="_blank" rel="noopener">XRPSCAN</a>
+            <a class="btn" href="https://bithomp.com/en" target="_blank" rel="noopener">Bithomp</a>
+            <a class="btn" href="https://x.com/wcktoken" target="_blank" rel="noopener">X Post</a>
+          </div>
+        </div>
+      </article>
 
     </section>
   </main>
@@ -300,26 +323,26 @@
     document.getElementById('y').textContent = new Date().getFullYear();
 
     // MODAL LOGIC
-    const modal=document.getElementById('imgModal');
-    const modalImg=document.getElementById('modalImage');
-    const closeBtn=document.querySelector('.modal-close');
+    const modal = document.getElementById('imgModal');
+    const modalImg = document.getElementById('modalImage');
+    const closeBtn = document.querySelector('.modal-close');
 
-    document.querySelectorAll('.open-modal').forEach(link=>{
-      link.addEventListener('click',e=>{
+    document.querySelectorAll('.open-modal').forEach(link => {
+      link.addEventListener('click', e => {
         e.preventDefault();
-        modalImg.src=link.dataset.img;
+        modalImg.src = link.dataset.img;
         modal.classList.add('active');
       });
     });
 
-    const closeModal=()=>{
+    const closeModal = () => {
       modal.classList.remove('active');
-      modalImg.src='';
+      modalImg.src = '';
     };
 
-    closeBtn.addEventListener('click',closeModal);
-    modal.addEventListener('click',e=>{if(e.target===modal)closeModal()});
-    document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal()});
+    closeBtn.addEventListener('click', closeModal);
+    modal.addEventListener('click', e => { if (e.target === modal) closeModal(); });
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
   </script>
 
 </body>
