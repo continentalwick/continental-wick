@@ -19,15 +19,15 @@
       --gold2:#d4aa00;
     }
 
-    *{box-sizing:border-box}
-    body{
+    * { box-sizing:border-box; }
+    body {
       margin:0;
       background:var(--bg);
       color:var(--fg);
       font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
     }
 
-    /* STATIC BACK BUTTON */
+    /* STATIC BACK BUTTON (HEADER-ONLY, NORMAL FLOW) */
     .back-btn {
       display:inline-block;
       margin-bottom:24px;
@@ -48,7 +48,7 @@
     }
 
     /* HEADER */
-    header{
+    header {
       padding:48px 16px 40px;
       text-align:center;
       border-bottom:1px solid var(--line);
@@ -59,7 +59,7 @@
       margin:0 auto;
       text-align:left;
     }
-    .tagline{
+    .tagline {
       font-size:12px;
       color:var(--muted);
       letter-spacing:1.3px;
@@ -69,14 +69,14 @@
       margin-bottom:10px;
       text-align:center;
     }
-    h1{
+    h1 {
       margin:0;
       font-size:clamp(30px,4vw,46px);
       font-weight:700;
       letter-spacing:-1px;
       text-align:center;
     }
-    .subline{
+    .subline {
       color:var(--muted);
       margin-top:8px;
       font-size:15px;
@@ -84,14 +84,14 @@
     }
 
     /* WRAPPER */
-    .wrap{
+    .wrap {
       max-width:1200px;
       margin:0 auto;
       padding:48px 16px 80px;
     }
 
     /* SECTION TITLE BAR */
-    .section-title{
+    .section-title {
       font-size:15px;
       font-weight:600;
       color:var(--muted);
@@ -103,14 +103,14 @@
     }
 
     /* GRID */
-    .grid{
+    .grid {
       display:grid;
       grid-template-columns:repeat(auto-fit,minmax(270px,1fr));
       gap:24px;
     }
 
     /* CARD */
-    .card{
+    .card {
       background:var(--card);
       border:1px solid var(--line);
       border-radius:18px;
@@ -120,40 +120,41 @@
       box-shadow:0 4px 24px rgba(0,0,0,.35);
       transition:transform .15s ease;
     }
-    .card:hover{
+    .card:hover {
       transform:translateY(-4px);
     }
-    .thumb{
+    .thumb {
       width:100%;
       aspect-ratio:4/3;
       object-fit:cover;
       display:block;
       background:#0f0f11;
     }
-    .body{
+    .body {
       padding:18px 16px 16px;
       display:flex;
       flex-direction:column;
       gap:10px;
     }
-    .title{
+    .title {
       font-size:18px;
       font-weight:700;
       letter-spacing:-0.2px;
     }
-    .meta{
+    .meta {
       font-size:13px;
       color:var(--muted);
+      line-height:1.4;
     }
 
-    .row{
+    .row {
       margin-top:8px;
       display:flex;
       gap:10px;
       flex-wrap:wrap;
     }
 
-    .btn{
+    .btn {
       display:inline-block;
       padding:10px 14px;
       font-size:13px;
@@ -164,15 +165,15 @@
       color:var(--fg);
       transition:.15s all;
     }
-    .btn:hover{
+    .btn:hover {
       border-color:#33353a;
     }
-    .btn.primary{
+    .btn.primary {
       border-color:var(--accent);
     }
 
     /* FOOTER */
-    footer{
+    footer {
       border-top:1px solid var(--line);
       text-align:center;
       padding:40px 16px;
@@ -181,7 +182,7 @@
     }
 
     /* MODAL */
-    .modal{
+    .modal {
       display:none;
       position:fixed;
       inset:0;
@@ -192,27 +193,29 @@
       padding:24px;
       backdrop-filter:blur(3px);
     }
-    .modal.active{display:flex}
-    .modal-inner{
+    .modal.active { display:flex; }
+    .modal-inner {
       position:relative;
       max-width:min(1000px,96vw);
       max-height:92vh;
       animation:fadeIn .2s ease-out;
     }
-    @keyframes fadeIn{
-      from{opacity:0; transform:scale(.96)}
-      to{opacity:1; transform:scale(1)}
+    @keyframes fadeIn {
+      from { opacity:0; transform:scale(.96); }
+      to   { opacity:1; transform:scale(1); }
     }
-    .modal-img{
+    .modal-img {
       max-width:100%;
       max-height:92vh;
       border-radius:16px;
       box-shadow:0 8px 40px rgba(0,0,0,.7);
     }
-    .modal-close{
+    .modal-close {
       position:absolute;
-      top:-14px; right:-14px;
-      width:42px; height:42px;
+      top:-14px;
+      right:-14px;
+      width:42px;
+      height:42px;
       border-radius:50%;
       border:1px solid #2d2e33;
       background:#1a1b1d;
@@ -245,8 +248,11 @@
 
       <!-- 001 WICK -->
       <article class="card">
-        <a class="open-modal" href="#" data-img="https://github.com/continentalwick/continental-wick/blob/main/assets/nfts/CONTINENTAL-WICK-001_PREVIEW.png?raw=true">
-          <img class="thumb" src="https://github.com/continentalwick/continental-wick/blob/main/assets/nfts/CONTINENTAL-WICK-001_PREVIEW.png?raw=true" alt="CONTINENTAL WICK — The Diamond" />
+        <a class="open-modal" href="#"
+           data-img="https://github.com/continentalwick/continental-wick/blob/main/assets/nfts/CONTINENTAL-WICK-001_PREVIEW.png?raw=true">
+          <img class="thumb"
+               src="https://github.com/continentalwick/continental-wick/blob/main/assets/nfts/CONTINENTAL-WICK-001_PREVIEW.png?raw=true"
+               alt="CONTINENTAL WICK — The Diamond" />
         </a>
 
         <div class="body">
@@ -262,8 +268,11 @@
 
       <!-- 002 CLICKZ -->
       <article class="card">
-        <a class="open-modal" href="#" data-img="https://github.com/continentalwick/continental-wick/blob/main/assets/nfts/CLICKZ-002_PREVIEW.png?raw=true">
-          <img class="thumb" src="https://github.com/continentalwick/continental-wick/blob/main/assets/nfts/CLICKZ-002_PREVIEW.png?raw=true" alt="CLICKZ — The Feed" />
+        <a class="open-modal" href="#"
+           data-img="https://github.com/continentalwick/continental-wick/blob/main/assets/nfts/CLICKZ-002_PREVIEW.png?raw=true">
+          <img class="thumb"
+               src="https://github.com/continentalwick/continental-wick/blob/main/assets/nfts/CLICKZ-002_PREVIEW.png?raw=true"
+               alt="CLICKZ — The Feed" />
         </a>
 
         <div class="body">
@@ -279,20 +288,18 @@
 
       <!-- 003 ARMORIE -->
       <article class="card">
-        <a
-          class="open-modal"
-          href="#"
-          data-img="https://github.com/continentalwick/continental-wick/blob/main/assets/nfts/the_armorer_003_preview.png?raw=true">
-          <img
-            class="thumb"
-            src="https://github.com/continentalwick/continental-wick/blob/main/assets/nfts/the_armorer_003_preview.webp?raw=true"
-            alt="ARMORIE — The Armorer" />
+        <a class="open-modal" href="#"
+           data-img="https://github.com/continentalwick/continental-wick/blob/main/assets/nfts/the_armorer_003_preview.png?raw=true">
+          <img class="thumb"
+               src="https://github.com/continentalwick/continental-wick/blob/main/assets/nfts/the_armorer_003_preview.webp?raw=true"
+               alt="ARMORIE — The Armorer" />
         </a>
 
         <div class="body">
           <div class="title">ARMORIE — The Armorer</div>
           <div class="meta">
-            Protocol Armorer • Weaponization Specialist • Threat Level: NONE
+            Protocol Armorer • Weaponization Specialist • Threat Level: NONE<br>
+            Curates the entire vault of protocol-grade digital weapons. Assigns loadouts for enforcement missions. Issues no warnings—only payloads.
           </div>
           <div class="row">
             <a class="btn primary" href="https://xrpscan.com" target="_blank" rel="noopener">XRPSCAN</a>
@@ -323,7 +330,7 @@
     document.getElementById('y').textContent = new Date().getFullYear();
 
     // MODAL LOGIC
-    const modal = document.getElementById('imgModal');
+    const modal    = document.getElementById('imgModal');
     const modalImg = document.getElementById('modalImage');
     const closeBtn = document.querySelector('.modal-close');
 
@@ -341,8 +348,12 @@
     };
 
     closeBtn.addEventListener('click', closeModal);
-    modal.addEventListener('click', e => { if (e.target === modal) closeModal(); });
-    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+    modal.addEventListener('click', e => {
+      if (e.target === modal) closeModal();
+    });
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape') closeModal();
+    });
   </script>
 
 </body>
