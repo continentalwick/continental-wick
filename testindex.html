@@ -23,22 +23,25 @@
   <meta property="og:description" content="Protocol order. Chaotic reality. Collect the agents.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://wicktoken.net/">
-  <meta property="og:image" content="https://raw.githubusercontent.com/continentalwick/continental-wick/main/assets/logo.png">
+  <meta property="og:image" content="/assets/logo.png">
 
-  <style>
-    * { box-sizing: border-box }
+<style>
+    * { box-sizing: border-box; }
     html, body { overflow-x: hidden; -webkit-text-size-adjust:none; }
 
     body {
-      margin:0; background:#121113; color:#f8f8f8;
-      font-family:'Segoe UI',Arial,sans-serif; min-height:100vh;
+      margin:0;
+      background:#121113;
+      color:#f8f8f8;
+      font-family:'Segoe UI',Arial,sans-serif;
+      min-height:100vh;
     }
 
     header { text-align:center; padding:40px 16px 20px; }
 
     .hero-img {
-      width:50%; max-width:260px; display:block;
-      margin:0 auto 20px;
+      width:50%; max-width:260px;
+      display:block; margin:0 auto 20px;
     }
 
     h1 {
@@ -46,7 +49,7 @@
       letter-spacing:.05em; color:#ffd700; font-weight:800;
     }
 
-    /* ⭐ Enhanced Tagline */
+    /* Enhanced Tagline */
     .tagline {
       font-size:1.22em;
       color:#e0cf93;
@@ -81,11 +84,12 @@
       color:#ececec; text-decoration:none;
     }
 
-    .social-wrap { margin-top:14px }
+    .social-wrap { margin-top:14px; }
     .social-row { display:flex; justify-content:center; gap:14px; }
 
     .social-btn {
-      width:40px; height:40px; display:flex; align-items:center; justify-content:center;
+      width:40px; height:40px;
+      display:flex; align-items:center; justify-content:center;
       background:#18171a; border:1px solid #2d2c30;
       border-radius:10px; box-shadow:0 2px 8px #0006;
       text-decoration:none; color:#fff;
@@ -93,41 +97,49 @@
     .social-icon { width:22px; height:22px; }
 
     .verify-line {
-      text-align:center; margin-top:12px; font-size:1.02em; color:#d8d3c0;
+      text-align:center; margin-top:12px;
+      font-size:1.02em; color:#d8d3c0;
     }
-    .verify-line a { color:#ffd700; font-weight:700; text-decoration:none }
+    .verify-line a {
+      color:#ffd700; font-weight:700; text-decoration:none;
+    }
 
-    /* Blended info strip */
+    /* Info Strip */
     .blend-section {
       margin: 18px auto 22px;
       padding: 14px 16px;
       max-width: 960px;
       text-align:center;
       background: linear-gradient(90deg, rgba(255,215,0,.10), rgba(255,255,255,.05) 60%, rgba(255,215,0,.10));
-      border: 1px solid #2f2b1d;
+      border:1px solid #2f2b1d;
       border-radius:10px;
       color:#e8e3cf;
       font-weight:700;
-      line-height:1.4;
     }
 
-    /* Launch block */
+    /* Launch Block */
     .launch-block {
-      background:#232227; border-radius:11px;
-      text-align:center; padding:32px 14px 26px;
-      margin:0 auto 38px; max-width:900px;
+      background:#232227;
+      border-radius:11px;
+      text-align:center;
+      padding:32px 14px 26px;
+      margin:0 auto 38px;
+      max-width:900px;
       box-shadow:0 4px 30px #000a;
     }
-
     .btn {
-      display:inline-block; padding:12px 18px;
-      border-radius:12px; border:1px solid #e5c767;
-      font-weight:800; background: radial-gradient(120% 120% at 50% -10%, #ffe083 0%, #b8942e 60%, #2a261a 100%);
-      color:#0c0b07; text-decoration:none;
+      display:inline-block;
+      padding:12px 18px;
+      border-radius:12px;
+      border:1px solid #e5c767;
+      font-weight:800;
+      background: radial-gradient(120% 120% at 50% -10%, #ffe083 0%, #b8942e 60%, #2a261a 100%);
+      color:#0c0b07;
+      text-decoration:none;
       box-shadow:0 6px 22px rgba(255, 208, 64, .18);
     }
 
-    /* CHAOTIC UNIVERSE BLOCK */
+    /* Universe Block */
     .chaos-block {
       background:#18171a;
       border:1px solid #2a2a2d;
@@ -136,34 +148,63 @@
       margin:34px auto;
       max-width:900px;
       box-shadow:0 3px 12px #0008;
+      text-align:left;
     }
     .chaos-block h2 {
       color:#ffd700; font-size:1.6em; margin-bottom:12px; font-weight:800;
-    }
-    .scene {
-      margin:10px 0;
-      color:#f0dca6;
-      font-style:italic;
-      font-size:0.97em;
+      text-align:center;
     }
 
-    /* NFT CARDS */
-    .section-title { text-align:center; font-size:1.55em; margin:44px 0 22px; color:#ffd700; font-weight:700 }
-    .cards-row { display:flex; justify-content:center; gap:36px; flex-wrap:wrap; margin-bottom:22px }
-    .card-box {
-      background:#18171a; border-radius:16px; box-shadow:0 3px 18px #000b;
-      padding:16px; max-width:420px; border:2px solid #c6a450;
-    }
-    .card-box img { width:100%; border-radius:12px; border:2px solid #c6a450; }
+    .chaos-block p { line-height:1.5; }
 
+    /* NFT CARD WALL — GPK STYLE */
+    .nft-wall {
+      max-width:1100px;
+      margin:40px auto;
+      padding:0 20px;
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));
+      gap:30px;
+      justify-items:center;
+    }
+
+    .nft-card {
+      width:280px; /* medium size */
+      background:#18171a;
+      border-radius:14px;
+      border:2px solid #c6a450;
+      box-shadow:0 4px 12px #0009;
+      padding:14px;
+      transform:rotate(var(--tilt));
+      transition:transform .2s;
+    }
+    .nft-card:hover { transform:rotate(var(--tilt-hover)); }
+
+    .nft-card img {
+      width:100%;
+      border-radius:12px;
+      border:2px solid #c6a450;
+    }
+
+    .nft-title {
+      margin-top:10px;
+      font-size:1.05em;
+      font-weight:700;
+      color:#ffd700;
+      text-align:center;
+    }
+
+    /* Whitepaper */
     .whitepaper-block {
       background:#232227;
       padding:22px 12px 26px;
       border-radius:11px;
       margin:36px auto;
       max-width:460px;
+      text-align:center;
     }
 
+    /* Legal */
     .legal-disclaimer {
       background:#000; color:#aaa;
       text-align:center; padding:30px 15px;
@@ -172,20 +213,24 @@
       border-radius:6px;
     }
 
-    footer { margin:40px 0 22px; text-align:center; color:#bdbdbd; font-size:1.05em }
-    .x-handle { color:#ffd700; text-decoration:none; font-weight:700 }
-
-  </style>
+    footer {
+      margin:40px 0 22px;
+      text-align:center;
+      color:#bdbdbd;
+      font-size:1.05em;
+    }
+    .x-handle { color:#ffd700; text-decoration:none; font-weight:700; }
+</style>
 </head>
 
 <body>
 
 <header>
-    <img src="https://raw.githubusercontent.com/continentalwick/continental-wick/main/assets/logo.png" class="hero-img">
+    <img src="/assets/logo.png" class="hero-img">
 
     <h1>CONTINENTAL WICK</h1>
 
-    <!-- ⭐ UPDATED TAGLINE ⭐ -->
+    <!-- Enhanced Tagline -->
     <div class="tagline">
       Protocol order. Chaotic reality.
       <span class="tagline-highlight">Collect the agents.</span>
@@ -196,21 +241,28 @@
     </div>
 </header>
 
-<!-- TOKEN SECTION -->
+<!-- TOKEN INFO -->
 <div class="token-details" style="text-align:center; margin-bottom:14px; font-size:1.1em;">
     <b>Token:</b> <span style="color:#ffd700;">$WCK</span> —
-    <b>Issuer:</b> <code style="color:#ffe083;background:#191817;padding:2px 6px;border-radius:6px;">rpFVEydkZrUjf4tcbLeDeVqXm5zYQGtXWm</code>
+    <b>Issuer:</b>
+    <code style="color:#ffe083;background:#191817;padding:2px 6px;border-radius:6px;">
+      rpFVEydkZrUjf4tcbLeDeVqXm5zYQGtXWm
+    </code>
 </div>
 
 <div class="social-wrap">
   <div class="social-row">
-    <a class="social-btn" href="https://x.com/wcktoken" target="_blank"><img class="social-icon" src="/assets/x.png"></a>
-    <a class="social-btn" href="https://t.me/wcktoken" target="_blank"><img class="social-icon" src="/assets/telegram.png"></a>
+    <a class="social-btn" href="https://x.com/wcktoken" target="_blank">
+      <img class="social-icon" src="/assets/x.png">
+    </a>
+    <a class="social-btn" href="https://t.me/wcktoken" target="_blank">
+      <img class="social-icon" src="/assets/telegram.png">
+    </a>
     <a class="social-btn" href="https://t.me/wcklobby" target="_blank">💬</a>
   </div>
 
   <div class="verify-line">
-    Verify: 
+    Verify:
     <a href="https://bithomp.com/explorer/rpFVEydkZrUjf4tcbLeDeVqXm5zYQGtXWm" target="_blank">Bithomp</a>
     <span style="opacity:.6;">|</span>
     <a href="https://xrpscan.com/account/rpFVEydkZrUjf4tcbLeDeVqXm5zYQGtXWm" target="_blank">XRPSCAN</a>
@@ -225,7 +277,9 @@
 
 <!-- LAUNCH BLOCK -->
 <section class="launch-block">
-    <div class="launch-title" style="font-size:1.35em; font-weight:800; color:#ffd700;">$WCK Launching Soon</div>
+    <div class="launch-title" style="font-size:1.35em; font-weight:800; color:#ffd700;">
+        $WCK Launching Soon
+    </div>
     <div class="launch-sub" style="color:#e0cf93;">Liquidity drops on XRPL DEX.</div>
     <div class="launch-sub" style="color:#e0cf93;"><strong>Set your trust line now.</strong></div>
 
@@ -236,52 +290,78 @@
     </a>
 </section>
 
-<!-- CHAOTIC UNIVERSE -->
+<!-- WCK UNIVERSE BLOCK -->
 <div class="chaos-block">
   <h2>WELCOME TO THE WCK UNIVERSE</h2>
   <p>
-    WCK captures agents in moments — chaotic, cinematic, focused, deadly, stupid, stylish,
-    or completely unexpected. It’s Garbage Pail Kids energy with Continental structure.
+    WCK captures protocol agents in collected moments — calm, chaotic, messy,
+    precise, cinematic, or completely absurd. These aren’t characters.
+    They’re snapshots from a universe built on consequence.
   </p>
-
-  <p class="scene"><b>Wick</b> eating cereal while a Sleeve crashes through a skylight.</p>
-  <p class="scene"><b>Clickz</b> taping routers, modems, and a toaster into a sparking “signal tower.”</p>
-  <p class="scene"><b>Armoire</b> welding a shopping cart into a weapons rack in a grocery store.</p>
-  <p class="scene"><b>Soren</b> meditating calmly in the center of an explosion he scheduled.</p>
-  <p class="scene"><b>Gazz</b> crying over a laminated 2021 gas receipt.</p>
-  <p class="scene"><b>The Sleeves</b> blowing themselves up trying to open a vending machine.</p>
-
-  <p style="margin-top:16px;">
-    Cards don’t follow one mood.  
-    Some are chaos. Some are calm.  
-    All of them are moments inside the WCK universe.
+  <p style="margin-top:16px; text-align:center;">
+    <b>Collect the agents. Complete the universe.</b>
   </p>
 </div>
 
-<!-- NFT CARDS -->
-<section id="nft-cards" style="text-align:center; padding:40px 20px; background-color:#111;">
-    <h2 class="section-title">NFT TRADING CARDS</h2>
+<!-- NFT CARD WALL — GPK STYLE -->
+<section style="padding:10px 0 50px;">
 
-    <div class="cards-row">
-      <div class="card-box">
-        <img src="https://github.com/continentalwick/continental-wick/blob/main/assets/nfts/CONTINENTAL-WICK-001_PREVIEW.png?raw=true">
-        <div class="card-title" style="color:#f8d05f;font-weight:700;margin-top:8px;">Card 001 — CONTINENTAL WICK</div>
+  <h2 class="section-title" style="margin-bottom:20px;">NFT TRADING CARDS</h2>
+
+  <div class="nft-wall">
+
+      <!-- Card 001 — Continental Wick -->
+      <div class="nft-card" style="--tilt:-4deg; --tilt-hover:-1deg;">
+        <img src="/assets/nfts/CONTINENTAL-WICK-001_PREVIEW.png">
+        <div class="nft-title">Card 001 — CONTINENTAL WICK</div>
       </div>
 
-      <div class="card-box">
-        <img src="https://github.com/continentalwick/continental-wick/blob/main/assets/nfts/CLICKZ-002_PREVIEW.png?raw=true">
-        <div class="card-title" style="color:#f8d05f;font-weight:700;margin-top:8px;">Card 002 — CLICKZ</div>
+      <!-- Card 002 — Clickz Official -->
+      <div class="nft-card" style="--tilt:3deg; --tilt-hover:0deg;">
+        <img src="/assets/nfts/CLICKZ-PREVIEW-CARD.webp">
+        <div class="nft-title">Card 002 — CLICKZ</div>
       </div>
-    </div>
 
-    <a href="/nft" style="display:inline-block;margin-top:18px;padding:12px 18px;background:#0a1f28;border:1px solid #00b4ff;border-radius:12px;color:#ececec;text-decoration:none;font-weight:700;">Explore All NFTs</a>
+      <!-- Card 003 — The Architect -->
+      <div class="nft-card" style="--tilt:-2deg; --tilt-hover:1deg;">
+        <img src="/assets/nfts/THE-ARCHITECT-PREVIEW-CARD.webp">
+        <div class="nft-title">Card 003 — THE ARCHITECT</div>
+      </div>
+
+      <!-- Preview — Clickz Chaos Scene -->
+      <div class="nft-card" style="--tilt:5deg; --tilt-hover:2deg;">
+        <img src="/assets/nfts/CLICKZ-002_PREVIEW.png">
+        <div class="nft-title">Preview — CLICKZ</div>
+      </div>
+
+      <!-- Preview — Armoire -->
+      <div class="nft-card" style="--tilt:-5deg; --tilt-hover:-2deg;">
+        <img src="/assets/nfts/THE-ARMORER-PREVIEW-CARD.webp">
+        <div class="nft-title">Preview — ARMOIRE</div>
+      </div>
+
+      <!-- Preview — Soren -->
+      <div class="nft-card" style="--tilt:4deg; --tilt-hover:1deg;">
+        <img src="/assets/nfts/MARSHAL-VANCE-003_PREVIEW.png">
+        <div class="nft-title">Preview — SOREN</div>
+      </div>
+
+  </div>
+
+  <div style="text-align:center;">
+    <a href="/nft"
+       style="display:inline-block;margin-top:18px;padding:12px 18px;background:#0a1f28;border:1px solid #00b4ff;border-radius:12px;color:#ececec;text-decoration:none;font-weight:700;">
+       Explore All NFTs
+    </a>
+  </div>
+
 </section>
 
 <!-- WHITEPAPER BUTTON -->
-<div class="whitepaper-block" style="text-align:center;">
+<div class="whitepaper-block">
   <a href="/whitepaper.html"
      target="_blank"
-     style="padding:11px 30px;background:linear-gradient(90deg,#ffd700,#e0b600);color:#18171a;border-radius:8px;font-weight:bold;font-size:1.08em;text-decoration:none;border:1.5px solid #ffe083;">
+     style="padding:11px 30px;background:linear-gradient(90deg,#ffd700,#e0b600);color:#18171a;border-radius:8px;font-weight:700;border:1.5px solid #ffe083;text-decoration:none;">
      View White Paper
   </a>
 </div>
@@ -290,11 +370,11 @@
 <div class="legal-disclaimer">
   <h3>🛡 Legal Disclaimer</h3>
   <p>
-    CONTINENTAL WICK and the $WCK token are independent creations and not affiliated with any existing film franchise or trademark holders.
-    All references and themes represent a fictional protocol universe.
+    CONTINENTAL WICK and the $WCK token are independent creations forming a fictional protocol universe.
+    No affiliation with any film studios or trademark holders.
   </p>
   <p>
-    $WCK is a utility token on the XRPL. It is not issued or endorsed by Ripple Labs or the XRP Ledger Foundation.
+    $WCK is a utility token built on the XRP Ledger (XRPL).
   </p>
 </div>
 
@@ -306,7 +386,7 @@
       &nbsp;•&nbsp;
       <a class="x-handle" href="https://t.me/wcklobby" target="_blank">The Lobby @wcklobby</a>
     </div>
-    <div style="margin-top:6px;">&copy; 2025 CONTINENTAL WICK.</div>
+    <div style="margin-top:6px;">© 2025 CONTINENTAL WICK.</div>
 </footer>
 
 </body>
