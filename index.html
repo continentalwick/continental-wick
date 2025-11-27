@@ -33,6 +33,7 @@
       font-family:'Segoe UI',Arial,sans-serif;
     }
 
+    /* WCK MAIN PAGE v2 — jiggling cards */
     /* STATIC RAD BADGE — FINAL VERSION */
     .rad-badge {
       position: fixed !important;
@@ -164,6 +165,8 @@
       justify-content:center; gap:28px;
       margin-bottom:20px;
     }
+
+    /* Card jiggle */
     .card-box {
       width:280px;
       background:#18171a;
@@ -172,9 +175,24 @@
       border:2px solid #c6a450;
       box-shadow:0 3px 14px #0008;
       transform:rotate(var(--tilt));
+      will-change:transform;
     }
     .card-box img {
       width:100%; border-radius:12px; border:2px solid #c6a450;
+      display:block;
+    }
+
+    @keyframes cardJiggle {
+      0%   { transform: rotate(var(--tilt)); }
+      25%  { transform: rotate(calc(var(--tilt) + 1deg)); }
+      50%  { transform: rotate(calc(var(--tilt) - 1deg)); }
+      75%  { transform: rotate(calc(var(--tilt) + 0.5deg)); }
+      100% { transform: rotate(var(--tilt)); }
+    }
+
+    .card-box:hover,
+    .card-box:active {
+      animation: cardJiggle 0.22s ease-in-out;
     }
 
     /* WHITEPAPER */
@@ -235,7 +253,7 @@
 </a>
 
 <header>
-  <img src="https://raw.githubusercontent.com/continentalwick/continental-wick/main/assets/logo.png" class="hero-img">
+  <img src="https://raw.githubusercontent.com/continentalwick/continental-wick/main/assets/logo.png" class="hero-img" alt="CONTINENTAL WICK Logo">
   <h1>CONTINENTAL WICK</h1>
   <div class="tagline">
     Protocol Order. Chaotic Reality.<br>
@@ -259,10 +277,10 @@
 <div class="social-wrap">
   <div class="social-row">
     <a class="social-btn" href="https://x.com/wcktoken" target="_blank">
-      <img class="social-icon" src="/assets/x.png">
+      <img class="social-icon" src="/assets/x.png" alt="X">
     </a>
     <a class="social-btn" href="https://t.me/wcktoken" target="_blank">
-      <img class="social-icon" src="/assets/telegram.png">
+      <img class="social-icon" src="/assets/telegram.png" alt="Telegram">
     </a>
     <a class="social-btn" href="https://t.me/wcklobby" target="_blank">💬</a>
   </div>
@@ -304,8 +322,7 @@
   </p>
   <p>
     It's the chaos of Garbage Pail Kids slammed into the discipline of
-    Continental-grade enforcement. Agents caught doing what they do best —
-    or worst — with absolute confidence.
+    Continental-grade enforcement. Agents caught doing what they do best — or worst — with absolute confidence.
   </p>
   <p>
     These aren't “characters.” They’re identities. Protocol signatures baked
@@ -323,21 +340,21 @@
   <div class="card-box" style="--tilt:-3deg;">
     <picture>
       <source srcset="/assets/nfts/continental_wick_001_preview.webp" type="image/webp">
-      <img src="/assets/nfts/continental_wick_001_preview.png">
+      <img src="/assets/nfts/continental_wick_001_preview.png" alt="CONTINENTAL WICK — The Diamond">
     </picture>
   </div>
 
   <div class="card-box" style="--tilt:2deg;">
     <picture>
       <source srcset="/assets/nfts/clickz_002_preview.webp" type="image/webp">
-      <img src="/assets/nfts/clickz_002_preview.png">
+      <img src="/assets/nfts/clickz_002_preview.png" alt="CLICKZ — The Feed">
     </picture>
   </div>
 
   <div class="card-box" style="--tilt:-2deg;">
     <picture>
       <source srcset="/assets/nfts/the_armorer_003_preview.webp" type="image/webp">
-      <img src="/assets/nfts/the_armorer_003_preview.png">
+      <img src="/assets/nfts/the_armorer_003_preview.png" alt="ARMORIE — The Armorer">
     </picture>
   </div>
 
@@ -353,21 +370,21 @@
   <div class="card-box" style="--tilt:2deg;">
     <picture>
       <source srcset="/assets/nfts/clickz_preview_card.webp" type="image/webp">
-      <img src="/assets/nfts/clickz_preview_card.png">
+      <img src="/assets/nfts/clickz_preview_card.png" alt="CLICKZ Preview Card">
     </picture>
   </div>
 
   <div class="card-box" style="--tilt:-3deg;">
     <picture>
       <source srcset="/assets/nfts/the_architect_preview_card.webp" type="image/webp">
-      <img src="/assets/nfts/the_architect_preview_card.png">
+      <img src="/assets/nfts/the_architect_preview_card.png" alt="THE ARCHITECT Preview Card">
     </picture>
   </div>
 
   <div class="card-box" style="--tilt:3deg;">
     <picture>
       <source srcset="/assets/nfts/the_armorer_preview_card.webp" type="image/webp">
-      <img src="/assets/nfts/the_armorer_preview_card.png">
+      <img src="/assets/nfts/the_armorer_preview_card.png" alt="ARMORIE Preview Card">
     </picture>
   </div>
 
