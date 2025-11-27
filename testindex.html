@@ -33,18 +33,25 @@
       font-family:'Segoe UI',Arial,sans-serif;
     }
 
-    /* STATIC RAD BADGE — FINAL VERSION */
+    /* STATIC RAD BADGE — FINAL, GPU ANCHORED VERSION */
     .rad-badge {
       position: fixed !important;
-      top: 14px !important;
-      left: 14px !important;
+      inset: 14px auto auto 14px !important;
       width: 90px !important;
       height: auto !important;
-      z-index: 99999 !important;
-      display: block !important;
+      z-index: 999999 !important;
       pointer-events: auto !important;
+
+      /* iOS anti-floating patches */
+      transform: translate3d(0,0,0) !important;
+      backface-visibility: hidden !important;
+      will-change: transform !important;
     }
-    .rad-badge img { width:100% !important; height:auto !important; display:block !important; }
+    .rad-badge img {
+      width:100% !important;
+      height:auto !important;
+      display:block !important;
+    }
 
     header { text-align:center; padding:40px 16px 20px; }
 
@@ -214,7 +221,7 @@
       align-items:center;
       justify-content:center;
       cursor:pointer;
-      z-index:9999;
+      z-index:999999;
       font-size:22px;
       color:#ffd700;
       user-select:none;
