@@ -30,20 +30,21 @@
     html, body { overflow-x: hidden; -webkit-text-size-adjust:none; }
     body {
       margin:0; background:#121113; color:#f8f8f8;
-      font-family:'Segoe UI',Arial,sans-serif; min-height:100vh;
+      font-family:'Segoe UI',Arial,sans-serif;
     }
 
-    /* RAD CERTIFIED BADGE */
+    /* STATIC RAD BADGE — FINAL VERSION */
     .rad-badge {
-      position: fixed;
-      top: 14px;
-      left: 14px;
-      width: 90px;
-      height: auto;
-      z-index: 9999;
-      display: block;
+      position: fixed !important;
+      top: 14px !important;
+      left: 14px !important;
+      width: 90px !important;
+      height: auto !important;
+      z-index: 99999 !important;
+      display: block !important;
+      pointer-events: auto !important;
     }
-    .rad-badge img { width:100%; height:auto; display:block; }
+    .rad-badge img { width:100% !important; height:auto !important; display:block !important; }
 
     header { text-align:center; padding:40px 16px 20px; }
 
@@ -225,7 +226,7 @@
 
 <body>
 
-<!-- RAD CERTIFIED LOGO (TOP-LEFT) -->
+<!-- RAD CERTIFIED BADGE -->
 <a href="https://radgarlington.io/ledger.html" class="rad-badge" target="_blank">
   <picture>
     <source srcset="/assets/rad_ledger_certified.webp" type="image/webp">
@@ -235,7 +236,6 @@
 
 <header>
   <img src="https://raw.githubusercontent.com/continentalwick/continental-wick/main/assets/logo.png" class="hero-img">
-
   <h1>CONTINENTAL WICK</h1>
   <div class="tagline">
     Protocol Order. Chaotic Reality.<br>
@@ -294,7 +294,7 @@
   </a>
 </section>
 
-<!-- UNIVERSE INTRO -->
+<!-- UNIVERSE -->
 <div class="universe-block">
   <h2>WELCOME TO THE WCK UNIVERSE</h2>
   <p>
@@ -313,13 +313,13 @@
   </p>
 </div>
 
-<!-- SECTION A — LEGACY CARDS -->
+<!-- SECTION A: LEGACY -->
 <div class="section-header">SERIES 1 — LEGACY CARDS</div>
 <div class="section-underline"></div>
 <div class="section-desc">The first three agents ever minted. The foundation of the WCK universe.</div>
 
 <div class="cards-row">
-  <!-- 001 CONTINENTAL WICK -->
+
   <div class="card-box" style="--tilt:-3deg;">
     <picture>
       <source srcset="/assets/nfts/continental_wick_001_preview.webp" type="image/webp">
@@ -327,7 +327,6 @@
     </picture>
   </div>
 
-  <!-- 002 CLICKZ -->
   <div class="card-box" style="--tilt:2deg;">
     <picture>
       <source srcset="/assets/nfts/clickz_002_preview.webp" type="image/webp">
@@ -335,22 +334,22 @@
     </picture>
   </div>
 
-  <!-- 003 ARMORER -->
   <div class="card-box" style="--tilt:-2deg;">
     <picture>
       <source srcset="/assets/nfts/the_armorer_003_preview.webp" type="image/webp">
       <img src="/assets/nfts/the_armorer_003_preview.png">
     </picture>
   </div>
+
 </div>
 
-<!-- SECTION B — CHAOS PREVIEWS -->
+<!-- SECTION B: CHAOS PREVIEWS -->
 <div class="section-header">CHAOS PREVIEWS — UPCOMING SERIES</div>
 <div class="section-underline"></div>
 <div class="section-desc">Early looks into the chaos shaping the next wave of agents.</div>
 
 <div class="cards-row">
-  <!-- CLICKZ CHAOS PREVIEW -->
+
   <div class="card-box" style="--tilt:2deg;">
     <picture>
       <source srcset="/assets/nfts/clickz_preview_card.webp" type="image/webp">
@@ -358,7 +357,6 @@
     </picture>
   </div>
 
-  <!-- ARCHITECT CHAOS PREVIEW -->
   <div class="card-box" style="--tilt:-3deg;">
     <picture>
       <source srcset="/assets/nfts/the_architect_preview_card.webp" type="image/webp">
@@ -366,13 +364,13 @@
     </picture>
   </div>
 
-  <!-- ARMORER CHAOS PREVIEW -->
   <div class="card-box" style="--tilt:3deg;">
     <picture>
       <source srcset="/assets/nfts/the_armorer_preview_card.webp" type="image/webp">
       <img src="/assets/nfts/the_armorer_preview_card.png">
     </picture>
   </div>
+
 </div>
 
 <!-- WHITEPAPER -->
