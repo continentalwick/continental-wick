@@ -27,49 +27,72 @@
 
   <style>
     * { box-sizing: border-box }
-    html, body { overflow-x: hidden; -webkit-text-size-adjust:none; }
-    body {
-      margin:0; background:#121113; color:#f8f8f8;
-      font-family:'Segoe UI',Arial,sans-serif;
+
+    html, body {
+      overflow-x: hidden;
+      -webkit-text-size-adjust: none;
+      margin: 0;
+      padding: 0;
+      background: #121113;
+      color: #f8f8f8;
+      font-family: 'Segoe UI', Arial, sans-serif;
     }
 
-    /* STATIC RAD BADGE — FINAL, GPU ANCHORED VERSION */
+    /* 🔥 GLOBAL ANTI-FLOAT PATCH — FIXES FLOATING BADGE ON ALL DEVICES */
+    html, body, * {
+      transform: none !important;
+      perspective: none !important;
+      filter: none !important;
+      backdrop-filter: none !important;
+    }
+
+    /* STATIC RAD BADGE — FINAL, UNBREAKABLE VERSION */
     .rad-badge {
       position: fixed !important;
-      inset: 14px auto auto 14px !important;
+      top: 14px !important;
+      left: 14px !important;
       width: 90px !important;
       height: auto !important;
       z-index: 999999 !important;
+      display: block !important;
       pointer-events: auto !important;
-
-      /* iOS anti-floating patches */
       transform: translate3d(0,0,0) !important;
       backface-visibility: hidden !important;
       will-change: transform !important;
     }
     .rad-badge img {
-      width:100% !important;
-      height:auto !important;
-      display:block !important;
+      width: 100% !important;
+      height: auto !important;
+      display: block !important;
     }
 
-    header { text-align:center; padding:40px 16px 20px; }
+    header {
+      text-align: center;
+      padding: 40px 16px 20px;
+    }
 
     .hero-img {
-      width:50%; max-width:260px; display:block;
-      margin:0 auto 20px;
+      width: 50%;
+      max-width: 260px;
+      display: block;
+      margin: 0 auto 20px;
     }
 
     h1 {
-      font-size:2.7em; margin:6px 0 6px;
-      letter-spacing:.05em; color:#ffd700; font-weight:800;
+      font-size: 2.7em;
+      margin: 6px 0 6px;
+      letter-spacing: .05em;
+      color: #ffd700;
+      font-weight: 800;
     }
 
     /* TAGLINE */
     .tagline {
-      font-size:1.15em; color:#e0cf93;
-      margin-bottom:16px; letter-spacing:.015em;
-      animation:fadein 1.2s ease-out;
+      font-size: 1.15em;
+      color: #e0cf93;
+      margin-bottom: 16px;
+      letter-spacing: .015em;
+      animation: fadein 1.2s ease-out;
     }
     @keyframes fadein {
       from { opacity:0; transform:translateY(6px); }
@@ -78,32 +101,42 @@
     .gold { color:#ffd700; font-weight:800; }
 
     /* NAV CHIP */
-    .chip-nav { margin:12px auto 22px; }
+    .chip-nav { margin: 12px auto 22px; }
     .chip-link {
-      display:inline-block; padding:8px 12px;
-      font-weight:700; border-radius:999px;
-      background:#16171a; border:1px solid #2a2b2f;
-      color:#ececec; text-decoration:none;
+      display: inline-block;
+      padding: 8px 12px;
+      font-weight: 700;
+      border-radius: 999px;
+      background: #16171a;
+      border: 1px solid #2a2b2f;
+      color: #ececec;
+      text-decoration: none;
     }
 
     /* SOCIAL */
-    .social-wrap { margin-top:14px }
+    .social-wrap { margin-top: 14px }
     .social-row { display:flex; justify-content:center; gap:14px; }
     .social-btn {
-      width:40px; height:40px; display:flex; align-items:center; justify-content:center;
-      background:#18171a; border:1px solid #2d2c30;
-      border-radius:10px; box-shadow:0 2px 8px #0006;
+      width:40px; height:40px;
+      display:flex; align-items:center; justify-content:center;
+      background:#18171a;
+      border:1px solid #2d2c30;
+      border-radius:10px;
+      box-shadow:0 2px 8px #0006;
       text-decoration:none; color:#fff;
     }
     .social-icon { width:22px; height:22px; }
 
     /* VERIFY LINE */
     .verify-line {
-      text-align:center; margin-top:12px; font-size:1.02em; color:#d8d3c0;
+      text-align:center;
+      margin-top:12px;
+      font-size:1.02em;
+      color:#d8d3c0;
     }
     .verify-line a { color:#ffd700; font-weight:700; text-decoration:none }
 
-    /* BLEND STRIP */
+    /* SUPPLY STRIP */
     .blend-section {
       margin: 18px auto 22px;
       padding: 14px 16px;
@@ -118,32 +151,48 @@
 
     /* LAUNCH BLOCK */
     .launch-block {
-      background:#232227; border-radius:11px;
-      text-align:center; padding:32px 14px 26px;
-      margin:0 auto 38px; max-width:900px;
+      background:#232227;
+      border-radius:11px;
+      text-align:center;
+      padding:32px 14px 26px;
+      margin:0 auto 38px;
+      max-width:900px;
       box-shadow:0 4px 30px #000a;
     }
 
     .btn {
-      display:inline-block; padding:12px 18px;
-      border-radius:12px; border:1px solid #e5c767;
+      display:inline-block;
+      padding:12px 18px;
+      border-radius:12px;
+      border:1px solid #e5c767;
       font-weight:800;
       background: radial-gradient(120% 120% at 50% -10%, #ffe083 0%, #b8942e 60%, #2a261a 100%);
-      color:#0c0b07; text-decoration:none;
+      color:#0c0b07;
+      text-decoration:none;
       box-shadow:0 6px 22px rgba(255, 208, 64, .18);
     }
 
     /* UNIVERSE BLOCK */
     .universe-block {
-      max-width:900px; margin:40px auto; padding:22px 20px;
-      background:#18171a; border:1px solid #2b292d; border-radius:12px;
-      box-shadow:0 3px 12px #0007; text-align:center;
+      max-width:900px;
+      margin:40px auto;
+      padding:22px 20px;
+      background:#18171a;
+      border:1px solid #2b292d;
+      border-radius:12px;
+      box-shadow:0 3px 12px #0007;
+      text-align:center;
     }
     .universe-block h2 {
-      color:#ffd700; font-size:1.7em; margin-bottom:14px; font-weight:800;
+      color:#ffd700;
+      font-size:1.7em;
+      margin-bottom:14px;
+      font-weight:800;
     }
     .universe-block p {
-      color:#e5dfc8; font-size:1.05em; line-height:1.55;
+      color:#e5dfc8;
+      font-size:1.05em;
+      line-height:1.55;
       margin-bottom:10px;
     }
 
@@ -157,18 +206,23 @@
     }
     .section-underline {
       width:80px; height:3px;
-      background:#ffd700; margin:6px auto 14px;
+      background:#ffd700;
+      margin:6px auto 14px;
       border-radius:2px;
     }
     .section-desc {
-      color:#e4ddc3; text-align:center;
-      margin-bottom:22px; font-size:0.98em;
+      color:#e4ddc3;
+      text-align:center;
+      margin-bottom:22px;
+      font-size:0.98em;
     }
 
-    /* NFT GRID */
+    /* NFT GRID — SAFE TILT VERSION */
     .cards-row {
-      display:flex; flex-wrap:wrap;
-      justify-content:center; gap:28px;
+      display:flex;
+      flex-wrap:wrap;
+      justify-content:center;
+      gap:28px;
       margin-bottom:20px;
     }
     .card-box {
@@ -178,10 +232,14 @@
       padding:12px;
       border:2px solid #c6a450;
       box-shadow:0 3px 14px #0008;
-      transform:rotate(var(--tilt));
+
+      /* RE-ENABLED SAFE TILT */
+      transform: rotate(var(--tilt)) translateZ(0) !important;
     }
     .card-box img {
-      width:100%; border-radius:12px; border:2px solid #c6a450;
+      width:100%;
+      border-radius:12px;
+      border:2px solid #c6a450;
     }
 
     /* WHITEPAPER */
@@ -196,15 +254,28 @@
 
     /* LEGAL */
     .legal-disclaimer {
-      background:#000; color:#aaa;
-      text-align:center; padding:30px 15px;
-      font-size:.85rem; line-height:1.5;
-      max-width:900px; margin:50px auto 0;
+      background:#000;
+      color:#aaa;
+      text-align:center;
+      padding:30px 15px;
+      font-size:.85rem;
+      line-height:1.5;
+      max-width:900px;
+      margin:50px auto 0;
       border-radius:6px;
     }
 
-    footer { margin:40px 0 22px; text-align:center; color:#bdbdbd; font-size:1.05em }
-    .x-handle { color:#ffd700; text-decoration:none; font-weight:700 }
+    footer {
+      margin:40px 0 22px;
+      text-align:center;
+      color:#bdbdbd;
+      font-size:1.05em;
+    }
+    .x-handle {
+      color:#ffd700;
+      text-decoration:none;
+      font-weight:700;
+    }
 
     /* AUDIO TOGGLE */
     .audio-toggle {
@@ -221,13 +292,14 @@
       align-items:center;
       justify-content:center;
       cursor:pointer;
-      z-index:999999;
+      z-index:9999;
       font-size:22px;
       color:#ffd700;
       user-select:none;
       transition:.15s transform;
     }
     .audio-toggle:active { transform:scale(.92); }
+
   </style>
 </head>
 
@@ -311,7 +383,7 @@
   </p>
   <p>
     It's the chaos of Garbage Pail Kids slammed into the discipline of
-    Continental-grade enforcement. Agents caught doing what they do best —
+    Continental-grade enforcement. Agents caught doing what they do best —  
     or worst — with absolute confidence.
   </p>
   <p>
@@ -323,7 +395,7 @@
 <!-- SECTION A: LEGACY -->
 <div class="section-header">SERIES 1 — LEGACY CARDS</div>
 <div class="section-underline"></div>
-<div class="section-desc">The first three agents ever minted. The foundation of the WCK universe.</div>
+<div class="section-desc">The foundation of the WCK universe.</div>
 
 <div class="cards-row">
 
@@ -353,7 +425,7 @@
 <!-- SECTION B: CHAOS PREVIEWS -->
 <div class="section-header">CHAOS PREVIEWS — UPCOMING SERIES</div>
 <div class="section-underline"></div>
-<div class="section-desc">Early looks into the chaos shaping the next wave of agents.</div>
+<div class="section-desc">Early looks into what’s coming next.</div>
 
 <div class="cards-row">
 
