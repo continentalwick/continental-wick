@@ -28,7 +28,6 @@
   <style>
     * { box-sizing: border-box }
     html, body { overflow-x: hidden; -webkit-text-size-adjust:none; }
-
     body {
       margin:0; background:#121113; color:#f8f8f8;
       font-family:'Segoe UI',Arial,sans-serif; min-height:100vh;
@@ -42,8 +41,9 @@
       width: 90px;
       height: auto;
       z-index: 9999;
-      pointer-events: none;
+      display: block;
     }
+    .rad-badge img { width:100%; height:auto; display:block; }
 
     header { text-align:center; padding:40px 16px 20px; }
 
@@ -59,18 +59,15 @@
 
     /* TAGLINE */
     .tagline {
-      font-size:1.15em;
-      color:#e0cf93;
-      margin-bottom:16px;
-      letter-spacing:.015em;
+      font-size:1.15em; color:#e0cf93;
+      margin-bottom:16px; letter-spacing:.015em;
       animation:fadein 1.2s ease-out;
     }
-    .gold { color:#ffd700; font-weight:800; }
-
     @keyframes fadein {
       from { opacity:0; transform:translateY(6px); }
       to   { opacity:1; transform:translateY(0); }
     }
+    .gold { color:#ffd700; font-weight:800; }
 
     /* NAV CHIP */
     .chip-nav { margin:12px auto 22px; }
@@ -122,7 +119,8 @@
     .btn {
       display:inline-block; padding:12px 18px;
       border-radius:12px; border:1px solid #e5c767;
-      font-weight:800; background: radial-gradient(120% 120% at 50% -10%, #ffe083 0%, #b8942e 60%, #2a261a 100%);
+      font-weight:800;
+      background: radial-gradient(120% 120% at 50% -10%, #ffe083 0%, #b8942e 60%, #2a261a 100%);
       color:#0c0b07; text-decoration:none;
       box-shadow:0 6px 22px rgba(255, 208, 64, .18);
     }
@@ -150,10 +148,8 @@
       margin:50px 0 6px;
     }
     .section-underline {
-      width:80px;
-      height:3px;
-      background:#ffd700;
-      margin:6px auto 14px;
+      width:80px; height:3px;
+      background:#ffd700; margin:6px auto 14px;
       border-radius:2px;
     }
     .section-desc {
@@ -167,7 +163,6 @@
       justify-content:center; gap:28px;
       margin-bottom:20px;
     }
-
     .card-box {
       width:280px;
       background:#18171a;
@@ -225,21 +220,25 @@
       transition:.15s transform;
     }
     .audio-toggle:active { transform:scale(.92); }
-
   </style>
 </head>
 
 <body>
 
 <!-- RAD CERTIFIED LOGO (TOP-LEFT) -->
-<img src="/assets/rad-certified.png" class="rad-badge">
+<a href="https://radgarlington.io/ledger.html" class="rad-badge" target="_blank">
+  <picture>
+    <source srcset="/assets/rad_ledger_certified.webp" type="image/webp">
+    <img src="/assets/rad_ledger_certified.png" alt="RAD Certified Project">
+  </picture>
+</a>
 
 <header>
   <img src="https://raw.githubusercontent.com/continentalwick/continental-wick/main/assets/logo.png" class="hero-img">
 
   <h1>CONTINENTAL WICK</h1>
   <div class="tagline">
-    Protocol Order. Chaotic Reality.  
+    Protocol Order. Chaotic Reality.<br>
     <span class="gold">Collect the agents.</span>
   </div>
 
@@ -300,17 +299,17 @@
   <h2>WELCOME TO THE WCK UNIVERSE</h2>
   <p>
     WCK is a collectible world where protocol agents are frozen in cinematic,
-    absurd, sharp, or disastrous moments — each card a snapshot from a universe
-    that refuses to behave.
+    absurd, sharp, or disastrous moments — captured like trading cards ripped
+    straight out of a universe that refuses to behave.
   </p>
   <p>
-    It’s the chaos of Garbage Pail Kids mixed with the discipline of Continental-style
-    enforcement. Agents documented doing what they do best — or worst — in a world
-    built on consequences.
+    It's the chaos of Garbage Pail Kids slammed into the discipline of
+    Continental-grade enforcement. Agents caught doing what they do best —
+    or worst — with absolute confidence.
   </p>
   <p>
-    These aren't characters. They’re identities. Protocol profiles. Ledger-born signatures
-    taken from the moments nobody else sees.
+    These aren't “characters.” They’re identities. Protocol signatures baked
+    into a ledger that records everything — even the moments no one was meant to see.
   </p>
 </div>
 
@@ -320,8 +319,7 @@
 <div class="section-desc">The first three agents ever minted. The foundation of the WCK universe.</div>
 
 <div class="cards-row">
-
-  <!-- 001 — Continental Wick -->
+  <!-- 001 CONTINENTAL WICK -->
   <div class="card-box" style="--tilt:-3deg;">
     <picture>
       <source srcset="/assets/nfts/continental_wick_001_preview.webp" type="image/webp">
@@ -329,22 +327,21 @@
     </picture>
   </div>
 
-  <!-- 002 — Clickz -->
-  <div class="card-box" style="--tilt:2.5deg;">
+  <!-- 002 CLICKZ -->
+  <div class="card-box" style="--tilt:2deg;">
     <picture>
       <source srcset="/assets/nfts/clickz_002_preview.webp" type="image/webp">
       <img src="/assets/nfts/clickz_002_preview.png">
     </picture>
   </div>
 
-  <!-- 003 — Armoire -->
+  <!-- 003 ARMORER -->
   <div class="card-box" style="--tilt:-2deg;">
     <picture>
       <source srcset="/assets/nfts/the_armorer_003_preview.webp" type="image/webp">
       <img src="/assets/nfts/the_armorer_003_preview.png">
     </picture>
   </div>
-
 </div>
 
 <!-- SECTION B — CHAOS PREVIEWS -->
@@ -353,8 +350,7 @@
 <div class="section-desc">Early looks into the chaos shaping the next wave of agents.</div>
 
 <div class="cards-row">
-
-  <!-- Clickz Preview -->
+  <!-- CLICKZ CHAOS PREVIEW -->
   <div class="card-box" style="--tilt:2deg;">
     <picture>
       <source srcset="/assets/nfts/clickz_preview_card.webp" type="image/webp">
@@ -362,7 +358,7 @@
     </picture>
   </div>
 
-  <!-- Architect Preview -->
+  <!-- ARCHITECT CHAOS PREVIEW -->
   <div class="card-box" style="--tilt:-3deg;">
     <picture>
       <source srcset="/assets/nfts/the_architect_preview_card.webp" type="image/webp">
@@ -370,14 +366,13 @@
     </picture>
   </div>
 
-  <!-- Armorer Preview -->
+  <!-- ARMORER CHAOS PREVIEW -->
   <div class="card-box" style="--tilt:3deg;">
     <picture>
       <source srcset="/assets/nfts/the_armorer_preview_card.webp" type="image/webp">
       <img src="/assets/nfts/the_armorer_preview_card.png">
     </picture>
   </div>
-
 </div>
 
 <!-- WHITEPAPER -->
