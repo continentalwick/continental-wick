@@ -3,90 +3,103 @@
 <head>
   <meta charset="UTF-8">
   <title>CONTINENTAL WICK ($WCK)</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   <link rel="canonical" href="https://wicktoken.net/">
 
-  <!-- Favicons / PWA (files live in /assets/) -->
+  <!-- Favicons -->
   <link rel="icon" href="/assets/favicon.ico">
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
   <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
   <link rel="manifest" href="/assets/site.webmanifest">
   <meta name="theme-color" content="#121113">
-  <meta name="application-name" content="$WCK">
-  <meta name="apple-mobile-web-app-title" content="$WCK">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
-  <meta name="msapplication-TileColor" content="#121113">
-  <meta name="msapplication-config" content="/assets/browserconfig.xml">
 
   <!-- SEO -->
-  <meta name="description" content="$WCK – The Utility That Memes. CONTINENTAL protocol agent enforcing value on XRPL. NFT card series and ledger-driven culture.">
-  <meta name="keywords" content="WCK, Continental Wick, XRPL, XRP Ledger, crypto, NFT cards, meme coin, protocol enforcer, The Utility That Memes">
+  <meta name="description" content="CONTINENTAL WICK — A collectible universe where protocol order meets cinematic chaos. Powered by XRPL.">
+  <meta name="keywords" content="WCK, Continental Wick, XRPL, XRP Ledger, crypto, NFT cards, protocol agents, collectibles">
 
   <!-- OG / Twitter -->
   <meta property="og:title" content="CONTINENTAL WICK ($WCK)">
-  <meta property="og:description" content="The Utility That Memes. Powered by XRPL.">
+  <meta property="og:description" content="Protocol order. Chaotic reality. Collect the agents.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://wicktoken.net/">
-  <meta property="og:site_name" content="CONTINENTAL WICK">
   <meta property="og:image" content="https://raw.githubusercontent.com/continentalwick/continental-wick/main/assets/logo.png">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="CONTINENTAL WICK ($WCK)">
-  <meta name="twitter:description" content="The Utility That Memes. Powered by XRPL.">
-  <meta name="twitter:image" content="https://raw.githubusercontent.com/continentalwick/continental-wick/main/assets/logo.png">
 
   <style>
     * { box-sizing: border-box }
-    html, body { overflow-x: hidden }
+    html, body { overflow-x: hidden; -webkit-text-size-adjust:none; }
+    body {
+      margin:0; background:#121113; color:#f8f8f8;
+      font-family:'Segoe UI',Arial,sans-serif;
+    }
 
-    body { margin:0; background:#121113; color:#f8f8f8; font-family:'Segoe UI',Arial,sans-serif; min-height:100vh; letter-spacing:.01em }
-    header { text-align:center; margin:48px auto 12px; padding:0 16px }
+    /* STATIC RAD BADGE — FINAL VERSION */
+    .rad-badge {
+      position: fixed !important;
+      top: 14px !important;
+      left: 14px !important;
+      width: 90px !important;
+      height: auto !important;
+      z-index: 99999 !important;
+      display: block !important;
+      pointer-events: auto !important;
+    }
+    .rad-badge img { width:100% !important; height:auto !important; display:block !important; }
 
-    .hero-img { width:55%; max-width:320px; height:auto; margin:0 auto 20px; display:block; }
-    @media (max-width:480px){ .hero-img{ width:65%; max-width:220px; } }
+    header { text-align:center; padding:40px 16px 20px; }
 
-    h1 { font-size:2.7em; margin:6px 0 4px; letter-spacing:.05em; color:#ffd700; font-weight:700 }
-    .tagline { font-size:1.12em; color:#e0cf93; margin-bottom:10px }
+    .hero-img {
+      width:50%; max-width:260px; display:block;
+      margin:0 auto 20px;
+    }
 
-    /* Quick nav chip to /nft */
-    .chip-nav { display:inline-block; margin:6px 0 16px; }
-    .chip-link { display:inline-block; font-weight:700; text-decoration:none; color:#ececec; background:#16171a; border:1px solid #2a2b2f; padding:8px 12px; border-radius:999px; }
-    .chip-link:hover { border-color:#2f3035 }
+    h1 {
+      font-size:2.7em; margin:6px 0 6px;
+      letter-spacing:.05em; color:#ffd700; font-weight:800;
+    }
 
-    /* Social */
-    .social-wrap { margin-top:10px }
-    .social-row { display:flex; justify-content:center; align-items:center; gap:14px }
+    /* TAGLINE */
+    .tagline {
+      font-size:1.15em; color:#e0cf93;
+      margin-bottom:16px; letter-spacing:.015em;
+      animation:fadein 1.2s ease-out;
+    }
+    @keyframes fadein {
+      from { opacity:0; transform:translateY(6px); }
+      to   { opacity:1; transform:translateY(0); }
+    }
+    .gold { color:#ffd700; font-weight:800; }
+
+    /* NAV CHIP */
+    .chip-nav { margin:12px auto 22px; }
+    .chip-link {
+      display:inline-block; padding:8px 12px;
+      font-weight:700; border-radius:999px;
+      background:#16171a; border:1px solid #2a2b2f;
+      color:#ececec; text-decoration:none;
+    }
+
+    /* SOCIAL */
+    .social-wrap { margin-top:14px }
+    .social-row { display:flex; justify-content:center; gap:14px; }
     .social-btn {
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      width:40px;
-      height:40px;
-      border-radius:10px;
-      background:#18171a;
-      border:1px solid #2d2c30;
-      box-shadow:0 2px 8px #0006;
-      transition:.15s transform,.15s box-shadow;
-      text-decoration:none;
-      color:#f8f8f8;
+      width:40px; height:40px; display:flex; align-items:center; justify-content:center;
+      background:#18171a; border:1px solid #2d2c30;
+      border-radius:10px; box-shadow:0 2px 8px #0006;
+      text-decoration:none; color:#fff;
     }
-    .social-btn:visited {
-      text-decoration:none;
-      color:#f8f8f8;
+    .social-icon { width:22px; height:22px; }
+
+    /* VERIFY LINE */
+    .verify-line {
+      text-align:center; margin-top:12px; font-size:1.02em; color:#d8d3c0;
     }
-    .social-btn:hover { transform:translateY(-2px); box-shadow:0 6px 18px #0009 }
-    .social-icon { width:24px; height:24px; display:block }
+    .verify-line a { color:#ffd700; font-weight:700; text-decoration:none }
 
-    /* Verify line */
-    .verify-line{ text-align:center; margin-top:12px; font-size:1.02em; color:#d8d3c0; letter-spacing:.01em }
-    .verify-line b, .verify-line a{ color:#ffd700; font-weight:700; text-decoration:none }
-    .verify-line a:hover{ text-decoration:underline }
-
-    /* Blended info strip */
+    /* BLEND STRIP */
     .blend-section {
-      margin: 18px auto 14px;
-      padding: 10px 16px;
+      margin: 18px auto 22px;
+      padding: 14px 16px;
       max-width: 960px;
       text-align:center;
       background: linear-gradient(90deg, rgba(255,215,0,.10), rgba(255,255,255,.05) 60%, rgba(255,215,0,.10));
@@ -94,69 +107,97 @@
       border-radius:10px;
       color:#e8e3cf;
       font-weight:700;
-      line-height:1.4;
     }
-    .blend-section .line { display:block }
-    .blend-section .em { color:#ffd700 }
 
-    /* Launch banner */
-    .launch-block { background:#232227; border-radius:11px; text-align:center; padding:32px 14px 26px; margin:0 auto 38px; max-width:900px; box-shadow:0 4px 30px #000a }
-    .launch-title { font-size:1.35em; font-weight:800; color:#ffd700; margin-bottom:10px; letter-spacing:.02em }
-    .launch-sub { color:#e0cf93; font-size:1.02em; margin:0 0 6px }
-    .cta-row { display:flex; gap:10px; justify-content:center; align-items:center; margin:12px 0 0; flex-wrap:wrap }
+    /* LAUNCH BLOCK */
+    .launch-block {
+      background:#232227; border-radius:11px;
+      text-align:center; padding:32px 14px 26px;
+      margin:0 auto 38px; max-width:900px;
+      box-shadow:0 4px 30px #000a;
+    }
 
-    .btn { appearance:none; border:none; border-radius:12px; padding:12px 18px; font-weight:800; letter-spacing:.02em; cursor:pointer; transition:.15s transform,.15s box-shadow,.15s background,.15s border-color }
-    .btn:active { transform:translateY(1px) }
-    .btn-trustline {
+    .btn {
+      display:inline-block; padding:12px 18px;
+      border-radius:12px; border:1px solid #e5c767;
+      font-weight:800;
       background: radial-gradient(120% 120% at 50% -10%, #ffe083 0%, #b8942e 60%, #2a261a 100%);
-      color:#0c0b07; border:1.5px solid #e5c767;
-      box-shadow:0 6px 22px rgba(255, 208, 64, .18), inset 0 1px 0 rgba(255,255,255,.18);
-    }
-    .btn-trustline:hover { filter:brightness(1.06) }
-    .btn-trustline .mini { display:block; font-size:.78em; font-weight:600; opacity:.9; color:#120e05; margin-top:2px }
-
-    /* Cards */
-    .section-title { text-align:center; font-size:1.55em; margin:44px 0 22px; color:#ffd700; letter-spacing:.02em; font-weight:700 }
-    .cards-row { display:flex; justify-content:center; gap:36px; flex-wrap:wrap; margin-bottom:22px; padding:0 12px }
-    .card-box { background:#18171a; border-radius:16px; box-shadow:0 3px 18px #000b; padding:16px; width:100%; max-width:420px; display:flex; flex-direction:column; align-items:center; border:2px solid #c6a450; margin:0 auto }
-    .card-box img { width:100%; height:auto; object-fit:cover; border-radius:12px; margin-bottom:10px; border:2.5px solid #c6a450; background:#18171a }
-    .card-title { font-size:1.04em; margin-top:6px; color:#f8d05f; letter-spacing:.01em; text-align:center; font-weight:700 }
-    .card-actions { display:flex; gap:10px; flex-wrap:wrap; justify-content:center; margin-top:10px }
-    .btn-ghost { display:inline-block; padding:8px 10px; border-radius:10px; border:1px solid #26272b; background:#16171a; color:#ececec; text-decoration:none; font-size:.95em }
-    .btn-ghost:hover { border-color:#2f3035 }
-
-    /* Whitepaper */
-    .whitepaper-block { background:#232227; border-radius:11px; text-align:center; padding:22px 12px 26px; margin:36px auto 24px; max-width:460px; box-shadow:0 2px 16px #0005 }
-    .whitepaper-title { font-size:1.22em; font-weight:700; color:#fff; letter-spacing:.02em; margin-bottom:9px }
-
-    .token-details { text-align:center; margin:28px 0 10px; color:#e5e2c9; font-size:1.10em; padding:0 16px }
-    .token-details code { color:#ffe083; background:#191817; padding:1.5px 7px; border-radius:6px; font-size:.98em }
-
-    .legal-disclaimer { background:#000; color:#aaa; text-align:center; padding:30px 15px; font-size:.85rem; line-height:1.5; max-width:900px; margin:50px auto 0; border-radius:6px }
-    .legal-disclaimer a { color:#fff; text-decoration:underline }
-
-    footer { margin:40px 0 22px; text-align:center; color:#bdbdbd; font-size:1.05em; letter-spacing:.02em }
-    .x-handle { display:inline-block; margin-top:4px; font-size:1.02em; color:#ffd700; text-decoration:none; font-weight:600 }
-    .x-handle:hover { text-decoration:underline }
-
-    @media (max-width:700px){
-      header{ margin-top:20px }
-      .cards-row{ gap:18px }
+      color:#0c0b07; text-decoration:none;
+      box-shadow:0 6px 22px rgba(255, 208, 64, .18);
     }
 
-    /* RAD Certified seal — top-left */
-    .rad-certified-badge {
-      position: absolute;
-      top: 10px;
-      left: 10px;
-      z-index: 50;
-      width: 90px;
+    /* UNIVERSE BLOCK */
+    .universe-block {
+      max-width:900px; margin:40px auto; padding:22px 20px;
+      background:#18171a; border:1px solid #2b292d; border-radius:12px;
+      box-shadow:0 3px 12px #0007; text-align:center;
     }
-    .rad-certified-badge img {
-      width: 100%;
-      height: auto;
-      display: block;
+    .universe-block h2 {
+      color:#ffd700; font-size:1.7em; margin-bottom:14px; font-weight:800;
     }
+    .universe-block p {
+      color:#e5dfc8; font-size:1.05em; line-height:1.55;
+      margin-bottom:10px;
+    }
+
+    /* SECTION TITLES */
+    .section-header {
+      text-align:center;
+      font-size:1.35em;
+      font-weight:800;
+      color:#ffd700;
+      margin:50px 0 6px;
+    }
+    .section-underline {
+      width:80px; height:3px;
+      background:#ffd700; margin:6px auto 14px;
+      border-radius:2px;
+    }
+    .section-desc {
+      color:#e4ddc3; text-align:center;
+      margin-bottom:22px; font-size:0.98em;
+    }
+
+    /* NFT GRID */
+    .cards-row {
+      display:flex; flex-wrap:wrap;
+      justify-content:center; gap:28px;
+      margin-bottom:20px;
+    }
+    .card-box {
+      width:280px;
+      background:#18171a;
+      border-radius:14px;
+      padding:12px;
+      border:2px solid #c6a450;
+      box-shadow:0 3px 14px #0008;
+      transform:rotate(var(--tilt));
+    }
+    .card-box img {
+      width:100%; border-radius:12px; border:2px solid #c6a450;
+    }
+
+    /* WHITEPAPER */
+    .whitepaper-block {
+      background:#232227;
+      padding:22px 12px 26px;
+      border-radius:11px;
+      margin:36px auto;
+      max-width:460px;
+      text-align:center;
+    }
+
+    /* LEGAL */
+    .legal-disclaimer {
+      background:#000; color:#aaa;
+      text-align:center; padding:30px 15px;
+      font-size:.85rem; line-height:1.5;
+      max-width:900px; margin:50px auto 0;
+      border-radius:6px;
+    }
+
+    footer { margin:40px 0 22px; text-align:center; color:#bdbdbd; font-size:1.05em }
+    .x-handle { color:#ffd700; text-decoration:none; font-weight:700 }
 
     /* AUDIO TOGGLE */
     .audio-toggle {
@@ -184,191 +225,231 @@
 </head>
 
 <body>
-  <!-- RAD Certified badge -->
-  <a href="https://radgarlington.io/ledger.html" class="rad-certified-badge">
-    <picture>
-      <source srcset="/assets/rad_ledger_certified.webp" type="image/webp">
-      <img src="/assets/rad_ledger_certified.png" alt="Certified RAD Project" loading="lazy">
-    </picture>
-  </a>
 
-  <header>
-    <img src="https://raw.githubusercontent.com/continentalwick/continental-wick/main/assets/logo.png" alt="$WCK Logo" class="hero-img">
-    <h1>CONTINENTAL WICK</h1>
-    <div class="tagline">The Utility That Memes. Powered by XRPL.</div>
-    <div class="chip-nav">
-      <a class="chip-link" href="/nft">Explore NFTs →</a>
-    </div>
-  </header>
+<!-- RAD CERTIFIED BADGE -->
+<a href="https://radgarlington.io/ledger.html" class="rad-badge" target="_blank">
+  <picture>
+    <source srcset="/assets/rad_ledger_certified.webp" type="image/webp">
+    <img src="/assets/rad_ledger_certified.png" alt="RAD Certified Project">
+  </picture>
+</a>
 
-  <div class="token-details">
-    <b>Token:</b> <span style="color:#ffd700;">$WCK</span> —
-    <b>Issuer:</b> <code>rpFVEydkZrUjf4tcbLeDeVqXm5zYQGtXWm</code>
-
-    <div class="social-wrap">
-      <div class="social-row">
-        <a class="social-btn" href="https://x.com/wcktoken" target="_blank"><img class="social-icon" src="/assets/x.png"></a>
-        <a class="social-btn" href="https://t.me/wcktoken" target="_blank"><img class="social-icon" src="/assets/telegram.png"></a>
-        <a class="social-btn" href="https://t.me/wcklobby" target="_blank"><span class="social-icon" style="font-size:20px;">💬</span></a>
-      </div>
-
-      <div class="verify-line">
-        🔍 Verify on:
-        <a href="https://bithomp.com/explorer/rpFVEydkZrUjf4tcbLeDeVqXm5zYQGtXWm" target="_blank"><b>Bithomp</b></a>
-        <span style="opacity:.6;">|</span>
-        <a href="https://xrpscan.com/account/rpFVEydkZrUjf4tcbLeDeVqXm5zYQGtXWm" target="_blank"><b>XRPSCAN</b></a>
-      </div>
-    </div>
+<header>
+  <img src="https://raw.githubusercontent.com/continentalwick/continental-wick/main/assets/logo.png" class="hero-img">
+  <h1>CONTINENTAL WICK</h1>
+  <div class="tagline">
+    Protocol Order. Chaotic Reality.<br>
+    <span class="gold">Collect the agents.</span>
   </div>
 
-  <div class="blend-section">
-    <span class="line"><span class="em">Decimals:</span> 6 — <span class="em">Total Supply:</span> 100,000,000</span>
-    <span class="line">Protocol Enforced • Powered by XRPL • The Utility That Memes</span>
+  <div class="chip-nav">
+    <a class="chip-link" href="/nft">Explore NFTs →</a>
   </div>
+</header>
 
-  <section class="launch-block">
-    <div class="launch-title">$WCK Launching Soon</div>
-    <div class="launch-sub">We’re going live on-chain. Liquidity will drop on the XRPL DEX.</div>
-    <div class="launch-sub"><strong>Set your trust line now</strong> to be ready.</div>
-    <div class="cta-row">
-      <a
-        class="btn btn-trustline"
-        href="https://xrpl.services/?issuer=rpFVEydkZrUjf4tcbLeDeVqXm5zYQGtXWm&currency=WCK&limit=100000000"
-        target="_blank"
-      >
-        🗝️ Set $WCK Trust Line
-        <span class="mini">opens via xrpl.services</span>
-      </a>
-    </div>
-  </section>
+<!-- TOKEN SECTION -->
+<div class="token-details" style="text-align:center; margin-bottom:14px; font-size:1.1em;">
+  <b>Token:</b> <span style="color:#ffd700;">$WCK</span> —
+  <b>Issuer:</b>
+  <code style="color:#ffe083;background:#191817;padding:2px 6px;border-radius:6px;">
+    rpFVEydkZrUjf4tcbLeDeVqXm5zYQGtXWm
+  </code>
+</div>
 
-  <section id="nft-cards" style="text-align:center; padding:40px 20px; background-color:#111;">
-    <h2 class="section-title">NFT TRADING CARDS</h2>
-
-    <div class="cards-row">
-      <div class="card-box">
-        <img src="https://github.com/continentalwick/continental-wick/blob/main/assets/nfts/CONTINENTAL-WICK-001_PREVIEW.png?raw=true">
-        <div class="card-title">Card 001 — CONTINENTAL WICK<br><small>Codename: The Diamond</small></div>
-        <div class="card-actions">
-          <a class="btn-ghost" href="/nft#wick">Details</a>
-          <a class="btn-ghost" href="#">XRPSCAN</a>
-          <a class="btn-ghost" href="#">Bithomp</a>
-        </div>
-      </div>
-
-      <div class="card-box">
-        <img src="https://github.com/continentalwick/continental-wick/blob/main/assets/nfts/CLICKZ-002_PREVIEW.png?raw=true">
-        <div class="card-title">Card 002 — CLICKZ<br><small>Codename: The Feed</small></div>
-        <div class="card-actions">
-          <a class="btn-ghost" href="/nft#clickz">Details</a>
-          <a class="btn-ghost" href="#">XRPSCAN</a>
-          <a class="btn-ghost" href="#">Bithomp</a>
-        </div>
-      </div>
-    </div>
-
-    <div style="max-width:720px;margin:10px auto 0;text-align:center;padding:12px 16px;">
-      <p style="color:#ffd700;font-weight:700;letter-spacing:.03em;margin:0 0 8px;">COMING SOON</p>
-      <ul style="list-style:none;padding:0;margin:8px 0 6px;color:#e5e2c9;line-height:1.6;">
-        <li><strong style="color:#f8d05f;">Common</strong> — Base-level protocol drops</li>
-        <li><strong style="color:#f8d05f;">Rare</strong> — Limited mission-set exclusives</li>
-        <li><strong style="color:#f8d05f;">Ultra Rare</strong> — High-value, low-supply protocol icons</li>
-      </ul>
-      <p class="collect-line">Collect them all. Secure the set.</p>
-
-      <div style="margin-top:10px;">
-        <a href="/nft" style="text-decoration:none; font-weight:700; border:1px solid #00b4ff; padding:12px 16px; border-radius:12px; color:#ececec; background:#0a1f28;">Explore All NFTs</a>
-      </div>
-    </div>
-  </section>
-
-  <div class="whitepaper-block">
-    <a href="/whitepaper.html"
-       target="_blank"
-       style="display:inline-block;margin-top:10px;padding:11px 30px;background:linear-gradient(90deg,#ffd700,#e0b600);color:#18171a;border-radius:8px;font-weight:bold;font-size:1.08em;text-decoration:none;box-shadow:0 2px 8px #0004;border:1.5px solid #ffe083;">
-       View White Paper
+<div class="social-wrap">
+  <div class="social-row">
+    <a class="social-btn" href="https://x.com/wcktoken" target="_blank">
+      <img class="social-icon" src="/assets/x.png">
     </a>
+    <a class="social-btn" href="https://t.me/wcktoken" target="_blank">
+      <img class="social-icon" src="/assets/telegram.png">
+    </a>
+    <a class="social-btn" href="https://t.me/wcklobby" target="_blank">💬</a>
   </div>
 
-  <div class="legal-disclaimer">
-    <h3>🛡 Legal Disclaimer</h3>
-    <p>
-      CONTINENTAL WICK and the $WCK token are independent creations and are
-      <strong>not affiliated with, endorsed by, or associated with</strong>
-      the <em>John Wick</em> film franchise, Lionsgate Films, Summit Entertainment,
-      or any related trademarks or intellectual property.
-    </p>
-    <p>
-      All references to “CONTINENTAL,” “WICK,” or related terminology are part of a
-      <strong>fictional blockchain protocol universe</strong> developed by the $WCK team.
-      They do not depict or reference any characters, stories, or settings from the
-      John Wick franchise.
-    </p>
-    <p>
-      $WCK is a utility token built on the <strong>XRP Ledger (XRPL)</strong>.
-      It is not issued or endorsed by Ripple Labs Inc. or the XRP Ledger Foundation.
-    </p>
+  <div class="verify-line">
+    Verify:
+    <a href="https://bithomp.com/explorer/rpFVEydkZrUjf4tcbLeDeVqXm5zYQGtXWm" target="_blank">Bithomp</a>
+    <span style="opacity:.6;">|</span>
+    <a href="https://xrpscan.com/account/rpFVEydkZrUjf4tcbLeDeVqXm5zYQGtXWm" target="_blank">XRPSCAN</a>
+  </div>
+</div>
+
+<!-- SUPPLY STRIP -->
+<div class="blend-section">
+  <span><b>Decimals:</b> 6 — <b>Total Supply:</b> 100,000,000</span><br>
+  <span>Protocol Enforced • Powered by XRPL • The Utility That Memes</span>
+</div>
+
+<!-- LAUNCH -->
+<section class="launch-block">
+  <div style="font-size:1.35em; font-weight:800; color:#ffd700;">$WCK Launching Soon</div>
+  <div style="color:#e0cf93;">Liquidity drops on XRPL DEX.</div>
+  <div style="color:#e0cf93;"><strong>Set your trust line now.</strong></div>
+
+  <a class="btn"
+     href="https://xrpl.services/?issuer=rpFVEydkZrUjf4tcbLeDeVqXm5zYQGtXWm&currency=WCK&limit=100000000"
+     target="_blank">
+    🗝️ Set $WCK Trust Line
+  </a>
+</section>
+
+<!-- UNIVERSE -->
+<div class="universe-block">
+  <h2>WELCOME TO THE WCK UNIVERSE</h2>
+  <p>
+    WCK is a collectible world where protocol agents are frozen in cinematic,
+    absurd, sharp, or disastrous moments — captured like trading cards ripped
+    straight out of a universe that refuses to behave.
+  </p>
+  <p>
+    It's the chaos of Garbage Pail Kids slammed into the discipline of
+    Continental-grade enforcement. Agents caught doing what they do best —
+    or worst — with absolute confidence.
+  </p>
+  <p>
+    These aren't “characters.” They’re identities. Protocol signatures baked
+    into a ledger that records everything — even the moments no one was meant to see.
+  </p>
+</div>
+
+<!-- SECTION A: LEGACY -->
+<div class="section-header">SERIES 1 — LEGACY CARDS</div>
+<div class="section-underline"></div>
+<div class="section-desc">The first three agents ever minted. The foundation of the WCK universe.</div>
+
+<div class="cards-row">
+
+  <div class="card-box" style="--tilt:-3deg;">
+    <picture>
+      <source srcset="/assets/nfts/continental_wick_001_preview.webp" type="image/webp">
+      <img src="/assets/nfts/continental_wick_001_preview.png">
+    </picture>
   </div>
 
-  <footer>
-    <div>
-      <a class="x-handle" href="https://x.com/wcktoken" target="_blank">𝕏 @wcktoken</a>
-      &nbsp;•&nbsp;
-      <a class="x-handle" href="https://t.me/wcktoken" target="_blank">Telegram @wcktoken</a>
-      &nbsp;•&nbsp;
-      <a class="x-handle" href="https://t.me/wcklobby" target="_blank">The Lobby @wcklobby</a>
-    </div>
-    <div style="margin-top:6px;">&copy; 2025 CONTINENTAL WICK. All rights reserved.</div>
-  </footer>
+  <div class="card-box" style="--tilt:2deg;">
+    <picture>
+      <source srcset="/assets/nfts/clickz_002_preview.webp" type="image/webp">
+      <img src="/assets/nfts/clickz_002_preview.png">
+    </picture>
+  </div>
 
-  <!-- AUDIO ELEMENT -->
-  <audio id="bg-audio" preload="auto">
-    <source src="/assets/killing_strangers.mp3" type="audio/mpeg">
-  </audio>
+  <div class="card-box" style="--tilt:-2deg;">
+    <picture>
+      <source srcset="/assets/nfts/the_armorer_003_preview.webp" type="image/webp">
+      <img src="/assets/nfts/the_armorer_003_preview.png">
+    </picture>
+  </div>
 
-  <!-- AUDIO TOGGLE BUTTON -->
-  <div class="audio-toggle" id="audioToggle">🔇</div>
+</div>
 
-  <!-- AUDIO SCRIPT -->
-  <script>
-    const audio = document.getElementById('bg-audio');
-    const toggle = document.getElementById('audioToggle');
+<!-- SECTION B: CHAOS PREVIEWS -->
+<div class="section-header">CHAOS PREVIEWS — UPCOMING SERIES</div>
+<div class="section-underline"></div>
+<div class="section-desc">Early looks into the chaos shaping the next wave of agents.</div>
 
-    let started = false;
-    let playing = false;
+<div class="cards-row">
 
-    const startAudio = () => {
-      if (!started) {
-        audio.play().then(() => {
-          started = true;
-          playing = true;
-          toggle.textContent = "🔊";
-        }).catch(() => {});
-      }
-    };
+  <div class="card-box" style="--tilt:2deg;">
+    <picture>
+      <source srcset="/assets/nfts/clickz_preview_card.webp" type="image/webp">
+      <img src="/assets/nfts/clickz_preview_card.png">
+    </picture>
+  </div>
 
-    const triggers = ["touchstart", "click", "scroll", "wheel", "keydown"];
-    triggers.forEach(ev => {
-      document.addEventListener(ev, startAudio, { once: true });
-    });
+  <div class="card-box" style="--tilt:-3deg;">
+    <picture>
+      <source srcset="/assets/nfts/the_architect_preview_card.webp" type="image/webp">
+      <img src="/assets/nfts/the_architect_preview_card.png">
+    </picture>
+  </div>
 
-    toggle.addEventListener("click", () => {
-      if (!started) {
-        startAudio();
-        return;
-      }
+  <div class="card-box" style="--tilt:3deg;">
+    <picture>
+      <source srcset="/assets/nfts/the_armorer_preview_card.webp" type="image/webp">
+      <img src="/assets/nfts/the_armorer_preview_card.png">
+    </picture>
+  </div>
 
-      if (playing) {
-        audio.pause();
-        playing = false;
-        toggle.textContent = "🔇";
-      } else {
-        audio.play();
-        playing = true;
-        toggle.textContent = "🔊";
-      }
-    });
-  </script>
+</div>
+
+<!-- WHITEPAPER -->
+<div class="whitepaper-block">
+  <a href="/whitepaper.html"
+     target="_blank"
+     style="padding:11px 30px;background:linear-gradient(90deg,#ffd700,#e0b600);color:#18171a;border-radius:8px;font-weight:bold;font-size:1.08em;text-decoration:none;border:1.5px solid #ffe083;">
+     View White Paper
+  </a>
+</div>
+
+<!-- LEGAL -->
+<div class="legal-disclaimer">
+  <h3>🛡 Legal Disclaimer</h3>
+  <p>
+    CONTINENTAL WICK and the $WCK token are independent creations and not affiliated with any existing film franchise or trademark holders.
+    All references and themes represent a fictional protocol universe.
+  </p>
+  <p>
+    $WCK is a utility token on the XRPL. It is not issued or endorsed by Ripple Labs or the XRP Ledger Foundation.
+  </p>
+</div>
+
+<footer>
+  <div>
+    <a class="x-handle" href="https://x.com/wcktoken" target="_blank">𝕏 @wcktoken</a>
+    &nbsp;•&nbsp;
+    <a class="x-handle" href="https://t.me/wcktoken" target="_blank">Telegram @wcktoken</a>
+    &nbsp;•&nbsp;
+    <a class="x-handle" href="https://t.me/wcklobby" target="_blank">The Lobby @wcklobby</a>
+  </div>
+  <div style="margin-top:6px;">© 2025 CONTINENTAL WICK.</div>
+</footer>
+
+<!-- AUDIO ELEMENT -->
+<audio id="bg-audio" preload="auto">
+  <source src="/assets/killing_strangers.mp3" type="audio/mpeg">
+</audio>
+
+<!-- AUDIO TOGGLE BUTTON -->
+<div class="audio-toggle" id="audioToggle">🔇</div>
+
+<script>
+  const audio = document.getElementById('bg-audio');
+  const toggle = document.getElementById('audioToggle');
+
+  let started = false;
+  let playing = false;
+
+  // FIRST TOUCH START — iOS SAFE
+  const startAudio = () => {
+    if (started) return;
+    audio.play().then(() => {
+      started = true;
+      playing = true;
+      toggle.textContent = "🔊";
+    }).catch(() => {});
+  };
+
+  ["pointerdown","touchstart","click","keydown","scroll","wheel"].forEach(ev => {
+    window.addEventListener(ev, startAudio, { once:true, passive:true });
+  });
+
+  toggle.addEventListener("click", () => {
+    if (!started) {
+      startAudio();
+      return;
+    }
+    if (playing) {
+      audio.pause();
+      playing = false;
+      toggle.textContent = "🔇";
+    } else {
+      audio.play();
+      playing = true;
+      toggle.textContent = "🔊";
+    }
+  });
+</script>
 
 </body>
 </html>
