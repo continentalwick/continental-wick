@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <title>CONTINENTAL WICK — NFT Vault</title>
 
-<!-- ZOOM LOCK (safe, mobile-friendly) -->
+<!-- Prevent zoom but stay responsive -->
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <meta name="format-detection" content="telephone=no">
 
@@ -26,11 +26,13 @@
     animation:fadeIn 1.1s ease-out forwards;
   }
 
+  /* Fade-in */
   @keyframes fadeIn {
     from { opacity:0; transform:translateY(20px); }
     to   { opacity:1; transform:translateY(0); }
   }
 
+  /* Flicker */
   @keyframes flicker {
     0%,100% { opacity:1; }
     92% { opacity:0.87; }
@@ -38,11 +40,13 @@
     96% { opacity:1; }
   }
 
+  /* FIXED BACKGROUND SCALING */
   .vault-wrap {
     width:100%;
-    min-height:100vh;
-    background:url('/assets/wck_vault.webp') center center no-repeat;
-    background-size:cover;
+    min-height:100dvh; /* real mobile height */
+    background:url('/assets/wck_vault.webp') top center no-repeat;
+    background-size:100% auto; /* FIX: prevents zoom-out effect */
+    background-attachment:scroll;
     padding:20px;
     display:flex;
     flex-direction:column;
@@ -50,6 +54,14 @@
     animation:flicker 5s infinite;
   }
 
+  /* For extra tall screens */
+  @media (min-aspect-ratio: 9/16) {
+    .vault-wrap {
+      background-size:cover;
+    }
+  }
+
+  /* BACK BUTTON */
   .back-btn {
     position:fixed;
     top:20px;
@@ -68,6 +80,7 @@
   }
   .back-btn:active { transform:scale(.94); }
 
+  /* AUDIO TOGGLE */
   .audio-toggle {
     position:fixed;
     top:20px;
@@ -89,6 +102,7 @@
   }
   .audio-toggle:active { transform:scale(.92); }
 
+  /* LOGO */
   .wck-logo {
     width:160px;
     margin-top:65px;
@@ -96,7 +110,6 @@
     filter:drop-shadow(0 0 12px var(--gold)) drop-shadow(0 0 22px rgba(212,164,74,0.5));
     animation:glowPulse 3s infinite ease-in-out;
   }
-
   @keyframes glowPulse {
     0%,100% { filter:drop-shadow(0 0 12px var(--gold)); }
     50%     { filter:drop-shadow(0 0 22px var(--gold)) drop-shadow(0 0 30px rgba(212,164,74,1)); }
@@ -169,6 +182,7 @@
 </audio>
 
 <div class="vault-wrap">
+
   <img class="wck-logo" src="/assets/logo.webp" alt="WCK Logo">
 
   <div class="title">THE CONTINENTAL NFT VAULT</div>
@@ -187,6 +201,7 @@
     <a class="series-item" href="#">SERIES 5</a>
     <a class="series-item" href="#">VIEW ALL</a>
   </div>
+
 </div>
 
 <footer>© CONTINENTAL WICK — All Rights Reserved.</footer>
