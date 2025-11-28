@@ -66,7 +66,7 @@ img { max-width:100%; display:block; }
 }
 
 /* =========================================================
-   FULL-SCREEN GLITCH FLICKER (unstable vault effect)
+   FULL-SCREEN GLITCH FLICKER — LEVEL 3 (UNSTABLE)
    ========================================================= */
 .flicker-screen {
   position:fixed;
@@ -75,34 +75,62 @@ img { max-width:100%; display:block; }
   width:100%;
   height:100%;
   pointer-events:none;
-  background:rgba(255,255,255,0.18);
+  background:rgba(255,255,255,0.20);
   mix-blend-mode:overlay;
   opacity:0;
-  animation:vaultFlicker 3.7s infinite;
+  animation:vaultFlicker 2.8s infinite;
   z-index:5;
 }
 
-/* HARD, CHAOTIC FLICKER — full screen */
+/* HARD UNSTABLE GLITCH FLICKER */
 @keyframes vaultFlicker {
-  0%, 100% { opacity:0; }
-  3% { opacity:0.9; }
-  4% { opacity:0; }
-  8% { opacity:0.45; }
-  9% { opacity:0; }
-  12% { opacity:0.7; }
+  0% { opacity:0; }
+  2% { opacity:1; }
+  3% { opacity:0; }
+
+  7% { opacity:0.65; }
+  8% { opacity:0; }
+
+  12% { opacity:1; }
   13% { opacity:0; }
-  17% { opacity:1; }
-  18% { opacity:0; }
-  26% { opacity:0.5; }
-  27% { opacity:0; }
-  41% { opacity:0.8; }
-  42% { opacity:0; }
-  55% { opacity:1; }
+
+  /* Double glitch burst */
+  18% { opacity:0.85; }
+  20% { opacity:0; }
+  21% { opacity:0.9; }
+  22% { opacity:0; }
+
+  /* Extended unstable phase */
+  28% { opacity:0.55; }
+  29% { opacity:0; }
+  30% { opacity:0.75; }
+  31% { opacity:0; }
+
+  /* Heavy spike */
+  42% { opacity:1; }
+  43% { opacity:0; }
+
+  /* Random micro-stutters */
+  50% { opacity:0.4; }
+  51% { opacity:0; }
+  55% { opacity:0.7; }
   56% { opacity:0; }
-  71% { opacity:0.6; }
-  72% { opacity:0; }
-  86% { opacity:0.9; }
-  87% { opacity:0; }
+
+  /* Chaotic cluster */
+  63% { opacity:1; }
+  64% { opacity:0; }
+  65% { opacity:0.7; }
+  66% { opacity:0; }
+
+  /* Unstable slow decay */
+  76% { opacity:0.4; }
+  78% { opacity:0; }
+
+  /* Final strobe hit */
+  92% { opacity:1; }
+  93% { opacity:0; }
+
+  100% { opacity:0; }
 }
 
 /* MAIN WRAP */
@@ -123,7 +151,7 @@ img { max-width:100%; display:block; }
 }
 
 /* =========================================================
-   LOGO — TRUE PULSE RESTORED (FAST, DEEP, BRIGHT)
+   LOGO PULSE — FAST, STRONG, BRIGHT
    ========================================================= */
 .wck-logo {
   width:130px;
@@ -133,7 +161,6 @@ img { max-width:100%; display:block; }
   animation:logoPulse 1.25s infinite cubic-bezier(0.4,0,0.6,1);
 }
 
-/* HARD PULSE — like a beating light */
 @keyframes logoPulse {
   0%   { filter:drop-shadow(0 0 6px #d4a44a); opacity:0.85; }
   40%  { filter:drop-shadow(0 0 38px #ffdd9c); opacity:1; }
@@ -141,7 +168,7 @@ img { max-width:100%; display:block; }
   100% { filter:drop-shadow(0 0 6px #d4a44a); opacity:0.85; }
 }
 
-/* TITLE + SUBTEXT */
+/* TITLE */
 .title {
   font-size:1.9rem;
   font-weight:800;
@@ -150,6 +177,7 @@ img { max-width:100%; display:block; }
   text-shadow:0 0 10px #000;
 }
 
+/* SUBTEXT */
 .sub {
   font-size:1rem;
   font-weight:700;
@@ -176,8 +204,8 @@ img { max-width:100%; display:block; }
   border:1px solid #d4a44a;
   border-radius:12px;
   padding:18px 16px;
-  backdrop-filter:blur(2px);
   margin-bottom:26px;
+  backdrop-filter:blur(2px);
 }
 
 .rarity-box h2 {
@@ -223,7 +251,6 @@ img { max-width:100%; display:block; }
   border-radius:10px;
   text-decoration:none;
   color:#e6e6e6;
-  backdrop-filter:blur(2px);
 }
 
 /* FOOTER */
@@ -249,7 +276,7 @@ footer {
 
 <body>
 
-<!-- FULL-SCREEN FLICKER -->
+<!-- FLICKER -->
 <div class="flicker-screen"></div>
 
 <!-- BACK BUTTON -->
@@ -266,7 +293,7 @@ footer {
 
   <img class="wck-logo" src="/nft/assets/logo.webp">
 
-  <div class="title">THE CONTINENTAL NFT VAULT</div>
+  <div class="title">THE CONTINENTENTAL NFT VAULT</div>
 
   <div class="sub">
     A sealed chamber built for protocol-grade chaos.  
