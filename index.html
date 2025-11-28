@@ -79,14 +79,42 @@
     }
     .gold { color:#ffd700; font-weight:800; }
 
-    /* NAV CHIP */
-    .chip-nav { margin:12px auto 22px; }
-    .chip-link {
-      display:inline-block; padding:8px 12px;
-      font-weight:700; border-radius:999px;
-      background:#16171a; border:1px solid #2a2b2f;
-      color:#ececec; text-decoration:none;
+    /* ENTER THE VAULT BUTTON (REPLACES Explore NFTs) */
+    .vault-button {
+      display:inline-block;
+      padding:14px 26px;
+      border-radius:14px;
+      font-weight:800;
+      font-size:1.05em;
+      text-decoration:none;
+      color:#0c0b07;
+      background:radial-gradient(140% 140% at 50% -30%, #ffe083 0%, #d7a63e 55%, #2a261a 100%);
+      border:2px solid #ffe083;
+      box-shadow:
+          0 0 12px rgba(255,215,0,0.35),
+          0 0 24px rgba(255,215,0,0.25),
+          inset 0 0 8px rgba(255,215,0,0.45);
+      animation:pulseGlow 2.2s infinite ease-in-out;
     }
+
+    @keyframes pulseGlow {
+      0%,100% {
+        box-shadow:
+          0 0 12px rgba(255,215,0,0.35),
+          0 0 24px rgba(255,215,0,0.25),
+          inset 0 0 8px rgba(255,215,0,0.45);
+      }
+      50% {
+        box-shadow:
+          0 0 24px rgba(255,215,0,0.6),
+          0 0 40px rgba(255,215,0,0.35),
+          inset 0 0 10px rgba(255,215,0,0.65);
+      }
+    }
+
+    .vault-button:active { transform:scale(.94); }
+
+    .chip-nav { margin:12px auto 22px; }
 
     /* SOCIAL */
     .social-wrap { margin-top:14px }
@@ -139,7 +167,7 @@
       color:#0c0b07;
       text-decoration:none;
       box-shadow:0 6px 22px rgba(255,208,64,.18);
-      margin-top:14px; /* extra space above Trust Line button */
+      margin-top:14px;
     }
 
     /* UNIVERSE BLOCK */
@@ -156,7 +184,7 @@
       margin-bottom:10px;
     }
 
-    /* SECTION TITLES */
+    /* SECTION HEADERS */
     .section-header {
       text-align:center;
       font-size:1.35em;
@@ -206,7 +234,7 @@
       display:block;
     }
 
-    /* JIGGLE ANIMATION (PC + MOBILE) */
+    /* JIGGLE (HOVER + TOUCH) */
     @keyframes cardJiggle {
       0%   { transform: rotate(var(--tilt)); }
       25%  { transform: rotate(calc(var(--tilt) + 1deg)); }
@@ -220,7 +248,7 @@
       animation: cardJiggle 0.22s ease-in-out;
     }
 
-    /* WHITEPAPER */
+    /* WHITEPAPER BLOCK */
     .whitepaper-block {
       background:#232227;
       padding:22px 12px 26px;
@@ -263,13 +291,12 @@
       transition:.15s transform;
     }
     .audio-toggle:active { transform:scale(.92); }
-
   </style>
 </head>
 
 <body>
 
-<!-- RAD BADGE (STATIC TOP-LEFT, SCROLLS WITH PAGE) -->
+<!-- RAD BADGE -->
 <a href="https://radgarlington.io/ledger.html" class="rad-badge" target="_blank">
   <picture>
     <source src="/assets/rad_ledger_certified.webp" type="image/webp">
@@ -277,7 +304,6 @@
   </picture>
 </a>
 
-<!-- CONTENT WRAPPER -->
 <div id="content">
 
 <header>
@@ -288,8 +314,9 @@
     <span class="gold">Collect the agents.</span>
   </div>
 
+  <!-- UPDATED BUTTON -->
   <div class="chip-nav">
-    <a class="chip-link" href="/nft">Explore NFTs →</a>
+    <a class="vault-button" href="/nft/vault.html">ENTER THE VAULT</a>
   </div>
 </header>
 
@@ -340,7 +367,7 @@
   </a>
 </section>
 
-<!-- UNIVERSE SECTION -->
+<!-- UNIVERSE -->
 <div class="universe-block">
   <h2>WELCOME TO THE WCK UNIVERSE</h2>
   <p>
@@ -359,7 +386,7 @@
   </p>
 </div>
 
-<!-- LEGACY CARDS -->
+<!-- SERIES 1 -->
 <div class="section-header">SERIES 1 — LEGACY CARDS</div>
 <div class="section-underline"></div>
 <div class="section-desc">The first three agents ever minted. The foundation of the WCK universe.</div>
@@ -444,11 +471,13 @@
 <div class="legal-disclaimer">
   <h3>🛡 Legal Disclaimer</h3>
   <p>
-    CONTINENTAL WICK and the $WCK token are independent creations and not affiliated with any existing film franchise or trademark holders.
-    All references and themes represent a fictional protocol universe.
+    CONTINENTAL WICK and the $WCK token are independent creations and not affiliated
+    with any existing film franchise or trademark holders. All references and themes
+    represent a fictional protocol universe.
   </p>
   <p>
-    $WCK is a utility token on the XRPL. It is not issued or endorsed by Ripple Labs or the XRP Ledger Foundation.
+    $WCK is a utility token on the XRPL. It is not issued or endorsed by Ripple Labs
+    or the XRP Ledger Foundation.
   </p>
 </div>
 
