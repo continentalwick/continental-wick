@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>CONTINENTAL WICK — NFT Vault</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+  :root {
+    --bg:#0b0b0c;
+    --fg:#e6e6e6;
+    --gold:#d4a44a;
+    --card-bg:#111113;
+  }
+
+  body {
+    margin:0;
+    background:var(--bg);
+    font-family:system-ui, sans-serif;
+    color:var(--fg);
+    overflow-x:hidden;
+    animation:fadeIn 1.1s ease-out forwards;
+  }
+
+  /* CINEMATIC FADE-IN */
+  @keyframes fadeIn {
+    from { opacity:0; translate:0 20px; }
+    to { opacity:1; translate:0 0; }
+  }
+
+  /* Lights flicker effect */
+  @keyframes flicker {
+    0%, 100% { opacity:1; }
+    92% { opacity:0.85; }
+    94% { opacity:0.4; }
+    96% { opacity:1; }
+  }
+
+  .vault-wrap {
+    width:100%;
+    min-height:100vh;
+    background:url('/assets/wck_vault.webp') center center no-repeat;
+    background-size:cover;
+    padding:30px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    animation:flicker 5s infinite;
+  }
+
+  /* BACK BUTTON */
+  .back-btn {
+    position:fixed;
+    top:20px;
+    left:20px;
+    padding:10px 18px;
+    background:var(--gold);
+    color:#111;
+    font-weight:700;
+    border-radius:6px;
+    text-decoration:none;
+    box-shadow:0 0 10px #000;
+    z-index:20;
+  }
+
+  /* GLOWING LOGO */
+  .wck-logo {
+    width:160px;
+    margin-top:70px;
+    margin-bottom:15px;
+    filter:drop-shadow(0 0 12px var(--gold))
+           drop-shadow(0 0 22px rgba(212,164,74,0.5));
+    animation:glowPulse 3s infinite ease-in-out;
+  }
+
+  @keyframes glowPulse {
+    0%,100% { filter:drop-shadow(0 0 12px var(--gold)); }
+    50%     { filter:drop-shadow(0 0 20px var(--gold)) drop-shadow(0 0 35px rgba(212,164,74,0.8)); }
+  }
+
+  /* TITLE */
+  .title {
+    font-size:2.2rem;
+    font-weight:800;
+    text-align:center;
+    margin-bottom:20px;
+    text-shadow:0 0 12px #000;
+  }
+
+  /* SERIES LIST */
+  .series-list {
+    margin-top:20px;
+    width:100%;
+    max-width:450px;
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+  }
+
+  .series-item {
+    background:rgba(0,0,0,0.55);
+    border:1px solid var(--gold);
+    padding:14px 20px;
+    border-radius:10px;
+    font-weight:700;
+    text-decoration:none;
+    color:var(--fg);
+    text-align:center;
+    transition:.2s ease;
+  }
+
+  .series-item:hover {
+    background:rgba(0,0,0,0.75);
+    transform:scale(1.03);
+  }
+
+  /* CARD JITTER (used later when you display NFTs) */
+  .jitter:hover {
+    animation:jitter 0.26s infinite;
+  }
+
+  @keyframes jitter {
+    0% { transform:translate(0, 0); }
+    25% { transform:translate(-2px, 1px); }
+    50% { transform:translate(2px, -1px); }
+    75% { transform:translate(-1px, -2px); }
+    100% { transform:translate(0, 0); }
+  }
+
+</style>
+</head>
+<body>
+
+<a class="back-btn" href="/index.html">BACK</a>
+
+<div class="vault-wrap">
+
+  <!-- YOUR WCK LOGO -->
+  <img class="wck-logo" src="/assets/wck_logo.png" alt="WCK">
+
+  <div class="title">THE CONTINENTAL NFT VAULT</div>
+
+  <!-- CLICKABLE SERIES LIST -->
+  <div class="series-list">
+    <a class="series-item" href="/nft/series1.html">SERIES 1</a>
+    <a class="series-item" href="/nft/series2.html">SERIES 2</a>
+    <a class="series-item" href="/nft/series3.html">SERIES 3</a>
+    <a class="series-item" href="/nft/series4.html">SERIES 4</a>
+    <a class="series-item" href="/nft/series5.html">SERIES 5</a>
+    <a class="series-item" href="/nft/all.html">VIEW ALL</a>
+  </div>
+
+</div>
+
+</body>
+</html>
