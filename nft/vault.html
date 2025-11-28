@@ -11,208 +11,239 @@
                user-scalable=no">
 
 <style>
-  :root {
-    --bg:#0b0b0c;
-    --fg:#e6e6e6;
-    --gold:#d4a44a;
-  }
 
-  html, body {
-    margin:0;
-    padding:0;
-    background:var(--bg);
-    font-family:system-ui, sans-serif;
-    color:var(--fg);
-    overflow-x:hidden;
-    -webkit-text-size-adjust:none;
-    touch-action:manipulation;
-    width:100%;
-  }
+/* =========================================================
+   GLOBAL FIX — THE PATCH (stops horizontal overflow)
+   ========================================================= */
+html, body {
+  width:100%;
+  max-width:100%;
+  overflow-x:hidden !important;
+  margin:0;
+  padding:0;
+  -webkit-text-size-adjust:none;
+  touch-action:manipulation;
+  background:#0b0b0c;
+  font-family:system-ui, sans-serif;
+  color:#e6e6e6;
+}
 
-  /* PAGE WRAP */
-  .vault-wrap {
-    width:100%;
-    padding:20px 14px;
-    box-sizing:border-box;
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    animation:fadeIn 1s ease-out forwards;
-  }
+* {
+  max-width:100% !important;
+  box-sizing:border-box;
+}
 
-  @keyframes fadeIn {
-    from { opacity:0; transform:translateY(20px); }
-    to   { opacity:1; transform:translateY(0); }
-  }
+img {
+  max-width:100%;
+  height:auto;
+  display:block;
+}
 
-  /* BACK BUTTON */
-  .back-btn {
-    position:fixed;
-    top:16px;
-    left:16px;
-    padding:10px 18px;
-    font-weight:800;
-    font-size:.95rem;
-    border-radius:12px;
-    background:radial-gradient(120% 120% at 50% -10%, #ffe083 0%, #b8942e 60%);
-    color:#0c0b07;
-    border:1px solid #e5c767;
-    text-decoration:none;
-    box-shadow:0 4px 10px rgba(0,0,0,.45);
-    z-index:30;
-  }
+/* =========================================================
+   BACK BUTTON
+   ========================================================= */
+.back-btn {
+  position:fixed;
+  top:16px;
+  left:16px;
+  padding:10px 18px;
+  font-weight:800;
+  font-size:.95rem;
+  border-radius:12px;
+  background:radial-gradient(120% 120% at 50% -10%, #ffe083 0%, #b8942e 60%);
+  color:#0c0b07;
+  border:1px solid #e5c767;
+  text-decoration:none;
+  box-shadow:0 4px 10px rgba(0,0,0,.45);
+  z-index:30;
+}
 
-  /* AUDIO */
-  .audio-toggle {
-    position:fixed;
-    top:16px;
-    right:16px;
-    width:42px;
-    height:42px;
-    background:rgba(0,0,0,0.6);
-    border:2px solid var(--gold);
-    border-radius:50%;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-size:18px;
-    cursor:pointer;
-    color:var(--gold);
-    z-index:40;
-  }
+/* =========================================================
+   AUDIO BUTTON
+   ========================================================= */
+.audio-toggle {
+  position:fixed;
+  top:16px;
+  right:16px;
+  width:42px;
+  height:42px;
+  background:rgba(0,0,0,0.6);
+  border:2px solid #d4a44a;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:18px;
+  cursor:pointer;
+  color:#d4a44a;
+  z-index:40;
+}
 
-  /* LOGO */
-  .wck-logo {
-    width:130px;
-    margin-top:70px;
-    margin-bottom:12px;
-    filter:drop-shadow(0 0 12px var(--gold));
-  }
+/* =========================================================
+   MAIN WRAP
+   ========================================================= */
+.vault-wrap {
+  width:100%;
+  padding:20px 14px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  animation:fadeIn 1s ease-out forwards;
+}
 
-  .title {
-    font-size:1.9rem;
-    text-align:center;
-    font-weight:800;
-    margin-bottom:10px;
-    text-shadow:0 0 10px #000;
-  }
+@keyframes fadeIn {
+  from { opacity:0; transform:translateY(20px); }
+  to   { opacity:1; transform:translateY(0); }
+}
 
-  .sub {
-    font-size:1rem;
-    font-weight:700;
-    text-align:center;
-    max-width:500px;
-    line-height:1.45;
-    margin-bottom:20px;
-    color:#f1d89b;
-  }
+/* =========================================================
+   LOGO + TITLE + SUBTEXT
+   ========================================================= */
+.wck-logo {
+  width:130px;
+  margin-top:70px;
+  margin-bottom:12px;
+  filter:drop-shadow(0 0 12px #d4a44a);
+}
 
-  /* CHAOS IMAGE */
-  .chaos-bg {
-    width:100%;
-    max-width:600px;
-    display:block;
-    border-radius:12px;
-    margin-bottom:22px;
-  }
+.title {
+  font-size:1.9rem;
+  font-weight:800;
+  text-align:center;
+  margin-bottom:10px;
+  text-shadow:0 0 10px #000;
+}
 
-  /* RARITY */
-  .rarity-box {
-    width:100%;
-    max-width:600px;
-    background:rgba(0,0,0,.55);
-    border:1px solid var(--gold);
-    border-radius:12px;
-    padding:18px 16px;
-    backdrop-filter:blur(2px);
-    margin-bottom:26px;
-  }
+.sub {
+  font-size:1rem;
+  font-weight:700;
+  text-align:center;
+  max-width:500px;
+  line-height:1.45;
+  margin-bottom:20px;
+  color:#f1d89b;
+}
 
-  .rarity-box h2 {
-    margin:0 0 12px;
-    font-size:1.3rem;
-    text-align:center;
-    color:var(--gold);
-  }
+/* =========================================================
+   CHAOS IMAGE
+   ========================================================= */
+.chaos-bg {
+  width:100%;
+  max-width:500px;
+  border-radius:12px;
+  margin-bottom:22px;
+}
 
-  .rarity-item {
-    font-size:.95rem;
-    margin-bottom:12px;
-    line-height:1.4;
-  }
+/* =========================================================
+   RARITY BOX
+   ========================================================= */
+.rarity-box {
+  width:100%;
+  max-width:500px;
+  background:rgba(0,0,0,.55);
+  border:1px solid #d4a44a;
+  border-radius:12px;
+  padding:18px 16px;
+  backdrop-filter:blur(2px);
+  margin-bottom:26px;
+}
 
-  /* VAULT BACKGROUND + SERIES */
-  .vault-bg-wrap {
-    position:relative;
-    width:100%;
-    max-width:600px;
-    overflow:hidden;
-    margin-bottom:40px;
-  }
+.rarity-box h2 {
+  margin:0 0 12px;
+  font-size:1.3rem;
+  font-weight:800;
+  text-align:center;
+  color:#d4a44a;
+}
 
-  .vault-bg {
-    width:100%;
-    height:auto;
-    display:block;
-    border-radius:12px;
-  }
+.rarity-item {
+  font-size:.95rem;
+  line-height:1.4;
+  margin-bottom:12px;
+}
 
-  .series-list {
-    position:absolute;
-    top:14px;
-    left:50%;
-    transform:translateX(-50%);
-    width:88%;
-    display:flex;
-    flex-direction:column;
-    gap:10px;
-  }
+/* =========================================================
+   VAULT BACKGROUND + SERIES STACK
+   ========================================================= */
+.vault-bg-wrap {
+  position:relative;
+  width:100%;
+  max-width:500px;
+  overflow:hidden;
+  margin-bottom:40px;
+}
 
-  .series-item {
-    background:rgba(0,0,0,0.65);
-    border:1px solid var(--gold);
-    padding:10px 16px;
-    text-align:center;
-    font-weight:800;
-    border-radius:10px;
-    text-decoration:none;
-    color:var(--fg);
-    backdrop-filter:blur(2px);
-  }
+.vault-bg {
+  width:100%;
+  border-radius:12px;
+}
 
-  /* MOBILE FIXES */
-  @media (max-width:480px) {
-    .title { font-size:1.7rem; }
-    .sub { font-size:.95rem; }
-    .wck-logo { width:115px; }
-    .series-item { font-size:.9rem; padding:9px 14px; }
-    .series-list { width:92%; top:12px; }
-    .rarity-box { padding:16px 14px; }
-  }
+.series-list {
+  position:absolute;
+  top:12px;
+  left:50%;
+  transform:translateX(-50%);
+  width:90%;
+  max-width:420px;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  padding:0;
+  margin:0;
+}
 
-  footer {
-    width:100%;
-    text-align:center;
-    padding:25px 0;
-    font-size:.85rem;
-    color:#999;
-    margin-top:20px;
-  }
+.series-item {
+  background:rgba(0,0,0,0.65);
+  border:1px solid #d4a44a;
+  padding:10px 16px;
+  text-align:center;
+  font-weight:800;
+  border-radius:10px;
+  text-decoration:none;
+  color:#e6e6e6;
+  backdrop-filter:blur(2px);
+}
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+footer {
+  width:100%;
+  text-align:center;
+  padding:25px 0;
+  font-size:.85rem;
+  color:#999;
+  margin-top:20px;
+}
+
+/* =========================================================
+   MOBILE TUNING
+   ========================================================= */
+@media (max-width:480px) {
+  .title { font-size:1.7rem; }
+  .sub { font-size:.95rem; }
+  .wck-logo { width:115px; }
+  .series-item { font-size:.9rem; padding:9px 14px; }
+}
 
 </style>
 </head>
 
 <body>
 
+<!-- BACK BUTTON -->
 <a class="back-btn" href="/index.html">← BACK</a>
 
+<!-- AUDIO -->
 <div class="audio-toggle" id="audioToggle">🔊</div>
 <audio id="bgAudio" preload="auto">
   <source src="/assets/sounds/killing_strangers.mp3" type="audio/mpeg">
 </audio>
 
+<!-- MAIN WRAP -->
 <div class="vault-wrap">
 
+  <!-- LOGO -->
   <img class="wck-logo" src="/nft/assets/logo.webp">
 
   <div class="title">THE CONTINENTAL NFT VAULT</div>
@@ -222,19 +253,18 @@
     Every series enters here first — unfiltered identity locked in steel.
   </div>
 
-  <!-- CHAOS IMAGE -->
+  <!-- CHAOS -->
   <img class="chaos-bg" src="/nft/assets/vault_chaos_bg.webp">
 
   <!-- RARITY -->
   <div class="rarity-box">
     <h2>NFT RARITY LEVELS</h2>
-
     <div class="rarity-item"><b>COMMON</b><br>Standard vault print. Baseline issuance.</div>
     <div class="rarity-item"><b>RARE</b><br>Elevated print. Limited anomalies.</div>
     <div class="rarity-item"><b>ULTRA RARE</b><br>The apex tier. Minimal supply.</div>
   </div>
 
-  <!-- VAULT BACKGROUND -->
+  <!-- VAULT BACKGROUND + SERIES -->
   <div class="vault-bg-wrap">
     <img class="vault-bg" src="/nft/assets/wck_vault.webp">
 
