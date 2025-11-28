@@ -80,7 +80,7 @@ url = "https://continentalwick.com/.well-known/self-assessment.md"
 
 [[DOCUMENTS]]
 type = "Whitepaper"
-url = "https://continentalwick.com/.well-known/whitepaper.md"
+url = "https://continentalwick.com/.well-known/litepaper.md"
 
 [[DOCUMENTS]]
 type = "Whitepaper (IPFS)"
