@@ -80,7 +80,7 @@ img {
 }
 
 /* =========================================================
-   **FULL-SCREEN FLICKER LAYER**
+   FULL-SCREEN FLICKER LAYER
    ========================================================= */
 .flicker-screen {
   position:fixed;
@@ -89,7 +89,7 @@ img {
   width:100%;
   height:100%;
   pointer-events:none;
-  background:rgba(255,255,255,0.08);
+  background:rgba(255,255,255,0.10);
   mix-blend-mode:overlay;
   opacity:0;
   animation:vaultFlicker 7s infinite;
@@ -98,18 +98,20 @@ img {
 
 @keyframes vaultFlicker {
   0%, 100% { opacity:0; }
-  4% { opacity:0.35; }
-  5% { opacity:0; }
-  11% { opacity:0.20; }
-  12% { opacity:0; }
-  25% { opacity:0.45; }
-  26% { opacity:0; }
-  44% { opacity:0.30; }
-  45% { opacity:0; }
-  63% { opacity:0.6; }
-  64% { opacity:0; }
-  78% { opacity:0.25; }
-  79% { opacity:0; }
+  3%  { opacity:0.55; }
+  4%  { opacity:0; }
+  9%  { opacity:0.35; }
+  10% { opacity:0; }
+  22% { opacity:0.75; }
+  23% { opacity:0; }
+  37% { opacity:0.50; }
+  38% { opacity:0; }
+  51% { opacity:0.65; }
+  52% { opacity:0; }
+  66% { opacity:0.80; }
+  67% { opacity:0; }
+  82% { opacity:0.45; }
+  83% { opacity:0; }
 }
 
 /* =========================================================
@@ -138,14 +140,15 @@ img {
   width:130px;
   margin-top:70px;
   margin-bottom:12px;
-  filter:drop-shadow(0 0 14px #d4a44a);
+  filter:drop-shadow(0 0 8px #d4a44a);
   animation:logoPulse 2.8s ease-in-out infinite;
 }
 
 @keyframes logoPulse {
-  0%   { filter:drop-shadow(0 0 6px #d4a44a); opacity:0.95; }
-  50%  { filter:drop-shadow(0 0 26px #ffd37f); opacity:1; }
-  100% { filter:drop-shadow(0 0 6px #d4a44a); opacity:0.95; }
+  0%   { filter:drop-shadow(0 0 8px #d4a44a); opacity:0.90; }
+  40%  { filter:drop-shadow(0 0 34px #ffdf9b); opacity:1; }
+  60%  { filter:drop-shadow(0 0 40px #ffe9b8); opacity:1; }
+  100% { filter:drop-shadow(0 0 8px #d4a44a); opacity:0.90; }
 }
 
 .title {
@@ -259,7 +262,7 @@ footer {
 }
 
 /* =========================================================
-   MOBILE TUNING
+   MOBILE
    ========================================================= */
 @media (max-width:480px) {
   .title { font-size:1.7rem; }
@@ -298,10 +301,10 @@ footer {
     Every series enters here first — unfiltered identity locked in steel.
   </div>
 
-  <!-- CHAOS -->
+  <!-- CHAOS IMAGE -->
   <img class="chaos-bg" src="/nft/assets/vault_chaos_bg.webp">
 
-  <!-- RARITY -->
+  <!-- RARITY BOX -->
   <div class="rarity-box">
     <h2>NFT RARITY LEVELS</h2>
     <div class="rarity-item"><b>COMMON</b><br>Standard vault print. Baseline issuance.</div>
@@ -309,7 +312,7 @@ footer {
     <div class="rarity-item"><b>ULTRA RARE</b><br>The apex tier. Minimal supply.</div>
   </div>
 
-  <!-- VAULT BACKGROUND + SERIES -->
+  <!-- VAULT BACKGROUND -->
   <div class="vault-bg-wrap">
     <img class="vault-bg" src="/nft/assets/wck_vault.webp">
 
