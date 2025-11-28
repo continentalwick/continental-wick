@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <title>CONTINENTAL WICK — NFT Vault</title>
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
 
 <style>
   :root {
@@ -23,10 +23,10 @@
     touch-action:manipulation;
   }
 
-  /* CINEMATIC FADE-IN */
+  /* Fade-in */
   @keyframes fadeIn {
-    from { opacity:0; translate:0 20px; }
-    to { opacity:1; translate:0 0; }
+    from { opacity:0; transform:translateY(20px); }
+    to   { opacity:1; transform:translateY(0); }
   }
 
   /* Flicker */
@@ -49,7 +49,7 @@
     animation:flicker 5s infinite;
   }
 
-  /* BACK BUTTON — GOLD, CLEAN, NO GLOW */
+  /* BACK BUTTON — clean gold */
   .back-btn {
     position:fixed;
     top:20px;
@@ -62,14 +62,11 @@
     color:#0c0b07;
     border:1px solid #e5c767;
     text-decoration:none;
-    box-shadow:0 4px 14px rgba(0,0,0,.45); /* static clean shadow */
+    box-shadow:0 4px 14px rgba(0,0,0,.45);
     z-index:30;
     transition:.15s ease;
   }
-
-  .back-btn:active {
-    transform:scale(.94);
-  }
+  .back-btn:active { transform:scale(.94); }
 
   /* AUDIO TOGGLE */
   .audio-toggle {
@@ -91,10 +88,7 @@
     box-shadow:0 0 10px #000;
     transition:.15s ease;
   }
-
-  .audio-toggle:active {
-    transform:scale(.92);
-  }
+  .audio-toggle:active { transform:scale(.92); }
 
   /* LOGO */
   .wck-logo {
@@ -125,6 +119,8 @@
     margin-bottom:28px;
     color:#f1d89b;
     text-shadow:0 0 6px #000;
+    max-width:480px;
+    line-height:1.45;
   }
 
   /* SERIES LIST */
@@ -184,7 +180,11 @@
 
   <div class="title">THE CONTINENTAL NFT VAULT</div>
 
-  <div class="sub">Garbage Pail Kids x John Wick energy — unleashed.</div>
+  <div class="sub">
+    A sealed chamber built for protocol-grade chaos.  
+    Every series enters this vault first — no filters, no noise, just raw identity captured at the exact moment the universe snapped.  
+    Step in and choose your chapter.
+  </div>
 
   <div class="series-list">
     <a class="series-item" href="/nft/series_1.html">SERIES 1</a>
