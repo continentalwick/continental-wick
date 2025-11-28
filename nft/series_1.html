@@ -15,8 +15,9 @@
       --card:#131315;
       --line:#1b1b1e;
       --accent:#00b4ff;
-      --gold1:#ffcc33;
-      --gold2:#d4aa00;
+      --gold1:#ffe083;
+      --gold2:#b8942e;
+      --gold3:#2a261a;
     }
 
     * { box-sizing:border-box; }
@@ -30,24 +31,23 @@
       touch-action:manipulation;
     }
 
-    /* BACK BUTTON */
+    /* GLOSSY GOLD BACK BUTTON */
     .back-btn {
       display:inline-block;
       margin-bottom:24px;
-      padding:10px 18px;
+      padding:12px 22px;
       font-size:14px;
-      font-weight:600;
+      font-weight:700;
       text-decoration:none;
-      color:#18171a;
-      background:linear-gradient(90deg,var(--gold1),var(--gold2));
-      border:1px solid #e0b600;
-      border-radius:10px;
-      box-shadow:0 3px 10px rgba(0,0,0,.35);
-      transition:.15s all;
+      color:#0c0b07;
+      background:radial-gradient(120% 120% at 50% -10%, var(--gold1) 0%, var(--gold2) 60%, var(--gold3) 100%);
+      border:1px solid #e5c767;
+      border-radius:12px;
+      box-shadow:0 4px 14px rgba(0,0,0,.45);
+      transition:.15s ease;
     }
-    .back-btn:hover {
-      filter:brightness(1.08);
-      transform:translateX(-2px);
+    .back-btn:active {
+      transform:scale(.94);
     }
 
     /* HEADER */
@@ -66,7 +66,7 @@
     /* LOGO */
     .wck-logo {
       width:140px;
-      margin:14px auto 12px;
+      margin:14px auto 14px;
       display:block;
       filter:drop-shadow(0 0 14px #d4aa00);
     }
@@ -77,8 +77,8 @@
       letter-spacing:1.3px;
       text-transform:uppercase;
       font-weight:600;
-      margin-top:20px;
-      margin-bottom:10px;
+      margin-top:12px;
+      margin-bottom:14px;
       text-align:center;
     }
     h1 {
@@ -251,10 +251,10 @@
 
   <header>
     <div class="top-left">
-      <a href="/nft/vault.html" class="back-btn">⟵ Back</a>
+      <!-- FIXED: Back to VAULT with glossy gold CTA -->
+      <a href="/nft/vault.html" class="back-btn">⟵ Back to Vault</a>
     </div>
 
-    <!-- LOGO -->
     <img src="/assets/logo.webp" class="wck-logo" alt="WCK Logo">
 
     <div class="tagline">GPK-LEVEL CHAOS MEETS JOHN WICK PRECISION — SERIES ONE BEGINS</div>
@@ -285,9 +285,9 @@
             Activated when trust fractures. Embodies consequence, not value. When the protocol requires finality, Wick delivers it.
           </div>
           <div class="row">
-            <a class="btn primary" href="https://xrpscan.com" target="_blank" rel="noopener">XRPSCAN</a>
-            <a class="btn" href="https://bithomp.com" target="_blank" rel="noopener">Bithomp</a>
-            <a class="btn" href="https://x.com/wcktoken" target="_blank" rel="noopener">X Post</a>
+            <a class="btn primary" href="https://xrpscan.com" target="_blank">XRPSCAN</a>
+            <a class="btn" href="https://bithomp.com" target="_blank">Bithomp</a>
+            <a class="btn" href="https://x.com/wcktoken" target="_blank">X Post</a>
           </div>
         </div>
       </article>
@@ -308,9 +308,9 @@
             Sees everything. Flags nothing. Locks everything. If Clickz is watching you, you're already late.
           </div>
           <div class="row">
-            <a class="btn primary" href="https://xrpscan.com" target="_blank" rel="noopener">XRPSCAN</a>
-            <a class="btn" href="https://bithomp.com" target="_blank" rel="noopener">Bithomp</a>
-            <a class="btn" href="https://x.com/wcktoken" target="_blank" rel="noopener">X Post</a>
+            <a class="btn primary" href="https://xrpscan.com" target="_blank">XRPSCAN</a>
+            <a class="btn" href="https://bithomp.com" target="_blank">Bithomp</a>
+            <a class="btn" href="https://x.com/wcktoken" target="_blank">X Post</a>
           </div>
         </div>
       </article>
@@ -331,9 +331,9 @@
             Oversees all digital weapons. Assigns payloads for enforcement missions. Issues no warnings — only consequences.
           </div>
           <div class="row">
-            <a class="btn primary" href="https://xrpscan.com" target="_blank" rel="noopener">XRPSCAN</a>
-            <a class="btn" href="https://bithomp.com" target="_blank" rel="noopener">Bithomp</a>
-            <a class="btn" href="https://x.com/wcktoken" target="_blank" rel="noopener">X Post</a>
+            <a class="btn primary" href="https://xrpscan.com" target="_blank">XRPSCAN</a>
+            <a class="btn" href="https://bithomp.com" target="_blank">Bithomp</a>
+            <a class="btn" href="https://x.com/wcktoken" target="_blank">X Post</a>
           </div>
         </div>
       </article>
