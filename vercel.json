@@ -12,24 +12,11 @@
   "headers": [
     {
       "source": "/.well-known/xrp-ledger.toml",
-      "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=300" }
-      ]
+      "headers": [{ "key": "Cache-Control", "value": "public, max-age=300" }]
     },
     {
       "source": "/.well-known/logo.png",
-      "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=86400" }
-      ]
-    },
-    {
-      "source": "/(.*)",
-      "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "no-store, no-cache, must-revalidate, proxy-revalidate, max-age=0"
-        }
-      ]
+      "headers": [{ "key": "Cache-Control", "value": "public, max-age=86400" }]
     }
   ]
 }
