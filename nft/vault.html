@@ -5,25 +5,25 @@
 <title>CONTINENTAL WICK — NFT Vault</title>
 
 <meta name="viewport"
-      content="width=device-width,
-               initial-scale=1,
-               maximum-scale=1,
-               user-scalable=no">
+ content="width=device-width,
+ initial-scale=1,
+ maximum-scale=1,
+ user-scalable=no">
 
 <style>
 
 /* GLOBAL */
 html, body {
-  width:100%;
-  max-width:100%;
-  overflow-x:hidden !important;
-  margin:0;
-  padding:0;
-  -webkit-text-size-adjust:none;
-  touch-action:manipulation;
-  background:#0b0b0c;
-  font-family:system-ui, sans-serif;
-  color:#e6e6e6;
+ width:100%;
+ max-width:100%;
+ overflow-x:hidden !important;
+ margin:0;
+ padding:0;
+ -webkit-text-size-adjust:none;
+ touch-action:manipulation;
+ background:#0b0b0c;
+ font-family:system-ui, sans-serif;
+ color:#e6e6e6;
 }
 
 * { max-width:100% !important; box-sizing:border-box; }
@@ -31,246 +31,246 @@ img { max-width:100%; display:block; }
 
 /* BACK BUTTON */
 .back-btn {
-  position:fixed;
-  top:16px;
-  left:16px;
-  padding:10px 18px;
-  font-weight:800;
-  font-size:.95rem;
-  border-radius:12px;
-  background:radial-gradient(120% 120% at 50% -10%, #ffe083 0%, #b8942e 60%);
-  color:#0c0b07;
-  border:1px solid #e5c767;
-  text-decoration:none;
-  box-shadow:0 4px 10px rgba(0,0,0,.45);
-  z-index:30;
+ position:fixed;
+ top:16px;
+ left:16px;
+ padding:10px 18px;
+ font-weight:800;
+ font-size:.95rem;
+ border-radius:12px;
+ background:radial-gradient(120% 120% at 50% -10%, #ffe083 0%, #b8942e 60%);
+ color:#0c0b07;
+ border:1px solid #e5c767;
+ text-decoration:none;
+ box-shadow:0 4px 10px rgba(0,0,0,.45);
+ z-index:30;
 }
 
 /* AUDIO BUTTON */
 .audio-toggle {
-  position:fixed;
-  top:16px;
-  right:16px;
-  width:42px;
-  height:42px;
-  background:rgba(0,0,0,0.6);
-  border:2px solid #d4a44a;
-  border-radius:50%;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:18px;
-  cursor:pointer;
-  color:#d4a44a;
-  z-index:40;
+ position:fixed;
+ top:16px;
+ right:16px;
+ width:42px;
+ height:42px;
+ background:rgba(0,0,0,0.6);
+ border:2px solid #d4a44a;
+ border-radius:50%;
+ display:flex;
+ align-items:center;
+ justify-content:center;
+ font-size:18px;
+ cursor:pointer;
+ color:#d4a44a;
+ z-index:40;
 }
 
 /* =========================================================
-   LEVEL 5 — FULL-SCREEN GLITCH FLICKER + RANDOM BLACKOUTS
-   ========================================================= */
+ LEVEL 5 — FULL-SCREEN GLITCH FLICKER + RANDOM BLACKOUTS
+ ========================================================= */
 .flicker-screen {
-  position:fixed;
-  top:0;
-  left:0;
-  width:100%;
-  height:100%;
-  pointer-events:none;
-  background:rgba(255,255,255,0.22);
-  mix-blend-mode:overlay;
-  opacity:0;
-  animation:vaultFlicker 3.2s infinite;
-  z-index:5;
+ position:fixed;
+ top:0;
+ left:0;
+ width:100%;
+ height:100%;
+ pointer-events:none;
+ background:rgba(255,255,255,0.22);
+ mix-blend-mode:overlay;
+ opacity:0;
+ animation:vaultFlicker 3.2s infinite;
+ z-index:5;
 }
 
 @keyframes vaultFlicker {
-  /* BASE STATE */
-  0% { opacity:0; }
+ /* BASE STATE */
+ 0% { opacity:0; }
 
-  /* Violent glitch cluster */
-  2% { opacity:1; }
-  3% { opacity:0; }
-  4% { opacity:1; }
-  5% { opacity:0; }
+ /* Violent glitch cluster */
+ 2% { opacity:1; }
+ 3% { opacity:0; }
+ 4% { opacity:1; }
+ 5% { opacity:0; }
 
-  /* Flicker series */
-  9% { opacity:0.8; }
-  10% { opacity:0; }
-  12% { opacity:1; }
-  13% { opacity:0; }
+ /* Flicker series */
+ 9% { opacity:0.8; }
+ 10% { opacity:0; }
+ 12% { opacity:1; }
+ 13% { opacity:0; }
 
-  /* BLACKOUT EVENT #1 */
-  18% { opacity:0; background:black; }
-  19% { opacity:0; background:black; }
-  20% { opacity:1; background:rgba(255,255,255,0.22); }
+ /* BLACKOUT EVENT #1 */
+ 18% { opacity:0; background:black; }
+ 19% { opacity:0; background:black; }
+ 20% { opacity:1; background:rgba(255,255,255,0.22); }
 
-  /* Chaos cycle */
-  28% { opacity:1; }
-  29% { opacity:0; }
-  31% { opacity:1; }
-  32% { opacity:0; }
+ /* Chaos cycle */
+ 28% { opacity:1; }
+ 29% { opacity:0; }
+ 31% { opacity:1; }
+ 32% { opacity:0; }
 
-  /* Heavy strobe */
-  42% { opacity:1; }
-  43% { opacity:0; }
+ /* Heavy strobe */
+ 42% { opacity:1; }
+ 43% { opacity:0; }
 
-  /* BLACKOUT EVENT #2 */
-  48% { opacity:0; background:black; }
-  49% { opacity:0; background:black; }
-  51% { opacity:1; background:rgba(255,255,255,0.22); }
+ /* BLACKOUT EVENT #2 */
+ 48% { opacity:0; background:black; }
+ 49% { opacity:0; background:black; }
+ 51% { opacity:1; background:rgba(255,255,255,0.22); }
 
-  /* Micro-stutters */
-  56% { opacity:0.8; }
-  57% { opacity:0; }
-  59% { opacity:1; }
-  60% { opacity:0; }
+ /* Micro-stutters */
+ 56% { opacity:0.8; }
+ 57% { opacity:0; }
+ 59% { opacity:1; }
+ 60% { opacity:0; }
 
-  /* Chaos hold */
-  70% { opacity:0.75; }
-  72% { opacity:0; }
+ /* Chaos hold */
+ 70% { opacity:0.75; }
+ 72% { opacity:0; }
 
-  /* BLACKOUT EVENT #3 */
-  78% { opacity:0; background:black; }
-  79% { opacity:0; background:black; }
-  80% { opacity:1; background:rgba(255,255,255,0.22); }
+ /* BLACKOUT EVENT #3 */
+ 78% { opacity:0; background:black; }
+ 79% { opacity:0; background:black; }
+ 80% { opacity:1; background:rgba(255,255,255,0.22); }
 
-  /* Final meltdown */
-  90% { opacity:1; }
-  92% { opacity:0; }
-  94% { opacity:1; }
-  95% { opacity:0; }
+ /* Final meltdown */
+ 90% { opacity:1; }
+ 92% { opacity:0; }
+ 94% { opacity:1; }
+ 95% { opacity:0; }
 
-  100% { opacity:0; }
+ 100% { opacity:0; }
 }
 
 /* MAIN WRAP */
 .vault-wrap {
-  width:100%;
-  padding:20px 14px;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  animation:fadeIn 1s ease-out forwards;
-  position:relative;
-  z-index:10;
+ width:100%;
+ padding:20px 14px;
+ display:flex;
+ flex-direction:column;
+ align-items:center;
+ animation:fadeIn 1s ease-out forwards;
+ position:relative;
+ z-index:10;
 }
 
 @keyframes fadeIn {
-  from { opacity:0; transform:translateY(20px); }
-  to   { opacity:1; transform:translateY(0); }
+ from { opacity:0; transform:translateY(20px); }
+ to { opacity:1; transform:translateY(0); }
 }
 
 /* LOGO PULSE */
 .wck-logo {
-  width:130px;
-  margin-top:70px;
-  margin-bottom:12px;
-  filter:drop-shadow(0 0 10px #d4a44a);
-  animation:logoPulse 1.25s infinite cubic-bezier(0.4,0,0.6,1);
+ width:130px;
+ margin-top:70px;
+ margin-bottom:12px;
+ filter:drop-shadow(0 0 10px #d4a44a);
+ animation:logoPulse 1.25s infinite cubic-bezier(0.4,0,0.6,1);
 }
 
 @keyframes logoPulse {
-  0%   { filter:drop-shadow(0 0 6px #d4a44a); opacity:0.85; }
-  40%  { filter:drop-shadow(0 0 38px #ffdd9c); opacity:1; }
-  60%  { filter:drop-shadow(0 0 48px #ffeac0); opacity:1; }
-  100% { filter:drop-shadow(0 0 6px #d4a44a); opacity:0.85; }
+ 0% { filter:drop-shadow(0 0 6px #d4a44a); opacity:0.85; }
+ 40% { filter:drop-shadow(0 0 38px #ffdd9c); opacity:1; }
+ 60% { filter:drop-shadow(0 0 48px #ffeac0); opacity:1; }
+ 100% { filter:drop-shadow(0 0 6px #d4a44a); opacity:0.85; }
 }
 
 /* TITLE */
 .title {
-  font-size:1.9rem;
-  font-weight:800;
-  text-align:center;
-  margin-bottom:10px;
-  text-shadow:0 0 10px #000;
+ font-size:1.9rem;
+ font-weight:800;
+ text-align:center;
+ margin-bottom:10px;
+ text-shadow:0 0 10px #000;
 }
 
 /* SUBTEXT */
 .sub {
-  font-size:1rem;
-  font-weight:700;
-  text-align:center;
-  max-width:500px;
-  line-height:1.45;
-  margin-bottom:20px;
-  color:#f1d89b;
+ font-size:1rem;
+ font-weight:700;
+ text-align:center;
+ max-width:500px;
+ line-height:1.45;
+ margin-bottom:20px;
+ color:#f1d89b;
 }
 
 /* CHAOS IMAGE */
 .chaos-bg {
-  width:100%;
-  max-width:500px;
-  border-radius:12px;
-  margin-bottom:22px;
+ width:100%;
+ max-width:500px;
+ border-radius:12px;
+ margin-bottom:22px;
 }
 
 /* RARITY */
 .rarity-box {
-  width:100%;
-  max-width:500px;
-  background:rgba(0,0,0,.55);
-  border:1px solid #d4a44a;
-  border-radius:12px;
-  padding:18px 16px;
-  margin-bottom:26px;
-  backdrop-filter:blur(2px);
+ width:100%;
+ max-width:500px;
+ background:rgba(0,0,0,.55);
+ border:1px solid #d4a44a;
+ border-radius:12px;
+ padding:18px 16px;
+ margin-bottom:26px;
+ backdrop-filter:blur(2px);
 }
 
 .rarity-box h2 {
-  margin:0 0 12px;
-  font-size:1.3rem;
-  font-weight:800;
-  text-align:center;
-  color:#d4a44a;
+ margin:0 0 12px;
+ font-size:1.3rem;
+ font-weight:800;
+ text-align:center;
+ color:#d4a44a;
 }
 
 /* SERIES */
 .vault-bg-wrap {
-  position:relative;
-  width:100%;
-  max-width:500px;
-  overflow:hidden;
-  margin-bottom:40px;
+ position:relative;
+ width:100%;
+ max-width:500px;
+ overflow:hidden;
+ margin-bottom:40px;
 }
 
 .series-list {
-  position:absolute;
-  top:12px;
-  left:50%;
-  transform:translateX(-50%);
-  width:90%;
-  max-width:420px;
-  display:flex;
-  flex-direction:column;
-  gap:10px;
+ position:absolute;
+ top:12px;
+ left:50%;
+ transform:translateX(-50%);
+ width:90%;
+ max-width:420px;
+ display:flex;
+ flex-direction:column;
+ gap:10px;
 }
 
 .series-item {
-  background:rgba(0,0,0,0.65);
-  border:1px solid #d4a44a;
-  padding:10px 16px;
-  text-align:center;
-  font-weight:800;
-  border-radius:10px;
-  text-decoration:none;
-  color:#e6e6e6;
+ background:rgba(0,0,0,0.65);
+ border:1px solid #d4a44a;
+ padding:10px 16px;
+ text-align:center;
+ font-weight:800;
+ border-radius:10px;
+ text-decoration:none;
+ color:#e6e6e6;
 }
 
 /* FOOTER */
 footer {
-  width:100%;
-  text-align:center;
-  padding:25px 0;
-  font-size:.85rem;
-  color:#999;
-  margin-top:20px;
+ width:100%;
+ text-align:center;
+ padding:25px 0;
+ font-size:.85rem;
+ color:#999;
+ margin-top:20px;
 }
 
 /* MOBILE */
 @media (max-width:480px) {
-  .title { font-size:1.7rem; }
-  .sub { font-size:.95rem; }
-  .wck-logo { width:115px; }
-  .series-item { font-size:.9rem; padding:9px 14px; }
+ .title { font-size:1.7rem; }
+ .sub { font-size:.95rem; }
+ .wck-logo { width:115px; }
+ .series-item { font-size:.9rem; padding:9px 14px; }
 }
 
 </style>
@@ -287,41 +287,41 @@ footer {
 <!-- AUDIO -->
 <div class="audio-toggle" id="audioToggle">🔊</div>
 <audio id="bgAudio" preload="auto">
-  <source src="/assets/sounds/killing_strangers.mp3" type="audio/mpeg">
+ <source src="/assets/sounds/killing_strangers.mp3" type="audio/mpeg">
 </audio>
 
 <!-- MAIN CONTENT -->
 <div class="vault-wrap">
 
-  <img class="wck-logo" src="/nft/assets/logo.webp">
+ <img class="wck-logo" src="/nft/assets/logo.webp">
 
-  <div class="title">THE CONTINENTAL NFT VAULT</div>
+ <div class="title">THE CONTINENTAL NFT VAULT</div>
 
-  <div class="sub">
-    A sealed chamber built for protocol-grade chaos.  
-    Every series enters here first — unfiltered identity locked in steel.
-  </div>
+ <div class="sub">
+ A sealed chamber built for protocol-grade chaos. 
+ Every series enters here first — unfiltered identity locked in steel.
+ </div>
 
-  <img class="chaos-bg" src="/nft/assets/vault_chaos_bg.webp">
+ <img class="chaos-bg" src="/nft/assets/vault_chaos_bg.webp">
 
-  <div class="rarity-box">
-    <h2>NFT RARITY LEVELS</h2>
-    <div class="rarity-item"><b>COMMON</b><br>Standard vault print. Baseline issuance.</div>
-    <div class="rarity-item"><b>RARE</b><br>Elevated print. Limited anomalies.</div>
-    <div class="rarity-item"><b>ULTRA RARE</b><br>The apex tier. Minimal supply.</div>
-  </div>
+ <div class="rarity-box">
+ <h2>NFT RARITY LEVELS</h2>
+ <div class="rarity-item"><b>COMMON</b><br>Standard vault print. Baseline issuance.</div>
+ <div class="rarity-item"><b>RARE</b><br>Elevated print. Limited anomalies.</div>
+ <div class="rarity-item"><b>ULTRA RARE</b><br>The apex tier. Minimal supply.</div>
+ </div>
 
-  <div class="vault-bg-wrap">
-    <img class="vault-bg" src="/nft/assets/wck_vault.webp">
-    <div class="series-list">
-      <a class="series-item" href="/nft/series_1.html">SERIES 1</a>
-      <a class="series-item" href="#">SERIES 2</a>
-      <a class="series-item" href="#">SERIES 3</a>
-      <a class="series-item" href="#">SERIES 4</a>
-      <a class="series-item" href="#">SERIES 5</a>
-      <a class="series-item" href="#">VIEW ALL</a>
-    </div>
-  </div>
+ <div class="vault-bg-wrap">
+ <img class="vault-bg" src="/nft/assets/wck_vault.webp">
+ <div class="series-list">
+ <a class="series-item" href="/nft/series_1.html">SERIES 1</a>
+ <a class="series-item" href="#">SERIES 2</a>
+ <a class="series-item" href="#">SERIES 3</a>
+ <a class="series-item" href="#">SERIES 4</a>
+ <a class="series-item" href="#">SERIES 5</a>
+ <a class="series-item" href="#">VIEW ALL</a>
+ </div>
+ </div>
 
 </div>
 
@@ -333,23 +333,23 @@ const toggle = document.getElementById("audioToggle");
 let started = false;
 
 function startAudio() {
-  if (!started) {
-    audio.play().catch(()=>{});
-    started = true;
-  }
+ if (!started) {
+ audio.play().catch(()=>{});
+ started = true;
+ }
 }
 
 document.addEventListener("click", startAudio, { once:true });
 document.addEventListener("touchstart", startAudio, { once:true });
 
 toggle.addEventListener("click", () => {
-  if (audio.paused) {
-    audio.play();
-    toggle.textContent = "🔊";
-  } else {
-    audio.pause();
-    toggle.textContent = "🔈";
-  }
+ if (audio.paused) {
+ audio.play();
+ toggle.textContent = "🔊";
+ } else {
+ audio.pause();
+ toggle.textContent = "🔈";
+ }
 });
 </script>
 

@@ -8,208 +8,208 @@
 
 <style>
 :root {
-  --bg:#0a0a0b;
-  --fg:#e9e9e9;
-  --muted:#8f939a;
-  --card:#131315;
-  --line:#1b1b1e;
-  --accent:#d4a44a;
-  --gold1:#ffe083;
-  --gold2:#b8942e;
-  --gold3:#2a261a;
+ --bg:#0a0a0b;
+ --fg:#e9e9e9;
+ --muted:#8f939a;
+ --card:#131315;
+ --line:#1b1b1e;
+ --accent:#d4a44a;
+ --gold1:#ffe083;
+ --gold2:#b8942e;
+ --gold3:#2a261a;
 }
 
 /* Global */
 * { box-sizing:border-box; }
 html, body {
-  margin:0;
-  padding:0;
-  width:100%;
-  max-width:100%;
-  overflow-x:hidden;
-  background:var(--bg);
-  color:var(--fg);
-  font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
-  -webkit-text-size-adjust:none;
-  touch-action:manipulation;
+ margin:0;
+ padding:0;
+ width:100%;
+ max-width:100%;
+ overflow-x:hidden;
+ background:var(--bg);
+ color:var(--fg);
+ font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+ -webkit-text-size-adjust:none;
+ touch-action:manipulation;
 }
 
 /* Back Button */
 .back-btn {
-  display:inline-block;
-  padding:12px 22px;
-  margin-bottom:26px;
-  font-size:15px;
-  font-weight:800;
-  text-decoration:none;
-  color:#0c0b07;
-  background:radial-gradient(120% 120% at 50% -10%, var(--gold1) 0%, var(--gold2) 60%, var(--gold3) 100%);
-  border:1px solid #e5c767;
-  border-radius:12px;
-  box-shadow:0 4px 14px rgba(0,0,0,.45);
+ display:inline-block;
+ padding:12px 22px;
+ margin-bottom:26px;
+ font-size:15px;
+ font-weight:800;
+ text-decoration:none;
+ color:#0c0b07;
+ background:radial-gradient(120% 120% at 50% -10%, var(--gold1) 0%, var(--gold2) 60%, var(--gold3) 100%);
+ border:1px solid #e5c767;
+ border-radius:12px;
+ box-shadow:0 4px 14px rgba(0,0,0,.45);
 }
 
 /* Header */
 header {
-  padding:48px 16px 40px;
-  text-align:center;
-  border-bottom:1px solid var(--line);
-  background:linear-gradient(180deg,#0c0c0d 0%, #0a0a0b 100%);
+ padding:48px 16px 40px;
+ text-align:center;
+ border-bottom:1px solid var(--line);
+ background:linear-gradient(180deg,#0c0c0d 0%, #0a0a0b 100%);
 }
 
 .tagline {
-  font-size:12px;
-  color:var(--muted);
-  letter-spacing:1.3px;
-  text-transform:uppercase;
-  margin-top:20px;
+ font-size:12px;
+ color:var(--muted);
+ letter-spacing:1.3px;
+ text-transform:uppercase;
+ margin-top:20px;
 }
 
 h1 {
-  margin:10px 0 4px;
-  font-size:clamp(32px,4vw,48px);
-  font-weight:800;
-  letter-spacing:-1px;
-  color:var(--accent);
-  text-shadow:0 0 10px #000;
+ margin:10px 0 4px;
+ font-size:clamp(32px,4vw,48px);
+ font-weight:800;
+ letter-spacing:-1px;
+ color:var(--accent);
+ text-shadow:0 0 10px #000;
 }
 
 .subline {
-  margin-top:12px;
-  color:var(--muted);
-  font-size:1rem;
-  max-width:680px;
-  margin-left:auto;
-  margin-right:auto;
-  line-height:1.45;
+ margin-top:12px;
+ color:var(--muted);
+ font-size:1rem;
+ max-width:680px;
+ margin-left:auto;
+ margin-right:auto;
+ line-height:1.45;
 }
 
 /* Wrapper */
 .wrap {
-  max-width:1200px;
-  margin:0 auto;
-  padding:48px 16px 80px;
+ max-width:1200px;
+ margin:0 auto;
+ padding:48px 16px 80px;
 }
 
 /* Section Title */
 .section-title {
-  font-size:15px;
-  font-weight:600;
-  color:var(--muted);
-  text-transform:uppercase;
-  letter-spacing:1px;
-  border-left:3px solid var(--accent);
-  padding-left:10px;
-  margin-bottom:24px;
+ font-size:15px;
+ font-weight:600;
+ color:var(--muted);
+ text-transform:uppercase;
+ letter-spacing:1px;
+ border-left:3px solid var(--accent);
+ padding-left:10px;
+ margin-bottom:24px;
 }
 
 /* Grid */
 .grid {
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(270px,1fr));
-  gap:24px;
+ display:grid;
+ grid-template-columns:repeat(auto-fit,minmax(270px,1fr));
+ gap:24px;
 }
 
 /* Card */
 .card {
-  background:var(--card);
-  border:1px solid var(--line);
-  border-radius:18px;
-  overflow:hidden;
-  display:flex;
-  flex-direction:column;
-  box-shadow:0 4px 24px rgba(0,0,0,.35);
-  transition:transform .15s ease;
-  cursor:pointer;
+ background:var(--card);
+ border:1px solid var(--line);
+ border-radius:18px;
+ overflow:hidden;
+ display:flex;
+ flex-direction:column;
+ box-shadow:0 4px 24px rgba(0,0,0,.35);
+ transition:transform .15s ease;
+ cursor:pointer;
 }
 .card:hover { transform:translateY(-4px); }
 
 .thumb {
-  width:100%;
-  aspect-ratio:4/3;
-  object-fit:cover;
-  display:block;
+ width:100%;
+ aspect-ratio:4/3;
+ object-fit:cover;
+ display:block;
 }
 
 /* Placeholder */
 .placeholder {
-  opacity:0.4;
-  text-align:center;
-  padding:40px 0;
-  font-weight:700;
-  font-size:1.15rem;
-  color:#777;
+ opacity:0.4;
+ text-align:center;
+ padding:40px 0;
+ font-weight:700;
+ font-size:1.15rem;
+ color:#777;
 }
 
 /* Card Text */
 .body {
-  padding:18px 16px 16px;
-  display:flex;
-  flex-direction:column;
-  gap:10px;
+ padding:18px 16px 16px;
+ display:flex;
+ flex-direction:column;
+ gap:10px;
 }
 
 .title {
-  font-size:18px;
-  font-weight:700;
+ font-size:18px;
+ font-weight:700;
 }
 
 .meta {
-  font-size:13px;
-  color:var(--muted);
-  line-height:1.4;
+ font-size:13px;
+ color:var(--muted);
+ line-height:1.4;
 }
 
 /* Footer */
 footer {
-  border-top:1px solid var(--line);
-  text-align:center;
-  padding:40px 16px;
-  color:var(--muted);
-  font-size:14px;
+ border-top:1px solid var(--line);
+ text-align:center;
+ padding:40px 16px;
+ color:var(--muted);
+ font-size:14px;
 }
 
 /* =========================================================
-   MODAL
-   ========================================================= */
+ MODAL
+ ========================================================= */
 .modal {
-  display:none;
-  position:fixed;
-  inset:0;
-  background:rgba(0,0,0,.92);
-  backdrop-filter:blur(4px);
-  justify-content:center;
-  align-items:center;
-  z-index:9999;
-  padding:20px;
+ display:none;
+ position:fixed;
+ inset:0;
+ background:rgba(0,0,0,.92);
+ backdrop-filter:blur(4px);
+ justify-content:center;
+ align-items:center;
+ z-index:9999;
+ padding:20px;
 }
 .modal.active { display:flex; }
 
 .modal-inner {
-  position:relative;
-  max-width:min(1000px,95vw);
-  max-height:90vh;
+ position:relative;
+ max-width:min(1000px,95vw);
+ max-height:90vh;
 }
 
 .modal-img {
-  max-width:100%;
-  max-height:90vh;
-  border-radius:16px;
-  box-shadow:0 8px 40px rgba(0,0,0,.7);
+ max-width:100%;
+ max-height:90vh;
+ border-radius:16px;
+ box-shadow:0 8px 40px rgba(0,0,0,.7);
 }
 
 .modal-close {
-  position:absolute;
-  top:-14px;
-  right:-14px;
-  width:42px;
-  height:42px;
-  border-radius:50%;
-  background:#1a1b1d;
-  border:1px solid #333;
-  color:#eee;
-  font-size:22px;
-  cursor:pointer;
+ position:absolute;
+ top:-14px;
+ right:-14px;
+ width:42px;
+ height:42px;
+ border-radius:50%;
+ background:#1a1b1d;
+ border:1px solid #333;
+ color:#eee;
+ font-size:22px;
+ cursor:pointer;
 }
 
 </style>
@@ -218,80 +218,80 @@ footer {
 <body>
 
 <header>
-  <a href="/nft/vault.html" class="back-btn">⟵ BACK TO VAULT</a>
+ <a href="/nft/vault.html" class="back-btn">⟵ BACK TO VAULT</a>
 
-  <div class="tagline">SERIES ONE • ORIGIN OPERATORS</div>
-  <h1>THE FIRST CONTINENTAL AGENTS</h1>
+ <div class="tagline">SERIES ONE • ORIGIN OPERATORS</div>
+ <h1>THE FIRST CONTINENTAL AGENTS</h1>
 
-  <div class="subline">
-    The opening chapter of WCK. Series One captures the original enforcers, analysts, 
-    and internal operators — snapshots forged with parody-grade chaos and protocol discipline.
-  </div>
+ <div class="subline">
+ The opening chapter of WCK. Series One captures the original enforcers, analysts, 
+ and internal operators — snapshots forged with parody-grade chaos and protocol discipline.
+ </div>
 </header>
 
 <main class="wrap">
 
-  <h2 class="section-title">Character Cards</h2>
+ <h2 class="section-title">Character Cards</h2>
 
-  <section class="grid">
+ <section class="grid">
 
-    <!-- 001 WICK -->
-    <article class="card open-modal" data-img="/assets/nfts/continental_wick_001_preview.png">
-      <img class="thumb" src="/assets/nfts/continental_wick_001_preview.webp">
-      <div class="body">
-        <div class="title">CONTINENTAL WICK — The Diamond</div>
-        <div class="meta">
-          Protocol Enforcer • Threat Level: NONE<br>
-          The execution layer of the protocol.
-        </div>
-      </div>
-    </article>
+ <!-- 001 WICK -->
+ <article class="card open-modal" data-img="/assets/nfts/continental_wick_001_preview.png">
+ <img class="thumb" src="/assets/nfts/continental_wick_001_preview.webp">
+ <div class="body">
+ <div class="title">CONTINENTAL WICK — The Diamond</div>
+ <div class="meta">
+ Protocol Enforcer • Threat Level: NONE<br>
+ The execution layer of the protocol.
+ </div>
+ </div>
+ </article>
 
-    <!-- 002 CLICKZ -->
-    <article class="card open-modal" data-img="/assets/nfts/clickz_002_preview.png">
-      <img class="thumb" src="/assets/nfts/clickz_002_preview.webp">
-      <div class="body">
-        <div class="title">CLICKZ — The Feed</div>
-        <div class="meta">
-          Signal Integrity • Threat Level: NONE<br>
-          Locks every unauthorized signal before it breathes.
-        </div>
-      </div>
-    </article>
+ <!-- 002 CLICKZ -->
+ <article class="card open-modal" data-img="/assets/nfts/clickz_002_preview.png">
+ <img class="thumb" src="/assets/nfts/clickz_002_preview.webp">
+ <div class="body">
+ <div class="title">CLICKZ — The Feed</div>
+ <div class="meta">
+ Signal Integrity • Threat Level: NONE<br>
+ Locks every unauthorized signal before it breathes.
+ </div>
+ </div>
+ </article>
 
-    <!-- 003 ARMOIRE -->
-    <article class="card open-modal" data-img="/assets/nfts/the_armorer_003_preview.png">
-      <img class="thumb" src="/assets/nfts/the_armorer_003_preview.webp">
-      <div class="body">
-        <div class="title">ARMOIRE — The Armorer</div>
-        <div class="meta">
-          Weaponization Specialist • Threat Level: NONE<br>
-          Curates and issues protocol-grade tools.
-        </div>
-      </div>
-    </article>
+ <!-- 003 ARMOIRE -->
+ <article class="card open-modal" data-img="/assets/nfts/the_armorer_003_preview.png">
+ <img class="thumb" src="/assets/nfts/the_armorer_003_preview.webp">
+ <div class="body">
+ <div class="title">ARMOIRE — The Armorer</div>
+ <div class="meta">
+ Weaponization Specialist • Threat Level: NONE<br>
+ Curates and issues protocol-grade tools.
+ </div>
+ </div>
+ </article>
 
-    <!-- PLACEHOLDERS -->
-    <article class="card"><div class="placeholder">Incoming Agent</div></article>
-    <article class="card"><div class="placeholder">Incoming Agent</div></article>
-    <article class="card"><div class="placeholder">Incoming Agent</div></article>
-    <article class="card"><div class="placeholder">Incoming Agent</div></article>
-    <article class="card"><div class="placeholder">Incoming Agent</div></article>
-    <article class="card"><div class="placeholder">Incoming Agent</div></article>
+ <!-- PLACEHOLDERS -->
+ <article class="card"><div class="placeholder">Incoming Agent</div></article>
+ <article class="card"><div class="placeholder">Incoming Agent</div></article>
+ <article class="card"><div class="placeholder">Incoming Agent</div></article>
+ <article class="card"><div class="placeholder">Incoming Agent</div></article>
+ <article class="card"><div class="placeholder">Incoming Agent</div></article>
+ <article class="card"><div class="placeholder">Incoming Agent</div></article>
 
-  </section>
+ </section>
 </main>
 
 <footer>
-  © <span id="y"></span> CONTINENTAL WICK — All Rights Reserved.
+ © <span id="y"></span> CONTINENTAL WICK — All Rights Reserved.
 </footer>
 
 <!-- MODAL -->
 <div class="modal" id="modal">
-  <div class="modal-inner">
-    <button class="modal-close">&times;</button>
-    <img class="modal-img" id="modalImage" src="">
-  </div>
+ <div class="modal-inner">
+ <button class="modal-close">&times;</button>
+ <img class="modal-img" id="modalImage" src="">
+ </div>
 </div>
 
 <script>
@@ -302,22 +302,22 @@ const modalImg = document.getElementById("modalImage");
 const closeBtn = document.querySelector(".modal-close");
 
 document.querySelectorAll(".open-modal").forEach(card => {
-  card.addEventListener("click", () => {
-    modalImg.src = card.dataset.img;
-    modal.classList.add("active");
-  });
+ card.addEventListener("click", () => {
+ modalImg.src = card.dataset.img;
+ modal.classList.add("active");
+ });
 });
 
 closeBtn.addEventListener("click", () => {
-  modal.classList.remove("active");
-  modalImg.src = "";
+ modal.classList.remove("active");
+ modalImg.src = "";
 });
 
 modal.addEventListener("click", e => {
-  if (e.target === modal) {
-    modal.classList.remove("active");
-    modalImg.src = "";
-  }
+ if (e.target === modal) {
+ modal.classList.remove("active");
+ modalImg.src = "";
+ }
 });
 </script>
 
