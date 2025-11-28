@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <title>$WCK NFTs — CONTINENTAL WICK</title>
+  <title>$WCK NFTs — SERIES 1</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="canonical" href="https://wicktoken.net/nft" />
   <meta name="description" content="$WCK NFT hub — official gallery for CONTINENTAL WICK character cards and protocol artifacts on XRPL." />
@@ -20,14 +20,17 @@
     }
 
     * { box-sizing:border-box; }
+
     body {
       margin:0;
       background:var(--bg);
       color:var(--fg);
       font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      -webkit-text-size-adjust:none;
+      touch-action:manipulation;
     }
 
-    /* STATIC BACK BUTTON (HEADER-ONLY, NORMAL FLOW) */
+    /* BACK BUTTON */
     .back-btn {
       display:inline-block;
       margin-bottom:24px;
@@ -59,6 +62,15 @@
       margin:0 auto;
       text-align:left;
     }
+
+    /* LOGO */
+    .wck-logo {
+      width:140px;
+      margin:14px auto 12px;
+      display:block;
+      filter:drop-shadow(0 0 14px #d4aa00);
+    }
+
     .tagline {
       font-size:12px;
       color:var(--muted);
@@ -90,7 +102,7 @@
       padding:48px 16px 80px;
     }
 
-    /* SECTION TITLE BAR */
+    /* SECTION TITLE */
     .section-title {
       font-size:15px;
       font-weight:600;
@@ -123,6 +135,7 @@
     .card:hover {
       transform:translateY(-4px);
     }
+
     .thumb {
       width:100%;
       aspect-ratio:4/3;
@@ -130,17 +143,20 @@
       display:block;
       background:#0f0f11;
     }
+
     .body {
       padding:18px 16px 16px;
       display:flex;
       flex-direction:column;
       gap:10px;
     }
+
     .title {
       font-size:18px;
       font-weight:700;
       letter-spacing:-0.2px;
     }
+
     .meta {
       font-size:13px;
       color:var(--muted);
@@ -194,22 +210,26 @@
       backdrop-filter:blur(3px);
     }
     .modal.active { display:flex; }
+
     .modal-inner {
       position:relative;
       max-width:min(1000px,96vw);
       max-height:92vh;
       animation:fadeIn .2s ease-out;
     }
+
     @keyframes fadeIn {
       from { opacity:0; transform:scale(.96); }
       to   { opacity:1; transform:scale(1); }
     }
+
     .modal-img {
       max-width:100%;
       max-height:92vh;
       border-radius:16px;
       box-shadow:0 8px 40px rgba(0,0,0,.7);
     }
+
     .modal-close {
       position:absolute;
       top:-14px;
@@ -229,41 +249,44 @@
 
 <body>
 
-  <!-- STATIC BACK BUTTON TOP LEFT -->
   <header>
     <div class="top-left">
-      <a href="https://wicktoken.net" class="back-btn">⟵ Back</a>
+      <a href="/nft/vault.html" class="back-btn">⟵ Back</a>
     </div>
 
-    <div class="tagline">PROTOCOL ENFORCED • XRPL NATIVE • SERIES ONE</div>
-    <h1>CONTINENTAL WICK — NFT COLLECTION</h1>
-    <div class="subline">Official gallery for character cards & protocol-grade artifacts</div>
+    <!-- LOGO -->
+    <img src="/assets/logo.webp" class="wck-logo" alt="WCK Logo">
+
+    <div class="tagline">GPK-LEVEL CHAOS MEETS JOHN WICK PRECISION — SERIES ONE BEGINS</div>
+
+    <h1>CONTINENTAL WICK — SERIES 1</h1>
+    <div class="subline">The first agents. The first signatures. The foundation of the protocol universe.</div>
   </header>
 
-  <!-- MAIN -->
   <main class="wrap">
+
     <h2 class="section-title">Character Cards</h2>
-<!-- WCK NFT PAGE v2 — lowercase filenames + codex bios -->
+
     <section class="grid">
 
       <!-- 001 CONTINENTAL WICK -->
       <article class="card">
         <a class="open-modal" href="#"
-           data-img="https://github.com/continentalwick/continental-wick/blob/main/assets/nfts/continental_wick_001_preview.png?raw=true">
+           data-img="/assets/nfts/continental_wick_001_preview.png">
           <img class="thumb"
-               src="https://github.com/continentalwick/continental-wick/blob/main/assets/nfts/continental_wick_001_preview.webp?raw=true"
+               src="/assets/nfts/continental_wick_001_preview.webp"
                alt="CONTINENTAL WICK — The Diamond" />
         </a>
 
         <div class="body">
           <div class="title">CONTINENTAL WICK — The Diamond</div>
           <div class="meta">
-            Protocol Enforcer • OTC Execution Layer • Threat Level: NONE<br>
-            Execution layer of the Continental Protocol. Activated when trust fractures. Embodies consequence, not value. Never negotiates, never hesitates. When the protocol requires finality, Wick delivers it.
+            Protocol Enforcer • Execution Layer • Threat Level: NONE<br>
+            Activated when trust fractures. Embodies consequence, not value. When the protocol requires finality, Wick delivers it.
           </div>
           <div class="row">
             <a class="btn primary" href="https://xrpscan.com" target="_blank" rel="noopener">XRPSCAN</a>
-            <a class="btn" href="https://bithomp.com/en" target="_blank" rel="noopener">Bithomp</a>
+            <a class="btn" href="https://bithomp.com" target="_blank" rel="noopener">Bithomp</a>
             <a class="btn" href="https://x.com/wcktoken" target="_blank" rel="noopener">X Post</a>
           </div>
         </div>
@@ -272,9 +295,9 @@
       <!-- 002 CLICKZ -->
       <article class="card">
         <a class="open-modal" href="#"
-           data-img="https://github.com/continentalwick/continental-wick/blob/main/assets/nfts/clickz_002_preview.png?raw=true">
+           data-img="/assets/nfts/clickz_002_preview.png">
           <img class="thumb"
-               src="https://github.com/continentalwick/continental-wick/blob/main/assets/nfts/clickz_002_preview.webp?raw=true"
+               src="/assets/nfts/clickz_002_preview.webp"
                alt="CLICKZ — The Feed" />
         </a>
 
@@ -282,11 +305,11 @@
           <div class="title">CLICKZ — The Feed</div>
           <div class="meta">
             Internal Surveillance Ops • Signal Integrity • Threat Level: NONE<br>
-            Monitors all internal signals inside the Continental. Sees everything. Flags nothing. Locks everything. If Clickz is watching you, you’re already late.
+            Sees everything. Flags nothing. Locks everything. If Clickz is watching you, you're already late.
           </div>
           <div class="row">
             <a class="btn primary" href="https://xrpscan.com" target="_blank" rel="noopener">XRPSCAN</a>
-            <a class="btn" href="https://bithomp.com/en" target="_blank" rel="noopener">Bithomp</a>
+            <a class="btn" href="https://bithomp.com" target="_blank" rel="noopener">Bithomp</a>
             <a class="btn" href="https://x.com/wcktoken" target="_blank" rel="noopener">X Post</a>
           </div>
         </div>
@@ -295,9 +318,9 @@
       <!-- 003 ARMORIE -->
       <article class="card">
         <a class="open-modal" href="#"
-           data-img="https://github.com/continentalwick/continental-wick/blob/main/assets/nfts/the_armorer_003_preview.png?raw=true">
+           data-img="/assets/nfts/the_armorer_003_preview.png">
           <img class="thumb"
-               src="https://github.com/continentalwick/continental-wick/blob/main/assets/nfts/the_armorer_003_preview.webp?raw=true"
+               src="/assets/nfts/the_armorer_003_preview.webp"
                alt="ARMORIE — The Armorer" />
         </a>
 
@@ -305,11 +328,11 @@
           <div class="title">ARMORIE — The Armorer</div>
           <div class="meta">
             Protocol Armorer • Weaponization Specialist • Threat Level: NONE<br>
-            Curates the entire vault of protocol-grade digital weapons. Assigns loadouts for enforcement missions. Issues no warnings—only payloads.
+            Oversees all digital weapons. Assigns payloads for enforcement missions. Issues no warnings — only consequences.
           </div>
           <div class="row">
             <a class="btn primary" href="https://xrpscan.com" target="_blank" rel="noopener">XRPSCAN</a>
-            <a class="btn" href="https://bithomp.com/en" target="_blank" rel="noopener">Bithomp</a>
+            <a class="btn" href="https://bithomp.com" target="_blank" rel="noopener">Bithomp</a>
             <a class="btn" href="https://x.com/wcktoken" target="_blank" rel="noopener">X Post</a>
           </div>
         </div>
@@ -318,7 +341,6 @@
     </section>
   </main>
 
-  <!-- FOOTER -->
   <footer>
     &copy; <span id="y"></span> CONTINENTAL WICK — All Rights Reserved
   </footer>
@@ -332,11 +354,9 @@
   </div>
 
   <script>
-    // YEAR
     document.getElementById('y').textContent = new Date().getFullYear();
 
-    // MODAL LOGIC
-    const modal    = document.getElementById('imgModal');
+    const modal = document.getElementById('imgModal');
     const modalImg = document.getElementById('modalImage');
     const closeBtn = document.querySelector('.modal-close');
 
@@ -354,12 +374,8 @@
     };
 
     closeBtn.addEventListener('click', closeModal);
-    modal.addEventListener('click', e => {
-      if (e.target === modal) closeModal();
-    });
-    document.addEventListener('keydown', e => {
-      if (e.key === 'Escape') closeModal();
-    });
+    modal.addEventListener('click', e => { if (e.target === modal) closeModal(); });
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
   </script>
 
 </body>
