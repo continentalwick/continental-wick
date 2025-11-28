@@ -66,7 +66,7 @@ img { max-width:100%; display:block; }
 }
 
 /* =========================================================
-   FULL-SCREEN FLICKER — LEVEL 4 (MAX GLITCH)
+   LEVEL 5 — FULL-SCREEN GLITCH FLICKER + RANDOM BLACKOUTS
    ========================================================= */
 .flicker-screen {
   position:fixed;
@@ -75,63 +75,69 @@ img { max-width:100%; display:block; }
   width:100%;
   height:100%;
   pointer-events:none;
-  background:rgba(255,255,255,0.20);
+  background:rgba(255,255,255,0.22);
   mix-blend-mode:overlay;
   opacity:0;
-  animation:vaultFlicker 2.5s infinite;
+  animation:vaultFlicker 3.2s infinite;
   z-index:5;
 }
 
 @keyframes vaultFlicker {
+  /* BASE STATE */
   0% { opacity:0; }
 
+  /* Violent glitch cluster */
   2% { opacity:1; }
   3% { opacity:0; }
   4% { opacity:1; }
   5% { opacity:0; }
-  6% { opacity:1; }
-  7% { opacity:0; }
 
-  10% { opacity:0.75; }
-  11% { opacity:0; }
-  12% { opacity:0.9; }
+  /* Flicker series */
+  9% { opacity:0.8; }
+  10% { opacity:0; }
+  12% { opacity:1; }
   13% { opacity:0; }
 
-  18% { opacity:0.85; }
-  20% { opacity:0.3; }
-  22% { opacity:1; }
-  24% { opacity:0; }
+  /* BLACKOUT EVENT #1 */
+  18% { opacity:0; background:black; }
+  19% { opacity:0; background:black; }
+  20% { opacity:1; background:rgba(255,255,255,0.22); }
 
-  30% { opacity:1; }
-  31% { opacity:0; }
-  32% { opacity:0.75; }
-  33% { opacity:0; }
-  35% { opacity:1; }
-  36% { opacity:0; }
+  /* Chaos cycle */
+  28% { opacity:1; }
+  29% { opacity:0; }
+  31% { opacity:1; }
+  32% { opacity:0; }
 
-  45% { opacity:1; }
-  46% { opacity:0.1; }
-  47% { opacity:1; }
-  48% { opacity:0; }
+  /* Heavy strobe */
+  42% { opacity:1; }
+  43% { opacity:0; }
 
-  55% { opacity:0.6; }
-  56% { opacity:0; }
-  58% { opacity:0.8; }
-  59% { opacity:0; }
-  61% { opacity:1; }
-  62% { opacity:0; }
+  /* BLACKOUT EVENT #2 */
+  48% { opacity:0; background:black; }
+  49% { opacity:0; background:black; }
+  51% { opacity:1; background:rgba(255,255,255,0.22); }
 
+  /* Micro-stutters */
+  56% { opacity:0.8; }
+  57% { opacity:0; }
+  59% { opacity:1; }
+  60% { opacity:0; }
+
+  /* Chaos hold */
   70% { opacity:0.75; }
-  72% { opacity:0.35; }
-  74% { opacity:0.95; }
-  75% { opacity:0; }
+  72% { opacity:0; }
 
-  88% { opacity:1; }
-  89% { opacity:0; }
-  91% { opacity:1; }
+  /* BLACKOUT EVENT #3 */
+  78% { opacity:0; background:black; }
+  79% { opacity:0; background:black; }
+  80% { opacity:1; background:rgba(255,255,255,0.22); }
+
+  /* Final meltdown */
+  90% { opacity:1; }
   92% { opacity:0; }
-  94% { opacity:0.6; }
-  96% { opacity:0; }
+  94% { opacity:1; }
+  95% { opacity:0; }
 
   100% { opacity:0; }
 }
@@ -153,9 +159,7 @@ img { max-width:100%; display:block; }
   to   { opacity:1; transform:translateY(0); }
 }
 
-/* =========================================================
-   LOGO — FAST, STRONG PULSE
-   ========================================================= */
+/* LOGO PULSE */
 .wck-logo {
   width:130px;
   margin-top:70px;
@@ -228,11 +232,6 @@ img { max-width:100%; display:block; }
   margin-bottom:40px;
 }
 
-.vault-bg {
-  width:100%;
-  border-radius:12px;
-}
-
 .series-list {
   position:absolute;
   top:12px;
@@ -279,10 +278,10 @@ footer {
 
 <body>
 
-<!-- LEVEL-4 FLICKER -->
+<!-- LEVEL 5 FLICKER -->
 <div class="flicker-screen"></div>
 
-<!-- BACK -->
+<!-- BACK BUTTON -->
 <a class="back-btn" href="/index.html">← BACK</a>
 
 <!-- AUDIO -->
@@ -291,7 +290,7 @@ footer {
   <source src="/assets/sounds/killing_strangers.mp3" type="audio/mpeg">
 </audio>
 
-<!-- MAIN -->
+<!-- MAIN CONTENT -->
 <div class="vault-wrap">
 
   <img class="wck-logo" src="/nft/assets/logo.webp">
@@ -314,7 +313,6 @@ footer {
 
   <div class="vault-bg-wrap">
     <img class="vault-bg" src="/nft/assets/wck_vault.webp">
-
     <div class="series-list">
       <a class="series-item" href="/nft/series_1.html">SERIES 1</a>
       <a class="series-item" href="#">SERIES 2</a>
