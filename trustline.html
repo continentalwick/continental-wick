@@ -1,63 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Add $WCK Trustline</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #fff;
-      color: #111;
-      text-align: center;
-      padding: 40px;
-    }
-    .button {
-      background: #111;
-      color: #fff;
-      padding: 14px 28px;
-      border-radius: 8px;
-      font-weight: bold;
-      text-decoration: none;
-      display: inline-block;
-      margin: 20px 0;
-    }
-    #qrcode {
-      margin-top: 30px;
-    }
-  </style>
+ <meta charset="UTF-8" />
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Add $WCK Trustline</title>
+ <style>
+ body {
+ font-family: Arial, sans-serif;
+ background: #fff;
+ color: #111;
+ text-align: center;
+ padding: 40px;
+ }
+ .button {
+ background: #111;
+ color: #fff;
+ padding: 14px 28px;
+ border-radius: 8px;
+ font-weight: bold;
+ text-decoration: none;
+ display: inline-block;
+ margin: 20px 0;
+ }
+ #qrcode {
+ margin-top: 30px;
+ }
+ </style>
 </head>
 <body>
-  <img src="https://ipfs.io/ipfs/bafkreiajbbmrlqvhxajx7tihkbgnlwsolovkxxjjks4r7drs3w75oze3xy" width="100" alt="$WCK Logo">
-  <h1>Add $WCK Trustline</h1>
-  <p><strong>CONTINENTAL WICK</strong> is powered by XRPL.<br>Click below or scan QR to authorize the official $WCK trustline in XAMAN.</p>
+ <img src="https://ipfs.io/ipfs/bafkreiajbbmrlqvhxajx7tihkbgnlwsolovkxxjjks4r7drs3w75oze3xy" width="100" alt="$WCK Logo">
+ <h1>Add $WCK Trustline</h1>
+ <p><strong>CONTINENTAL WICK</strong> is powered by XRPL.<br>Click below or scan QR to authorize the official $WCK trustline in XAMAN.</p>
 
-  <a class="button" id="launchLink" href="#" target="_blank" rel="noopener noreferrer">
-    Sign Trustline in XAMAN
-  </a>
+ <a class="button" id="launchLink" href="#" target="_blank" rel="noopener noreferrer">
+ Sign Trustline in XAMAN
+ </a>
 
-  <div id="qrcode"></div>
+ <div id="qrcode"></div>
 
-  <script>
-    async function generateTrustlinePayload() {
-      try {
-        const response = await fetch("https://continental-wick.vercel.app/api/create-payload");
-        const data = await response.json();
+ <script>
+ async function generateTrustlinePayload() {
+ try {
+ const response = await fetch("https://continental-wick.vercel.app/api/create-payload");
+ const data = await response.json();
 
-        const signUrl = `https://xumm.app/sign/${data.uuid}`;
-        document.getElementById("launchLink").href = signUrl;
+ const signUrl = `https://xumm.app/sign/${data.uuid}`;
+ document.getElementById("launchLink").href = signUrl;
 
-        const qrImage = new Image();
-        qrImage.src = `https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${encodeURIComponent(signUrl)}`;
-        qrImage.alt = "Scan with XAMAN";
-        document.getElementById("qrcode").appendChild(qrImage);
-      } catch (err) {
-        alert("Failed to generate trustline payload. Try again later.");
-        console.error(err);
-      }
-    }
+ const qrImage = new Image();
+ qrImage.src = `https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${encodeURIComponent(signUrl)}`;
+ qrImage.alt = "Scan with XAMAN";
+ document.getElementById("qrcode").appendChild(qrImage);
+ } catch (err) {
+ alert("Failed to generate trustline payload. Try again later.");
+ console.error(err);
+ }
+ }
 
-    generateTrustlinePayload();
-  </script>
+ generateTrustlinePayload();
+ </script>
 </body>
 </html>
