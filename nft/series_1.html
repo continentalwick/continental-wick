@@ -3,9 +3,9 @@
 <head>
   <meta charset="utf-8" />
   <title>$WCK NFTs — SERIES 1</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="canonical" href="https://wicktoken.net/nft" />
-  <meta name="description" content="$WCK NFT hub — official gallery for CONTINENTAL WICK character cards and protocol artifacts on XRPL." />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+  <link rel="canonical" href="https://wicktoken.net/nft/series_1.html" />
+  <meta name="description" content="Series One of CONTINENTAL WICK — protocol agents captured in their defining moments." />
 
   <style>
     :root {
@@ -14,30 +14,30 @@
       --muted:#8f939a;
       --card:#131315;
       --line:#1b1b1e;
-      --accent:#00b4ff;
+      --accent:#d4a44a;
       --gold1:#ffe083;
       --gold2:#b8942e;
       --gold3:#2a261a;
     }
 
     * { box-sizing:border-box; }
-
     body {
       margin:0;
       background:var(--bg);
       color:var(--fg);
-      font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      font-family:system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
       -webkit-text-size-adjust:none;
       touch-action:manipulation;
+      overflow-x:hidden;
     }
 
-    /* GLOSSY GOLD BACK BUTTON */
+    /* BACK BUTTON */
     .back-btn {
       display:inline-block;
-      margin-bottom:24px;
       padding:12px 22px;
-      font-size:14px;
-      font-weight:700;
+      margin-bottom:26px;
+      font-size:15px;
+      font-weight:800;
       text-decoration:none;
       color:#0c0b07;
       background:radial-gradient(120% 120% at 50% -10%, var(--gold1) 0%, var(--gold2) 60%, var(--gold3) 100%);
@@ -46,9 +46,7 @@
       box-shadow:0 4px 14px rgba(0,0,0,.45);
       transition:.15s ease;
     }
-    .back-btn:active {
-      transform:scale(.94);
-    }
+    .back-btn:active { transform:scale(.94); }
 
     /* HEADER */
     header {
@@ -57,42 +55,32 @@
       border-bottom:1px solid var(--line);
       background:linear-gradient(180deg,#0c0c0d 0%, #0a0a0b 100%);
     }
-    .top-left {
-      max-width:1200px;
-      margin:0 auto;
-      text-align:left;
-    }
-
-    /* LOGO */
-    .wck-logo {
-      width:140px;
-      margin:14px auto 14px;
-      display:block;
-      filter:drop-shadow(0 0 14px #d4aa00);
-    }
 
     .tagline {
       font-size:12px;
       color:var(--muted);
       letter-spacing:1.3px;
       text-transform:uppercase;
-      font-weight:600;
-      margin-top:12px;
-      margin-bottom:14px;
-      text-align:center;
+      margin-top:20px;
     }
+
     h1 {
-      margin:0;
-      font-size:clamp(30px,4vw,46px);
-      font-weight:700;
+      margin:10px 0 4px;
+      font-size:clamp(32px,4vw,48px);
+      font-weight:800;
       letter-spacing:-1px;
-      text-align:center;
+      color:var(--accent);
+      text-shadow:0 0 10px #000;
     }
+
     .subline {
+      margin-top:12px;
       color:var(--muted);
-      margin-top:8px;
-      font-size:15px;
-      text-align:center;
+      font-size:1rem;
+      max-width:680px;
+      margin-left:auto;
+      margin-right:auto;
+      line-height:1.45;
     }
 
     /* WRAPPER */
@@ -107,11 +95,11 @@
       font-size:15px;
       font-weight:600;
       color:var(--muted);
-      margin:0 0 24px;
       text-transform:uppercase;
       letter-spacing:1px;
       border-left:3px solid var(--accent);
       padding-left:10px;
+      margin-bottom:24px;
     }
 
     /* GRID */
@@ -132,9 +120,7 @@
       box-shadow:0 4px 24px rgba(0,0,0,.35);
       transition:transform .15s ease;
     }
-    .card:hover {
-      transform:translateY(-4px);
-    }
+    .card:hover { transform:translateY(-4px); }
 
     .thumb {
       width:100%;
@@ -163,32 +149,15 @@
       line-height:1.4;
     }
 
-    .row {
-      margin-top:8px;
-      display:flex;
-      gap:10px;
-      flex-wrap:wrap;
+    .placeholder {
+      opacity:0.4;
+      text-align:center;
+      padding:40px 0;
+      font-weight:700;
+      font-size:1.15rem;
+      color:#777;
     }
 
-    .btn {
-      display:inline-block;
-      padding:10px 14px;
-      font-size:13px;
-      border-radius:10px;
-      text-decoration:none;
-      background:#16171a;
-      border:1px solid #26272b;
-      color:var(--fg);
-      transition:.15s all;
-    }
-    .btn:hover {
-      border-color:#33353a;
-    }
-    .btn.primary {
-      border-color:var(--accent);
-    }
-
-    /* FOOTER */
     footer {
       border-top:1px solid var(--line);
       text-align:center;
@@ -197,186 +166,102 @@
       font-size:14px;
     }
 
-    /* MODAL */
-    .modal {
-      display:none;
-      position:fixed;
-      inset:0;
-      z-index:999;
-      background:rgba(0,0,0,.92);
-      justify-content:center;
-      align-items:center;
-      padding:24px;
-      backdrop-filter:blur(3px);
-    }
-    .modal.active { display:flex; }
-
-    .modal-inner {
-      position:relative;
-      max-width:min(1000px,96vw);
-      max-height:92vh;
-      animation:fadeIn .2s ease-out;
-    }
-
-    @keyframes fadeIn {
-      from { opacity:0; transform:scale(.96); }
-      to   { opacity:1; transform:scale(1); }
-    }
-
-    .modal-img {
-      max-width:100%;
-      max-height:92vh;
-      border-radius:16px;
-      box-shadow:0 8px 40px rgba(0,0,0,.7);
-    }
-
-    .modal-close {
-      position:absolute;
-      top:-14px;
-      right:-14px;
-      width:42px;
-      height:42px;
-      border-radius:50%;
-      border:1px solid #2d2e33;
-      background:#1a1b1d;
-      color:#fff;
-      font-size:22px;
-      line-height:40px;
-      cursor:pointer;
-    }
   </style>
 </head>
 
 <body>
 
-  <header>
-    <div class="top-left">
-      <!-- FIXED: Back to VAULT with glossy gold CTA -->
-      <a href="/nft/vault.html" class="back-btn">⟵ Back to Vault</a>
-    </div>
+<header>
+  <a href="/nft/vault.html" class="back-btn">⟵ BACK TO VAULT</a>
 
-    <img src="/assets/logo.webp" class="wck-logo" alt="WCK Logo">
+  <div class="tagline">SERIES ONE • ORIGIN OPERATORS</div>
+  <h1>THE FIRST CONTINENTAL AGENTS</h1>
 
-    <div class="tagline">GPK-LEVEL CHAOS MEETS JOHN WICK PRECISION — SERIES ONE BEGINS</div>
-
-    <h1>CONTINENTAL WICK — SERIES 1</h1>
-    <div class="subline">The first agents. The first signatures. The foundation of the protocol universe.</div>
-  </header>
-
-  <main class="wrap">
-
-    <h2 class="section-title">Character Cards</h2>
-
-    <section class="grid">
-
-      <!-- 001 CONTINENTAL WICK -->
-      <article class="card">
-        <a class="open-modal" href="#"
-           data-img="/assets/nfts/continental_wick_001_preview.png">
-          <img class="thumb"
-               src="/assets/nfts/continental_wick_001_preview.webp"
-               alt="CONTINENTAL WICK — The Diamond" />
-        </a>
-
-        <div class="body">
-          <div class="title">CONTINENTAL WICK — The Diamond</div>
-          <div class="meta">
-            Protocol Enforcer • Execution Layer • Threat Level: NONE<br>
-            Activated when trust fractures. Embodies consequence, not value. When the protocol requires finality, Wick delivers it.
-          </div>
-          <div class="row">
-            <a class="btn primary" href="https://xrpscan.com" target="_blank">XRPSCAN</a>
-            <a class="btn" href="https://bithomp.com" target="_blank">Bithomp</a>
-            <a class="btn" href="https://x.com/wcktoken" target="_blank">X Post</a>
-          </div>
-        </div>
-      </article>
-
-      <!-- 002 CLICKZ -->
-      <article class="card">
-        <a class="open-modal" href="#"
-           data-img="/assets/nfts/clickz_002_preview.png">
-          <img class="thumb"
-               src="/assets/nfts/clickz_002_preview.webp"
-               alt="CLICKZ — The Feed" />
-        </a>
-
-        <div class="body">
-          <div class="title">CLICKZ — The Feed</div>
-          <div class="meta">
-            Internal Surveillance Ops • Signal Integrity • Threat Level: NONE<br>
-            Sees everything. Flags nothing. Locks everything. If Clickz is watching you, you're already late.
-          </div>
-          <div class="row">
-            <a class="btn primary" href="https://xrpscan.com" target="_blank">XRPSCAN</a>
-            <a class="btn" href="https://bithomp.com" target="_blank">Bithomp</a>
-            <a class="btn" href="https://x.com/wcktoken" target="_blank">X Post</a>
-          </div>
-        </div>
-      </article>
-
-      <!-- 003 ARMORIE -->
-      <article class="card">
-        <a class="open-modal" href="#"
-           data-img="/assets/nfts/the_armorer_003_preview.png">
-          <img class="thumb"
-               src="/assets/nfts/the_armorer_003_preview.webp"
-               alt="ARMORIE — The Armorer" />
-        </a>
-
-        <div class="body">
-          <div class="title">ARMORIE — The Armorer</div>
-          <div class="meta">
-            Protocol Armorer • Weaponization Specialist • Threat Level: NONE<br>
-            Oversees all digital weapons. Assigns payloads for enforcement missions. Issues no warnings — only consequences.
-          </div>
-          <div class="row">
-            <a class="btn primary" href="https://xrpscan.com" target="_blank">XRPSCAN</a>
-            <a class="btn" href="https://bithomp.com" target="_blank">Bithomp</a>
-            <a class="btn" href="https://x.com/wcktoken" target="_blank">X Post</a>
-          </div>
-        </div>
-      </article>
-
-    </section>
-  </main>
-
-  <footer>
-    &copy; <span id="y"></span> CONTINENTAL WICK — All Rights Reserved
-  </footer>
-
-  <!-- MODAL -->
-  <div class="modal" id="imgModal">
-    <div class="modal-inner">
-      <button class="modal-close">&times;</button>
-      <img id="modalImage" class="modal-img" src="" alt="NFT Preview" />
-    </div>
+  <div class="subline">
+    The opening chapter of WCK.  
+    Series One captures the original enforcers, analysts, and internal operators
+    in moments too sharp to ignore — snapshots forged with the twisted punch of 
+    parody-grade chaos and the ice-cold precision of protocol discipline.
   </div>
+</header>
 
-  <script>
-    document.getElementById('y').textContent = new Date().getFullYear();
+<main class="wrap">
 
-    const modal = document.getElementById('imgModal');
-    const modalImg = document.getElementById('modalImage');
-    const closeBtn = document.querySelector('.modal-close');
+  <h2 class="section-title">Character Cards</h2>
 
-    document.querySelectorAll('.open-modal').forEach(link => {
-      link.addEventListener('click', e => {
-        e.preventDefault();
-        modalImg.src = link.dataset.img;
-        modal.classList.add('active');
-      });
-    });
+  <section class="grid">
 
-    const closeModal = () => {
-      modal.classList.remove('active');
-      modalImg.src = '';
-    };
+    <!-- 001 CONTINENTAL WICK -->
+    <article class="card">
+      <img class="thumb" src="/assets/nfts/continental_wick_001_preview.webp" alt="">
+      <div class="body">
+        <div class="title">CONTINENTAL WICK — The Diamond</div>
+        <div class="meta">
+          Protocol Enforcer • Threat Level: NONE<br>
+          The execution layer of the protocol. Activated only when trust fractures.
+        </div>
+      </div>
+    </article>
 
-    closeBtn.addEventListener('click', closeModal);
-    modal.addEventListener('click', e => { if (e.target === modal) closeModal(); });
-    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
-  </script>
+    <!-- 002 CLICKZ -->
+    <article class="card">
+      <img class="thumb" src="/assets/nfts/clickz_002_preview.webp" alt="">
+      <div class="body">
+        <div class="title">CLICKZ — The Feed</div>
+        <div class="meta">
+          Internal Surveillance • Threat Level: NONE<br>
+          Locks every unauthorized signal before it reaches daylight.
+        </div>
+      </div>
+    </article>
+
+    <!-- 003 ARMOIRE -->
+    <article class="card">
+      <img class="thumb" src="/assets/nfts/the_armorer_003_preview.webp" alt="">
+      <div class="body">
+        <div class="title">ARMOIRE — The Armorer</div>
+        <div class="meta">
+          Weaponization Specialist • Threat Level: NONE<br>
+          Curates every protocol-grade tool in the vault.
+        </div>
+      </div>
+    </article>
+
+    <!-- PLACEHOLDERS -->
+    <article class="card">
+      <div class="placeholder">Incoming Agent</div>
+    </article>
+
+    <article class="card">
+      <div class="placeholder">Incoming Agent</div>
+    </article>
+
+    <article class="card">
+      <div class="placeholder">Incoming Agent</div>
+    </article>
+
+    <article class="card">
+      <div class="placeholder">Incoming Agent</div>
+    </article>
+
+    <article class="card">
+      <div class="placeholder">Incoming Agent</div>
+    </article>
+
+    <article class="card">
+      <div class="placeholder">Incoming Agent</div>
+    </article>
+
+  </section>
+</main>
+
+<footer>
+  © <span id="y"></span> CONTINENTAL WICK — All Rights Reserved.
+</footer>
+
+<script>
+  document.getElementById('y').textContent = new Date().getFullYear();
+</script>
 
 </body>
 </html>
